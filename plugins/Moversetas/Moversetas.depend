@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1373864417 source:/home/tiberius/IC/plugins/Moversetas/main.cpp
+	<ros/ros.h>
+	<stdio.h>
+	<std_msgs/Float64.h>
+	<termios.h>
+	<signal.h>
+	<time.h>
+
