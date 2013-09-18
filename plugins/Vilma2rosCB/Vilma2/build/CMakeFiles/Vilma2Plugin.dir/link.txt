@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC    -shared -Wl,-soname,libVilma2Plugin.so -o libVilma2Plugin.so CMakeFiles/Vilma2Plugin.dir/DRCVehiclePlugin.cc.o -L/usr/lib/gazebo-1.8/plugins 

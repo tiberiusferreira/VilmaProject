@@ -25,7 +25,7 @@
 #include <std_msgs/Float64.h>
 #include <std_msgs/Int8.h>
 
-#include "/home/tiberius/IC/plugins/Vilma2CB/DRCVehiclePlugin.hh"
+#include "Vilma2/DRCVehiclePlugin.hh"
 
 namespace gazebo
 {
