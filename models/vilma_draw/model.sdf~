@@ -3,7 +3,7 @@
   <model name="vilma_draw">
     <link name="chassis">
       <inertial>
-
+        <!--Not sure about data below, need to talk to Olmer-->
         <mass>1261.3</mass> <!--Used data from Punto weighing-->
         <inertia>
           <ixx>0.0</ixx> <!-- Used model from "Mathematical Model for the Fiat punto, Olmer García, Mechanical Computational Department UNICAMP-->
