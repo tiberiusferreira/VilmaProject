@@ -3,13 +3,12 @@
   <model name="vilma_draw">
     <link name="chassis">
       <inertial>
-        <!-- subtracted wheel weights from dry weight of 771 kg -->
-        <!-- http://www.polaris.com/en-us/ranger-utv/side-by-sides/ranger-ev/specifications -->
-        <mass>720.0</mass>
+        <!--Not sure about data below, need to talk to Olmer-->
+        <mass>1261.3</mass> <!--Used data from Punto weighing-->
         <inertia>
-          <ixx>140</ixx>
-          <ixy>0.0</ixy><iyy>550</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>550</izz>
+          <ixx>0.0</ixx> <!-- Used model from "Mathematical Model for the Fiat punto, Olmer García, Mechanical Computational Department UNICAMP-->
+          <ixy>0.0</ixy><iyy>897.3676</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1825.0626</izz>
         </inertia>
         <!-- chassis c.o.g. near lateral/longitudinal center, height of 0.4 m -->
         <pose>0.1 0 0.4  0 0 0</pose>
