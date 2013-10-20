@@ -1,14 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0"?> 
 <sdf version="1.4">
   <model name="vilma_draw">
     <link name="chassis">
       <inertial>
-        <!--Not sure about data below, need to talk to Olmer-->
+        <!--Not sure about data below, need to talk to Olmer 18/10/13-->
         <mass>1261.3</mass> <!--Used data from Punto weighing-->
         <inertia>
           <ixx>0.0</ixx> <!-- Used model from "Mathematical Model for the Fiat punto, Olmer García, Mechanical Computational Department UNICAMP-->
-          <ixy>0.0</ixy><iyy>897.3676</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1825.0626</izz>
+          <ixy>0.0</ixy><iyy>0.0</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>2722.4303</izz>
         </inertia>
         <!-- chassis c.o.g. near lateral/longitudinal center, height of 0.4 m -->
         <pose>0.1 0 0.4  0 0 0</pose>
@@ -52,9 +52,9 @@
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
-          <ixx>0.228</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixx>0.160731</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
+          <ixy>0.0</ixy><iyy>0.22815</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>0.160731</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -103,9 +103,9 @@
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
-          <ixx>0.228</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixx>0.160731</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
+          <ixy>0.0</ixy><iyy>0.22815</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>0.160731</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -156,9 +156,9 @@
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
-          <ixx>0.228</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixx>0.160731</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
+          <ixy>0.0</ixy><iyy>0.22815</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>0.160731</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -227,9 +227,9 @@
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
-          <ixx>0.228</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixx>0.160731</ixx> <!--Calculated using a cilinder model of the wheel, mass and 12kg and radius as 0.195m -->
+          <ixy>0.0</ixy><iyy>0.22815</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>0.160731</izz>
         </inertia>
       </inertial>
       <collision name="collision">
