@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>vilma_draw</name>
+  <version>1.0</version>
+  <sdf version="1.3">model-1_3.sdf</sdf>
+ <sdf version="1.4">model.sdf</sdf>
+
+  <author>
+    <name>Olmer Garcia</name>
+    <email>olmerg@gmail.com</email>
+  </author>
+
+  <author>
+    <name>Tiberio</name>
+    <email></email>
+  </author>
+
+  <description>
+    A model of VILMA CAR
+ created from the Polaris Ranger EV of DRCSIM 2.6
+	authors Cole Biesemeyer e NAte Koenig
+  </description>
+
+</model>

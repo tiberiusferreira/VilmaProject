@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1372328886 source:/home/tiberius/IC/plugins/Vilma2ros/DRCVehicleROSPlugin.cpp
+	<math.h>
+	<stdlib.h>
+	"DRCVehicleROSPlugin.h"
+	"gazebo/common/common.hh"
+	"gazebo/physics/Base.hh"
+	"gazebo/physics/CylinderShape.hh"
+	"gazebo/physics/SphereShape.hh"
+
+1372988604 /home/tiberius/IC/plugins/Vilma2ros/DRCVehicleROSPlugin.h
+	<ros/ros.h>
+	<ros/callback_queue.h>
+	<ros/advertise_options.h>
+	<ros/subscribe_options.h>
+	<std_msgs/Float64.h>
+	<std_msgs/Int8.h>
+	"../Vilma2/DRCVehiclePlugin.hh"
+
+1372415042 /home/tiberius/IC/plugins/Vilma2/DRCVehiclePlugin.hh
+	<boost/thread.hpp>
+	<boost/thread/mutex.hpp>
+	<gazebo/physics/physics.hh>
+	<gazebo/transport/TransportTypes.hh>
+	<gazebo/common/Time.hh>
+	<gazebo/common/Plugin.hh>
+	<gazebo/common/Events.hh>
+	<gazebo/common/PID.hh>
+
+1373235713 source:/home/tiberio/Dropbox/IC/plugins/Vilma2rosCB/DRCVehicleROSPlugin.cpp
+	<math.h>
+	<stdlib.h>
+	"DRCVehicleROSPlugin.h"
+	"gazebo/common/common.hh"
+	"gazebo/physics/Base.hh"
+	"gazebo/physics/CylinderShape.hh"
+	"gazebo/physics/SphereShape.hh"
+
+1373235957 /home/tiberio/Dropbox/IC/plugins/Vilma2rosCB/DRCVehicleROSPlugin.h
+	<ros/ros.h>
+	<ros/callback_queue.h>
+	<ros/advertise_options.h>
+	<ros/subscribe_options.h>
+	<std_msgs/Float64.h>
+	<std_msgs/Int8.h>
+	"/home/tiberius/IC/plugins/Vilma2CB/DRCVehiclePlugin.hh"
+
