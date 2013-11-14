@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="Road_cure_right">
+    <static>true</static>
+    <pose>0 0 0.0 0 0 0</pose>
+    <link name="link">
+      <visual name="visual">
+	
+        <pose>0.04 0 -0.1 0 0 0</pose>
+        <geometry>
+	 
+          <mesh>
+            <uri>model://Road_Curve_right/Road_Curve_right.dae</uri>
+	
+          </mesh>
+        </geometry>
+        
+      </visual>
+
+    </link>
+  </model>
+</sdf>

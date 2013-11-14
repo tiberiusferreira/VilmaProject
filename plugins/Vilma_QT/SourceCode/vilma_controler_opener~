@@ -1,0 +1,6 @@
+#!/bin/sh
+LD_LIBRARY_PATH=$HOME/Qt/5.1.0/gcc_64/lib:/opt/ros/hydro/lib:$LD_LIBRARY_PATH
+./vilma_controler
+
+
+
