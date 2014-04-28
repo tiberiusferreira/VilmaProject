@@ -103,10 +103,10 @@
       <aero_load>0.1</aero_load>
       <min_brake_percent>0.04</min_brake_percent>
     </plugin>
-	<plugin filename="libgazebo_ros_p3d.so" name="p3d_en_ros">
+	<plugin filename="libhector_gazebo_ros_gps.so" name="gps_en_ros">
 		<bodyName>vilma_draw::chassis</bodyName>
-		<topicName>vilma_vehicle/p3d</topicName>
-		<gaussianNoise>0.0</gaussianNoise>
+		<topicName>vilma_vehicle/gps</topicName>
+
 		<xyzOffset>0 0 0.0</xyzOffset>
 		<rpyOffset>0 0 0</rpyOffset>
 	</plugin>
@@ -124,4 +124,4 @@
   </model>
 
 
-</sdf>
+</sdf>	
