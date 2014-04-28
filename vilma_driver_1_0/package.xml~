@@ -47,7 +47,7 @@
   <run_depend>roscpp</run_depend>
   <run_depend>std_msgs</run_depend>
   <run_depend>vilma_plugin</run_depend>
-  <run_depend>hector_gazebo_plugins</run_depend>
+  <run_depend>hector_gazoebo_plugins</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
