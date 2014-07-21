@@ -3,7 +3,7 @@ VilmaProject
  Code used by UNICAMP's autonomous car simulator. Consists so far of:
  1-Fiat Punto model.
  2-Gazebo plugin to make the car behave like a real car would and not be just a static model (vilma-plugin).
- 3-Qt based controller for the vehicle so it can be controlled beyond the command line and the car starte can be 
+ 3-Qt based controller for the vehicle so it can be controlled beyond the command line and the car state can be 
  checked (vilma_controller).
  4-A very experimental self driving Qt based controller which in the current state only keeps the car at constant
  speed.
