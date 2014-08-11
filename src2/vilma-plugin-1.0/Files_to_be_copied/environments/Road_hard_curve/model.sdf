@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="Road_hard_curve">
+    <static>true</static>
+    <pose>0 0 0.0 0 0 0</pose>
+    <link name="link">
+      <visual name="visual">
+        <pose>0 0 0.04 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+	    <scale> 0.39 0.39 1</scale>
+          </mesh>
+        </geometry>
+        
+      </visual>
+
+    </link>
+  </model>
+</sdf>
