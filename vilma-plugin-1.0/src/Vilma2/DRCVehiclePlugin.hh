@@ -312,7 +312,6 @@ namespace gazebo
     private: double frSteeringState;
     private: double gasPedalState;
     private: double brakePedalState;
-// fazer uma funcao publica para accedar a os estados das rodas
 //Store the velocities of the wheels
     public: double flWheelStatePUB;
     public: double frWheelStatePUB;
