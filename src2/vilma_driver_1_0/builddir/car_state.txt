@@ -1,0 +1,33 @@
+Just after acknowledging the obstacle
+Front Left Wheel Speed 6.339911 rad/s.
+Front Right Wheel Speed 6.347860rad/s.
+Back Left Wheel Speed 6.342184rad/s.
+Back Right Wheel Speed 6.346296rad/s.
+Model latitude -22.818935.
+Model longitude -47.064762.
+Model X pose 3.260604.
+Model Y pose 0.018192.
+Model Z pose -0.000154.
+Model X linear velocity 1.810794.
+Model Y linear velocity 0.007324.
+Model Z linear velocity -0.013019.
+Model X angular velocity -0.004694.
+Model Y angular velocity -0.001252.
+Model Z angular velocity -0.000105.
+
+Just after no longer detecting the obstacle
+Front Left Wheel Speed 13.174435 rad/s.
+Front Right Wheel Speed 15.069026rad/s.
+Back Left Wheel Speed 12.613548rad/s.
+Back Right Wheel Speed 14.575267rad/s.
+Model latitude -22.818858.
+Model longitude -47.064789.
+Model X pose 12.379689.
+Model Y pose 2.928051.
+Model Z pose -0.000134.
+Model X linear velocity 3.013753.
+Model Y linear velocity 2.876310.
+Model Z linear velocity -0.015183.
+Model X angular velocity 0.006893.
+Model Y angular velocity 0.001324.
+Model Z angular velocity 0.439295.

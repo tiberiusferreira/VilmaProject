@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+if grep -Fxq "source ${HOME}/catkin_ws/install/setup.bash" ~/.bashrc
+then
+    echo Currently sourcing catkin setup.bash. OK!
+else
+    echo Not currently sourcing catkin setup.bash Setting..	
+    echo "
+source ${HOME}/catkin_ws/install/setup.bash" >> ~/.bashrc
+	if grep -Fxq "source ${HOME}/catkin_ws/install/setup.bash" ~/.bashrc
+	then 
+    	echo Setting successful. Open a new terminal once install is done.
+	else
+   	 echo Not able to set. Check your ~/.bashrc to see if really not set.
+	fi
+fi
+
+if grep -Fxq "export GAZEBO_MODEL_PATH=${HOME}/catkin_ws/install/share/vilma_plugin:$GAZEBO_MODEL_PATH" ~/.bashrc
+then
+    echo GAZEBO model path set. OK!
+else
+    echo GAZEBO model path not set. Setting...	
+    echo "
+export GAZEBO_MODEL_PATH=${HOME}/catkin_ws/install/share/vilma_plugin:$GAZEBO_MODEL_PATH" >> ~/.bashrc
+	if grep -Fxq "export GAZEBO_MODEL_PATH=${HOME}/catkin_ws/install/share/vilma_plugin:$GAZEBO_MODEL_PATH" ~/.bashrc
+	then
+    	echo Setting successful. Open a new terminal once install is done.
+	else
+   	echo Not able to set. Check your ~/.bashrc to see if really not set.
+	fi
+fi
+
