@@ -1,0 +1,8 @@
+prefix=/home/tiberio/catkin_ws/install
+
+Name: hector_gazebo_plugins
+Description: Description of hector_gazebo_plugins
+Version: 0.3.2
+Cflags: -I/home/tiberio/catkin_ws/install/include
+Libs: -L/home/tiberio/catkin_ws/install/lib 
+Requires: roscpp std_msgs geometry_msgs nav_msgs tf

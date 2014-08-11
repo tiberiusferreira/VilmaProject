@@ -1,0 +1,8 @@
+prefix=/home/tiberio/catkin_ws/install
+
+Name: vilma_controllerqt_1_0
+Description: Description of vilma_controllerqt_1_0
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/tiberio/catkin_ws/install/lib 
+Requires: roscpp std_msgs vilma_plugin

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "vilma_driverqt_1_0")
+set(vilma_driverqt_1_0_MAINTAINER "tiberio <tiberiusferreira@gmail.com>, olmer <olmerg@fem.unicamp.br>")
+set(vilma_driverqt_1_0_DEPRECATED "")
+set(vilma_driverqt_1_0_VERSION "1.0.0")
+set(vilma_driverqt_1_0_BUILD_DEPENDS "roscpp" "std_msgs" "hector_gazebo_plugins")
+set(vilma_driverqt_1_0_RUN_DEPENDS "Qt4" "roscpp" "std_msgs" "vilma_plugin" "hector_gazebo_plugins")
+set(vilma_driverqt_1_0_BUILDTOOL_DEPENDS "catkin" "Qt4")
