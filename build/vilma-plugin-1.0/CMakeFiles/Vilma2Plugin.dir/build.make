@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/tiberio/catkin_ws/src
 
@@ -54,11 +57,11 @@ vilma-plugin-1.0/CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.o: /
 
 vilma-plugin-1.0/CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.i"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/Vilma2/DRCVehiclePlugin.cc > CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.i
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 vilma-plugin-1.0/CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.s"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/Vilma2/DRCVehiclePlugin.cc -o CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.s
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 vilma-plugin-1.0/CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.o.requires:
 .PHONY : vilma-plugin-1.0/CMakeFiles/Vilma2Plugin.dir/src/Vilma2/DRCVehiclePlugin.cc.o.requires

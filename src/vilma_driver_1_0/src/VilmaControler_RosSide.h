@@ -13,7 +13,7 @@
 #include <sensor_msgs/Imu.h>
 #include <time.h>
 #include <gazebo/math/gzmath.hh>
-#include <physics/physics.hh>
+#include <gazebo/physics/physics.hh>
 #include <sensor_msgs/NavSatFix.h>
 class VilmaControler_ROS
 {

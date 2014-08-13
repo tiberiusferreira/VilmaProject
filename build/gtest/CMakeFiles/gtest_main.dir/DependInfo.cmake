@@ -6,7 +6,6 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/usr/src/gtest/src/gtest_main.cc" "/home/tiberio/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
-SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
@@ -17,3 +16,12 @@ SET(CMAKE_TARGET_DEFINITIONS
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/tiberio/catkin_ws/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
+
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/src/gtest/include"
+  "/usr/src/gtest"
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

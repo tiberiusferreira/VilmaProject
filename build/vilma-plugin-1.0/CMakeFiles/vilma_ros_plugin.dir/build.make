@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/tiberio/catkin_ws/src
 
@@ -54,11 +57,11 @@ vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o: 
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp > CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires:
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires
@@ -77,105 +80,35 @@ vilma_ros_plugin_OBJECTS = \
 vilma_ros_plugin_EXTERNAL_OBJECTS =
 
 /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_api_plugin.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_paths_plugin.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libvision_reconfigure.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_camera_utils.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_camera.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_multicamera.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_depth_camera.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_openni_kinect.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_gpu_laser.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_laser.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_block_laser.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_p3d.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_imu.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_f3d.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_bumper.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_template.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_projector.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_prosilica.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_force.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_joint_trajectory.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_joint_pose_trajectory.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_diff_drive.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_skid_steer_drive.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_video.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libgazebo_ros_planar_move.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/liburdf.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/liburdfdom_sensor.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/liburdfdom_model_state.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/liburdfdom_model.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/liburdfdom_world.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosconsole_bridge.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libpcl_ros_filters.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libpcl_ros_io.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libpcl_ros_tf.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_common.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_kdtree.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_octree.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_search.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_io.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_sample_consensus.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_filters.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_visualization.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_outofcore.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_features.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_segmentation.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_people.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_registration.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_recognition.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_keypoints.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_surface.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_tracking.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libpcl_apps.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_iostreams-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_serialization-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libqhull.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libOpenNI.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libflann_cpp_s.a
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libvtkCommon.so.5.8.0
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libvtkRendering.so.5.8.0
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libvtkHybrid.so.5.8.0
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libvtkCharts.so.5.8.0
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libnodeletlib.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libbondcpp.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libuuid.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosbag.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosbag_storage.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_program_options-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libtopic_tools.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libtf.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libtf2_ros.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libactionlib.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libtf2.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libimage_transport.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libmessage_filters.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libtinyxml.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libclass_loader.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libPocoFoundation.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libroslib.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libroscpp.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_signals-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_filesystem-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosconsole.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosconsole_log4cxx.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librosconsole_backend_interface.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/liblog4cxx.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_regex-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libxmlrpcpp.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libroscpp_serialization.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/librostime.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_date_time-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_system-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/libboost_thread-mt.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libcpp_common.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/hydro/lib/libconsole_bridge.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /home/tiberio/catkin_ws/devel/lib/libVilma2Plugin.so
 /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build.make
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_api_plugin.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_paths_plugin.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroslib.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libactionlib.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libmessage_filters.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/liblog4cxx.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp_serialization.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librostime.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libcpp_common.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /home/tiberio/catkin_ws/devel/lib/libVilma2Plugin.so
 /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so"
 	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vilma_ros_plugin.dir/link.txt --verbose=$(VERBOSE)

@@ -35,6 +35,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/tiberio/catkin_ws/src
 
@@ -231,90 +234,6 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : bond_generate_messages_cpp
-
-# fast build rule for target.
-bond_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/bond_generate_messages_cpp.dir/build
-.PHONY : bond_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : bond_generate_messages_lisp
-
-# fast build rule for target.
-bond_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/bond_generate_messages_lisp.dir/build
-.PHONY : bond_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_py: vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-driver_base_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/rule
-.PHONY : driver_base_generate_messages_cpp
-
-# fast build rule for target.
-driver_base_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_cpp.dir/build
-.PHONY : driver_base_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-driver_base_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/rule
-.PHONY : driver_base_generate_messages_lisp
-
-# fast build rule for target.
-driver_base_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_lisp.dir/build
-.PHONY : driver_base_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/rule
-
-# Convenience name for target.
-driver_base_generate_messages_py: vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/rule
-.PHONY : driver_base_generate_messages_py
-
-# fast build rule for target.
-driver_base_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/driver_base_generate_messages_py.dir/build
-.PHONY : driver_base_generate_messages_py/fast
-
-# Convenience name for target.
 vilma_driver_1_0/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 .PHONY : vilma_driver_1_0/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
@@ -413,20 +332,6 @@ gazebo_msgs_generate_messages_py/fast:
 .PHONY : gazebo_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-
-# Convenience name for target.
-gazebo_plugins_gencfg: vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-.PHONY : gazebo_plugins_gencfg
-
-# fast build rule for target.
-gazebo_plugins_gencfg/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/build.make vilma_driver_1_0/CMakeFiles/gazebo_plugins_gencfg.dir/build
-.PHONY : gazebo_plugins_gencfg/fast
-
-# Convenience name for target.
 vilma_driver_1_0/CMakeFiles/gazebo_ros_gencfg.dir/rule:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/gazebo_ros_gencfg.dir/rule
 .PHONY : vilma_driver_1_0/CMakeFiles/gazebo_ros_gencfg.dir/rule
@@ -481,146 +386,6 @@ geometry_msgs_generate_messages_py: vilma_driver_1_0/CMakeFiles/geometry_msgs_ge
 geometry_msgs_generate_messages_py/fast:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : nav_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nav_msgs_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
-.PHONY : nav_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : nav_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nav_msgs_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
-.PHONY : nav_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : nodelet_generate_messages_cpp
-
-# fast build rule for target.
-nodelet_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-.PHONY : nodelet_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : nodelet_generate_messages_lisp
-
-# fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_py: vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/rule
-.PHONY : nodelet_generate_messages_py
-
-# fast build rule for target.
-nodelet_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/nodelet_generate_messages_py.dir/build
-.PHONY : nodelet_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-.PHONY : pcl_msgs_generate_messages_cpp
-
-# fast build rule for target.
-pcl_msgs_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build
-.PHONY : pcl_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-.PHONY : pcl_msgs_generate_messages_lisp
-
-# fast build rule for target.
-pcl_msgs_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build
-.PHONY : pcl_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_py: vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-.PHONY : pcl_msgs_generate_messages_py
-
-# fast build rule for target.
-pcl_msgs_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/pcl_msgs_generate_messages_py.dir/build
-.PHONY : pcl_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/rule
-
-# Convenience name for target.
-pcl_ros_gencfg: vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/rule
-.PHONY : pcl_ros_gencfg
-
-# fast build rule for target.
-pcl_ros_gencfg/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/build.make vilma_driver_1_0/CMakeFiles/pcl_ros_gencfg.dir/build
-.PHONY : pcl_ros_gencfg/fast
 
 # Convenience name for target.
 vilma_driver_1_0/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -789,48 +554,6 @@ tf_generate_messages_py: vilma_driver_1_0/CMakeFiles/tf_generate_messages_py.dir
 tf_generate_messages_py/fast:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/tf_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/tf_generate_messages_py.dir/build
 .PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_cpp: vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-.PHONY : topic_tools_generate_messages_cpp
-
-# fast build rule for target.
-topic_tools_generate_messages_cpp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/build.make vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_cpp.dir/build
-.PHONY : topic_tools_generate_messages_cpp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_lisp: vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-.PHONY : topic_tools_generate_messages_lisp
-
-# fast build rule for target.
-topic_tools_generate_messages_lisp/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/build.make vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_lisp.dir/build
-.PHONY : topic_tools_generate_messages_lisp/fast
-
-# Convenience name for target.
-vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/rule:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-.PHONY : vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_py: vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-.PHONY : topic_tools_generate_messages_py
-
-# fast build rule for target.
-topic_tools_generate_messages_py/fast:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/build.make vilma_driver_1_0/CMakeFiles/topic_tools_generate_messages_py.dir/build
-.PHONY : topic_tools_generate_messages_py/fast
 
 # Convenience name for target.
 vilma_driver_1_0/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
@@ -1044,12 +767,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... bond_generate_messages_cpp"
-	@echo "... bond_generate_messages_lisp"
-	@echo "... bond_generate_messages_py"
-	@echo "... driver_base_generate_messages_cpp"
-	@echo "... driver_base_generate_messages_lisp"
-	@echo "... driver_base_generate_messages_py"
 	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
@@ -1058,7 +775,6 @@ help:
 	@echo "... gazebo_msgs_generate_messages_cpp"
 	@echo "... gazebo_msgs_generate_messages_lisp"
 	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... gazebo_plugins_gencfg"
 	@echo "... gazebo_ros_gencfg"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1067,16 +783,6 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... nav_msgs_generate_messages_py"
-	@echo "... nodelet_generate_messages_cpp"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... nodelet_generate_messages_py"
-	@echo "... pcl_msgs_generate_messages_cpp"
-	@echo "... pcl_msgs_generate_messages_lisp"
-	@echo "... pcl_msgs_generate_messages_py"
-	@echo "... pcl_ros_gencfg"
 	@echo "... rebuild_cache"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1091,9 +797,6 @@ help:
 	@echo "... tf_generate_messages_cpp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf_generate_messages_py"
-	@echo "... topic_tools_generate_messages_cpp"
-	@echo "... topic_tools_generate_messages_lisp"
-	@echo "... topic_tools_generate_messages_py"
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"

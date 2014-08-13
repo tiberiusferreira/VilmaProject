@@ -7,12 +7,15 @@
 # The syntax for the file is as follows:
 # KEY:TYPE=VALUE
 # KEY is the name of a variable in the cache.
-# TYPE is a hint to GUI's for the type of VALUE, DO NOT EDIT TYPE!.
+# TYPE is a hint to GUIs for the type of VALUE, DO NOT EDIT TYPE!.
 # VALUE is the current value for the KEY.
 
 ########################
 # EXTERNAL cache entries
 ########################
+
+//The threading library used by boost-thread
+BOOST_THREAD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
@@ -22,6 +25,9 @@ Boost_DIR:PATH=Boost_DIR-NOTFOUND
 
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
+
+//Boost library directory
+Boost_LIBRARY_DIR:PATH=/usr/lib
 
 //Boost library directory
 Boost_LIBRARY_DIRS:FILEPATH=/usr/lib
@@ -172,8 +178,27 @@ CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//If set, runtime paths are not added when installing shared libraries,
+// but are added when building.
+CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
+
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
+
+//Flags used by the linker during the creation of static libraries.
+CMAKE_STATIC_LINKER_FLAGS:STRING=
+
+//Flags used by the linker during debug builds.
+CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
+
+//Flags used by the linker during release minsize builds.
+CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during release builds.
+CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
+
+//Flags used by the linker during Release with Debug Info builds.
+CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
@@ -196,6 +221,9 @@ DOXYGEN_FOUND:BOOL=TRUE
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 
+//Empy script
+EMPY_SCRIPT:STRING=/usr/bin/empy
+
 //Path to a file.
 GTEST_INCLUDE_DIR:PATH=/usr/include
 
@@ -216,6 +244,9 @@ LINUXMINT:BOOL=TRUE
 
 //LSB Distrib - codename tag
 LINUXMINT_MAYA:BOOL=TRUE
+
+//LSB Distrib - codename tag
+LINUXMINT_QIANA:BOOL=TRUE
 
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
@@ -287,7 +318,7 @@ QT_DBUSCPP2XML_EXECUTABLE:FILEPATH=/usr/bin/qdbuscpp2xml
 QT_DBUSXML2CPP_EXECUTABLE:FILEPATH=/usr/bin/qdbusxml2cpp
 
 //Path to a program.
-QT_DESIGNER_EXECUTABLE:FILEPATH=QT_DESIGNER_EXECUTABLE-NOTFOUND
+QT_DESIGNER_EXECUTABLE:FILEPATH=/usr/bin/designer
 
 //The location of the Qt docs
 QT_DOC_DIR:PATH=/usr/share/qt4/doc
@@ -296,7 +327,7 @@ QT_DOC_DIR:PATH=/usr/share/qt4/doc
 QT_IMPORTS_DIR:PATH=
 
 //Path to a program.
-QT_LINGUIST_EXECUTABLE:FILEPATH=QT_LINGUIST_EXECUTABLE-NOTFOUND
+QT_LINGUIST_EXECUTABLE:FILEPATH=/usr/bin/linguist
 
 //Path to a program.
 QT_LRELEASE_EXECUTABLE:FILEPATH=/usr/bin/lrelease-qt4
@@ -344,7 +375,7 @@ QT_QCNCODECS_PLUGIN_DEBUG:FILEPATH=QT_QCNCODECS_PLUGIN_DEBUG-NOTFOUND
 QT_QCNCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqcncodecs.so
 
 //Path to a program.
-QT_QCOLLECTIONGENERATOR_EXECUTABLE:FILEPATH=QT_QCOLLECTIONGENERATOR_EXECUTABLE-NOTFOUND
+QT_QCOLLECTIONGENERATOR_EXECUTABLE:FILEPATH=/usr/bin/qcollectiongenerator
 
 //Path to a library.
 QT_QCOREWLANBEARER_PLUGIN_DEBUG:FILEPATH=QT_QCOREWLANBEARER_PLUGIN_DEBUG-NOTFOUND
@@ -872,7 +903,7 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_R
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //The directory containing a CMake configuration file for SDFormat.
-SDFormat_DIR:PATH=/usr/lib/cmake/sdformat
+SDFormat_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
@@ -887,10 +918,10 @@ _CATKIN_GTEST_INCLUDE:FILEPATH=/usr/include/gtest/gtest.h
 _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //The directory containing a CMake configuration file for actionlib.
-actionlib_DIR:PATH=/opt/ros/hydro/share/actionlib/cmake
+actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 
 //The directory containing a CMake configuration file for actionlib_msgs.
-actionlib_msgs_DIR:PATH=/opt/ros/hydro/share/actionlib_msgs/cmake
+actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
 //The directory containing a CMake configuration file for angles.
 angles_DIR:PATH=/opt/ros/hydro/share/angles/cmake
@@ -902,46 +933,46 @@ bond_DIR:PATH=/opt/ros/hydro/share/bond/cmake
 bondcpp_DIR:PATH=/opt/ros/hydro/share/bondcpp/cmake
 
 //The directory containing a CMake configuration file for catkin.
-catkin_DIR:PATH=/opt/ros/hydro/share/catkin/cmake
+catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
 
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/hydro/share/class_loader/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
-cpp_common_DIR:PATH=/opt/ros/hydro/share/cpp_common/cmake
+cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for driver_base.
 driver_base_DIR:PATH=/opt/ros/hydro/share/driver_base/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
-dynamic_reconfigure_DIR:PATH=/opt/ros/hydro/share/dynamic_reconfigure/cmake
+dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 
 //The directory containing a CMake configuration file for gazebo.
 gazebo_DIR:PATH=/usr/share/gazebo/cmake
 
 //The directory containing a CMake configuration file for gazebo_msgs.
-gazebo_msgs_DIR:PATH=/opt/ros/hydro/share/gazebo_msgs/cmake
+gazebo_msgs_DIR:PATH=/opt/ros/indigo/share/gazebo_msgs/cmake
 
 //The directory containing a CMake configuration file for gazebo_plugins.
 gazebo_plugins_DIR:PATH=/opt/ros/hydro/share/gazebo_plugins/cmake
 
 //The directory containing a CMake configuration file for gazebo_ros.
-gazebo_ros_DIR:PATH=/opt/ros/hydro/share/gazebo_ros/cmake
+gazebo_ros_DIR:PATH=/opt/ros/indigo/share/gazebo_ros/cmake
 
 //The directory containing a CMake configuration file for gencpp.
-gencpp_DIR:PATH=/opt/ros/hydro/share/gencpp/cmake
+gencpp_DIR:PATH=/opt/ros/indigo/share/gencpp/cmake
 
 //The directory containing a CMake configuration file for genlisp.
-genlisp_DIR:PATH=/opt/ros/hydro/share/genlisp/cmake
+genlisp_DIR:PATH=/opt/ros/indigo/share/genlisp/cmake
 
 //The directory containing a CMake configuration file for genmsg.
-genmsg_DIR:PATH=/opt/ros/hydro/share/genmsg/cmake
+genmsg_DIR:PATH=/opt/ros/indigo/share/genmsg/cmake
 
 //The directory containing a CMake configuration file for genpy.
-genpy_DIR:PATH=/opt/ros/hydro/share/genpy/cmake
+genpy_DIR:PATH=/opt/ros/indigo/share/genpy/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
-geometry_msgs_DIR:PATH=/opt/ros/hydro/share/geometry_msgs/cmake
+geometry_msgs_DIR:PATH=/opt/ros/indigo/share/geometry_msgs/cmake
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/tiberio/catkin_ws/build/gtest
@@ -972,16 +1003,16 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 image_transport_DIR:PATH=/opt/ros/hydro/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/hydro/lib/libimage_transport.so
+lib:FILEPATH=/opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
 
 //The directory containing a CMake configuration file for message_filters.
-message_filters_DIR:PATH=/opt/ros/hydro/share/message_filters/cmake
+message_filters_DIR:PATH=/opt/ros/indigo/share/message_filters/cmake
 
 //The directory containing a CMake configuration file for message_generation.
-message_generation_DIR:PATH=/opt/ros/hydro/share/message_generation/cmake
+message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
-message_runtime_DIR:PATH=/opt/ros/hydro/share/message_runtime/cmake
+message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/hydro/share/nav_msgs/cmake
@@ -990,7 +1021,7 @@ nav_msgs_DIR:PATH=/opt/ros/hydro/share/nav_msgs/cmake
 nodelet_DIR:PATH=/opt/ros/hydro/share/nodelet/cmake
 
 //Path to a library.
-onelib:FILEPATH=/usr/lib/libsdformat.so
+onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/hydro/share/pcl_conversions/cmake
@@ -1011,67 +1042,67 @@ rosbag_DIR:PATH=/opt/ros/hydro/share/rosbag/cmake
 rosbag_storage_DIR:PATH=/opt/ros/hydro/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
-rosconsole_DIR:PATH=/opt/ros/hydro/share/rosconsole/cmake
+rosconsole_DIR:PATH=/opt/ros/indigo/share/rosconsole/cmake
 
 //The directory containing a CMake configuration file for rosconsole_bridge.
 rosconsole_bridge_DIR:PATH=/opt/ros/hydro/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
-roscpp_DIR:PATH=/opt/ros/hydro/share/roscpp/cmake
+roscpp_DIR:PATH=/opt/ros/indigo/share/roscpp/cmake
 
 //The directory containing a CMake configuration file for roscpp_serialization.
-roscpp_serialization_DIR:PATH=/opt/ros/hydro/share/roscpp_serialization/cmake
+roscpp_serialization_DIR:PATH=/opt/ros/indigo/share/roscpp_serialization/cmake
 
 //The directory containing a CMake configuration file for roscpp_traits.
-roscpp_traits_DIR:PATH=/opt/ros/hydro/share/roscpp_traits/cmake
+roscpp_traits_DIR:PATH=/opt/ros/indigo/share/roscpp_traits/cmake
 
 //The directory containing a CMake configuration file for rosgraph.
-rosgraph_DIR:PATH=/opt/ros/hydro/share/rosgraph/cmake
+rosgraph_DIR:PATH=/opt/ros/indigo/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
-rosgraph_msgs_DIR:PATH=/opt/ros/hydro/share/rosgraph_msgs/cmake
+rosgraph_msgs_DIR:PATH=/opt/ros/indigo/share/rosgraph_msgs/cmake
 
 //The directory containing a CMake configuration file for roslib.
-roslib_DIR:PATH=/opt/ros/hydro/share/roslib/cmake
+roslib_DIR:PATH=/opt/ros/indigo/share/roslib/cmake
 
 //The directory containing a CMake configuration file for rospy.
-rospy_DIR:PATH=/opt/ros/hydro/share/rospy/cmake
+rospy_DIR:PATH=/opt/ros/indigo/share/rospy/cmake
 
 //The directory containing a CMake configuration file for rostime.
-rostime_DIR:PATH=/opt/ros/hydro/share/rostime/cmake
+rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
-sensor_msgs_DIR:PATH=/opt/ros/hydro/share/sensor_msgs/cmake
+sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/hydro/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
-std_msgs_DIR:PATH=/opt/ros/hydro/share/std_msgs/cmake
+std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
 //The directory containing a CMake configuration file for std_srvs.
-std_srvs_DIR:PATH=/opt/ros/hydro/share/std_srvs/cmake
+std_srvs_DIR:PATH=/opt/ros/indigo/share/std_srvs/cmake
 
 //The directory containing a CMake configuration file for tf2.
-tf2_DIR:PATH=/opt/ros/hydro/share/tf2/cmake
+tf2_DIR:PATH=/opt/ros/indigo/share/tf2/cmake
 
 //The directory containing a CMake configuration file for tf2_msgs.
-tf2_msgs_DIR:PATH=/opt/ros/hydro/share/tf2_msgs/cmake
+tf2_msgs_DIR:PATH=/opt/ros/indigo/share/tf2_msgs/cmake
 
 //The directory containing a CMake configuration file for tf2_py.
-tf2_py_DIR:PATH=/opt/ros/hydro/share/tf2_py/cmake
+tf2_py_DIR:PATH=/opt/ros/indigo/share/tf2_py/cmake
 
 //The directory containing a CMake configuration file for tf2_ros.
-tf2_ros_DIR:PATH=/opt/ros/hydro/share/tf2_ros/cmake
+tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
-tf_DIR:PATH=/opt/ros/hydro/share/tf/cmake
+tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
 
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/hydro/share/topic_tools/cmake
 
 //The directory containing a CMake configuration file for trajectory_msgs.
-trajectory_msgs_DIR:PATH=/opt/ros/hydro/share/trajectory_msgs/cmake
+trajectory_msgs_DIR:PATH=/opt/ros/indigo/share/trajectory_msgs/cmake
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/hydro/share/urdf/cmake
@@ -1095,18 +1126,22 @@ vilma_plugin_BINARY_DIR:STATIC=/home/tiberio/catkin_ws/build/vilma-plugin-1.0
 vilma_plugin_SOURCE_DIR:STATIC=/home/tiberio/catkin_ws/src/vilma-plugin-1.0
 
 //Dependencies for the target
-vilma_ros_plugin_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/hydro/lib/libgazebo_ros_paths_plugin.so;general;/opt/ros/hydro/lib/libvision_reconfigure.so;general;/opt/ros/hydro/lib/libgazebo_ros_camera_utils.so;general;/opt/ros/hydro/lib/libgazebo_ros_camera.so;general;/opt/ros/hydro/lib/libgazebo_ros_multicamera.so;general;/opt/ros/hydro/lib/libgazebo_ros_depth_camera.so;general;/opt/ros/hydro/lib/libgazebo_ros_openni_kinect.so;general;/opt/ros/hydro/lib/libgazebo_ros_gpu_laser.so;general;/opt/ros/hydro/lib/libgazebo_ros_laser.so;general;/opt/ros/hydro/lib/libgazebo_ros_block_laser.so;general;/opt/ros/hydro/lib/libgazebo_ros_p3d.so;general;/opt/ros/hydro/lib/libgazebo_ros_imu.so;general;/opt/ros/hydro/lib/libgazebo_ros_f3d.so;general;/opt/ros/hydro/lib/libgazebo_ros_bumper.so;general;/opt/ros/hydro/lib/libgazebo_ros_template.so;general;/opt/ros/hydro/lib/libgazebo_ros_projector.so;general;/opt/ros/hydro/lib/libgazebo_ros_prosilica.so;general;/opt/ros/hydro/lib/libgazebo_ros_force.so;general;/opt/ros/hydro/lib/libgazebo_ros_joint_trajectory.so;general;/opt/ros/hydro/lib/libgazebo_ros_joint_pose_trajectory.so;general;/opt/ros/hydro/lib/libgazebo_ros_diff_drive.so;general;/opt/ros/hydro/lib/libgazebo_ros_skid_steer_drive.so;general;/opt/ros/hydro/lib/libgazebo_ros_video.so;general;/opt/ros/hydro/lib/libgazebo_ros_planar_move.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libpcl_ros_filters.so;general;/opt/ros/hydro/lib/libpcl_ros_io.so;general;/opt/ros/hydro/lib/libpcl_ros_tf.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;/usr/lib/libvtkCommon.so.5.8.0;general;/usr/lib/libvtkRendering.so.5.8.0;general;/usr/lib/libvtkHybrid.so.5.8.0;general;/usr/lib/libvtkCharts.so.5.8.0;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/librosbag_storage.so;general;/usr/lib/libboost_program_options-mt.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libimage_transport.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;Vilma2Plugin;
+vilma_ros_plugin_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libgazebo_ros_api_plugin.so;general;/opt/ros/indigo/lib/libgazebo_ros_paths_plugin.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/libtf.so;general;/opt/ros/indigo/lib/libtf2_ros.so;general;/opt/ros/indigo/lib/libactionlib.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libtf2.so;general;/opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;Vilma2Plugin;
 
 //The directory containing a CMake configuration file for xmlrpcpp.
-xmlrpcpp_DIR:PATH=/opt/ros/hydro/share/xmlrpcpp/cmake
+xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
 
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_INCLUDE_DIR
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR
+Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIRS
 Boost_LIBRARY_DIRS-ADVANCED:INTERNAL=1
 //The library version string for boost libraries
@@ -1137,7 +1172,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=7
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=12
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -1148,7 +1183,6 @@ CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
 CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
-CMAKE_CXX_COMPILER_WORKS:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
@@ -1161,7 +1195,6 @@ CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
-CMAKE_C_COMPILER_WORKS:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -1192,6 +1225,10 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+//Name of generator toolset.
+CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Have symbol pthread_create
+CMAKE_HAVE_LIBC_CREATE:INTERNAL=
 //Have library pthreads
 CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
 //Have library pthread
@@ -1239,8 +1276,20 @@ CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_SHARED_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SKIP_INSTALL_RPATH
+CMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SKIP_RPATH
 CMAKE_SKIP_RPATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS
+CMAKE_STATIC_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_DEBUG
+CMAKE_STATIC_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL
+CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELEASE
+CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STRIP
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //uname command
@@ -1252,9 +1301,9 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PROTOBUF
 FIND_PACKAGE_MESSAGE_DETAILS_PROTOBUF:INTERNAL=[/usr/lib/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.3()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtDeclarative][/usr/lib/x86_64-linux-gnu/libQtDeclarative.so][/usr/bin/uic-qt4][v4.8.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtDeclarative][/usr/lib/x86_64-linux-gnu/libQtDeclarative.so][/usr/bin/uic-qt4][v4.8.6()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
@@ -1711,4 +1760,12 @@ Q_WS_QWS:INTERNAL=
 Q_WS_WIN:INTERNAL=
 //Have symbol Q_WS_X11
 Q_WS_X11:INTERNAL=1
+//Components requested for this build tree.
+_Boost_COMPONENTS_SEARCHED:INTERNAL=thread
+//Last used Boost_INCLUDE_DIR value.
+_Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
+//Last used Boost_LIBRARY_DIR value.
+_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib
+//Last used Boost_USE_MULTITHREADED value.
+_Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 

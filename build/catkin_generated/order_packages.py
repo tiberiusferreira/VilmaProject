@@ -2,4 +2,4 @@
 source_root_dir = "/home/tiberio/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/tiberio/catkin_ws/install;/opt/ros/hydro".split(';') if "/home/tiberio/catkin_ws/install;/opt/ros/hydro" != "" else []
+underlay_workspaces = "/opt/ros/indigo".split(';') if "/opt/ros/indigo" != "" else []
