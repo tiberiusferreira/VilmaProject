@@ -57,11 +57,11 @@ vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o: 
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp > CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires:
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires

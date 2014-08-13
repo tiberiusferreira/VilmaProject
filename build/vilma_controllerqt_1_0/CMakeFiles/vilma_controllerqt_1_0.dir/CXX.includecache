@@ -776,6 +776,8 @@ QtCore/qglobal.h
 QtCore/qbasicatomic.h
 -
 
+/usr/include/qt4/QtCore/qatomic_aarch64.h
+
 /usr/include/qt4/QtCore/qatomic_alpha.h
 
 /usr/include/qt4/QtCore/qatomic_arch.h
@@ -801,6 +803,8 @@ QtCore/qatomic_i386.h
 /usr/include/qt4/QtCore/QtCore/qatomic_i386.h
 QtCore/qatomic_ia64.h
 /usr/include/qt4/QtCore/QtCore/qatomic_ia64.h
+QtCore/qatomic_m68k.h
+/usr/include/qt4/QtCore/QtCore/qatomic_m68k.h
 QtCore/qatomic_macosx.h
 /usr/include/qt4/QtCore/QtCore/qatomic_macosx.h
 QtCore/qatomic_mips.h
@@ -827,6 +831,8 @@ QtCore/qatomic_sh4a.h
 /usr/include/qt4/QtCore/QtCore/qatomic_sh4a.h
 QtCore/qatomic_generic.h
 /usr/include/qt4/QtCore/QtCore/qatomic_generic.h
+QtCore/qatomic_aarch64.h
+/usr/include/qt4/QtCore/QtCore/qatomic_aarch64.h
 
 /usr/include/qt4/QtCore/qatomic_arm.h
 QtCore/qatomic_armv7.h
@@ -865,6 +871,8 @@ ia64/sys/inline.h
 /usr/include/qt4/QtCore/qatomic_integrity.h
 INTEGRITY.h
 -
+
+/usr/include/qt4/QtCore/qatomic_m68k.h
 
 /usr/include/qt4/QtCore/qatomic_macosx.h
 QtCore/qatomic_x86_64.h
@@ -1043,6 +1051,8 @@ algorithm
 -
 AvailabilityMacros.h
 -
+utility
+-
 e32def.h
 -
 QtCore/qfeatures.h
@@ -1072,6 +1082,8 @@ QtCore/qstring.h
 
 /usr/include/qt4/QtCore/qiterator.h
 QtCore/qglobal.h
+-
+new
 -
 
 /usr/include/qt4/QtCore/qline.h
@@ -1368,6 +1380,22 @@ QtCore/QPoint
 qdeclarativeitem.h
 /usr/include/qt4/QtDeclarative/qdeclarativeitem.h
 
+/usr/include/qt4/QtDeclarative/QDeclarativeListProperty
+qdeclarativelist.h
+/usr/include/qt4/QtDeclarative/qdeclarativelist.h
+
+/usr/include/qt4/QtDeclarative/QDeclarativeParserStatus
+qdeclarativeparserstatus.h
+/usr/include/qt4/QtDeclarative/qdeclarativeparserstatus.h
+
+/usr/include/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+qdeclarativepropertyvalueinterceptor.h
+/usr/include/qt4/QtDeclarative/qdeclarativepropertyvalueinterceptor.h
+
+/usr/include/qt4/QtDeclarative/QDeclarativePropertyValueSource
+qdeclarativepropertyvaluesource.h
+/usr/include/qt4/QtDeclarative/qdeclarativepropertyvaluesource.h
+
 /usr/include/qt4/QtDeclarative/QDeclarativeView
 qdeclarativeview.h
 /usr/include/qt4/QtDeclarative/qdeclarativeview.h
@@ -1446,6 +1474,16 @@ QtCore/qobject.h
 QtCore/qglobal.h
 -
 QtCore/qvariant.h
+-
+QtCore/qurl.h
+-
+QtDeclarative/QDeclarativeListProperty
+-
+QtDeclarative/QDeclarativeParserStatus
+-
+QtDeclarative/QDeclarativePropertyValueSource
+-
+QtDeclarative/QDeclarativePropertyValueInterceptor
 -
 
 /usr/include/qt4/QtDeclarative/qdeclarativepropertyvalueinterceptor.h
@@ -2001,6 +2039,8 @@ QtCore/qmetatype.h
 -
 
 /usr/include/qt4/QtGui/qwidget.h
+QtCore/qconfig.h
+-
 QtGui/qwindowdefs.h
 -
 QtCore/qobject.h

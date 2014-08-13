@@ -52,19 +52,19 @@ include vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
 vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx: /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_QtSide.h
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_QtSide.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0/src && /usr/bin/moc-qt4 @/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx_parameters
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx_parameters
 
 vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx: /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_RosSide.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0/src && /usr/bin/moc-qt4 @/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
 
 vilma_driver_1_0/qrc_controlerresources.cxx: /home/tiberio/catkin_ws/src/vilma_driver_1_0/app.qml
 vilma_driver_1_0/qrc_controlerresources.cxx: vilma_driver_1_0/controlerresources.qrc.depends
 vilma_driver_1_0/qrc_controlerresources.cxx: /home/tiberio/catkin_ws/src/vilma_driver_1_0/controlerresources.qrc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating qrc_controlerresources.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/rcc -name controlerresources -o /home/tiberio/catkin_ws/build/vilma_driver_1_0/qrc_controlerresources.cxx /home/tiberio/catkin_ws/src/vilma_driver_1_0/controlerresources.qrc
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/lib/x86_64-linux-gnu/qt4/bin/rcc -name controlerresources -o /home/tiberio/catkin_ws/build/vilma_driver_1_0/qrc_controlerresources.cxx /home/tiberio/catkin_ws/src/vilma_driver_1_0/controlerresources.qrc
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/main.cpp
@@ -74,11 +74,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /home/tiberio
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/main.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/main.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o.requires
@@ -97,11 +97,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_QtSide.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_QtSide.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o.requires
@@ -120,11 +120,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cp
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires
@@ -143,11 +143,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx > CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o.requires
@@ -166,11 +166,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSid
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx > CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires
@@ -189,11 +189,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.o:
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_driver_1_0/qrc_controlerresources.cxx > CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.i
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+	cd /home/tiberio/catkin_ws/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_driver_1_0/qrc_controlerresources.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.s
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.o.requires:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.o.requires

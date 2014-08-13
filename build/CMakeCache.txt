@@ -27,19 +27,13 @@ Boost_DIR:PATH=Boost_DIR-NOTFOUND
 Boost_INCLUDE_DIR:PATH=/usr/include
 
 //Boost library directory
-Boost_LIBRARY_DIR:PATH=/usr/lib
-
-//Boost library directory
-Boost_LIBRARY_DIRS:FILEPATH=/usr/lib
-
-//The Boost THREAD library
-Boost_THREAD_LIBRARY:FILEPATH=/usr/lib/libboost_thread-mt.so
+Boost_LIBRARY_DIR:PATH=/usr/lib/x86_64-linux-gnu
 
 //Boost thread library (debug)
-Boost_THREAD_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_thread-mt.so
+Boost_THREAD_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
 
 //Boost thread library (release)
-Boost_THREAD_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_thread-mt.so
+Boost_THREAD_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
 
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
@@ -84,10 +78,10 @@ CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the compiler during Release with Debug Info builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler.
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //Flags used by the compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -104,7 +98,7 @@ CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the compiler during Release with Debug Info builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Flags used by the linker.
 CMAKE_EXE_LINKER_FLAGS:STRING=' '
@@ -213,10 +207,7 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
-DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
-
-//Doxygen found
-DOXYGEN_FOUND:BOOL=TRUE
+DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
 
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
@@ -243,9 +234,6 @@ GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 LINUXMINT:BOOL=TRUE
 
 //LSB Distrib - codename tag
-LINUXMINT_MAYA:BOOL=TRUE
-
-//LSB Distrib - codename tag
 LINUXMINT_QIANA:BOOL=TRUE
 
 //lsb_release executable was found
@@ -255,22 +243,22 @@ LSB_FOUND:BOOL=TRUE
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
-NOSETESTS:FILEPATH=/usr/bin/nosetests
+NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
 //Path to a file.
 PROTOBUF_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-PROTOBUF_LIBRARY:FILEPATH=/usr/lib/libprotobuf.so
+PROTOBUF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
 
 //Path to a library.
-PROTOBUF_LIBRARY_DEBUG:FILEPATH=/usr/lib/libprotobuf.so
+PROTOBUF_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
 
 //Path to a library.
-PROTOBUF_LITE_LIBRARY:FILEPATH=/usr/lib/libprotobuf-lite.so
+PROTOBUF_LITE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
 
 //Path to a library.
-PROTOBUF_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libprotobuf-lite.so
+PROTOBUF_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
 
 //The Google Protocol Buffers Compiler
 PROTOBUF_PROTOC_EXECUTABLE:FILEPATH=/usr/bin/protoc
@@ -312,13 +300,13 @@ QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG-N
 QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE-NOTFOUND
 
 //Path to a program.
-QT_DBUSCPP2XML_EXECUTABLE:FILEPATH=/usr/bin/qdbuscpp2xml
+QT_DBUSCPP2XML_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/qdbuscpp2xml
 
 //Path to a program.
-QT_DBUSXML2CPP_EXECUTABLE:FILEPATH=/usr/bin/qdbusxml2cpp
+QT_DBUSXML2CPP_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/qdbusxml2cpp
 
 //Path to a program.
-QT_DESIGNER_EXECUTABLE:FILEPATH=/usr/bin/designer
+QT_DESIGNER_EXECUTABLE:FILEPATH=QT_DESIGNER_EXECUTABLE-NOTFOUND
 
 //The location of the Qt docs
 QT_DOC_DIR:PATH=/usr/share/qt4/doc
@@ -327,19 +315,19 @@ QT_DOC_DIR:PATH=/usr/share/qt4/doc
 QT_IMPORTS_DIR:PATH=
 
 //Path to a program.
-QT_LINGUIST_EXECUTABLE:FILEPATH=/usr/bin/linguist
+QT_LINGUIST_EXECUTABLE:FILEPATH=QT_LINGUIST_EXECUTABLE-NOTFOUND
 
 //Path to a program.
-QT_LRELEASE_EXECUTABLE:FILEPATH=/usr/bin/lrelease-qt4
+QT_LRELEASE_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/lrelease
 
 //Path to a program.
-QT_LUPDATE_EXECUTABLE:FILEPATH=/usr/bin/lupdate-qt4
+QT_LUPDATE_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/lupdate
 
 //The location of the Qt mkspecs containing qconfig.pri
 QT_MKSPECS_DIR:PATH=/usr/share/qt4/mkspecs
 
 //Path to a program.
-QT_MOC_EXECUTABLE:FILEPATH=/usr/bin/moc-qt4
+QT_MOC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/moc
 
 //Path to a library.
 QT_PHONONWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_PHONONWIDGETS_PLUGIN_DEBUG-NOTFOUND
@@ -359,12 +347,6 @@ QT_PHONON_LIBRARY_DEBUG:FILEPATH=QT_PHONON_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 QT_PHONON_LIBRARY_RELEASE:FILEPATH=QT_PHONON_LIBRARY_RELEASE-NOTFOUND
 
-//Path to a library.
-QT_PHONON_QT7_PLUGIN_DEBUG:FILEPATH=QT_PHONON_QT7_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_PHONON_QT7_PLUGIN_RELEASE:FILEPATH=QT_PHONON_QT7_PLUGIN_RELEASE-NOTFOUND
-
 //The location of the Qt plugins
 QT_PLUGINS_DIR:PATH=/usr/lib/x86_64-linux-gnu/qt4/plugins
 
@@ -375,7 +357,7 @@ QT_QCNCODECS_PLUGIN_DEBUG:FILEPATH=QT_QCNCODECS_PLUGIN_DEBUG-NOTFOUND
 QT_QCNCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqcncodecs.so
 
 //Path to a program.
-QT_QCOLLECTIONGENERATOR_EXECUTABLE:FILEPATH=/usr/bin/qcollectiongenerator
+QT_QCOLLECTIONGENERATOR_EXECUTABLE:FILEPATH=QT_QCOLLECTIONGENERATOR_EXECUTABLE-NOTFOUND
 
 //Path to a library.
 QT_QCOREWLANBEARER_PLUGIN_DEBUG:FILEPATH=QT_QCOREWLANBEARER_PLUGIN_DEBUG-NOTFOUND
@@ -480,7 +462,7 @@ QT_QSQLITE2_PLUGIN_RELEASE:FILEPATH=QT_QSQLITE2_PLUGIN_RELEASE-NOTFOUND
 QT_QSQLITE_PLUGIN_DEBUG:FILEPATH=QT_QSQLITE_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_QSQLITE_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/sqldrivers/libqsqlite.so
+QT_QSQLITE_PLUGIN_RELEASE:FILEPATH=QT_QSQLITE_PLUGIN_RELEASE-NOTFOUND
 
 //Path to a library.
 QT_QSQLMYSQL_PLUGIN_DEBUG:FILEPATH=QT_QSQLMYSQL_PLUGIN_DEBUG-NOTFOUND
@@ -828,16 +810,16 @@ QT_QTWCODECS_PLUGIN_DEBUG:FILEPATH=QT_QTWCODECS_PLUGIN_DEBUG-NOTFOUND
 QT_QTWCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqtwcodecs.so
 
 //Path to a file.
-QT_QTWEBKIT_INCLUDE_DIR:PATH=/usr/include/qt4/QtWebKit
+QT_QTWEBKIT_INCLUDE_DIR:PATH=QT_QTWEBKIT_INCLUDE_DIR-NOTFOUND
 
 //The Qt QTWEBKIT library
-QT_QTWEBKIT_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtWebKit.so
+QT_QTWEBKIT_LIBRARY:STRING=
 
 //Path to a library.
 QT_QTWEBKIT_LIBRARY_DEBUG:FILEPATH=QT_QTWEBKIT_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_QTWEBKIT_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtWebKit.so
+QT_QTWEBKIT_LIBRARY_RELEASE:FILEPATH=QT_QTWEBKIT_LIBRARY_RELEASE-NOTFOUND
 
 //Path to a file.
 QT_QTXMLPATTERNS_INCLUDE_DIR:PATH=/usr/include/qt4/QtXmlPatterns
@@ -867,7 +849,7 @@ QT_QTXML_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtXml.so
 QT_QWEBVIEW_PLUGIN_DEBUG:FILEPATH=QT_QWEBVIEW_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_QWEBVIEW_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libqwebview.so
+QT_QWEBVIEW_PLUGIN_RELEASE:FILEPATH=QT_QWEBVIEW_PLUGIN_RELEASE-NOTFOUND
 
 //Path to a library.
 QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG:FILEPATH=QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG-NOTFOUND
@@ -876,7 +858,7 @@ QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG:FILEPATH=QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEB
 QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE:FILEPATH=QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE-NOTFOUND
 
 //Path to a program.
-QT_RCC_EXECUTABLE:FILEPATH=/usr/bin/rcc
+QT_RCC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/rcc
 
 //Path to a library.
 QT_TASKMENUEXTENSION_PLUGIN_DEBUG:FILEPATH=QT_TASKMENUEXTENSION_PLUGIN_DEBUG-NOTFOUND
@@ -888,10 +870,10 @@ QT_TASKMENUEXTENSION_PLUGIN_RELEASE:FILEPATH=QT_TASKMENUEXTENSION_PLUGIN_RELEASE
 QT_TRANSLATIONS_DIR:PATH=/usr/share/qt4/translations
 
 //Path to a program.
-QT_UIC3_EXECUTABLE:FILEPATH=/usr/bin/uic3
+QT_UIC3_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/uic3
 
 //Path to a program.
-QT_UIC_EXECUTABLE:FILEPATH=/usr/bin/uic-qt4
+QT_UIC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/uic
 
 //Path to a library.
 QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG-NOTFOUND
@@ -923,26 +905,11 @@ actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
-//The directory containing a CMake configuration file for angles.
-angles_DIR:PATH=/opt/ros/hydro/share/angles/cmake
-
-//The directory containing a CMake configuration file for bond.
-bond_DIR:PATH=/opt/ros/hydro/share/bond/cmake
-
-//The directory containing a CMake configuration file for bondcpp.
-bondcpp_DIR:PATH=/opt/ros/hydro/share/bondcpp/cmake
-
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
 
-//The directory containing a CMake configuration file for class_loader.
-class_loader_DIR:PATH=/opt/ros/hydro/share/class_loader/cmake
-
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
-
-//The directory containing a CMake configuration file for driver_base.
-driver_base_DIR:PATH=/opt/ros/hydro/share/driver_base/cmake
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
@@ -952,9 +919,6 @@ gazebo_DIR:PATH=/usr/share/gazebo/cmake
 
 //The directory containing a CMake configuration file for gazebo_msgs.
 gazebo_msgs_DIR:PATH=/opt/ros/indigo/share/gazebo_msgs/cmake
-
-//The directory containing a CMake configuration file for gazebo_plugins.
-gazebo_plugins_DIR:PATH=/opt/ros/hydro/share/gazebo_plugins/cmake
 
 //The directory containing a CMake configuration file for gazebo_ros.
 gazebo_ros_DIR:PATH=/opt/ros/indigo/share/gazebo_ros/cmake
@@ -999,9 +963,6 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
-//The directory containing a CMake configuration file for image_transport.
-image_transport_DIR:PATH=/opt/ros/hydro/share/image_transport/cmake
-
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
 
@@ -1014,38 +975,11 @@ message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
-//The directory containing a CMake configuration file for nav_msgs.
-nav_msgs_DIR:PATH=/opt/ros/hydro/share/nav_msgs/cmake
-
-//The directory containing a CMake configuration file for nodelet.
-nodelet_DIR:PATH=/opt/ros/hydro/share/nodelet/cmake
-
 //Path to a library.
 onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
 
-//The directory containing a CMake configuration file for pcl_conversions.
-pcl_conversions_DIR:PATH=/opt/ros/hydro/share/pcl_conversions/cmake
-
-//The directory containing a CMake configuration file for pcl_msgs.
-pcl_msgs_DIR:PATH=/opt/ros/hydro/share/pcl_msgs/cmake
-
-//The directory containing a CMake configuration file for pcl_ros.
-pcl_ros_DIR:PATH=/opt/ros/hydro/share/pcl_ros/cmake
-
-//The directory containing a CMake configuration file for pluginlib.
-pluginlib_DIR:PATH=/opt/ros/hydro/share/pluginlib/cmake
-
-//The directory containing a CMake configuration file for rosbag.
-rosbag_DIR:PATH=/opt/ros/hydro/share/rosbag/cmake
-
-//The directory containing a CMake configuration file for rosbag_storage.
-rosbag_storage_DIR:PATH=/opt/ros/hydro/share/rosbag_storage/cmake
-
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/indigo/share/rosconsole/cmake
-
-//The directory containing a CMake configuration file for rosconsole_bridge.
-rosconsole_bridge_DIR:PATH=/opt/ros/hydro/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
 roscpp_DIR:PATH=/opt/ros/indigo/share/roscpp/cmake
@@ -1074,9 +1008,6 @@ rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
-//The directory containing a CMake configuration file for smclib.
-smclib_DIR:PATH=/opt/ros/hydro/share/smclib/cmake
-
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
@@ -1098,14 +1029,8 @@ tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
 
-//The directory containing a CMake configuration file for topic_tools.
-topic_tools_DIR:PATH=/opt/ros/hydro/share/topic_tools/cmake
-
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/indigo/share/trajectory_msgs/cmake
-
-//The directory containing a CMake configuration file for urdf.
-urdf_DIR:PATH=/opt/ros/hydro/share/urdf/cmake
 
 //Value Computed by CMake
 vilma_controllerqt_1_0_BINARY_DIR:STATIC=/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0
@@ -1142,20 +1067,10 @@ Boost_DIR-ADVANCED:INTERNAL=1
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIR
 Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_LIBRARY_DIRS
-Boost_LIBRARY_DIRS-ADVANCED:INTERNAL=1
-//The library version string for boost libraries
-Boost_LIB_VERSION:INTERNAL=1_46_1
-//Whether the Boost THREAD library found
-Boost_THREAD_FOUND:INTERNAL=ON
-//ADVANCED property for variable: Boost_THREAD_LIBRARY
-Boost_THREAD_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_THREAD_LIBRARY_DEBUG
 Boost_THREAD_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_THREAD_LIBRARY_RELEASE
 Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//The version number for boost libraries
-Boost_VERSION:INTERNAL=104601
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/tiberio/catkin_ws/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/tiberio/catkin_ws/build/test_results
@@ -1205,10 +1120,6 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//Result of TRY_COMPILE
-CMAKE_DETERMINE_CXX_ABI_COMPILED:INTERNAL=TRUE
-//Result of TRY_COMPILE
-CMAKE_DETERMINE_C_ABI_COMPILED:INTERNAL=TRUE
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -1233,7 +1144,7 @@ CMAKE_HAVE_LIBC_CREATE:INTERNAL=
 CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
 //Have library pthread
 CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
-//Have include CMAKE_HAVE_PTHREAD_H
+//Have include pthread.h
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
@@ -1299,11 +1210,11 @@ CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PROTOBUF
-FIND_PACKAGE_MESSAGE_DETAILS_PROTOBUF:INTERNAL=[/usr/lib/libprotobuf.so][/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_PROTOBUF:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtDeclarative][/usr/lib/x86_64-linux-gnu/libQtDeclarative.so][/usr/bin/uic-qt4][v4.8.6()]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtDeclarative][/usr/lib/x86_64-linux-gnu/libQtDeclarative.so][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][v4.8.6()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
@@ -1347,7 +1258,7 @@ PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
 QT_ARTHURPLUGIN_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_ARTHURPLUGIN_PLUGIN_RELEASE
 QT_ARTHURPLUGIN_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-QT_BINARY_DIR:INTERNAL=/usr/bin
+QT_BINARY_DIR:INTERNAL=/usr/lib/x86_64-linux-gnu/qt4/bin
 //ADVANCED property for variable: QT_CONTAINEREXTENSION_PLUGIN_DEBUG
 QT_CONTAINEREXTENSION_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_CONTAINEREXTENSION_PLUGIN_RELEASE
@@ -1393,10 +1304,6 @@ QT_PHONON_LIBRARY-ADVANCED:INTERNAL=1
 QT_PHONON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_PHONON_LIBRARY_RELEASE
 QT_PHONON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_QT7_PLUGIN_DEBUG
-QT_PHONON_QT7_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_QT7_PLUGIN_RELEASE
-QT_PHONON_QT7_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_PLUGINS_DIR
 QT_PLUGINS_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QCNCODECS_PLUGIN_DEBUG
@@ -1453,7 +1360,6 @@ QT_QJPEG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 QT_QKRCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QKRCODECS_PLUGIN_RELEASE
 QT_QKRCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake
 //ADVANCED property for variable: QT_QMNG_PLUGIN_DEBUG
 QT_QMNG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QMNG_PLUGIN_RELEASE
@@ -1765,7 +1671,7 @@ _Boost_COMPONENTS_SEARCHED:INTERNAL=thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR value.
-_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib
+_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 

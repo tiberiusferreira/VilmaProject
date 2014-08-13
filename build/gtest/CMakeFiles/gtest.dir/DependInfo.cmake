@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/usr/src/gtest/src/gtest-all.cc" "/home/tiberio/catkin_ws/build/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
+SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS

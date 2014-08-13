@@ -11,6 +11,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx" "/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o"
   "/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx" "/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o"
   )
+SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS

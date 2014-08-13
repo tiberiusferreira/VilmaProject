@@ -273,6 +273,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/QTimer
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qalgorithms.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_alpha.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_arch.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_arm.h
@@ -286,6 +287,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_i386.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_ia64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_integrity.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_m68k.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_macosx.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_mips.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qatomic_parisc.h
@@ -348,6 +350,10 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qvariant.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtCore/qvector.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeItem
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeListProperty
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeParserStatus
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueSource
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarative.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarativecomponent.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarativeerror.h
@@ -681,6 +687,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/QTimer
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qalgorithms.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_alpha.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_arch.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_arm.h
@@ -694,6 +701,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_i386.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_ia64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_integrity.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_m68k.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_macosx.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_mips.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qatomic_parisc.h
@@ -756,6 +764,10 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cp
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qvariant.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtCore/qvector.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeItem
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeListProperty
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeParserStatus
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueSource
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarative.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarativecomponent.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarativeerror.h
@@ -1089,6 +1101,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/QTimer
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qalgorithms.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_alpha.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_arch.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_arm.h
@@ -1102,6 +1115,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_i386.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_ia64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_integrity.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_m68k.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_macosx.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_mips.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qatomic_parisc.h
@@ -1168,6 +1182,10 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qvariant.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtCore/qvector.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeItem
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeListProperty
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeParserStatus
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueSource
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/QDeclarativeView
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarative.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtDeclarative/qdeclarativecomponent.h
@@ -1518,6 +1536,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/QTimer
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qalgorithms.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_alpha.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_arch.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_arm.h
@@ -1531,6 +1550,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_i386.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_ia64.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_integrity.h
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_m68k.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_macosx.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_mips.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qatomic_parisc.h
@@ -1593,6 +1613,10 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qvariant.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtCore/qvector.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/QDeclarativeItem
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/QDeclarativeListProperty
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/QDeclarativeParserStatus
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueInterceptor
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/QDeclarativePropertyValueSource
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/qdeclarative.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/qdeclarativecomponent.h
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /usr/include/qt4/QtDeclarative/qdeclarativeerror.h
