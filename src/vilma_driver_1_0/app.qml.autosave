@@ -95,27 +95,27 @@ VilmaControlerQtSide {
         text: "Brake Value: 0.00" ;
         font.bold: true
         verticalAlignment: Text.AlignVCenter
-        anchors.horizontalCenterOffset: -200
+        anchors.horizontalCenterOffset: -208
 
     }
     Text {
         id:steeringvalue
         x: 0
-        y: 534
+        y: 646
         width: 195
         height: 35
-        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 231 }
+        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 119 }
         text: "Steering joint Value: 0.00" ;
         verticalAlignment: Text.AlignVCenter
         font.bold: true
-        anchors.horizontalCenterOffset: 222
+        anchors.horizontalCenterOffset: 195
     }
 
 
     Text {
         id: br_wheel_speed
-        x: 194
-        y: 528
+        x: 23
+        y: 548
         text: qsTr("Back Right Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -124,7 +124,7 @@ VilmaControlerQtSide {
     Text {
         id: bl_wheel_speed
         x: 21
-        y: 562
+        y: 569
         text: qsTr("Front Right Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -132,8 +132,8 @@ VilmaControlerQtSide {
 
     Text {
         id: fr_wheel_speed
-        x: 224
-        y: 677
+        x: 21
+        y: 685
         text: ("Back Left Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -149,7 +149,7 @@ VilmaControlerQtSide {
     }
     Text {
         id: xposition
-        x: 125
+        x: 91
         y: 260
         text: "X : 00.000"
         font.pointSize: 14
@@ -165,7 +165,7 @@ VilmaControlerQtSide {
     }
     Text {
         id: zposition
-        x: 354
+        x: 394
         y: 260
         text: "Z : 00.000"
         font.pointSize: 14
@@ -319,7 +319,7 @@ VilmaControlerQtSide {
         property color onHoverColor: "gold"
         property color borderColor: "lightblue"
         color: "#71f1da"
-        border.color: borderColor
+        border.color: "#add9e6"
         visible: true
         width: 118; height: 35
         x: 1
@@ -634,8 +634,8 @@ VilmaControlerQtSide {
     Text {
 
         id: steering_joint_exported_value
-        x: 200
-        y: 611
+        x: 21
+        y: 656
         text: ("Value being published to the steering: 00.00")
         font.bold: true
         font.pixelSize: 12

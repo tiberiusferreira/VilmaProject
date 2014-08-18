@@ -24,8 +24,11 @@ public:
     std_msgs::Int8 gears;
     ros::Publisher gas_pedalpub, brake_pedalpub, hand_brakepub,hand_wheelpub, gears_pub;
     ros::Subscriber gas_pedalsub, brake_pedalsub, hand_brakesub, hand_wheelsub, bl_wheel, br_wheel, fl_wheel, fr_wheel,gears_sub,
-     points_sub,modelstatesub,imu_sub;
+    points_sub,modelstatesub,imu_sub;
+    ros::ServiceClient gmscl;
+    gazebo_msgs::GetModelState getmodelstate;
     gazebo_msgs::ModelState modelstate;
+
     sensor_msgs::Imu imu_data;
     ros::NodeHandle rosNode;
     void callback1();
@@ -55,7 +58,7 @@ public:
     boost::thread_group tgroup;
     int thread_count;
     void init();
-    };
+};
 
 
 

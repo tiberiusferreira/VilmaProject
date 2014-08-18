@@ -41,260 +41,172 @@
 
 
 
-VilmaControler_QtSide::VilmaControler_QtSide(QDeclarativeItem *parent): QDeclarativeItem(parent)
+VilmaControler_QtSide::VilmaControler_QtSide() //Constructor
 {
+    VilmaControler_ROS_Object.init();
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(update_vilma_info()));
     timer->start(600);
-    VilmaControler_ROS_Object.init();
 }
 
 QString VilmaControler_QtSide::gas_joint() const
 {
-    return gas_joint_value;
-}
-
-void VilmaControler_QtSide::setGas_joint(const QString &value)
-{
-    gas_joint_value = value; // variable used by the gui and qml
-    emit gas_jointChanged();
+    return QString::number(VilmaControler_ROS_Object.gas_pedal_state.data,'f',2);
 }
 
 QString VilmaControler_QtSide::brake_joint() const
 {
-    return brake_joint_value;
-}
-
-void VilmaControler_QtSide::setBrake_joint(const QString &value)
-{
-    brake_joint_value = value;
-    emit brake_jointChanged();
+    return QString::number(VilmaControler_ROS_Object.brake_pedal_state.data,'f',2);
 }
 
 QString VilmaControler_QtSide::hand_brake_joint() const
 {
-    return hand_brake_joint_value;
+    return QString::number(VilmaControler_ROS_Object.hand_brake_state.data,'f',2);
 }
-
-void VilmaControler_QtSide::setHand_brake_joint(const QString &value)
-{
-    hand_brake_joint_value = value;
-    emit hand_brake_jointChanged();
-}
-
 
 QString VilmaControler_QtSide::steering_joint() const
 {
-    return steering_joint_value;
-}
-
-void VilmaControler_QtSide::setSteering_joint(const QString &value)
-{
-    steering_joint_value = value;
-    emit steering_jointChanged();
+    return QString::number(VilmaControler_ROS_Object.hand_wheel_state.data,'f',2);
 }
 
 QString VilmaControler_QtSide::bl_wheel_speed() const
 {
-    return bl_wheel_speed_value;
-}
-void VilmaControler_QtSide::setBl_wheel_speed(const QString &value)
-{
-    bl_wheel_speed_value = value;
-    emit bl_wheel_speedChanged();
+    return QString::number(VilmaControler_ROS_Object.bl_wheel_speed.data,'f',2);
 }
 
 QString VilmaControler_QtSide::br_wheel_speed() const
 {
-    return br_wheel_speed_value;
-}
-
-void VilmaControler_QtSide::setBr_wheel_speed(const QString &value)
-{
-    br_wheel_speed_value = value;
-    emit br_wheel_speedChanged();
+    return QString::number(VilmaControler_ROS_Object.br_wheel_speed.data,'f',2);
 }
 
 QString VilmaControler_QtSide::fl_wheel_speed() const
 {
-    return fl_wheel_speed_value;
-}
-
-void VilmaControler_QtSide::setFl_wheel_speed(const QString &value)
-{
-    fl_wheel_speed_value = value;
-    emit fl_wheel_speedChanged();
+    return QString::number(VilmaControler_ROS_Object.fl_wheel_speed.data,'f',2);
 }
 
 QString VilmaControler_QtSide::fr_wheel_speed() const
 {
-    return fr_wheel_speed_value;
-}
-
-void VilmaControler_QtSide::setFr_wheel_speed(const QString &value)
-{
-    fr_wheel_speed_value = value;
-    emit fr_wheel_speedChanged();
+    return QString::number(VilmaControler_ROS_Object.fr_wheel_speed.data,'f',2);
 }
 
 QString VilmaControler_QtSide::gears() const
 {
-    return gears_value;
-}
-
-void VilmaControler_QtSide::setgears(const QString &value)
-{
-    gears_value=value;
-    emit gearsChanged();
+    return QString::number(VilmaControler_ROS_Object.gears.data,'f',2);
 }
 
 void VilmaControler_QtSide::change_gears()
 {
     VilmaControler_ROS_Object.change_gears();
-    emit gearsChanged();
-}
-void VilmaControler_QtSide::setXposition(const QString &value)
-{
-    xposition_value = value;
-    emit x_positionChanged();
 }
 
 QString VilmaControler_QtSide::xposition() const
 {
-    return xposition_value;
-}
-
-void VilmaControler_QtSide::setYposition(const QString &value)
-{
-    yposition_value = value;
-    emit y_positionChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.position.x,'f',3);
 }
 
 QString VilmaControler_QtSide::yposition() const
 {
-    return yposition_value;
-}
-void VilmaControler_QtSide::setZposition(const QString &value)
-{
-    zposition_value = value;
-    emit z_positionChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.position.y,'f',3);
 }
 
 QString VilmaControler_QtSide::zposition() const
 {
-    return zposition_value;
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.position.z,'f',3);
 }
 
-QString VilmaControler_QtSide::readXtwist() const
+QString VilmaControler_QtSide::readXlinear_vel() const
 {
-    return xtwist_value;
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.linear.x,'f',3);
 }
 
-void VilmaControler_QtSide::setXtwist(const QString &value)
+QString VilmaControler_QtSide::readYlinear_vel() const
 {
-    xtwist_value = value;
-    emit xtwistChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.linear.y,'f',3);
 }
 
-
-QString VilmaControler_QtSide::readYtwist() const
+QString VilmaControler_QtSide::readZlinear_vel() const
 {
-    return ytwist_value;
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.linear.z,'f',3);
+}
+QString VilmaControler_QtSide::readXangular_vel() const
+{
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.x,'f',3);
 }
 
-void VilmaControler_QtSide::setYtwist(const QString &value)
+QString VilmaControler_QtSide::readYangular_vel() const
 {
-    ytwist_value = value;
-    emit ytwistChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.y,'f',3);
 }
 
-
-QString VilmaControler_QtSide::readZtwist() const
+QString VilmaControler_QtSide::readZangular_vel() const
 {
-    return ztwist_value;
-}
-
-void VilmaControler_QtSide::setZtwist(const QString &value)
-{
-    ztwist_value = value;
-    emit ztwistChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.z,'f',3);
 }
 
 QString VilmaControler_QtSide::readXorientation() const
 {
-    return xorientation_value;
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.x,'f',3);
 }
 
-void VilmaControler_QtSide::setXorientation(const QString &value)
-{
-    xorientation_value = value;
-    emit xorientationChanged();
-}
 
 QString VilmaControler_QtSide::readYorientation() const
 {
-    return yorientation_value;
-}
-
-void VilmaControler_QtSide::setYorientation(const QString &value)
-{
-    yorientation_value = value;
-    emit yorientationChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.y,'f',3);
 }
 
 QString VilmaControler_QtSide::readZorientation() const
 {
-    return yorientation_value;
-}
-
-void VilmaControler_QtSide::setZorientation(const QString &value)
-{
-    zorientation_value = value;
-    emit zorientationChanged();
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.z,'f',3);
 }
 
 QString VilmaControler_QtSide::readWorientation() const
 {
-    return worientation_value;
+    return QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.w,'f',3);
 }
-void VilmaControler_QtSide::setWorientation(const QString &value)
+
+QString VilmaControler_QtSide::readLatitude() const
 {
-    worientation_value = value;
-    emit worientationChanged();
+    return QString::number(VilmaControler_ROS_Object.car_gps_state.latitude,'f',9);
+}
+
+QString VilmaControler_QtSide::readLongitude() const
+{
+    return QString::number(VilmaControler_ROS_Object.car_gps_state.longitude,'f',9);
 }
 
 void VilmaControler_QtSide::maintain_speed()
 {
- this->VilmaControler_ROS_Object.maintain_speed();
+    this->VilmaControler_ROS_Object.maintain_speed();
 }
 
 void VilmaControler_QtSide::update_vilma_info()
 {
-
-    ros::spinOnce();//make sure it gets updated values
-    VilmaControler_QtSide::setGas_joint(QString::number(VilmaControler_ROS_Object.gas_pedal_state.data,'f',2));
-    VilmaControler_QtSide::setBrake_joint(QString::number(VilmaControler_ROS_Object.brake_pedal_state.data,'f',2));
-    VilmaControler_QtSide::setHand_brake_joint(QString::number(VilmaControler_ROS_Object.hand_brake_state.data,'f',2));
-    VilmaControler_QtSide::setSteering_joint(QString::number(VilmaControler_ROS_Object.hand_wheel_state.data,'f',2));
-    VilmaControler_QtSide::setBl_wheel_speed(QString::number(VilmaControler_ROS_Object.bl_wheel_speed.data,'f',2));
-    VilmaControler_QtSide::setBr_wheel_speed(QString::number(VilmaControler_ROS_Object.br_wheel_speed.data,'f',2));
-    VilmaControler_QtSide::setFl_wheel_speed(QString::number(VilmaControler_ROS_Object.fl_wheel_speed.data,'f',2));
-    VilmaControler_QtSide::setFr_wheel_speed(QString::number(VilmaControler_ROS_Object.fr_wheel_speed.data,'f',2));
-    VilmaControler_QtSide::setgears(QString::number(VilmaControler_ROS_Object.gears.data));
-    //Necessary because unlike subscribed nodes it does not update.
+    ros::spinOnce();
+    emit gas_jointChanged();
+    emit brake_jointChanged();
+    emit hand_brake_jointChanged();
+    emit steering_jointChanged();
+    emit bl_wheel_speedChanged();
+    emit br_wheel_speedChanged();
+    emit fl_wheel_speedChanged();
+    emit fr_wheel_speedChanged();
+    emit x_positionChanged();
+    emit y_positionChanged();
+    emit z_positionChanged();
+    emit xlinear_velChanged();
+    emit ylinear_velChanged();
+    emit zlinear_velChanged();
+    emit xangular_velChanged();
+    emit yangular_velChanged();
+    emit zangular_velChanged();
+    emit xorientationChanged();
+    emit yorientationChanged();
+    emit zorientationChanged();
+    emit worientationChanged();
+    emit gearsChanged();
+    emit latitudeChanged();
+    emit longitudeChanged();
     VilmaControler_ROS_Object.receive_model_physical_state();
-    VilmaControler_QtSide::setXposition(QString::number(VilmaControler_ROS_Object.modelstate.pose.position.x,'f',3));
-    VilmaControler_QtSide::setYposition(QString::number(VilmaControler_ROS_Object.modelstate.pose.position.y,'f',3));
-    VilmaControler_QtSide::setZposition(QString::number(VilmaControler_ROS_Object.modelstate.pose.position.z,'f',3));
-    VilmaControler_QtSide::setXtwist(QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.x,'f',3));
-    VilmaControler_QtSide::setYtwist(QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.y,'f',3));
-    VilmaControler_QtSide::setZtwist(QString::number(VilmaControler_ROS_Object.modelstate.twist.angular.z,'f',3));
-    VilmaControler_QtSide::setXorientation(QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.x,'f',3));
-    VilmaControler_QtSide::setYorientation(QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.y,'f',3));
-    VilmaControler_QtSide::setZorientation(QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.z,'f',3));
-    VilmaControler_QtSide::setWorientation(QString::number(VilmaControler_ROS_Object.modelstate.pose.orientation.w,'f',3));
-
-
 }
 
 void VilmaControler_QtSide::accelerate()
@@ -312,8 +224,7 @@ void VilmaControler_QtSide::deaccelerate()
     VilmaControler_ROS_Object.gas_pedalpub.publish(deaccelerate);
 }
 void VilmaControler_QtSide::use_brake_push()
-{
-
+{    
     std_msgs::Float64 use_brake;
     use_brake.data=VilmaControler_ROS_Object.brake_pedal_state.data+0.01;
     VilmaControler_ROS_Object.brake_pedalpub.publish(use_brake);
@@ -339,7 +250,7 @@ void VilmaControler_QtSide::use_Steering(float value)
 
 void VilmaControler_QtSide::reset_state()
 {
- VilmaControler_ROS_Object.reset_state();
+    VilmaControler_ROS_Object.reset_state();
 }
 
 

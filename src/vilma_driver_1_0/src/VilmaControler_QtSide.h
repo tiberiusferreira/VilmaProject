@@ -43,62 +43,53 @@
 #include <QtDeclarative/QDeclarativeItem>
 #include <QColor>
 #include <QTimer>
-#include<QKeyEvent>
+#include <QKeyEvent>
 #include <QDateTime>
 
 
-//![0]
 class VilmaControler_QtSide : public QDeclarativeItem
 {
-//![0]
+public:
+    VilmaControler_QtSide(); //constructor used to initilise stuff
+private:
+    VilmaControler_ROS VilmaControler_ROS_Object; //Object of the class VilmaControler_ROS, which handles ROS-QT interface.
     Q_OBJECT
-    Q_PROPERTY(QString gas_joint READ gas_joint WRITE setGas_joint) // Each one is a property exposed to the qml interface
-    Q_PROPERTY(QString brake_joint READ brake_joint WRITE setBrake_joint) //Each has a name, a fuction to return
-    Q_PROPERTY(QString hand_brake_joint READ hand_brake_joint WRITE setHand_brake_joint) //it's value and one to set it.
-    Q_PROPERTY(QString steering_joint READ steering_joint WRITE setSteering_joint)
-    Q_PROPERTY(QString bl_wheel_speed READ bl_wheel_speed WRITE setBl_wheel_speed)
-    Q_PROPERTY(QString br_wheel_speed READ br_wheel_speed WRITE setBr_wheel_speed)
-    Q_PROPERTY(QString fl_wheel_speed READ fl_wheel_speed WRITE setFl_wheel_speed)
-    Q_PROPERTY(QString fr_wheel_speed READ fr_wheel_speed WRITE setFr_wheel_speed)
-    Q_PROPERTY(QString gears READ gears WRITE setgears)
+    Q_PROPERTY(QString gas_joint READ gas_joint) // Each one is a property exposed to the qml interface
+    Q_PROPERTY(QString brake_joint READ brake_joint) //Each has a name, a fuction to return
+    Q_PROPERTY(QString hand_brake_joint READ hand_brake_joint) //it's value and one to set it.
+    Q_PROPERTY(QString steering_joint READ steering_joint)
+    Q_PROPERTY(QString bl_wheel_speed READ bl_wheel_speed)
+    Q_PROPERTY(QString br_wheel_speed READ br_wheel_speed)
+    Q_PROPERTY(QString fl_wheel_speed READ fl_wheel_speed)
+    Q_PROPERTY(QString fr_wheel_speed READ fr_wheel_speed)
+    Q_PROPERTY(QString gears READ gears)
     Q_PROPERTY(QString xposition READ xposition)
     Q_PROPERTY(QString yposition READ yposition)
     Q_PROPERTY(QString zposition READ zposition)
-    Q_PROPERTY(QString xtwist READ readXtwist WRITE setXtwist)
-    Q_PROPERTY(QString ytwist READ readYtwist WRITE setYtwist)
-    Q_PROPERTY(QString ztwist READ readZtwist WRITE setZtwist)
-    Q_PROPERTY(QString xorientation READ readXorientation WRITE setXorientation)
-    Q_PROPERTY(QString yorientation READ readYorientation WRITE setYorientation)
-    Q_PROPERTY(QString zorientation READ readZorientation WRITE setZorientation)
-    Q_PROPERTY(QString worientation READ readWorientation WRITE setWorientation)
-
-
-
-
-
-//![1]
-//!
-
-
+    Q_PROPERTY(QString xlinear_vel READ readXlinear_vel)
+    Q_PROPERTY(QString ylinear_vel READ readYlinear_vel)
+    Q_PROPERTY(QString zlinear_vel READ readZlinear_vel)
+    Q_PROPERTY(QString xangular_vel READ readXangular_vel)
+    Q_PROPERTY(QString yangular_vel READ readYangular_vel)
+    Q_PROPERTY(QString zangular_vel READ readZangular_vel)
+    Q_PROPERTY(QString xorientation READ readXorientation)
+    Q_PROPERTY(QString yorientation READ readYorientation)
+    Q_PROPERTY(QString zorientation READ readZorientation)
+    Q_PROPERTY(QString worientation READ readWorientation)
+    Q_PROPERTY(QString latitude READ readLatitude)
+    Q_PROPERTY(QString longitude READ readLongitude)
 public:
-//![1]    
+    QString readXlinear_vel() const;
+    QString readYlinear_vel() const;
+    QString readZlinear_vel() const;
 
-    VilmaControler_ROS VilmaControler_ROS_Object; //Object of the class VilmaControler_ROS, which handles ROS-QT interface.
-
-    VilmaControler_QtSide(QDeclarativeItem *parent = 0); //constructor
-
-    QString readXtwist() const;
-
-    QString readYtwist() const;
-
-    QString readZtwist() const;
+    QString readXangular_vel() const;
+    QString readYangular_vel() const;
+    QString readZangular_vel() const;
 
     QString readXorientation() const;
-
     QString readYorientation() const;
-
     QString readZorientation() const;
-
     QString readWorientation() const;
 
     QString gas_joint() const;  // Functions to read the properties declared above.
@@ -110,46 +101,19 @@ public:
     QString steering_joint() const;
 
     QString bl_wheel_speed() const;
-
     QString br_wheel_speed() const;
-
     QString fl_wheel_speed() const;
-
     QString fr_wheel_speed() const;
 
     QString gears() const;
 
     QString xposition() const;
-
     QString yposition() const;
-
     QString zposition() const;
 
+    QString readLatitude() const;
+    QString readLongitude() const;
 
-
-//![2]
-    void setXposition(const QString &value);
-    void setYposition(const QString &value);
-    void setZposition(const QString &value);
-
-    void setXtwist(const QString &value);
-    void setYtwist(const QString &value);
-    void setZtwist(const QString &value);
-
-    void setXorientation(const QString &value);
-    void setYorientation(const QString &value);
-    void setZorientation(const QString &value);
-    void setWorientation(const QString &value);
-
-    void setGas_joint(const QString &name); //functions which can be invoked from the qml code.
-    void setBrake_joint(const QString &name);
-    void setHand_brake_joint(const QString &name);
-    void setSteering_joint(const QString &name);
-    void setBl_wheel_speed(const QString &name);
-    void setBr_wheel_speed(const QString &name);
-    void setFl_wheel_speed(const QString &name);
-    void setFr_wheel_speed(const QString &name);
-    void setgears(const QString &name);
     Q_INVOKABLE void change_gears();
     Q_INVOKABLE void accelerate();
     Q_INVOKABLE void deaccelerate();
@@ -158,12 +122,11 @@ public:
     Q_INVOKABLE void use_brake_push();
     Q_INVOKABLE void use_brake_release();
     Q_INVOKABLE void reset_state(); //Function to reset all properties and car to default state.
-
-
+    Q_INVOKABLE void maintain_speed();
 
 public slots:
     void update_vilma_info(); //function to update the qml values using the ros values
-  Q_INVOKABLE  void maintain_speed();
+
 signals:
     void gas_jointChanged();
     void brake_jointChanged();
@@ -179,41 +142,19 @@ signals:
     void x_positionChanged();
     void y_positionChanged();
     void z_positionChanged();
-    void xtwistChanged();
-    void ytwistChanged();
-    void ztwistChanged();
+    void xlinear_velChanged();
+    void ylinear_velChanged();
+    void zlinear_velChanged();
+    void xangular_velChanged();
+    void yangular_velChanged();
+    void zangular_velChanged();
     void xorientationChanged();
     void yorientationChanged();
     void zorientationChanged();
     void worientationChanged();
+    void latitudeChanged();
+    void longitudeChanged();
 
-
-//![2]
-
-private:
-    QString gas_joint_value; // variables in which the properties used by the qml (gui) are stored.
-    QString brake_joint_value;
-    QString hand_brake_joint_value;
-    QString steering_joint_value;
-    QString bl_wheel_speed_value;
-    QString br_wheel_speed_value;
-    QString fl_wheel_speed_value;
-    QString fr_wheel_speed_value;
-    QString gears_value;
-    QString xposition_value;
-    QString yposition_value;
-    QString zposition_value;
-    QString xtwist_value;
-    QString ytwist_value;
-    QString ztwist_value;
-    QString xorientation_value;
-    QString yorientation_value;
-    QString zorientation_value;
-    QString worientation_value;
-
-//![3]
 };
-//![3]
-
 #endif
 
