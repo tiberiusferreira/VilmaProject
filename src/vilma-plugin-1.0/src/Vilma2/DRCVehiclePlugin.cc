@@ -49,7 +49,7 @@ DRCVehiclePlugin::DRCVehiclePlugin()
     this->blWheelRadius = 0.381;
     this->brWheelRadius = 0.381;
     this->pedalForce = 10;
-    this->handWheelForce = 10000;
+    this->handWheelForce = 5000;
     this->handBrakeForce = 10;
     this->steeredWheelForce = 200;
 }
@@ -524,9 +524,9 @@ void DRCVehiclePlugin::Load(physics::ModelPtr _parent,
                             this->handWheelForce, -this->handWheelForce);
     this->handBrakePID.Init(30, 0, 3.0, 5.0, -5.0,
                             this->handBrakeForce, -this->handBrakeForce);
-    this->flWheelSteeringPID.Init(5000, 0, 500, 50, -50,
+    this->flWheelSteeringPID.Init(100000, 0, 0, 50, -50,
                                   this->steeredWheelForce, -this->steeredWheelForce);
-    this->frWheelSteeringPID.Init(5000, 0, 500, 50, -50,
+    this->frWheelSteeringPID.Init(100000, 0, 0, 50, -50,
                                   this->steeredWheelForce, -this->steeredWheelForce);
 
     // New Mechanism for Updating every World Cycle

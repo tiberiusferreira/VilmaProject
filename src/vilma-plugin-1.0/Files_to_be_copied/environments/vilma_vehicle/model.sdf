@@ -36,6 +36,7 @@
         <rpyOffset>0 0 0</rpyOffset>		
       </plugin>
 
+
       <!-- VEHICLE -->
       <plugin name="vehicle" filename="libvilma_ros_plugin.so">
         <front_left_wheel>vilma_draw::front_left_wheel_joint</front_left_wheel>

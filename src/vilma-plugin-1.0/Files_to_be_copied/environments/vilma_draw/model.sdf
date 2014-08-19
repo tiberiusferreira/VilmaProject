@@ -14,13 +14,9 @@
 					<iyz>0.0</iyz>
 					<izz>2722.4303</izz>
 				</inertia>
-				<!--OLD- chassis c.o.g. near lateral/longitudinal center, height of 0.4 m--> 
 				<pose>0.358 0.0435 0.74625  0 0 0</pose>
-				<!--Redefined so CG = calculated for X Y, and Z made total height/2 because not sure about value for cg height. -->
 			</inertial>
 			<visual name="visual">
-				<!-- rotate mesh to get to X-forward 
-        <pose>0 0 0 0 0 -1.570796</pose> -->
 				<pose>-3.58 -2.465 -0.3 0 0 0</pose>
 				<geometry>
 					<mesh>
