@@ -77,7 +77,21 @@ private:
     Q_PROPERTY(QString zorientation READ readZorientation)
     Q_PROPERTY(QString worientation READ readWorientation)
     Q_PROPERTY(QString latitude READ readLatitude)
-    Q_PROPERTY(QString longitude READ readLongitude)
+    Q_PROPERTY(QString longitude READ readLongitude) // velocidade angular X Y Z. Aceleração Linear X Y Z. Orientação X Y Z W.
+    Q_PROPERTY(QString imu_ang_vel_x READ read_imu_ang_vel_x)
+    Q_PROPERTY(QString imu_ang_vel_y READ read_imu_ang_vel_y)
+    Q_PROPERTY(QString imu_ang_vel_z READ read_imu_ang_vel_z)
+    Q_PROPERTY(QString imu_lin_acel_x READ read_imu_lin_acel_x)
+    Q_PROPERTY(QString imu_lin_acel_y READ read_imu_lin_acel_y)
+    Q_PROPERTY(QString imu_lin_acel_z READ read_imu_lin_acel_z)
+    Q_PROPERTY(QString imu_ori_x READ read_imu_ori_x)
+    Q_PROPERTY(QString imu_ori_y READ read_imu_ori_y)
+    Q_PROPERTY(QString imu_ori_z READ read_imu_ori_z)
+    Q_PROPERTY(QString imu_ori_w READ read_imu_ori_w)
+
+
+
+
 public:
     QString readXlinear_vel() const;
     QString readYlinear_vel() const;
@@ -113,6 +127,18 @@ public:
 
     QString readLatitude() const;
     QString readLongitude() const;
+
+    QString read_imu_ang_vel_x() const;
+    QString read_imu_ang_vel_y() const;
+    QString read_imu_ang_vel_z() const;
+    QString read_imu_lin_acel_x() const;
+    QString read_imu_lin_acel_y() const;
+    QString read_imu_lin_acel_z() const;
+    QString read_imu_ori_x() const;
+    QString read_imu_ori_y() const;
+    QString read_imu_ori_z() const;
+    QString read_imu_ori_w() const;
+
 
     Q_INVOKABLE void change_gears();
     Q_INVOKABLE void accelerate();
@@ -154,7 +180,16 @@ signals:
     void worientationChanged();
     void latitudeChanged();
     void longitudeChanged();
-
+    void imu_ori_xChanged();
+    void imu_ori_yChanged();
+    void imu_ori_zChanged();
+    void imu_ori_wChanged();
+    void imu_ang_vel_xChanged();
+    void imu_ang_vel_yChanged();
+    void imu_ang_vel_zChanged();
+    void imu_lin_acel_xChanged();
+    void imu_lin_acel_yChanged();
+    void imu_lin_acel_zChanged();
 };
 #endif
 

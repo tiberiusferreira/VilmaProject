@@ -18,17 +18,17 @@
 class VilmaControler_ROS
 {
 public:
-    std_msgs::Float64 gas_pedal_state, brake_pedal_state,hand_brake_state,hand_wheel_state,
-    br_wheel_speed,bl_wheel_speed,fl_wheel_speed,fr_wheel_speed;
+    std_msgs::Float64 gas_pedal_state, brake_pedal_state,hand_brake_state,hand_wheel_state;
+    std_msgs::Float64 br_wheel_speed,bl_wheel_speed,fl_wheel_speed,fr_wheel_speed;
     sensor_msgs::NavSatFix car_gps_state;
     std_msgs::Int8 gears;
     ros::Publisher gas_pedalpub, brake_pedalpub, hand_brakepub,hand_wheelpub, gears_pub;
-    ros::Subscriber gas_pedalsub, brake_pedalsub, hand_brakesub, hand_wheelsub, bl_wheel, br_wheel, fl_wheel, fr_wheel,gears_sub,
-    points_sub,modelstatesub,imu_sub;
+    ros::Subscriber gas_pedalsub, brake_pedalsub, hand_brakesub, hand_wheelsub;
+    ros::Subscriber bl_wheel, br_wheel, fl_wheel, fr_wheel,gears_sub;
+    ros::Subscriber points_sub,modelstatesub,imu_sub;
     ros::ServiceClient gmscl;
-    gazebo_msgs::GetModelState getmodelstate;
+    gazebo_msgs::GetModelState getmodelstate; //stores call message to query for model state.
     gazebo_msgs::ModelState modelstate;
-
     sensor_msgs::Imu imu_data;
     ros::NodeHandle rosNode;
     void callback1();

@@ -22,12 +22,12 @@ static const uint qt_meta_data_VilmaControler_QtSide[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      36,   14, // methods
-      24,  194, // properties
+      46,   14, // methods
+      34,  244, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      26,       // signalCount
+      36,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
       23,   22,   22,   22, 0x05,
@@ -56,46 +56,66 @@ static const uint qt_meta_data_VilmaControler_QtSide[] = {
      504,   22,   22,   22, 0x05,
      526,   22,   22,   22, 0x05,
      544,   22,   22,   22, 0x05,
+     563,   22,   22,   22, 0x05,
+     582,   22,   22,   22, 0x05,
+     601,   22,   22,   22, 0x05,
+     620,   22,   22,   22, 0x05,
+     639,   22,   22,   22, 0x05,
+     662,   22,   22,   22, 0x05,
+     685,   22,   22,   22, 0x05,
+     708,   22,   22,   22, 0x05,
+     732,   22,   22,   22, 0x05,
+     756,   22,   22,   22, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-     563,   22,   22,   22, 0x0a,
+     780,   22,   22,   22, 0x0a,
 
  // methods: signature, parameters, type, tag, flags
-     583,   22,   22,   22, 0x02,
-     598,   22,   22,   22, 0x02,
-     611,   22,   22,   22, 0x02,
-     626,   22,   22,   22, 0x02,
-     649,  643,   22,   22, 0x02,
-     669,   22,   22,   22, 0x02,
-     686,   22,   22,   22, 0x02,
-     706,   22,   22,   22, 0x02,
-     720,   22,   22,   22, 0x02,
+     800,   22,   22,   22, 0x02,
+     815,   22,   22,   22, 0x02,
+     828,   22,   22,   22, 0x02,
+     843,   22,   22,   22, 0x02,
+     866,  860,   22,   22, 0x02,
+     886,   22,   22,   22, 0x02,
+     903,   22,   22,   22, 0x02,
+     923,   22,   22,   22, 0x02,
+     937,   22,   22,   22, 0x02,
 
  // properties: name, type, flags
-     745,  737, 0x0a095001,
-     755,  737, 0x0a095001,
-     767,  737, 0x0a095001,
-     784,  737, 0x0a095001,
-     799,  737, 0x0a095001,
-     814,  737, 0x0a095001,
-     829,  737, 0x0a095001,
-     844,  737, 0x0a095001,
-     859,  737, 0x0a095001,
-     865,  737, 0x0a095001,
-     875,  737, 0x0a095001,
-     885,  737, 0x0a095001,
-     895,  737, 0x0a095001,
-     907,  737, 0x0a095001,
-     919,  737, 0x0a095001,
-     931,  737, 0x0a095001,
-     944,  737, 0x0a095001,
-     957,  737, 0x0a095001,
-     970,  737, 0x0a095001,
-     983,  737, 0x0a095001,
-     996,  737, 0x0a095001,
-    1009,  737, 0x0a095001,
-    1022,  737, 0x0a095001,
-    1031,  737, 0x0a095001,
+     962,  954, 0x0a095001,
+     972,  954, 0x0a095001,
+     984,  954, 0x0a095001,
+    1001,  954, 0x0a095001,
+    1016,  954, 0x0a095001,
+    1031,  954, 0x0a095001,
+    1046,  954, 0x0a095001,
+    1061,  954, 0x0a095001,
+    1076,  954, 0x0a095001,
+    1082,  954, 0x0a095001,
+    1092,  954, 0x0a095001,
+    1102,  954, 0x0a095001,
+    1112,  954, 0x0a095001,
+    1124,  954, 0x0a095001,
+    1136,  954, 0x0a095001,
+    1148,  954, 0x0a095001,
+    1161,  954, 0x0a095001,
+    1174,  954, 0x0a095001,
+    1187,  954, 0x0a095001,
+    1200,  954, 0x0a095001,
+    1213,  954, 0x0a095001,
+    1226,  954, 0x0a095001,
+    1239,  954, 0x0a095001,
+    1248,  954, 0x0a095001,
+    1258,  954, 0x0a095001,
+    1272,  954, 0x0a095001,
+    1286,  954, 0x0a095001,
+    1300,  954, 0x0a095001,
+    1315,  954, 0x0a095001,
+    1330,  954, 0x0a095001,
+    1345,  954, 0x0a095001,
+    1355,  954, 0x0a095001,
+    1365,  954, 0x0a095001,
+    1375,  954, 0x0a095001,
 
        0        // eod
 };
@@ -114,6 +134,11 @@ static const char qt_meta_stringdata_VilmaControler_QtSide[] = {
     "xorientationChanged()\0yorientationChanged()\0"
     "zorientationChanged()\0worientationChanged()\0"
     "latitudeChanged()\0longitudeChanged()\0"
+    "imu_ori_xChanged()\0imu_ori_yChanged()\0"
+    "imu_ori_zChanged()\0imu_ori_wChanged()\0"
+    "imu_ang_vel_xChanged()\0imu_ang_vel_yChanged()\0"
+    "imu_ang_vel_zChanged()\0imu_lin_acel_xChanged()\0"
+    "imu_lin_acel_yChanged()\0imu_lin_acel_zChanged()\0"
     "update_vilma_info()\0change_gears()\0"
     "accelerate()\0deaccelerate()\0"
     "use_hand_brake()\0value\0use_Steering(float)\0"
@@ -127,7 +152,10 @@ static const char qt_meta_stringdata_VilmaControler_QtSide[] = {
     "zlinear_vel\0xangular_vel\0yangular_vel\0"
     "zangular_vel\0xorientation\0yorientation\0"
     "zorientation\0worientation\0latitude\0"
-    "longitude\0"
+    "longitude\0imu_ang_vel_x\0imu_ang_vel_y\0"
+    "imu_ang_vel_z\0imu_lin_acel_x\0"
+    "imu_lin_acel_y\0imu_lin_acel_z\0imu_ori_x\0"
+    "imu_ori_y\0imu_ori_z\0imu_ori_w\0"
 };
 
 void VilmaControler_QtSide::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -162,16 +190,26 @@ void VilmaControler_QtSide::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 23: _t->worientationChanged(); break;
         case 24: _t->latitudeChanged(); break;
         case 25: _t->longitudeChanged(); break;
-        case 26: _t->update_vilma_info(); break;
-        case 27: _t->change_gears(); break;
-        case 28: _t->accelerate(); break;
-        case 29: _t->deaccelerate(); break;
-        case 30: _t->use_hand_brake(); break;
-        case 31: _t->use_Steering((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 32: _t->use_brake_push(); break;
-        case 33: _t->use_brake_release(); break;
-        case 34: _t->reset_state(); break;
-        case 35: _t->maintain_speed(); break;
+        case 26: _t->imu_ori_xChanged(); break;
+        case 27: _t->imu_ori_yChanged(); break;
+        case 28: _t->imu_ori_zChanged(); break;
+        case 29: _t->imu_ori_wChanged(); break;
+        case 30: _t->imu_ang_vel_xChanged(); break;
+        case 31: _t->imu_ang_vel_yChanged(); break;
+        case 32: _t->imu_ang_vel_zChanged(); break;
+        case 33: _t->imu_lin_acel_xChanged(); break;
+        case 34: _t->imu_lin_acel_yChanged(); break;
+        case 35: _t->imu_lin_acel_zChanged(); break;
+        case 36: _t->update_vilma_info(); break;
+        case 37: _t->change_gears(); break;
+        case 38: _t->accelerate(); break;
+        case 39: _t->deaccelerate(); break;
+        case 40: _t->use_hand_brake(); break;
+        case 41: _t->use_Steering((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 42: _t->use_brake_push(); break;
+        case 43: _t->use_brake_release(); break;
+        case 44: _t->reset_state(); break;
+        case 45: _t->maintain_speed(); break;
         default: ;
         }
     }
@@ -209,9 +247,9 @@ int VilmaControler_QtSide::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 36)
+        if (_id < 46)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 36;
+        _id -= 46;
     }
 #ifndef QT_NO_PROPERTIES
       else if (_c == QMetaObject::ReadProperty) {
@@ -241,22 +279,32 @@ int VilmaControler_QtSide::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 21: *reinterpret_cast< QString*>(_v) = readWorientation(); break;
         case 22: *reinterpret_cast< QString*>(_v) = readLatitude(); break;
         case 23: *reinterpret_cast< QString*>(_v) = readLongitude(); break;
+        case 24: *reinterpret_cast< QString*>(_v) = read_imu_ang_vel_x(); break;
+        case 25: *reinterpret_cast< QString*>(_v) = read_imu_ang_vel_y(); break;
+        case 26: *reinterpret_cast< QString*>(_v) = read_imu_ang_vel_z(); break;
+        case 27: *reinterpret_cast< QString*>(_v) = read_imu_lin_acel_x(); break;
+        case 28: *reinterpret_cast< QString*>(_v) = read_imu_lin_acel_y(); break;
+        case 29: *reinterpret_cast< QString*>(_v) = read_imu_lin_acel_z(); break;
+        case 30: *reinterpret_cast< QString*>(_v) = read_imu_ori_x(); break;
+        case 31: *reinterpret_cast< QString*>(_v) = read_imu_ori_y(); break;
+        case 32: *reinterpret_cast< QString*>(_v) = read_imu_ori_z(); break;
+        case 33: *reinterpret_cast< QString*>(_v) = read_imu_ori_w(); break;
         }
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::WriteProperty) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::ResetProperty) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 24;
+        _id -= 34;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 24;
+        _id -= 34;
     }
 #endif // QT_NO_PROPERTIES
     return _id;
@@ -416,5 +464,65 @@ void VilmaControler_QtSide::latitudeChanged()
 void VilmaControler_QtSide::longitudeChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 25, 0);
+}
+
+// SIGNAL 26
+void VilmaControler_QtSide::imu_ori_xChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 26, 0);
+}
+
+// SIGNAL 27
+void VilmaControler_QtSide::imu_ori_yChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 27, 0);
+}
+
+// SIGNAL 28
+void VilmaControler_QtSide::imu_ori_zChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 28, 0);
+}
+
+// SIGNAL 29
+void VilmaControler_QtSide::imu_ori_wChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 29, 0);
+}
+
+// SIGNAL 30
+void VilmaControler_QtSide::imu_ang_vel_xChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 30, 0);
+}
+
+// SIGNAL 31
+void VilmaControler_QtSide::imu_ang_vel_yChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 31, 0);
+}
+
+// SIGNAL 32
+void VilmaControler_QtSide::imu_ang_vel_zChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 32, 0);
+}
+
+// SIGNAL 33
+void VilmaControler_QtSide::imu_lin_acel_xChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 33, 0);
+}
+
+// SIGNAL 34
+void VilmaControler_QtSide::imu_lin_acel_yChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 34, 0);
+}
+
+// SIGNAL 35
+void VilmaControler_QtSide::imu_lin_acel_zChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 35, 0);
 }
 QT_END_MOC_NAMESPACE

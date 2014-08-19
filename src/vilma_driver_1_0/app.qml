@@ -68,12 +68,13 @@ VilmaControlerQtSide {
     Text {
         id:gasvalue
         x: 0
-        y: 147
-        width: 141
+        y: 78
+        width: 121
         height: 35
         anchors {
-            bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 618 }
-        text: "Gas joint Value: 0.00" ;
+            bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 687 }
+        text: "GAS : 00.0"
+        font.pointSize: 14
         style: Text.Normal
         font.strikeout: false
         font.underline: true
@@ -82,40 +83,41 @@ VilmaControlerQtSide {
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         horizontalAlignment: Text.AlignHCenter
-        anchors.horizontalCenterOffset: -229
+        anchors.horizontalCenterOffset: -239
 
     }
     Text {
         id:brakevalue
         x: 0
-        y: 601
+        y: 78
         width: 141
         height: 35
-        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 164 }
-        text: "Brake Value: 0.00" ;
+        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 687 }
+        text: "Brake : 0.00"
+        font.pointSize: 14
         font.bold: true
         verticalAlignment: Text.AlignVCenter
-        anchors.horizontalCenterOffset: -200
+        anchors.horizontalCenterOffset: -60
 
     }
     Text {
         id:steeringvalue
         x: 0
-        y: 534
+        y: 716
         width: 195
         height: 35
-        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 231 }
+        anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 49 }
         text: "Steering joint Value: 0.00" ;
         verticalAlignment: Text.AlignVCenter
         font.bold: true
-        anchors.horizontalCenterOffset: 222
+        anchors.horizontalCenterOffset: -185
     }
 
 
     Text {
         id: br_wheel_speed
-        x: 194
-        y: 528
+        x: 14
+        y: 744
         text: qsTr("Back Right Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -123,8 +125,8 @@ VilmaControlerQtSide {
 
     Text {
         id: bl_wheel_speed
-        x: 21
-        y: 562
+        x: 351
+        y: 763
         text: qsTr("Front Right Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -132,8 +134,8 @@ VilmaControlerQtSide {
 
     Text {
         id: fr_wheel_speed
-        x: 224
-        y: 677
+        x: 351
+        y: 728
         text: ("Back Left Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -141,15 +143,15 @@ VilmaControlerQtSide {
 
     Text {
         id: fl_wheel_speed
-        x: 16
-        y: 706
+        x: 351
+        y: 742
         text: ("Front Left Wheel Speed: 00.00")
         font.bold: true
         font.pixelSize: 14
     }
     Text {
         id: xposition
-        x: 125
+        x: 91
         y: 260
         text: "X : 00.000"
         font.pointSize: 14
@@ -165,63 +167,40 @@ VilmaControlerQtSide {
     }
     Text {
         id: zposition
-        x: 354
+        x: 394
         y: 260
         text: "Z : 00.000"
         font.pointSize: 14
         font.bold: true
     }
     Text {
-        id: angular_velx
-        x: 16
-        y: 468
-        text: ("X : 00.000")
-        font.pointSize: 14
-        font.bold: true
-    }        Text {
-        id: angular_vely
-        x: 17
-        y: 489
-        text: ("Y : 00.000")
-        font.pointSize: 14
-        font.bold: true
-    }
-    Text {
-        id: angular_velz
-        x: 17
-        y: 515
-        text: ("Z : 00.000")
-        font.pointSize: 14
-        font.bold: true
-    }
-    Text {
         id: xorientation
-        x: 16
-        y: 393
+        x: 17
+        y: 376
         text: "X : 00.000"
         font.pointSize: 14
         font.bold: true
     }
     Text {
         id: yorientation
-        x: 160
-        y: 393
+        x: 161
+        y: 376
         text: "Y  00.000"
         font.pointSize: 14
         font.bold: true
     }
     Text {
         id: zorientation
-        x: 319
-        y: 393
+        x: 320
+        y: 376
         text: "Z : 00.000"
         font.pointSize: 14
         font.bold: true
     }
     Text {
         id: worientation
-        x: 470
-        y: 393
+        x: 471
+        y: 376
         text: "W : 00.000"
         font.pointSize: 14
         font.bold: true
@@ -260,8 +239,7 @@ VilmaControlerQtSide {
 
 
 
-    onGas_jointChanged: gasvalue.text="Gas joint Value: "+controler.gas_joint;
-    onBrake_jointChanged:brakevalue.text= "Brake joint Value: "+controler.brake_joint;
+
     onHand_brake_jointChanged:
     {
         if (controler.hand_brake_joint>0.05)
@@ -275,6 +253,9 @@ VilmaControlerQtSide {
         }
 
     }
+    onBrake_jointChanged:brakevalue.text= "Brake : "+controler.brake_joint;
+    onGas_jointChanged: gasvalue.text="GAS : "+controler.gas_joint;
+
     onX_positionChanged: xposition.text="X : "+controler.xposition;
     onY_positionChanged: yposition.text="Y : "+controler.yposition;
     onZ_positionChanged: zposition.text="Z : "+controler.zposition;
@@ -290,6 +271,16 @@ VilmaControlerQtSide {
     onWorientationChanged: worientation.text="W : "+controler.worientation;
     onLatitudeChanged: latitude.text="Latitude : "+controler.latitude;
     onLongitudeChanged: longitude.text="Longitude : "+controler.longitude;
+    onImu_ori_xChanged: x_imu_orientation.text="X : "+controler.imu_ori_x;
+    onImu_ori_yChanged: y_imu_orientation.text="Y : "+controler.imu_ori_y;
+    onImu_ori_zChanged: z_imu_orientation.text="Z : "+controler.imu_ori_z;
+    onImu_ori_wChanged: w_imu_orientation.text="W : "+controler.imu_ori_w;
+    onImu_ang_vel_xChanged: x_imu_ang_vel.text="X : "+controler.imu_ang_vel_x;
+    onImu_ang_vel_yChanged: y_imu_ang_vel.text="Y : "+controler.imu_ang_vel_y;
+    onImu_ang_vel_zChanged: z_imu_ang_vel.text="Z : "+controler.imu_ang_vel_z;
+    onImu_lin_acel_xChanged: x_imu_lin_acel.text="X : "+controler.imu_lin_acel_x;
+    onImu_lin_acel_yChanged: y_imu_lin_acel.text="Y : "+controler.imu_lin_acel_y;
+    onImu_lin_acel_zChanged: z_imu_lin_acel.text="Z : "+controler.imu_lin_acel_z;
 
 
     onSteering_jointChanged: steeringvalue.text="Steering joint Value: "+controler.steering_joint;
@@ -319,11 +310,11 @@ VilmaControlerQtSide {
         property color onHoverColor: "gold"
         property color borderColor: "lightblue"
         color: "#71f1da"
-        border.color: borderColor
+        border.color: "#add9e6"
         visible: true
-        width: 118; height: 35
-        x: 1
-        y: 69
+        width: 34; height: 31
+        x: 129
+        y: 64
         MouseArea {
             id: gas_increase
             enabled: true
@@ -337,7 +328,9 @@ VilmaControlerQtSide {
             hoverEnabled: true
 
             Text{
-                text: "increase Gas"
+                id: gas_increase_text
+                text: "+"
+                font.pointSize: 30
                 font.bold: true
                 anchors.centerIn: parent
             }
@@ -349,9 +342,9 @@ VilmaControlerQtSide {
         color: "#6ff1d9"
         border.color: borderColor
         visible: true
-        width: 118; height: 35
-        x: 1
-        y: 106
+        width: 34; height: 33
+        x: 129
+        y: 101
         MouseArea {
             id: gas_decrease
             anchors.fill: parent
@@ -366,7 +359,8 @@ VilmaControlerQtSide {
 
             Text{
                 color: "#000000"
-                text: "Decrease Gas"
+                text: "-"
+                font.pointSize: 30
                 font.bold: true
                 anchors.centerIn: parent
             }
@@ -375,19 +369,20 @@ VilmaControlerQtSide {
         property color onHoverColor: "gold"
         property color borderColor: "lightblue"
         anchors.left: parent.left
-        anchors.leftMargin: 121
+        anchors.leftMargin: 327
         anchors.top: parent.top
-        anchors.topMargin: 69
+        anchors.topMargin: 64
         border.color: borderColor
         visible: true
-        width: 116; height: 35
+        width: 34; height: 31
         color: "#6ff1d9"
         MouseArea {
             id: brake_increase
 
             anchors.fill: parent
             Text{
-                text: "Increase Brake"
+                text: "+"
+                font.pointSize: 30
                 font.bold: true
                 anchors.centerIn: parent
             }
@@ -407,9 +402,9 @@ VilmaControlerQtSide {
         color: "#6ff1d9"
         border.color: borderColor
         visible: true
-        width: 116; height: 35
-        x: 121
-        y: 106
+        width: 34; height: 33
+        x: 327
+        y: 101
         MouseArea {
             id: brake_decrease
             anchors.rightMargin: -1
@@ -419,7 +414,8 @@ VilmaControlerQtSide {
 
             anchors.fill: parent
             Text{
-                text: "Decrease Brake"
+                text: "-"
+                font.pointSize: 30
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 anchors.centerIn: parent
@@ -471,7 +467,7 @@ VilmaControlerQtSide {
         border.color: borderColor
         visible: true
         width: 139; height: 35
-        x: 234
+        x: 461
         y: 69
         MouseArea {
             id: reset_state
@@ -499,8 +495,8 @@ VilmaControlerQtSide {
         border.color: borderColor
         visible: true
         width: 166; height: 35
-        x: 237
-        y: 106
+        x: 436
+        y: 101
         MouseArea {
             id: maintain_speed
             anchors.fill: parent
@@ -634,8 +630,8 @@ VilmaControlerQtSide {
     Text {
 
         id: steering_joint_exported_value
-        x: 200
-        y: 611
+        x: 8
+        y: 763
         text: ("Value being published to the steering: 00.00")
         font.bold: true
         font.pixelSize: 12
@@ -671,7 +667,7 @@ VilmaControlerQtSide {
         y: 188
         width: 600
         height: 590
-        color: "#f6c2c2"
+        color: "#f7c1c1"
         z: -2
     }
 
@@ -728,9 +724,9 @@ VilmaControlerQtSide {
     Rectangle {
         id: rectangle4
         x: 8
-        y: 345
+        y: 339
         width: 586
-        height: 81
+        height: 280
         color: "#db29a9"
         radius: 0
         border.width: 6
@@ -740,8 +736,8 @@ VilmaControlerQtSide {
 
     Text {
         id: text5
-        x: 234
-        y: 354
+        x: 221
+        y: 345
         color: "#3811a6"
         text: qsTr("Quaternion")
         font.bold: true
@@ -751,44 +747,105 @@ VilmaControlerQtSide {
     Rectangle {
         id: rectangle5
         x: 8
-        y: 428
+        y: 618
         width: 586
-        height: 110
+        height: 104
         color: "#db29a9"
         radius: 0
         border.width: 6
         border.color: "#fbe5e5"
         z: -1
+
+        Text {
+            id: linear_velz
+            x: 467
+            y: 74
+            text: ("Z : 00.000")
+            font.bold: true
+            font.pointSize: 14
+        }
+
+        Text {
+            id: linear_vely
+            x: 467
+            y: 48
+            text: ("Y : 00.000")
+            font.bold: true
+            font.pointSize: 14
+        }
+
+        Text {
+            id: linear_velx
+            x: 466
+            y: 27
+            text: ("X : 00.000")
+            font.bold: true
+            font.pointSize: 14
+        }
+
+        Text {
+            id: text8
+            x: 370
+            y: 27
+            color: "#3811a6"
+            text: qsTr("Linear")
+            font.bold: true
+            font.pointSize: 19
+        }
+
+        Text {
+            id: text7
+            x: 8
+            y: 27
+            color: "#3811a6"
+            text: qsTr("Angular")
+            font.bold: true
+        font.pointSize: 19
     }
 
-    Text {
+Text {
         id: text6
-        x: 256
-        y: 432
+        x: 249
+        y: 11
         color: "#3811a6"
         text: qsTr("Speed")
         font.bold: true
         font.pointSize: 19
     }
 
-    Text {
-        id: text7
-        x: 16
-        y: 432
-        color: "#3811a6"
-        text: qsTr("Angular")
-        font.bold: true
-        font.pointSize: 19
-    }
+Text {
+    id: angular_velz
+    x: 135
+    y: 74
+    text: ("Z : 00.000")
+    font.pointSize: 14
+    font.bold: true
+}
 
-    Text {
-        id: text8
-        x: 434
-        y: 432
-        color: "#3811a6"
-        text: qsTr("Linear")
+Text {
+        id: angular_vely
+        x: 135
+        y: 48
+        text: ("Y : 00.000")
+        font.pointSize: 14
         font.bold: true
-        font.pointSize: 19
+}
+
+Text {
+    id: angular_velx
+    x: 134
+    y: 27
+    text: ("X : 00.000")
+    font.pointSize: 14
+    font.bold: true
+}
+
+
+
+
+
+
+
     }
 
     Text {
@@ -820,30 +877,123 @@ VilmaControlerQtSide {
     }
 
     Text {
-        id: linear_velx
-        x: 434
-        y: 468
-        text: ("X : 00.000")
+        id: text10
+        x: 267
+        y: 398
+        color: "#3811a6"
+        text: qsTr("IMU")
+        font.pointSize: 19
         font.bold: true
-        font.pointSize: 14
     }
 
     Text {
-        id: linear_vely
-        x: 435
-        y: 489
-        text: ("Y : 00.000")
-        font.bold: true
+        id: x_imu_orientation
+        x: 17
+        y: 434
+        text: "X : 00.000"
         font.pointSize: 14
+        font.bold: true
     }
 
     Text {
-        id: linear_velz
-        x: 435
-        y: 515
-        text: ("Z : 00.000")
-        font.bold: true
+        id: y_imu_orientation
+        x: 161
+        y: 434
+        text: "Y  00.000"
         font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: z_imu_orientation
+        x: 320
+        y: 434
+        text: "Z : 00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: w_imu_orientation
+        x: 471
+        y: 434
+        text: "W : 00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: text11
+        x: 147
+        y: 464
+        color: "#3811a6"
+        text: qsTr("IMU Angular Velocity")
+        font.pointSize: 19
+        font.bold: true
+    }
+
+    Text {
+        id: x_imu_ang_vel
+        x: 91
+        y: 512
+        text: "X : 00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: y_imu_ang_vel
+        x: 235
+        y: 512
+        text: "Y  00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: z_imu_ang_vel
+        x: 394
+        y: 512
+        text: "Z : 00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: text12
+        x: 126
+        y: 541
+        color: "#3811a6"
+        text: qsTr("IMU Linear Acceleration")
+        font.pointSize: 19
+        font.bold: true
+    }
+
+    Text {
+        id: x_imu_lin_acel
+        x: 91
+        y: 577
+        text: "X : 00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: y_imu_lin_acel
+        x: 235
+        y: 577
+        text: "Y  00.000"
+        font.pointSize: 14
+        font.bold: true
+    }
+
+    Text {
+        id: z_imu_lin_acel
+        x: 394
+        y: 577
+        text: "Z : 00.000"
+        font.pointSize: 14
+        font.bold: true
     }
 
 

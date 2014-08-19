@@ -46,7 +46,7 @@ VilmaControler_QtSide::VilmaControler_QtSide() //Constructor
     VilmaControler_ROS_Object.init();
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(update_vilma_info()));
-    timer->start(600);
+    timer->start(100);
 }
 
 QString VilmaControler_QtSide::gas_joint() const
@@ -173,6 +173,37 @@ QString VilmaControler_QtSide::readLongitude() const
 {
     return QString::number(VilmaControler_ROS_Object.car_gps_state.longitude,'f',9);
 }
+QString VilmaControler_QtSide::read_imu_ang_vel_x() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.angular_velocity.x,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ang_vel_y() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.angular_velocity.y,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ang_vel_z() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.angular_velocity.z,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_lin_acel_x() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.linear_acceleration.x,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_lin_acel_y() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.linear_acceleration.y,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_lin_acel_z() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.linear_acceleration.z,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ori_x() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.orientation.x,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ori_y() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.orientation.y,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ori_z() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.orientation.z,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_ori_w() const{
+    return QString::number(VilmaControler_ROS_Object.imu_data.orientation.w,'f',3);
+}
+
 
 void VilmaControler_QtSide::maintain_speed()
 {
@@ -206,6 +237,16 @@ void VilmaControler_QtSide::update_vilma_info()
     emit gearsChanged();
     emit latitudeChanged();
     emit longitudeChanged();
+    emit imu_ori_xChanged();
+    emit imu_ori_yChanged();
+    emit imu_ori_zChanged();
+    emit imu_ori_wChanged();
+    emit imu_ang_vel_xChanged();
+    emit imu_ang_vel_yChanged();
+    emit imu_ang_vel_zChanged();
+    emit imu_lin_acel_xChanged();
+    emit imu_lin_acel_yChanged();
+    emit imu_lin_acel_zChanged();
     VilmaControler_ROS_Object.receive_model_physical_state();
 }
 
