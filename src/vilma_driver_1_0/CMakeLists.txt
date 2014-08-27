@@ -124,7 +124,7 @@ add_executable(vilma_driverqt_1_0 ${vilma_driverqt_1_0_SOURCES} ${vilma_driverqt
 #   ${catkin_LIBRARIES}
 # )
 
-target_link_libraries(vilma_driverqt_1_0 ${QT_LIBRARIES} ${ROS_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(vilma_driverqt_1_0 ${QT_LIBRARIES} ${ROS_LIBRARIES} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 #############
 ## Install ##
 #############

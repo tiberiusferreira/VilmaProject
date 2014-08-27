@@ -48,7 +48,7 @@ VilmaControlerQtSide {
     y: 0
     anchors.leftMargin: 0
     width: 600; height: 800
-
+    z: -100
     anchors.verticalCenterOffset: 0
     anchors.horizontalCenterOffset: 0
     Component.onCompleted:
@@ -71,8 +71,10 @@ VilmaControlerQtSide {
         y: 78
         width: 121
         height: 35
-        anchors {
-            bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 687 }
+        anchors
+        {
+            bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; bottomMargin: 687
+        }
         text: "GAS : 00.0"
         font.pointSize: 14
         style: Text.Normal
@@ -206,10 +208,49 @@ VilmaControlerQtSide {
         font.bold: true
     }
 
+    TextInput {
+        id: input_z
+        x: 402
+        y: 28
+        width: 80
+        height: 20
+        text: qsTr("Input Z")
+        selectionColor: "#2f8fc5"
+        inputMask: qsTr("")
+        font.bold: true
+        font.pixelSize: 16
+        onAccepted: controler.focus=true;
+        validator: DoubleValidator{bottom: -1; top: 1;}
+
+
+
+        Rectangle {
+            id: rectangle6
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+            color: "#000000"
+            opacity: 0.3
+        }
+
+        MouseArea {
+            id: mouseArea3
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+            onClicked:{
+                input_z.text= "";
+                input_z.focus= true;
+            }
+        }
+    }
+
     Rectangle{
         property color onHoverColor: "gold"
         property color borderColor: "lightblue"
-        color: "#6ff1d9"
+        color: "#6ff1da"
         border.color: "#add9e6"
         visible: true
         width: 94; height: 35
@@ -278,12 +319,30 @@ VilmaControlerQtSide {
     onImu_ang_vel_xChanged: x_imu_ang_vel.text="X : "+controler.imu_ang_vel_x;
     onImu_ang_vel_yChanged: y_imu_ang_vel.text="Y : "+controler.imu_ang_vel_y;
     onImu_ang_vel_zChanged: z_imu_ang_vel.text="Z : "+controler.imu_ang_vel_z;
-    onImu_lin_acel_xChanged: x_imu_lin_acel.text="X : "+controler.imu_lin_acel_x;
-    onImu_lin_acel_yChanged: y_imu_lin_acel.text="Y : "+controler.imu_lin_acel_y;
-    onImu_lin_acel_zChanged: z_imu_lin_acel.text="Z : "+controler.imu_lin_acel_z;
+    onImu_lin_acel_xChanged:{
+        x_imu_lin_acel.text ="X : "+controler.imu_lin_acel_x;
+        x_imu_euler.text ="X : "+controler.imu_eul_x;
+    }
+    onImu_lin_acel_yChanged:{
+        y_imu_lin_acel.text ="Y : "+controler.imu_lin_acel_y;
+        y_imu_euler.text ="Y : "+controler.imu_eul_y;
+    }
+    onImu_lin_acel_zChanged:{
+        z_imu_lin_acel.text ="Z : "+controler.imu_lin_acel_z;
+        z_imu_euler.text ="Z : "+controler.imu_eul_z;
+    }
 
 
-    onSteering_jointChanged: steeringvalue.text="Steering joint Value: "+controler.steering_joint;
+
+
+
+    onSteering_jointChanged:{
+        steeringvalue.text="Steering joint Value: "+controler.steering_joint;
+        steering_slider.updatePos();
+        if(text15.text=="CONTINUOUS" && (input_X_pose.text!="") && (input_Y_pose.text!="")){
+            controler.reorientate_to_pose(input_X_pose.text,input_Y_pose.text);
+        }
+    }
     onBr_wheel_speedChanged: br_wheel_speed.text="Back Right Wheel Speed: "+controler.br_wheel_speed+"rad/s";
     onBl_wheel_speedChanged: bl_wheel_speed.text="Back Left Wheel Speed: "+controler.bl_wheel_speed+"rad/s";
     onFr_wheel_speedChanged: fr_wheel_speed.text="Front Right Wheel Speed: "+controler.fr_wheel_speed+"rad/s";
@@ -565,7 +624,6 @@ VilmaControlerQtSide {
     Item  { //Code from http://qt-project.org/doc/qt-4.7/demos-declarative-flickr-common-slider-qml.html
         id: steering_slider; width: 146
         height: 29
-
         x: 247
         y: 145
 
@@ -573,19 +631,12 @@ VilmaControlerQtSide {
         property real value: 1
         property real maximum: 2
         property real minimum: 0
+
         onValueChanged:
         {
             updatePos();
-            if (value>1)
-            {
-                controler.use_Steering(-(value-1)*3.14)
-                steering_joint_exported_value.text="Value being published to the steering: "+(-(value-1)*3.14)
-            }
-            else
-            {
-                steering_joint_exported_value.text="Value being published to the steering: "+(-(value-1)*(3.14))
-                controler.use_Steering(-(value-1)*(3.14))
-            }
+            controler.use_Steering(-(steering_slider.value-1)*3.14)
+            steering_joint_exported_value.text="Value being published to the steering: "+(-(steering_slider.value-1)*3.14)
         }
 
         property int xMax: width - handle.width - 4
@@ -611,17 +662,20 @@ VilmaControlerQtSide {
 
         Rectangle  {
             id: handle; smooth: true
-            y: 2; width: 30; height: steering_slider.height-4; color: "#6ff1d9"; radius: 6
+            y: 2; width: 30; height: steering_slider.height-4; color: "#000000"; radius: 6
 
             MouseArea  {
                 id: mouse
                 anchors.fill: parent; drag.target: parent
                 drag.axis: Drag.XAxis; drag.minimumX: 2; drag.maximumX: steering_slider.xMax+2
-                onPositionChanged:  { steering_slider.value = (steering_slider.maximum - steering_slider.minimum) * (handle.x-2) / steering_slider.xMax + steering_slider.minimum; }
+                onPositionChanged:  {
+                    steering_slider.value = (steering_slider.maximum - steering_slider.minimum) * (handle.x-2) / steering_slider.xMax + steering_slider.minimum;
+                }
             }
         }
-
     }
+
+
 
 
 
@@ -666,7 +720,7 @@ VilmaControlerQtSide {
         x: 2
         y: 188
         width: 600
-        height: 590
+        height: 612
         color: "#f7c1c1"
         z: -2
     }
@@ -717,6 +771,7 @@ VilmaControlerQtSide {
         y: 226
         color: "#3811a6"
         text: qsTr("Cartesian")
+        visible: true
         font.bold: true
         font.pointSize: 19
     }
@@ -800,45 +855,45 @@ VilmaControlerQtSide {
             color: "#3811a6"
             text: qsTr("Angular")
             font.bold: true
-        font.pointSize: 19
-    }
+            font.pointSize: 19
+        }
 
-Text {
-        id: text6
-        x: 249
-        y: 11
-        color: "#3811a6"
-        text: qsTr("Speed")
-        font.bold: true
-        font.pointSize: 19
-    }
+        Text {
+            id: text6
+            x: 249
+            y: 11
+            color: "#3811a6"
+            text: qsTr("Speed")
+            font.bold: true
+            font.pointSize: 19
+        }
 
-Text {
-    id: angular_velz
-    x: 135
-    y: 74
-    text: ("Z : 00.000")
-    font.pointSize: 14
-    font.bold: true
-}
+        Text {
+            id: angular_velz
+            x: 135
+            y: 74
+            text: ("Z : 00.000")
+            font.pointSize: 14
+            font.bold: true
+        }
 
-Text {
-        id: angular_vely
-        x: 135
-        y: 48
-        text: ("Y : 00.000")
-        font.pointSize: 14
-        font.bold: true
-}
+        Text {
+            id: angular_vely
+            x: 135
+            y: 48
+            text: ("Y : 00.000")
+            font.pointSize: 14
+            font.bold: true
+        }
 
-Text {
-    id: angular_velx
-    x: 134
-    y: 27
-    text: ("X : 00.000")
-    font.pointSize: 14
-    font.bold: true
-}
+        Text {
+            id: angular_velx
+            x: 134
+            y: 27
+            text: ("X : 00.000")
+            font.pointSize: 14
+            font.bold: true
+        }
 
 
 
@@ -925,7 +980,7 @@ Text {
     Text {
         id: text11
         x: 147
-        y: 464
+        y: 502
         color: "#3811a6"
         text: qsTr("IMU Angular Velocity")
         font.pointSize: 19
@@ -935,7 +990,7 @@ Text {
     Text {
         id: x_imu_ang_vel
         x: 91
-        y: 512
+        y: 532
         text: "X : 00.000"
         font.pointSize: 14
         font.bold: true
@@ -944,7 +999,7 @@ Text {
     Text {
         id: y_imu_ang_vel
         x: 235
-        y: 512
+        y: 532
         text: "Y  00.000"
         font.pointSize: 14
         font.bold: true
@@ -953,7 +1008,7 @@ Text {
     Text {
         id: z_imu_ang_vel
         x: 394
-        y: 512
+        y: 532
         text: "Z : 00.000"
         font.pointSize: 14
         font.bold: true
@@ -962,7 +1017,7 @@ Text {
     Text {
         id: text12
         x: 126
-        y: 541
+        y: 561
         color: "#3811a6"
         text: qsTr("IMU Linear Acceleration")
         font.pointSize: 19
@@ -972,7 +1027,7 @@ Text {
     Text {
         id: x_imu_lin_acel
         x: 91
-        y: 577
+        y: 589
         text: "X : 00.000"
         font.pointSize: 14
         font.bold: true
@@ -981,7 +1036,7 @@ Text {
     Text {
         id: y_imu_lin_acel
         x: 235
-        y: 577
+        y: 589
         text: "Y  00.000"
         font.pointSize: 14
         font.bold: true
@@ -990,11 +1045,224 @@ Text {
     Text {
         id: z_imu_lin_acel
         x: 394
-        y: 577
+        y: 589
         text: "Z : 00.000"
         font.pointSize: 14
         font.bold: true
     }
+
+    Rectangle {
+        id: rectangle8
+        x: 505
+        y: 25
+        width: 35
+        height: 26
+        color: "#6ff1d9"
+
+        MouseArea {
+            id: mouseArea1
+            x: -1
+            y: 0
+            width: 36
+            height: 26
+            onClicked:{
+                controler.reorientate_to_angle(input_z.text);
+                controler.focus= true;
+            }
+
+            Text {
+                id: text2
+                x: 2
+                y: 0
+                width: 34
+                height: 23
+                text: qsTr("OK")
+                font.bold: true
+                font.pixelSize: 21
+            }
+
+        }
+    }
+
+    Text {
+        id: x_imu_euler
+        x: 108
+        y: 474
+        text: "X : 00.000"
+        font.bold: true
+        font.pointSize: 14
+
+    }
+    Text {
+        id: y_imu_euler
+        x: 252
+        y: 474
+        text: "Y  00.000"
+        font.bold: true
+        font.pointSize: 14
+    }
+
+    Text {
+        id: z_imu_euler
+        x: 411
+        y: 474
+        text: "Z : 00.000"
+        font.bold: true
+        font.pointSize: 14
+    }
+
+    Text {
+        id: text13
+        x: 8
+        y: 470
+        color: "#3811a6"
+        text: qsTr("Euler:")
+        font.bold: true
+        font.pointSize: 19
+    }
+
+    TextInput {
+        id: input_Y_pose
+        x: 483
+        y: 150
+        width: 80
+        height: 20
+        text: qsTr("Input Y")
+        selectionColor: "#2f8fc5"
+        font.bold: true
+        inputMask: qsTr("")
+        validator: DoubleValidator {
+            top: 1000
+            bottom: -1000
+        }
+        font.pixelSize: 16
+        Rectangle {
+            id: rectangle7
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+            color: "#000000"
+            opacity: 0.3
+        }
+
+        MouseArea {
+            id: mouseArea4
+            onClicked:{
+                input_Y_pose.focus=true;
+                input_Y_pose.text= "";
+            }
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+        }
+    }
+
+    Rectangle {
+        id: rectangle9
+        x: 564
+        y: 147
+        width: 35
+        height: 26
+        color: "#6ff1d9"
+        MouseArea {
+            id: mouseArea5
+            x: -1
+            y: 0
+            width: 36
+            height: 26
+            onClicked: if((input_X_pose.text!="") && (input_Y_pose.text!="")){
+                           controler.reorientate_to_pose(input_X_pose.text,input_Y_pose.text);
+                       }
+
+            Text {
+                id: text14
+                x: 2
+                y: 0
+                width: 34
+                height: 23
+                text: qsTr("OK")
+                font.bold: true
+                font.pixelSize: 21
+            }
+        }
+    }
+
+    TextInput {
+        id: input_X_pose
+        x: 402
+        y: 150
+        width: 80
+        height: 20
+        text: qsTr("Input X")
+        font.bold: true
+        selectionColor: "#2f8fc5"
+        inputMask: qsTr("")
+        validator: DoubleValidator {
+            top: 1000
+            bottom: -1000
+        }
+        font.pixelSize: 16
+        Rectangle {
+            id: rectangle10
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+            color: "#000000"
+            opacity: 0.3
+        }
+
+        MouseArea {
+            id: mouseArea6
+            onClicked:{
+                input_X_pose.focus=true;
+                input_X_pose.text= "";
+            }
+            x: 0
+            y: 0
+            width: 80
+            height: 20
+        }
+    }
+
+    Rectangle {
+        id: rectangle11
+        x: 425
+        y: 176
+        width: 129
+        height: 26
+        color: "#6ff1d9"
+        MouseArea {
+            id: mouseArea7
+            x: -1
+            y: 0
+            width: 130
+            height: 26
+            onClicked: {
+                if(text15.text== qsTr("CONTINUOUS")){
+                    text15.text= qsTr("ONCE")
+                }else
+                text15.text= qsTr("CONTINUOUS")
+            }
+            Text {
+                id: text15
+                x: 2
+                y: 0
+                width: 129
+                height: 26
+                text: qsTr("ONCE")
+                horizontalAlignment: Text.AlignHCenter
+                font.bold: true
+                font.pixelSize: 21
+            }
+        }
+    }
+
+
+
+
 
 
 }

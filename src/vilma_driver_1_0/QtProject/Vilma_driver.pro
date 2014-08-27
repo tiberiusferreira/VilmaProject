@@ -6,9 +6,11 @@ INCLUDEPATH+=/usr/include/gazebo-1.8 \
 /usr/include/gazebo-1.9/ \
 /usr/include/gazebo-1.9/gazebo \
 /usr/include/gazebo-2.2 \
+/usr/include/gazebo-2.2/gazebo \
 /usr/include/gazebo-1.8/gazebo \ #Including path in case of using gazebo 1.9
 /usr/include/gazebo-2.1 \
 /opt/ros/hydro/include \
+/opt/ros/indigo/include \
 /usr/include/gazebo-2.1/gazebo \
 /usr/include/sdformat-1.4
 
@@ -413,6 +415,10 @@ unix:!macx: LIBS += -L$$PWD/../../../../../../opt/ros/indigo/lib/ -lrosconsole_b
 
 INCLUDEPATH += $$PWD/../../../../../../opt/ros/indigo/include
 DEPENDPATH += $$PWD/../../../../../../opt/ros/indigo/include
+
+LIBS += -L/opt/ros/indigo/lib/
+
+
 RESOURCES += \
     ../controlerresources.qrc
 
@@ -431,3 +437,5 @@ HEADERS += \
 unix:!macx: LIBS += -lboost_thread
 
 unix:!macx: LIBS += -lboost_system
+
+unix:!macx: LIBS += -lgazebo_math

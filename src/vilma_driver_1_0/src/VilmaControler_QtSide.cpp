@@ -203,6 +203,15 @@ QString VilmaControler_QtSide::read_imu_ori_z() const{
 QString VilmaControler_QtSide::read_imu_ori_w() const{
     return QString::number(VilmaControler_ROS_Object.imu_data.orientation.w,'f',3);
 }
+QString VilmaControler_QtSide::read_imu_eul_x(){
+    return QString::number(VilmaControler_ROS_Object.imudata_to_euler().GetAsEuler().x,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_eul_y(){
+    return QString::number(VilmaControler_ROS_Object.imudata_to_euler().GetAsEuler().y,'f',3);
+}
+QString VilmaControler_QtSide::read_imu_eul_z(){
+    return QString::number(VilmaControler_ROS_Object.imudata_to_euler().GetAsEuler().z,'f',3);
+}
 
 
 void VilmaControler_QtSide::maintain_speed()
@@ -292,6 +301,12 @@ void VilmaControler_QtSide::use_Steering(float value)
 void VilmaControler_QtSide::reset_state()
 {
     VilmaControler_ROS_Object.reset_state();
+}
+void VilmaControler_QtSide::reorientate_to_angle(float z){
+    VilmaControler_ROS_Object.reorientate_to_angle(z);
+}
+void VilmaControler_QtSide::reorientate_to_pose(float x, float y){
+    VilmaControler_ROS_Object.reorientate_to_pose(x,y);
 }
 
 

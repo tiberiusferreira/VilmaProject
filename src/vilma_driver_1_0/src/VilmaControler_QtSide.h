@@ -88,6 +88,9 @@ private:
     Q_PROPERTY(QString imu_ori_y READ read_imu_ori_y)
     Q_PROPERTY(QString imu_ori_z READ read_imu_ori_z)
     Q_PROPERTY(QString imu_ori_w READ read_imu_ori_w)
+    Q_PROPERTY(QString imu_eul_x READ read_imu_eul_x)
+    Q_PROPERTY(QString imu_eul_y READ read_imu_eul_y)
+    Q_PROPERTY(QString imu_eul_z READ read_imu_eul_z)
 
 
 
@@ -139,6 +142,10 @@ public:
     QString read_imu_ori_z() const;
     QString read_imu_ori_w() const;
 
+    QString read_imu_eul_x();
+    QString read_imu_eul_y();
+    QString read_imu_eul_z();
+
 
     Q_INVOKABLE void change_gears();
     Q_INVOKABLE void accelerate();
@@ -149,6 +156,10 @@ public:
     Q_INVOKABLE void use_brake_release();
     Q_INVOKABLE void reset_state(); //Function to reset all properties and car to default state.
     Q_INVOKABLE void maintain_speed();
+    Q_INVOKABLE void reorientate_to_angle(float z);
+    Q_INVOKABLE void reorientate_to_pose(float x, float y);
+
+
 
 public slots:
     void update_vilma_info(); //function to update the qml values using the ros values

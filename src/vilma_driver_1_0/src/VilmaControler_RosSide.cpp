@@ -76,10 +76,12 @@ void VilmaControler_ROS::init()
 }
 
 
-void VilmaControler_ROS::receive_gps_state(sensor_msgs::NavSatFix gps_state){
+void VilmaControler_ROS::receive_gps_state(sensor_msgs::NavSatFix gps_state)
+{
     this->car_gps_state=gps_state;
 }
-void VilmaControler_ROS::receive_imu_data(sensor_msgs::Imu data){
+void VilmaControler_ROS::receive_imu_data(sensor_msgs::Imu data)
+{
     this->imu_data=data;
 }
 
@@ -268,11 +270,7 @@ void VilmaControler_ROS::receive_model_physical_state()
 }
 void VilmaControler_ROS::receive_gas_pedal_data(const std_msgs::Float64::ConstPtr& msg)
 {
-    if(msg->data!=gas_pedal_state.data)
-    {
-        gas_pedal_state.data=msg->data;
-    }
-
+    gas_pedal_state.data=msg->data;
 }
 void VilmaControler_ROS::receive_brake_pedal_data(const std_msgs::Float64::ConstPtr& msg)
 {
@@ -308,24 +306,10 @@ void VilmaControler_ROS::receive_gears_state(const std_msgs::Int8::ConstPtr& msg
 }
 //////////////////////////////////// FUNCTION FOR CONTROLLING THE CAR //////////////////////////////////////
 
-void VilmaControler_ROS::change_gears(){
+void VilmaControler_ROS::set_gears(int gear){
     std_msgs::Int8 gears_value;
-
-    if (this->gears.data<0.3&&this->gears.data>-0.3)
-    {
-        gears_value.data=1;
-        this->gears_pub.publish(gears_value);
-    }
-    else if (this->gears.data<-0.5)
-    {
-        gears_value.data=0;
-        this->gears_pub.publish(gears_value);
-    }
-    else if (this->gears.data>0.5)
-    {
-        gears_value.data=-1;
-        this->gears_pub.publish(gears_value);
-    }
+    gears_value.data=gear;
+    this->gears_pub.publish(gears_value);
 }
 void VilmaControler_ROS::use_Steering(float value)
 {
@@ -343,6 +327,16 @@ void VilmaControler_ROS::accelerate(float amount_to_increase){
     }
     accelerate.data=this->gas_pedal_state.data+amount_to_increase;
     this->gas_pedalpub.publish(accelerate);
+}
+void VilmaControler_ROS::set_gas_pedal(float value){
+    std_msgs::Float64 pub_msg;
+    pub_msg.data=value;
+    this->gas_pedalpub.publish(pub_msg);
+}
+void VilmaControler_ROS::set_brake_pedal(float value){
+    std_msgs::Float64 pub_msg;
+    pub_msg.data=value;
+    this->brake_pedalpub.publish(pub_msg);
 }
 void VilmaControler_ROS::deaccelerate(float amount_to_decrease){
     std_msgs::Float64 deaccelerate;
@@ -399,6 +393,81 @@ void VilmaControler_ROS::reset_state(){
     }
 
 }
+void VilmaControler_ROS::reorientate_to_angle(float z, float w){// TODO USE PIDS HERE
+    std_msgs::Float64 steering_value;
+    int turn_dir=0;
+    float z_imu=this->imu_data.orientation.z, w_imu=this->imu_data.orientation.w;
+    if(z_imu>=0 && w_imu<=0){
+        if(z>z_imu && w>w_imu){
+            turn_dir=1;
+        }
+        else{
+            turn_dir=0;
+        }
+    }
+    if(z_imu>=0 && w_imu>0){
+        if(z<z_imu && w>w_imu){
+            turn_dir=1;
+        }
+        else{
+            turn_dir=0;
+        }
+    }
+    if(z_imu<0 && w_imu>0){
+        if(z<z_imu && w<w_imu){
+            turn_dir=1;
+        }
+        else{
+            turn_dir=0;
+        }
+    }
+    if(z_imu<0 && w_imu<0){
+        if(z>z_imu && w<w_imu){
+            turn_dir=1;
+        }
+        else{
+            turn_dir=0;
+        }
+    }
+    if(turn_dir==1){
+        steering_value.data=-3.14;
+        this->hand_wheelpub.publish(steering_value);
+    }else{
+        steering_value.data=3.14;
+        this->hand_wheelpub.publish(steering_value);
+    }
+}
+void VilmaControler_ROS::reorientate_to_angle(float z){
+    std_msgs::Float64 steering_value;
+    float value_to_turn;
+    float z_imu=imudata_to_euler().GetAsEuler().z;
+    value_to_turn=-z_imu; // so returns to Gazebos frame of reference
+    value_to_turn=value_to_turn+z;
+    steering_value.data=value_to_turn*(3.14/0.8727);
+    this->hand_wheelpub.publish(steering_value); //Sends to steeringwheel, so need to put ratio steering wheel and actual wheel;
+}
+int VilmaControler_ROS::reorientate_to_pose(float x, float y){
+    float deltax=x-this->modelstate.pose.position.x;
+    float deltay=y-this->modelstate.pose.position.y;
+    if(deltax<=0){
+        return -1;
+    }
+    float ang=atan(deltay/deltax);
+    this->reorientate_to_angle(ang);
+    return 1;
+
+}
+
+gazebo::math::Quaternion VilmaControler_ROS::imudata_to_euler()
+{
+    gazebo::math::Quaternion temp;
+    temp.x=this->imu_data.orientation.x;
+    temp.y=this->imu_data.orientation.y;
+    temp.z=this->imu_data.orientation.z;
+    temp.w=this->imu_data.orientation.w;
+    return temp;
+}
+
 void VilmaControler_ROS::maintain_speed(){
     if(this->thread_count>0){
         this->tgroup.interrupt_all();
