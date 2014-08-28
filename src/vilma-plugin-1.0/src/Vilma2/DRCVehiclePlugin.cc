@@ -27,7 +27,7 @@ namespace gazebo
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
 DRCVehiclePlugin::DRCVehiclePlugin()
-    : jointDeadbandPercent(0.02)
+    : jointDeadbandPercent(0.00)
 {
     this->keyState = ON;
     this->directionState = FORWARD;
@@ -43,13 +43,8 @@ DRCVehiclePlugin::DRCVehiclePlugin()
     this->frWheelSteeringCmd = 0;
 
     /// \TODO: get this from model //TALK TO OLMER ABOUUTTTTT!!
-    this->wheelRadius = 0.1;
-    this->flWheelRadius = 0.381;
-    this->frWheelRadius = 0.381;
-    this->blWheelRadius = 0.381;
-    this->brWheelRadius = 0.381;
     this->pedalForce = 10;
-    this->handWheelForce = 5000;
+    this->handWheelForce = 200;
     this->handBrakeForce = 10;
     this->steeredWheelForce = 200;
 }
@@ -520,13 +515,13 @@ void DRCVehiclePlugin::Load(physics::ModelPtr _parent,
                            this->pedalForce, -this->pedalForce);
     this->brakePedalPID.Init(800, 0, 3, 50, -50,
                              this->pedalForce, -this->pedalForce);
-    this->handWheelPID.Init(8, 0, 30.0, 2.0, -2.0,
+    this->handWheelPID.Init(800, 0, 3, 2.0, -2.0,
                             this->handWheelForce, -this->handWheelForce);
-    this->handBrakePID.Init(30, 0, 3.0, 5.0, -5.0,
+    this->handBrakePID.Init(800, 0, 3, 5.0, -5.0,
                             this->handBrakeForce, -this->handBrakeForce);
-    this->flWheelSteeringPID.Init(100000, 0, 0, 50, -50,
+    this->flWheelSteeringPID.Init(800, 0, 0, 50, -50,
                                   this->steeredWheelForce, -this->steeredWheelForce);
-    this->frWheelSteeringPID.Init(100000, 0, 0, 50, -50,
+    this->frWheelSteeringPID.Init(800, 0, 0, 50, -50,
                                   this->steeredWheelForce, -this->steeredWheelForce);
 
     // New Mechanism for Updating every World Cycle

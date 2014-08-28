@@ -33,7 +33,7 @@ LIBS += -lboost_system
 
 LIBS += -lgazebo_math
 
-TARGET = vilma_driver_widget
+TARGET = vilma_driver_widget_qtBuilt
 TEMPLATE = app
 
 

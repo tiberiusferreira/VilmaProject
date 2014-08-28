@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     VilmaControler_object.init();
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT( update()));
-    timer->start(100);
+    timer->start(250);
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
 }
@@ -142,13 +142,14 @@ void MainWindow::update()
         ui->gears_backwards_radio_button->setChecked(1);
     }
     if(ui->Set_wheel_direction_button->isChecked()){
-        if(!ui->Set_wheel_direction_from_table->isChecked()){
+        if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
+                && ui->Set_wheel_direction_y_input->text()!=""){
             VilmaControler_object.reorientate_to_pose(ui->Set_wheel_direction_x_input->text().toDouble(),ui->Set_wheel_direction_y_input->text().toDouble());
         }
         if(ui->Set_wheel_direction_from_table->isChecked())
         {
-            double row_max = ui->Set_wheel_direction_table->rowCount();
-            double column_max = ui->Set_wheel_direction_table->columnCount();
+            //double row_max = ui->Set_wheel_direction_table->rowCount();
+            //double column_max = ui->Set_wheel_direction_table->columnCount();
             double current_row;
             int ok;
             QTableWidgetItem *current_item = ui->Set_wheel_direction_table->item(0,2);
@@ -171,7 +172,6 @@ void MainWindow::update()
         }
     }
 }
-
 void MainWindow::on_Set_new_speed_toggled(bool checked)
 {
     if(checked)
@@ -260,5 +260,4 @@ void MainWindow::on_gears_backwards_radio_button_toggled(bool checked)
         VilmaControler_object.set_gears(-1);
     }
 }
-
 

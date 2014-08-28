@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 //![0]
-#include "VilmaControler_QtSide.h"
+#include "VilmaControler_RosSide.h"
 #include <cstdio>
 #include <cmath>
 //////////////////////////////////// INIT AND RECEIVE STATE FUNCTION //////////////////////////////////////
