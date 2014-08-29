@@ -27,6 +27,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/qt4/QtDeclarative"
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtCore"
+  "vilma_driver_1_0"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

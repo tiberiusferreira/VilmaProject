@@ -59,10 +59,10 @@ void MainWindow::update()
 {
 
     ros::spinOnce(); //update ros side values
-    VilmaControler_object.receive_model_physical_state();
-    ui->current_acel_label_slider->setSliderPosition((VilmaControler_object.gas_pedal_state.data)*100);
-    ui->current_brake_slider->setSliderPosition((VilmaControler_object.brake_pedal_state.data)*100);
-    ui->steering_slider->setSliderPosition((-VilmaControler_object.hand_wheel_state.data)*100);
+    VilmaControler_object.receive_model_physical_state(); //update ros side values dependable on service calls
+    ui->current_acel_label_slider->setSliderPosition((VilmaControler_object.gas_pedal_state.data)*100); //acel slider pose update
+    ui->current_brake_slider->setSliderPosition((VilmaControler_object.brake_pedal_state.data)*100); //brake slider pose update
+    ui->steering_slider->setSliderPosition((-VilmaControler_object.hand_wheel_state.data)*100); //steering slider pose update
     QString acel_text = QString("Current Acceleration: %1").arg(QString::number(VilmaControler_object.gas_pedal_state.data,'f',3));
     QString brake_text = QString("Current Brake: %1").arg(QString::number(VilmaControler_object.brake_pedal_state.data,'f',3));
     QString steering_text = QString("Hand Wheel Status : %1 rad").arg(QString::number(VilmaControler_object.hand_wheel_state.data,'f',3));
@@ -91,6 +91,7 @@ void MainWindow::update()
     QString gazebo_ang_vel_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.x,'f',3));
     QString gazebo_ang_vel_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.y,'f',3));
     QString gazebo_ang_vel_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.z,'f',3));
+    QString imu_euler_rot_z = QString("Z : %1").arg(QString::number(VilmaControler_object.imudata_to_euler().GetYaw(),'f',3));
 
 
     ui->current_acel_label->setText(acel_text);
@@ -121,10 +122,10 @@ void MainWindow::update()
     ui->gazebo_ang_vel_x->setText(gazebo_ang_vel_x_text);
     ui->gazebo_ang_vel_y->setText(gazebo_ang_vel_y_text);
     ui->gazebo_ang_vel_z->setText(gazebo_ang_vel_z_text);
+    ui->imu_euler_z_rotation_value->setText(imu_euler_rot_z);
 
 
-
-    if(VilmaControler_object.hand_brake_state.data>0.05)
+    if(VilmaControler_object.hand_brake_state.data>0.05) //set hand brake button status based on car info
     {
         ui->handbrake_button->setChecked(1);
     }
@@ -132,7 +133,8 @@ void MainWindow::update()
     {
         ui->handbrake_button->setChecked(0);
     }
-    if(VilmaControler_object.gears.data==1){
+
+    if(VilmaControler_object.gears.data==1){ //set correct gear checked box based on car info
         ui->gears_forward_radio_button->setChecked(1);
     }
     if(VilmaControler_object.gears.data==0){
@@ -141,6 +143,7 @@ void MainWindow::update()
     if(VilmaControler_object.gears.data==-1){
         ui->gears_backwards_radio_button->setChecked(1);
     }
+
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
                 && ui->Set_wheel_direction_y_input->text()!=""){
@@ -165,7 +168,7 @@ void MainWindow::update()
                 return;
             }
             ok=VilmaControler_object.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
-            if(ok==-1){
+            if(ok==-1){ //check if the X Y is behind the car already
                 current_item->setText(QString ("%1").arg(current_item->text().toDouble()+1));
             }
 

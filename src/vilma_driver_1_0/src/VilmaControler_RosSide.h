@@ -15,6 +15,7 @@
 #include <gazebo/math/gzmath.hh>
 #include <gazebo/physics/physics.hh>
 #include <sensor_msgs/NavSatFix.h>
+#include <QDebug>
 class VilmaControler_ROS
 {
 public:

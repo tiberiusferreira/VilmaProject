@@ -21,10 +21,6 @@ public:
 private slots:
     void update();
 
-//    void on_verticalSlider_valueChanged(int value);
-
-//    void on_actionAccelerator_toggled(bool arg1);
-
     void keyPressEvent(QKeyEvent *key);
 
     void on_Set_new_speed_toggled(bool checked);

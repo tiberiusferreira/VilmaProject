@@ -59,8 +59,6 @@ vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx: /home/tiberio/catkin_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_RosSide.cxx"
 	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
 
-vilma_controllerqt_1_0/qrc_controlerresources.cxx: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/app.qml
-vilma_controllerqt_1_0/qrc_controlerresources.cxx: vilma_controllerqt_1_0/controlerresources.qrc.depends
 vilma_controllerqt_1_0/qrc_controlerresources.cxx: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/controlerresources.qrc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating qrc_controlerresources.cxx"

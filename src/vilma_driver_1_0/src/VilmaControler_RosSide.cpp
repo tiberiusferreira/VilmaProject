@@ -449,10 +449,18 @@ void VilmaControler_ROS::reorientate_to_angle(float z){
 int VilmaControler_ROS::reorientate_to_pose(float x, float y){
     float deltax=x-this->modelstate.pose.position.x;
     float deltay=y-this->modelstate.pose.position.y;
-    if(deltax<=0){
+    if( (deltax>=0 && (imudata_to_euler().GetYaw()<=(-3.14/2) && imudata_to_euler().GetYaw()>=(3.14/2)))
+            || (deltax<0 && ((imudata_to_euler().GetYaw()<(3.14/2)) && imudata_to_euler().GetYaw()>(-3.14/2))))
+    { //if point is behind car, do nothing
         return -1;
     }
     float ang=atan(deltay/deltax);
+    if(imudata_to_euler().GetYaw()<(-3.14/2) || (imudata_to_euler().GetYaw()>3.14/2)){
+        this->reorientate_to_angle(ang);
+        qDebug() << "Car turned.";
+        qDebug() << ang;
+        return 1;
+    }
     this->reorientate_to_angle(ang);
     return 1;
 

@@ -4,12 +4,11 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tiberio/catkin_ws/build/vilma_driver_1_0/qrc_controlerresources.cxx" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.o"
-  "/home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_QtSide.cpp" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o"
   "/home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o"
   "/home/tiberio/catkin_ws/src/vilma_driver_1_0/src/main.cpp" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o"
-  "/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_QtSide.cxx" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o"
+  "/home/tiberio/catkin_ws/src/vilma_driver_1_0/src/mainwindow.cpp" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o"
   "/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o"
+  "/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_mainwindow.cxx" "/home/tiberio/catkin_ws/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -37,6 +36,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/qt4/QtDeclarative"
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtCore"
+  "vilma_driver_1_0"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

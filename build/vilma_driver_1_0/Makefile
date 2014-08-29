@@ -611,54 +611,6 @@ vilma_driverqt_1_0/fast:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build
 .PHONY : vilma_driverqt_1_0/fast
 
-qrc_controlerresources.o: qrc_controlerresources.cxx.o
-.PHONY : qrc_controlerresources.o
-
-# target to build an object file
-qrc_controlerresources.cxx.o:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.o
-.PHONY : qrc_controlerresources.cxx.o
-
-qrc_controlerresources.i: qrc_controlerresources.cxx.i
-.PHONY : qrc_controlerresources.i
-
-# target to preprocess a source file
-qrc_controlerresources.cxx.i:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.i
-.PHONY : qrc_controlerresources.cxx.i
-
-qrc_controlerresources.s: qrc_controlerresources.cxx.s
-.PHONY : qrc_controlerresources.s
-
-# target to generate assembly for a file
-qrc_controlerresources.cxx.s:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/qrc_controlerresources.cxx.s
-.PHONY : qrc_controlerresources.cxx.s
-
-src/VilmaControler_QtSide.o: src/VilmaControler_QtSide.cpp.o
-.PHONY : src/VilmaControler_QtSide.o
-
-# target to build an object file
-src/VilmaControler_QtSide.cpp.o:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.o
-.PHONY : src/VilmaControler_QtSide.cpp.o
-
-src/VilmaControler_QtSide.i: src/VilmaControler_QtSide.cpp.i
-.PHONY : src/VilmaControler_QtSide.i
-
-# target to preprocess a source file
-src/VilmaControler_QtSide.cpp.i:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.i
-.PHONY : src/VilmaControler_QtSide.cpp.i
-
-src/VilmaControler_QtSide.s: src/VilmaControler_QtSide.cpp.s
-.PHONY : src/VilmaControler_QtSide.s
-
-# target to generate assembly for a file
-src/VilmaControler_QtSide.cpp.s:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_QtSide.cpp.s
-.PHONY : src/VilmaControler_QtSide.cpp.s
-
 src/VilmaControler_RosSide.o: src/VilmaControler_RosSide.cpp.o
 .PHONY : src/VilmaControler_RosSide.o
 
@@ -707,29 +659,29 @@ src/main.cpp.s:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/moc_VilmaControler_QtSide.o: src/moc_VilmaControler_QtSide.cxx.o
-.PHONY : src/moc_VilmaControler_QtSide.o
+src/mainwindow.o: src/mainwindow.cpp.o
+.PHONY : src/mainwindow.o
 
 # target to build an object file
-src/moc_VilmaControler_QtSide.cxx.o:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o
-.PHONY : src/moc_VilmaControler_QtSide.cxx.o
+src/mainwindow.cpp.o:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o
+.PHONY : src/mainwindow.cpp.o
 
-src/moc_VilmaControler_QtSide.i: src/moc_VilmaControler_QtSide.cxx.i
-.PHONY : src/moc_VilmaControler_QtSide.i
+src/mainwindow.i: src/mainwindow.cpp.i
+.PHONY : src/mainwindow.i
 
 # target to preprocess a source file
-src/moc_VilmaControler_QtSide.cxx.i:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i
-.PHONY : src/moc_VilmaControler_QtSide.cxx.i
+src/mainwindow.cpp.i:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.i
+.PHONY : src/mainwindow.cpp.i
 
-src/moc_VilmaControler_QtSide.s: src/moc_VilmaControler_QtSide.cxx.s
-.PHONY : src/moc_VilmaControler_QtSide.s
+src/mainwindow.s: src/mainwindow.cpp.s
+.PHONY : src/mainwindow.s
 
 # target to generate assembly for a file
-src/moc_VilmaControler_QtSide.cxx.s:
-	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s
-.PHONY : src/moc_VilmaControler_QtSide.cxx.s
+src/mainwindow.cpp.s:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.s
+.PHONY : src/mainwindow.cpp.s
 
 src/moc_VilmaControler_RosSide.o: src/moc_VilmaControler_RosSide.cxx.o
 .PHONY : src/moc_VilmaControler_RosSide.o
@@ -754,6 +706,30 @@ src/moc_VilmaControler_RosSide.s: src/moc_VilmaControler_RosSide.cxx.s
 src/moc_VilmaControler_RosSide.cxx.s:
 	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
 .PHONY : src/moc_VilmaControler_RosSide.cxx.s
+
+src/moc_mainwindow.o: src/moc_mainwindow.cxx.o
+.PHONY : src/moc_mainwindow.o
+
+# target to build an object file
+src/moc_mainwindow.cxx.o:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o
+.PHONY : src/moc_mainwindow.cxx.o
+
+src/moc_mainwindow.i: src/moc_mainwindow.cxx.i
+.PHONY : src/moc_mainwindow.i
+
+# target to preprocess a source file
+src/moc_mainwindow.cxx.i:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.i
+.PHONY : src/moc_mainwindow.cxx.i
+
+src/moc_mainwindow.s: src/moc_mainwindow.cxx.s
+.PHONY : src/moc_mainwindow.s
+
+# target to generate assembly for a file
+src/moc_mainwindow.cxx.s:
+	cd /home/tiberio/catkin_ws/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.s
+.PHONY : src/moc_mainwindow.cxx.s
 
 # Help Target
 help:
@@ -801,24 +777,21 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... vilma_driverqt_1_0"
-	@echo "... qrc_controlerresources.o"
-	@echo "... qrc_controlerresources.i"
-	@echo "... qrc_controlerresources.s"
-	@echo "... src/VilmaControler_QtSide.o"
-	@echo "... src/VilmaControler_QtSide.i"
-	@echo "... src/VilmaControler_QtSide.s"
 	@echo "... src/VilmaControler_RosSide.o"
 	@echo "... src/VilmaControler_RosSide.i"
 	@echo "... src/VilmaControler_RosSide.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/moc_VilmaControler_QtSide.o"
-	@echo "... src/moc_VilmaControler_QtSide.i"
-	@echo "... src/moc_VilmaControler_QtSide.s"
+	@echo "... src/mainwindow.o"
+	@echo "... src/mainwindow.i"
+	@echo "... src/mainwindow.s"
 	@echo "... src/moc_VilmaControler_RosSide.o"
 	@echo "... src/moc_VilmaControler_RosSide.i"
 	@echo "... src/moc_VilmaControler_RosSide.s"
+	@echo "... src/moc_mainwindow.o"
+	@echo "... src/moc_mainwindow.i"
+	@echo "... src/moc_mainwindow.s"
 .PHONY : help
 
 
