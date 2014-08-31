@@ -12,5 +12,5 @@
 -DQT_GUI_LIB
 -DQT_CORE_LIB
 -o
-/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h

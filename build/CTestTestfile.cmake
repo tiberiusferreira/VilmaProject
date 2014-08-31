@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/tiberio/catkin_ws/src
-# Build directory: /home/tiberio/catkin_ws/build
+# Source directory: /home/tiberio/Dropbox/IC/VilmaProject/src
+# Build directory: /home/tiberio/Dropbox/IC/VilmaProject/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

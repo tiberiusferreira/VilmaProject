@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tiberio/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/tiberio/Dropbox/IC/VilmaProject/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tiberio/catkin_ws/build
+CMAKE_BINARY_DIR = /home/tiberio/Dropbox/IC/VilmaProject/build
 
 # Include any dependencies generated for this target.
 include vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/depend.make
@@ -49,34 +49,36 @@ include vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/progress.ma
 # Include the compile flags for this target's objects.
 include vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
 
-vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
+vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_QtSide.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx_parameters
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx_parameters
 
-vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_RosSide.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
 
-vilma_controllerqt_1_0/qrc_controlerresources.cxx: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/controlerresources.qrc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_3)
+vilma_controllerqt_1_0/qrc_controlerresources.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/app.qml
+vilma_controllerqt_1_0/qrc_controlerresources.cxx: vilma_controllerqt_1_0/controlerresources.qrc.depends
+vilma_controllerqt_1_0/qrc_controlerresources.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/controlerresources.qrc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating qrc_controlerresources.cxx"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/lib/x86_64-linux-gnu/qt4/bin/rcc -name controlerresources -o /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/controlerresources.qrc
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/lib/x86_64-linux-gnu/qt4/bin/rcc -name controlerresources -o /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/controlerresources.qrc
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_4)
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o -c /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o.requires
@@ -88,18 +90,18 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o.prov
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o.provides.build: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_5)
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o -c /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o.requires
@@ -111,18 +113,18 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o.provides.build: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_6)
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o -c /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp > CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp -o CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires
@@ -135,17 +137,17 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o -c /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o.requires
@@ -158,17 +160,17 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaContro
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o: vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o -c /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires
@@ -181,17 +183,17 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaContro
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/flags.make
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o: vilma_controllerqt_1_0/qrc_controlerresources.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o -c /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.i"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx > CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.i
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.s"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx -o CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.s
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o.requires:
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o.requires
@@ -214,45 +216,45 @@ vilma_controllerqt_1_0_OBJECTS = \
 # External object files for target vilma_controllerqt_1_0
 vilma_controllerqt_1_0_EXTERNAL_OBJECTS =
 
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/build.make
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtDeclarative.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtScript.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtSvg.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtXmlPatterns.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtGui.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtXml.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtSql.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtNetwork.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtCore.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libroscpp.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole_log4cxx.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole_backend_interface.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/liblog4cxx.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libxmlrpcpp.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libroscpp_serialization.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librostime.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libcpp_common.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0"
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vilma_controllerqt_1_0.dir/link.txt --verbose=$(VERBOSE)
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/build.make
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtDeclarative.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtScript.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtSvg.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtXmlPatterns.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtGui.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtXml.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtSql.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtNetwork.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libQtCore.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libroscpp.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/liblog4cxx.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libroscpp_serialization.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/librostime.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /opt/ros/indigo/lib/libcpp_common.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vilma_controllerqt_1_0.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/build: /home/tiberio/catkin_ws/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/build: /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_controllerqt_1_0/vilma_controllerqt_1_0
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/build
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/requires: vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o.requires
@@ -264,12 +266,12 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/requires: vilma_con
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/requires
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/clean:
-	cd /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 && $(CMAKE_COMMAND) -P CMakeFiles/vilma_controllerqt_1_0.dir/cmake_clean.cmake
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 && $(CMAKE_COMMAND) -P CMakeFiles/vilma_controllerqt_1_0.dir/cmake_clean.cmake
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/clean
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/depend: vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/depend: vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/depend: vilma_controllerqt_1_0/qrc_controlerresources.cxx
-	cd /home/tiberio/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiberio/catkin_ws/src /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0 /home/tiberio/catkin_ws/build /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0 /home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiberio/Dropbox/IC/VilmaProject/src /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0 /home/tiberio/Dropbox/IC/VilmaProject/build /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0 /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/depend
 

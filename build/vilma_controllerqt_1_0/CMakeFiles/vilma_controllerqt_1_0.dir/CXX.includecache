@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/qrc_controlerresources.cxx
 QtCore/qglobal.h
 -
 
-/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
 ../../../src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
 
-/home/tiberio/catkin_ws/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_controllerqt_1_0/src/moc_VilmaControler_RosSide.cxx
 
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
 VilmaControler_QtSide.h
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
 
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
 VilmaControler_RosSide.h
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
 QtDeclarative/QDeclarativeItem
 -
 QColor
@@ -32,11 +32,11 @@ QTimer
 QKeyEvent
 -
 
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
 VilmaControler_QtSide.h
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
 
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
 ros/ros.h
 -
 stdio.h
@@ -48,9 +48,9 @@ std_msgs/Int8.h
 time.h
 -
 
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp
 VilmaControler_QtSide.h
-/home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
 QtDeclarative/QDeclarativeView
 -
 QtGui/QApplication

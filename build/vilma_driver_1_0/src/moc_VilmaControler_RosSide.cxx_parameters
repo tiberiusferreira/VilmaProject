@@ -17,5 +17,5 @@
 -DQT_GUI_LIB
 -DQT_CORE_LIB
 -o
-/home/tiberio/catkin_ws/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
-/home/tiberio/catkin_ws/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.h

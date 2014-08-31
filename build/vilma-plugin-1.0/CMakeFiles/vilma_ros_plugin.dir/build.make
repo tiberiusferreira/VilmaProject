@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tiberio/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/tiberio/Dropbox/IC/VilmaProject/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tiberio/catkin_ws/build
+CMAKE_BINARY_DIR = /home/tiberio/Dropbox/IC/VilmaProject/build
 
 # Include any dependencies generated for this target.
 include vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/depend.make
@@ -50,18 +50,18 @@ include vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/progress.make
 include vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/flags.make
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/flags.make
-vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o: /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
+vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o -c /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp > CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp > CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.i
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/catkin_ws/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma-plugin-1.0/src/DRCVehicleROSPlugin.cpp -o CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.s
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires:
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires
@@ -79,52 +79,52 @@ vilma_ros_plugin_OBJECTS = \
 # External object files for target vilma_ros_plugin
 vilma_ros_plugin_EXTERNAL_OBJECTS =
 
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build.make
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_api_plugin.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_paths_plugin.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroslib.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libactionlib.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libmessage_filters.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_log4cxx.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_backend_interface.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/liblog4cxx.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libxmlrpcpp.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp_serialization.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librostime.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libcpp_common.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: /home/tiberio/catkin_ws/devel/lib/libVilma2Plugin.so
-/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so"
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vilma_ros_plugin.dir/link.txt --verbose=$(VERBOSE)
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build.make
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_api_plugin.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_paths_plugin.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroslib.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libactionlib.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libmessage_filters.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libtf2.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/liblog4cxx.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libroscpp_serialization.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/librostime.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /opt/ros/indigo/lib/libcpp_common.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libVilma2Plugin.so
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vilma_ros_plugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build: /home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so
+vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build: /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/build
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/requires: vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o.requires
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/requires
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/clean:
-	cd /home/tiberio/catkin_ws/build/vilma-plugin-1.0 && $(CMAKE_COMMAND) -P CMakeFiles/vilma_ros_plugin.dir/cmake_clean.cmake
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 && $(CMAKE_COMMAND) -P CMakeFiles/vilma_ros_plugin.dir/cmake_clean.cmake
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/clean
 
 vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/depend:
-	cd /home/tiberio/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiberio/catkin_ws/src /home/tiberio/catkin_ws/src/vilma-plugin-1.0 /home/tiberio/catkin_ws/build /home/tiberio/catkin_ws/build/vilma-plugin-1.0 /home/tiberio/catkin_ws/build/vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiberio/Dropbox/IC/VilmaProject/src /home/tiberio/Dropbox/IC/VilmaProject/src/vilma-plugin-1.0 /home/tiberio/Dropbox/IC/VilmaProject/build /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0 /home/tiberio/Dropbox/IC/VilmaProject/build/vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vilma-plugin-1.0/CMakeFiles/vilma_ros_plugin.dir/depend
 

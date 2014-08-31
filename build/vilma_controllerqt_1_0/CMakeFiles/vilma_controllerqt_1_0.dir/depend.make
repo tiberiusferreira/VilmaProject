@@ -6,9 +6,9 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresour
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o: /usr/include/qt4/QtCore/qfeatures.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/qrc_controlerresources.cxx.o: /usr/include/qt4/QtCore/qglobal.h
 
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.cpp
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
@@ -212,9 +212,9 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtGui/qwmatrix.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_QtSide.cpp.o: /usr/include/qt4/QtScript/qscriptvalue.h
 
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.cpp
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
@@ -418,9 +418,9 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtGui/qwmatrix.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /usr/include/qt4/QtScript/qscriptvalue.h
 
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/main.cpp
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/main.cpp
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
@@ -647,8 +647,8 @@ vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /us
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/main.cpp.o: /usr/include/qt4/QtScript/qscriptvalue.h
 
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: vilma_controllerqt_1_0/src/moc_VilmaControler_QtSide.cxx
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
-vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /home/tiberio/catkin_ws/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_QtSide.h
+vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_controllerqt_1_0/src/VilmaControler_RosSide.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /opt/ros/indigo/include/XmlRpcDecl.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /opt/ros/indigo/include/XmlRpcValue.h
 vilma_controllerqt_1_0/CMakeFiles/vilma_controllerqt_1_0.dir/src/moc_VilmaControler_QtSide.cxx.o: /opt/ros/indigo/include/ros/advertise_options.h

@@ -45,7 +45,7 @@
 void VilmaControler_ROS::init()
 {
     this->thread_count=0; //MOVE from here
-    obstacle_ahead=0;
+    obstacle_ahead=0; //MOVE from here.
     //////////////////////////////////// GAS PEDAL //////////////////////////////////////
     gas_pedalpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/gas_pedal/cmd", 1);
     gas_pedalsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/gas_pedal/state",1, &VilmaControler_ROS::receive_gas_pedal_data,this);
@@ -84,8 +84,6 @@ void VilmaControler_ROS::receive_imu_data(sensor_msgs::Imu data)
 {
     this->imu_data=data;
 }
-
-
 void VilmaControler_ROS::callback1()
 {
     float acceleration, speed_t1,speed_t2, target_speed, diff_vel, time_diff=0.01;
@@ -266,7 +264,6 @@ void VilmaControler_ROS::receive_model_physical_state()
     modelstate.pose.orientation.y=getmodelstate.response.pose.orientation.y;
     modelstate.pose.orientation.z=getmodelstate.response.pose.orientation.z;
     modelstate.pose.orientation.w=getmodelstate.response.pose.orientation.w;
-
 }
 void VilmaControler_ROS::receive_gas_pedal_data(const std_msgs::Float64::ConstPtr& msg)
 {
@@ -316,7 +313,6 @@ void VilmaControler_ROS::use_Steering(float value)
     std_msgs::Float64 steering_value;
     steering_value.data=value;
     hand_wheelpub.publish(steering_value);
-
 }
 void VilmaControler_ROS::accelerate(float amount_to_increase){
     std_msgs::Float64 accelerate;
@@ -391,77 +387,47 @@ void VilmaControler_ROS::reset_state(){
             ros::spinOnce();
         }
     }
-
 }
-void VilmaControler_ROS::reorientate_to_angle(float z, float w){// TODO USE PIDS HERE
+void VilmaControler_ROS::reorientate_to_angle(float z){//reorients car to go to given world direction
     std_msgs::Float64 steering_value;
-    int turn_dir=0;
-    float z_imu=this->imu_data.orientation.z, w_imu=this->imu_data.orientation.w;
-    if(z_imu>=0 && w_imu<=0){
-        if(z>z_imu && w>w_imu){
-            turn_dir=1;
-        }
-        else{
-            turn_dir=0;
-        }
+    float value_to_turn=0;
+    float z_imu=imudata_to_euler().GetAsEuler().z; //get car z rotation
+    if(z_imu<0){
+        z_imu=3.14+(z_imu+3.14);
     }
-    if(z_imu>=0 && w_imu>0){
-        if(z<z_imu && w>w_imu){
-            turn_dir=1;
-        }
-        else{
-            turn_dir=0;
-        }
-    }
-    if(z_imu<0 && w_imu>0){
-        if(z<z_imu && w<w_imu){
-            turn_dir=1;
-        }
-        else{
-            turn_dir=0;
-        }
-    }
-    if(z_imu<0 && w_imu<0){
-        if(z>z_imu && w<w_imu){
-            turn_dir=1;
-        }
-        else{
-            turn_dir=0;
-        }
-    }
-    if(turn_dir==1){
-        steering_value.data=-3.14;
-        this->hand_wheelpub.publish(steering_value);
-    }else{
-        steering_value.data=3.14;
-        this->hand_wheelpub.publish(steering_value);
-    }
+    value_to_turn=+z-z_imu; // value to turn = amount received - what the car has already turned.
+    steering_value.data=value_to_turn*(3.14/0.8727);//Sends to steeringwheel, so need to put ratio steering wheel and actual wheel
+    this->hand_wheelpub.publish(steering_value);
 }
-void VilmaControler_ROS::reorientate_to_angle(float z){
-    std_msgs::Float64 steering_value;
-    float value_to_turn;
-    float z_imu=imudata_to_euler().GetAsEuler().z;
-    value_to_turn=-z_imu; // so returns to Gazebos frame of reference
-    value_to_turn=value_to_turn+z;
-    steering_value.data=value_to_turn*(3.14/0.8727);
-    this->hand_wheelpub.publish(steering_value); //Sends to steeringwheel, so need to put ratio steering wheel and actual wheel;
-}
-int VilmaControler_ROS::reorientate_to_pose(float x, float y){
-    float deltax=x-this->modelstate.pose.position.x;
-    float deltay=y-this->modelstate.pose.position.y;
-    if( (deltax>=0 && (imudata_to_euler().GetYaw()<=(-3.14/2) && imudata_to_euler().GetYaw()>=(3.14/2)))
-            || (deltax<0 && ((imudata_to_euler().GetYaw()<(3.14/2)) && imudata_to_euler().GetYaw()>(-3.14/2))))
-    { //if point is behind car, do nothing
+int VilmaControler_ROS::reorientate_to_pose(float x, float y){ //reorientates wheels so model goes to position X Y given.
+    //Step 1: Find out if the desired location if forward or backwards in respect to the car.
+    //Solution: put all data in respect to car. Take car as origin, but keep axis orientation.
+    float newx=x-this->modelstate.pose.position.x;
+    float newy=y-this->modelstate.pose.position.y;
+    if( (newx>=0 && (imudata_to_euler().GetYaw()<=(-3.14/2) || imudata_to_euler().GetYaw()>=(3.14/2)))
+            || (newx<0 && ((imudata_to_euler().GetYaw()<(3.14/2)) && imudata_to_euler().GetYaw()>(-3.14/2))))
+    { //if point is oposite to car direction, do nothing
+        /* The point given is oposite to car direction if the car is facing forward (between -pi/2 and pi/2 of rotation)
+ and the point has a negative x value or if the car is facing backwards (between -pi/2 and -pi or between pi/2 and pi) and
+the point has a positive x value.*/
         return -1;
     }
-    float ang=atan(deltay/deltax);
-    if(imudata_to_euler().GetYaw()<(-3.14/2) || (imudata_to_euler().GetYaw()>3.14/2)){
-        this->reorientate_to_angle(ang);
-        qDebug() << "Car turned.";
-        qDebug() << ang;
-        return 1;
+    float ang=atan(newy/newx); //ang returned is from -pi/2 to pi/2
+    float ang_car=imudata_to_euler().GetAsEuler().z; //get car z rotation, but it goes from 0 to -3.14 and 0 to 3.14 too
+    //need to convert it so I can compare it with ang_car. It only needs to happen when the car is backwards
+    if(ang_car>(3.14/2))
+    {
+        ang_car=(ang_car-(3.14));
+    }else if(ang_car<(-3.14/2))
+    {
+        ang_car=((3.14)+(ang_car));
     }
-    this->reorientate_to_angle(ang);
+    float value_to_turn=ang-ang_car;
+    qDebug("The world ang to reorient is:%f\n",ang);
+    qDebug("The car ang is:%f\n",ang_car);
+    std_msgs::Float64 steering_value;
+    steering_value.data=value_to_turn*(3.14/0.8727);//Sends to steeringwheel, so need to put ratio steering wheel and actual wheel
+    this->hand_wheelpub.publish(steering_value);
     return 1;
 
 }

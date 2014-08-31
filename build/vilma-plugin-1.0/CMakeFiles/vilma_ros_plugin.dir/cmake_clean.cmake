@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/vilma_ros_plugin.dir/src/DRCVehicleROSPlugin.cpp.o"
-  "/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.pdb"
-  "/home/tiberio/catkin_ws/devel/lib/libvilma_ros_plugin.so"
+  "/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.pdb"
+  "/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/libvilma_ros_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

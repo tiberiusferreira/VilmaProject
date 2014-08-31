@@ -59,7 +59,6 @@ public:
     void set_brake_pedal(float value);
     void deaccelerate(float amount_to_decrease);
     void maintain_speed();
-    void reorientate_to_angle(float z, float w);
     void reorientate_to_angle(float z);
     int reorientate_to_pose(float x, float y);
     boost::thread_group tgroup;

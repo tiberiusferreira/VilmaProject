@@ -1,8 +1,8 @@
-prefix=/home/tiberio/catkin_ws/devel
+prefix=/home/tiberio/Dropbox/IC/VilmaProject/devel
 
 Name: vilma_plugin
 Description: Description of vilma_plugin
 Version: 1.0.0
 Cflags: 
-Libs: -L/home/tiberio/catkin_ws/devel/lib -lvilma_plugin
+Libs: -L/home/tiberio/Dropbox/IC/VilmaProject/devel/lib -lvilma_plugin
 Requires: gazebo_ros roscpp std_msgs
