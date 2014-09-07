@@ -5,7 +5,8 @@
 #include <QTimer>
 #include <QDebug>
 #include <QKeyEvent>
-#include "VilmaControler_RosSide.h"
+#include "vilma_ros_talker.h"
+#include "vilma_self_driver.h"
 namespace Ui {
 class MainWindow;
 }
@@ -45,7 +46,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    VilmaControler_ROS VilmaControler_object;
+    vilma_ros_talker vilma_talker_obj;
+    vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
     QTimer *timer;
 
 };

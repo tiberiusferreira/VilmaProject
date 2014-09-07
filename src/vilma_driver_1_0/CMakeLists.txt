@@ -13,8 +13,8 @@ find_package(gazebo REQUIRED)
 find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDeclarative)
 
 
-SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/mainwindow.cpp src/VilmaControler_RosSide.cpp )
-SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h src/VilmaControler_RosSide.h)
+SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/mainwindow.cpp src/vilma_ros_talker.cpp src/vilma_self_driver.cpp )
+SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h src/vilma_ros_talker.h src/vilma_self_driver.h)
 SET(vilma_driverqt_1_0_FORMS src/mainwindow.ui)
 #SET(vilma_driverqt_1_0_RESOURCES /src/mainwindow.ui)
 catkin_package(

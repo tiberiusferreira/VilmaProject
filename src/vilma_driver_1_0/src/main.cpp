@@ -8,6 +8,5 @@ int main(int argc, char *argv[])
     application.setStyle("cleanlooks");
     MainWindow w;
     w.show();
-
     return application.exec();
 }

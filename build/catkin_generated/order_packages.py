@@ -2,4 +2,4 @@
 source_root_dir = "/home/tiberio/Dropbox/IC/VilmaProject/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/indigo".split(';') if "/opt/ros/indigo" != "" else []
+underlay_workspaces = "/home/tiberio/Dropbox/IC/VilmaProject/install;/opt/ros/indigo".split(';') if "/home/tiberio/Dropbox/IC/VilmaProject/install;/opt/ros/indigo" != "" else []

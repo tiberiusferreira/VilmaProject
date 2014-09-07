@@ -54,19 +54,24 @@ vilma_driver_1_0/src/moc_mainwindow.cxx: /home/tiberio/Dropbox/IC/VilmaProject/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_mainwindow.cxx"
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_mainwindow.cxx_parameters
 
-vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
+vilma_driver_1_0/src/moc_vilma_ros_talker.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.h
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_VilmaControler_RosSide.cxx"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx_parameters
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_vilma_ros_talker.cxx"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_ros_talker.cxx_parameters
+
+vilma_driver_1_0/src/moc_vilma_self_driver.cxx: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating src/moc_vilma_self_driver.cxx"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_self_driver.cxx_parameters
 
 vilma_driver_1_0/ui_mainwindow.h: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mainwindow.h"
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/ui_mainwindow.h /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.ui
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o"
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/main.cpp
 
@@ -89,7 +94,7 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o.provides.build
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o"
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.cpp
 
@@ -110,32 +115,55 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o.provides
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.cpp
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.i"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.i
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.s"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.s
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires:
-.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.requires:
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.requires
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires
-	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.provides.build
-.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.provides
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.requires
+	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.provides.build
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.provides
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o: /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o -c /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.cpp
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.i"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.cpp > CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.i
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.s"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.cpp -o CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.s
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.requires:
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.requires
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.requires
+	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.provides.build
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.provides
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o: vilma_driver_1_0/src/moc_mainwindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o"
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_mainwindow.cxx
 
@@ -156,45 +184,72 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o.prov
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o: vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_8)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o: vilma_driver_1_0/src/moc_vilma_ros_talker.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_ros_talker.cxx
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx > CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.i"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_ros_talker.cxx > CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.i
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s"
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.s"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_ros_talker.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.s
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires:
-.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.requires:
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.requires
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires
-	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.provides.build
-.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.provides
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.requires
+	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.provides.build
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.provides
 
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/flags.make
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o: vilma_driver_1_0/src/moc_vilma_self_driver.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tiberio/Dropbox/IC/VilmaProject/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o -c /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_self_driver.cxx
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.i"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_self_driver.cxx > CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.i
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.s"
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_self_driver.cxx -o CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.s
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.requires:
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.requires
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.provides: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.requires
+	$(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.provides.build
+.PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.provides
+
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.provides.build: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o
 
 # Object files for target vilma_driverqt_1_0
 vilma_driverqt_1_0_OBJECTS = \
 "CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o" \
 "CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o" \
-"CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o" \
+"CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o" \
+"CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o" \
 "CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o" \
-"CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o"
+"CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o" \
+"CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o"
 
 # External object files for target vilma_driverqt_1_0
 vilma_driverqt_1_0_EXTERNAL_OBJECTS =
 
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o
-/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o
-/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o
+/home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: /usr/lib/x86_64-linux-gnu/libQtDeclarative.so
 /home/tiberio/Dropbox/IC/VilmaProject/devel/lib/vilma_driverqt_1_0/vilma_driverqt_1_0: /usr/lib/x86_64-linux-gnu/libQtScript.so
@@ -266,9 +321,11 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build: /home/tiberio/Dropbox/
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/main.cpp.o.requires
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.o.requires
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o.requires
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.o.requires
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o.requires
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires: vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o.requires
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/requires
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/clean:
@@ -276,7 +333,8 @@ vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/clean:
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/clean
 
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend: vilma_driver_1_0/src/moc_mainwindow.cxx
-vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend: vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend: vilma_driver_1_0/src/moc_vilma_ros_talker.cxx
+vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend: vilma_driver_1_0/src/moc_vilma_self_driver.cxx
 vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend: vilma_driver_1_0/ui_mainwindow.h
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiberio/Dropbox/IC/VilmaProject/src /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0 /home/tiberio/Dropbox/IC/VilmaProject/build /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0 /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/depend

@@ -39,9 +39,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    VilmaControler_RosSide.cpp
+    vilma_ros_talker.cpp \
+    vilma_self_driver.cpp
 
 HEADERS  += mainwindow.h \
-    VilmaControler_RosSide.h
+    vilma_ros_talker.h \
+    vilma_self_driver.h
 
 FORMS    += mainwindow.ui

@@ -6,22 +6,48 @@
 
 #IncludeRegexTransform: 
 
-/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_VilmaControler_RosSide.cxx
-
 /home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_mainwindow.cxx
 ../../../src/vilma_driver_1_0/src/mainwindow.h
 /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
 
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.cpp
-VilmaControler_RosSide.h
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
-cstdio
--
-cmath
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_ros_talker.cxx
+
+/home/tiberio/Dropbox/IC/VilmaProject/build/vilma_driver_1_0/src/moc_vilma_self_driver.cxx
+
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/main.cpp
+mainwindow.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
+QApplication
 -
 
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.cpp
+mainwindow.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
+ui_mainwindow.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/ui_mainwindow.h
+
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
+QMainWindow
+-
+QTimer
+-
+QDebug
+-
+QKeyEvent
+-
+vilma_ros_talker.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.h
+vilma_self_driver.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.h
+
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.cpp
+vilma_ros_talker.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.h
+
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.h
 ros/ros.h
+-
+QDebug
 -
 gazebo_msgs/GetModelState.h
 /home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/gazebo_msgs/GetModelState.h
@@ -51,32 +77,14 @@ gazebo/physics/physics.hh
 -
 sensor_msgs/NavSatFix.h
 -
-QDebug
--
 
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/main.cpp
-mainwindow.h
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
-QApplication
--
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.cpp
+vilma_self_driver.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.h
 
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.cpp
-mainwindow.h
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
-ui_mainwindow.h
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/ui_mainwindow.h
-
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/mainwindow.h
-QMainWindow
--
-QTimer
--
-QDebug
--
-QKeyEvent
--
-VilmaControler_RosSide.h
-/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/VilmaControler_RosSide.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_self_driver.h
+vilma_ros_talker.h
+/home/tiberio/Dropbox/IC/VilmaProject/src/vilma_driver_1_0/src/vilma_ros_talker.h
 
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h

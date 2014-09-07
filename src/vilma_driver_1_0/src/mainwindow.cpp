@@ -5,7 +5,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    VilmaControler_object.init();
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT( update()));
     timer->start(250);
@@ -21,35 +20,35 @@ MainWindow::~MainWindow()
 void MainWindow::keyPressEvent(QKeyEvent *key){
     if(key->key()== Qt::Key_W)
     {
-        VilmaControler_object.accelerate(0.1);
+        vilma_talker_obj.accelerate(0.1);
     }
     if(key->key()== Qt::Key_S)
     {
-        if(VilmaControler_object.gas_pedal_state.data>=0.02)
-            VilmaControler_object.set_gas_pedal(0);
+        if(vilma_talker_obj.gas_pedal_state.data>=0.02)
+            vilma_talker_obj.set_gas_pedal(0);
         else
         {
-            VilmaControler_object.set_brake_pedal(VilmaControler_object.brake_pedal_state.data+0.1);
+            vilma_talker_obj.set_brake_pedal(vilma_talker_obj.brake_pedal_state.data+0.1);
         }
     }
     if(key->key()== Qt::Key_D)
     {
-        if(VilmaControler_object.hand_wheel_state.data<-2.5)
+        if(vilma_talker_obj.hand_wheel_state.data<-2.5)
         {
-            VilmaControler_object.use_Steering(VilmaControler_object.hand_wheel_state.data-0.4);
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
         }else
         {
-            VilmaControler_object.use_Steering(VilmaControler_object.hand_wheel_state.data-0.4);
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
         }
     }
     if(key->key()== Qt::Key_A)
     {
-        if(VilmaControler_object.hand_wheel_state.data>2.5)
+        if(vilma_talker_obj.hand_wheel_state.data>2.5)
         {
-            VilmaControler_object.use_Steering(3.14);
+            vilma_talker_obj.set_steering(3.14);
         }else
         {
-            VilmaControler_object.use_Steering(VilmaControler_object.hand_wheel_state.data+0.4);
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data+0.4);
         }
     }
 }
@@ -59,41 +58,39 @@ void MainWindow::update()
 {
 
     ros::spinOnce(); //update ros side values
-    VilmaControler_object.receive_model_physical_state(); //update ros side values dependable on service calls
-    ui->current_acel_label_slider->setSliderPosition((VilmaControler_object.gas_pedal_state.data)*100); //acel slider pose update
-    ui->current_brake_slider->setSliderPosition((VilmaControler_object.brake_pedal_state.data)*100); //brake slider pose update
-    ui->steering_slider->setSliderPosition((-VilmaControler_object.hand_wheel_state.data)*100); //steering slider pose update
-    QString acel_text = QString("Current Acceleration: %1").arg(QString::number(VilmaControler_object.gas_pedal_state.data,'f',3));
-    QString brake_text = QString("Current Brake: %1").arg(QString::number(VilmaControler_object.brake_pedal_state.data,'f',3));
-    QString steering_text = QString("Hand Wheel Status : %1 rad").arg(QString::number(VilmaControler_object.hand_wheel_state.data,'f',3));
-    QString gazebo_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.modelstate.pose.position.x,'f',3));
-    QString gazebo_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.modelstate.pose.position.y,'f',3));
-    QString gazebo_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.modelstate.pose.position.z,'f',3));
-    QString latitude_text = QString("Z : %1").arg(QString::number(VilmaControler_object.car_gps_state.latitude,'f',9));
-    QString longitude_text = QString("Z : %1").arg(QString::number(VilmaControler_object.car_gps_state.longitude,'f',9));
-    QString quaternion_gazebo_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.modelstate.pose.orientation.x,'f',3));
-    QString quaternion_gazebo_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.modelstate.pose.orientation.y,'f',3));
-    QString quaternion_gazebo_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.modelstate.pose.orientation.z,'f',3));
-    QString quaternion_gazebo_w_text = QString("W : %1").arg(QString::number(VilmaControler_object.modelstate.pose.orientation.w,'f',3));
-    QString quaternion_imu_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.imu_data.orientation.x,'f',3));
-    QString quaternion_imu_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.imu_data.orientation.y,'f',3));
-    QString quaternion_imu_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.imu_data.orientation.z,'f',3));
-    QString quaternion_imu_w_text = QString("Z : %1").arg(QString::number(VilmaControler_object.imu_data.orientation.w,'f',3));
-    QString imu_ang_speed_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.imu_data.angular_velocity.x,'f',3));
-    QString imu_ang_speed_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.imu_data.angular_velocity.y,'f',3));
-    QString imu_ang_speed_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.imu_data.angular_velocity.z,'f',3));
-    QString imu_lin_acel_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.imu_data.linear_acceleration.x,'f',3));
-    QString imu_lin_acel_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.imu_data.linear_acceleration.y,'f',3));
-    QString imu_lin_acel_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.imu_data.linear_acceleration.z,'f',3));
-    QString gazebo_lin_vel_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.modelstate.twist.linear.x,'f',3));
-    QString gazebo_lin_vel_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.modelstate.twist.linear.y,'f',3));
-    QString gazebo_lin_vel_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.modelstate.twist.linear.z,'f',3));
-    QString gazebo_ang_vel_x_text = QString("X : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.x,'f',3));
-    QString gazebo_ang_vel_y_text = QString("Y : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.y,'f',3));
-    QString gazebo_ang_vel_z_text = QString("Z : %1").arg(QString::number(VilmaControler_object.modelstate.twist.angular.z,'f',3));
-    QString imu_euler_rot_z = QString("Z : %1").arg(QString::number(VilmaControler_object.imudata_to_euler().GetYaw(),'f',3));
-
-
+    vilma_talker_obj.receive_model_physical_state(); //update ros side values dependable on service calls
+    ui->current_acel_label_slider->setSliderPosition((vilma_talker_obj.gas_pedal_state.data)*100); //acel slider pose update
+    ui->current_brake_slider->setSliderPosition((vilma_talker_obj.brake_pedal_state.data)*100); //brake slider pose update
+    ui->steering_slider->setSliderPosition((-vilma_talker_obj.hand_wheel_state.data)*100); //steering slider pose update
+    QString acel_text = QString("Current Acceleration: %1").arg(QString::number(vilma_talker_obj.gas_pedal_state.data,'f',3));
+    QString brake_text = QString("Current Brake: %1").arg(QString::number(vilma_talker_obj.brake_pedal_state.data,'f',3));
+    QString steering_text = QString("Hand Wheel Status : %1 rad").arg(QString::number(vilma_talker_obj.hand_wheel_state.data,'f',3));
+    QString gazebo_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.position.x,'f',3));
+    QString gazebo_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.position.y,'f',3));
+    QString gazebo_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.position.z,'f',3));
+    QString latitude_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.car_gps_state.latitude,'f',9));
+    QString longitude_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.car_gps_state.longitude,'f',9));
+    QString quaternion_gazebo_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.x,'f',3));
+    QString quaternion_gazebo_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.y,'f',3));
+    QString quaternion_gazebo_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.z,'f',3));
+    QString quaternion_gazebo_w_text = QString("W : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.w,'f',3));
+    QString quaternion_imu_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.x,'f',3));
+    QString quaternion_imu_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.y,'f',3));
+    QString quaternion_imu_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.z,'f',3));
+    QString quaternion_imu_w_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.w,'f',3));
+    QString imu_ang_speed_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.x,'f',3));
+    QString imu_ang_speed_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.y,'f',3));
+    QString imu_ang_speed_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.z,'f',3));
+    QString imu_lin_acel_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.linear_acceleration.x,'f',3));
+    QString imu_lin_acel_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.linear_acceleration.y,'f',3));
+    QString imu_lin_acel_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.linear_acceleration.z,'f',3));
+    QString gazebo_lin_vel_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.linear.x,'f',3));
+    QString gazebo_lin_vel_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.linear.y,'f',3));
+    QString gazebo_lin_vel_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.linear.z,'f',3));
+    QString gazebo_ang_vel_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.angular.x,'f',3));
+    QString gazebo_ang_vel_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.angular.y,'f',3));
+    QString gazebo_ang_vel_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.angular.z,'f',3));
+    QString imu_euler_rot_z = QString("Z : %1").arg(QString::number(vilma_talker_obj.imudata_to_euler().GetYaw(),'f',3));
     ui->current_acel_label->setText(acel_text);
     ui->current_brake_label->setText(brake_text);
     ui->steering_status_label->setText(steering_text);
@@ -123,9 +120,7 @@ void MainWindow::update()
     ui->gazebo_ang_vel_y->setText(gazebo_ang_vel_y_text);
     ui->gazebo_ang_vel_z->setText(gazebo_ang_vel_z_text);
     ui->imu_euler_z_rotation_value->setText(imu_euler_rot_z);
-
-
-    if(VilmaControler_object.hand_brake_state.data>0.05) //set hand brake button status based on car info
+    if(vilma_talker_obj.hand_brake_state.data>0.05) //set hand brake button status based on car info
     {
         ui->handbrake_button->setChecked(1);
     }
@@ -134,20 +129,20 @@ void MainWindow::update()
         ui->handbrake_button->setChecked(0);
     }
 
-    if(VilmaControler_object.gears.data==1){ //set correct gear checked box based on car info
+    if(vilma_talker_obj.gears.data==1){ //set correct gear checked box based on car info
         ui->gears_forward_radio_button->setChecked(1);
     }
-    if(VilmaControler_object.gears.data==0){
+    if(vilma_talker_obj.gears.data==0){
         ui->gears_neutral_radio_button->setChecked(1);
     }
-    if(VilmaControler_object.gears.data==-1){
+    if(vilma_talker_obj.gears.data==-1){
         ui->gears_backwards_radio_button->setChecked(1);
     }
 
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
                 && ui->Set_wheel_direction_y_input->text()!=""){
-            VilmaControler_object.reorientate_to_pose(ui->Set_wheel_direction_x_input->text().toDouble(),ui->Set_wheel_direction_y_input->text().toDouble());
+            vilma_self_driver_obj.reorientate_to_pose(ui->Set_wheel_direction_x_input->text().toDouble(),ui->Set_wheel_direction_y_input->text().toDouble());
         }
         if(ui->Set_wheel_direction_from_table->isChecked())
         {
@@ -162,12 +157,12 @@ void MainWindow::update()
             QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(current_row-1,0);
             QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(current_row-1,1);
             if(X_item==0 || Y_item==0){ //reached end of X Y list
-                VilmaControler_object.use_Steering(0);
-                VilmaControler_object.set_gas_pedal(0);
-                VilmaControler_object.set_brake_pedal(1);
+                vilma_talker_obj.set_steering(0);
+                vilma_talker_obj.set_gas_pedal(0);
+                vilma_talker_obj.set_brake_pedal(1);
                 return;
             }
-            ok=VilmaControler_object.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
+            ok=vilma_self_driver_obj.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
             if(ok==-1){ //check if the X Y is behind the car already
                 current_item->setText(QString ("%1").arg(current_item->text().toDouble()+1));
             }
@@ -210,32 +205,32 @@ void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
 
 void MainWindow::on_current_acel_label_slider_sliderMoved(int position)
 {
-    VilmaControler_object.set_gas_pedal((float) position/100);
+    vilma_talker_obj.set_gas_pedal((float) position/100);
 }
 
 void MainWindow::on_current_brake_slider_sliderMoved(int position)
 {
-    VilmaControler_object.set_brake_pedal((float) position/100);
+    vilma_talker_obj.set_brake_pedal((float) position/100);
 }
 
 void MainWindow::on_steering_slider_sliderMoved(int position)
 {
-    VilmaControler_object.use_Steering((float) -position/100);
+    vilma_talker_obj.set_steering((float) -position/100);
 }
 
 void MainWindow::on_handbrake_button_toggled(bool checked)
 {
     if(checked)
     {
-        if(VilmaControler_object.hand_brake_state.data<0.2)
+        if(vilma_talker_obj.hand_brake_state.data<0.2)
         {
-            VilmaControler_object.use_hand_brake();
+            vilma_talker_obj.use_hand_brake();
         }
     }else
     {
-        if(VilmaControler_object.hand_brake_state.data>0.05)
+        if(vilma_talker_obj.hand_brake_state.data>0.05)
         {
-            VilmaControler_object.use_hand_brake();
+            vilma_talker_obj.use_hand_brake();
         }
     }
 }
@@ -244,7 +239,7 @@ void MainWindow::on_gears_forward_radio_button_toggled(bool checked)
 {
     if(checked)
     {
-        VilmaControler_object.set_gears(1);
+        vilma_talker_obj.set_gears(1);
     }
 }
 
@@ -252,7 +247,7 @@ void MainWindow::on_gears_neutral_radio_button_toggled(bool checked)
 {
     if(checked)
     {
-        VilmaControler_object.set_gears(0);
+        vilma_talker_obj.set_gears(0);
     }
 }
 
@@ -260,7 +255,7 @@ void MainWindow::on_gears_backwards_radio_button_toggled(bool checked)
 {
     if(checked)
     {
-        VilmaControler_object.set_gears(-1);
+        vilma_talker_obj.set_gears(-1);
     }
 }
 

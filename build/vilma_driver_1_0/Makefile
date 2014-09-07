@@ -611,30 +611,6 @@ vilma_driverqt_1_0/fast:
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build
 .PHONY : vilma_driverqt_1_0/fast
 
-src/VilmaControler_RosSide.o: src/VilmaControler_RosSide.cpp.o
-.PHONY : src/VilmaControler_RosSide.o
-
-# target to build an object file
-src/VilmaControler_RosSide.cpp.o:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.o
-.PHONY : src/VilmaControler_RosSide.cpp.o
-
-src/VilmaControler_RosSide.i: src/VilmaControler_RosSide.cpp.i
-.PHONY : src/VilmaControler_RosSide.i
-
-# target to preprocess a source file
-src/VilmaControler_RosSide.cpp.i:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.i
-.PHONY : src/VilmaControler_RosSide.cpp.i
-
-src/VilmaControler_RosSide.s: src/VilmaControler_RosSide.cpp.s
-.PHONY : src/VilmaControler_RosSide.s
-
-# target to generate assembly for a file
-src/VilmaControler_RosSide.cpp.s:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/VilmaControler_RosSide.cpp.s
-.PHONY : src/VilmaControler_RosSide.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -683,30 +659,6 @@ src/mainwindow.cpp.s:
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/mainwindow.cpp.s
 .PHONY : src/mainwindow.cpp.s
 
-src/moc_VilmaControler_RosSide.o: src/moc_VilmaControler_RosSide.cxx.o
-.PHONY : src/moc_VilmaControler_RosSide.o
-
-# target to build an object file
-src/moc_VilmaControler_RosSide.cxx.o:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.o
-.PHONY : src/moc_VilmaControler_RosSide.cxx.o
-
-src/moc_VilmaControler_RosSide.i: src/moc_VilmaControler_RosSide.cxx.i
-.PHONY : src/moc_VilmaControler_RosSide.i
-
-# target to preprocess a source file
-src/moc_VilmaControler_RosSide.cxx.i:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.i
-.PHONY : src/moc_VilmaControler_RosSide.cxx.i
-
-src/moc_VilmaControler_RosSide.s: src/moc_VilmaControler_RosSide.cxx.s
-.PHONY : src/moc_VilmaControler_RosSide.s
-
-# target to generate assembly for a file
-src/moc_VilmaControler_RosSide.cxx.s:
-	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_VilmaControler_RosSide.cxx.s
-.PHONY : src/moc_VilmaControler_RosSide.cxx.s
-
 src/moc_mainwindow.o: src/moc_mainwindow.cxx.o
 .PHONY : src/moc_mainwindow.o
 
@@ -730,6 +682,102 @@ src/moc_mainwindow.s: src/moc_mainwindow.cxx.s
 src/moc_mainwindow.cxx.s:
 	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_mainwindow.cxx.s
 .PHONY : src/moc_mainwindow.cxx.s
+
+src/moc_vilma_ros_talker.o: src/moc_vilma_ros_talker.cxx.o
+.PHONY : src/moc_vilma_ros_talker.o
+
+# target to build an object file
+src/moc_vilma_ros_talker.cxx.o:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.o
+.PHONY : src/moc_vilma_ros_talker.cxx.o
+
+src/moc_vilma_ros_talker.i: src/moc_vilma_ros_talker.cxx.i
+.PHONY : src/moc_vilma_ros_talker.i
+
+# target to preprocess a source file
+src/moc_vilma_ros_talker.cxx.i:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.i
+.PHONY : src/moc_vilma_ros_talker.cxx.i
+
+src/moc_vilma_ros_talker.s: src/moc_vilma_ros_talker.cxx.s
+.PHONY : src/moc_vilma_ros_talker.s
+
+# target to generate assembly for a file
+src/moc_vilma_ros_talker.cxx.s:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_ros_talker.cxx.s
+.PHONY : src/moc_vilma_ros_talker.cxx.s
+
+src/moc_vilma_self_driver.o: src/moc_vilma_self_driver.cxx.o
+.PHONY : src/moc_vilma_self_driver.o
+
+# target to build an object file
+src/moc_vilma_self_driver.cxx.o:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.o
+.PHONY : src/moc_vilma_self_driver.cxx.o
+
+src/moc_vilma_self_driver.i: src/moc_vilma_self_driver.cxx.i
+.PHONY : src/moc_vilma_self_driver.i
+
+# target to preprocess a source file
+src/moc_vilma_self_driver.cxx.i:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.i
+.PHONY : src/moc_vilma_self_driver.cxx.i
+
+src/moc_vilma_self_driver.s: src/moc_vilma_self_driver.cxx.s
+.PHONY : src/moc_vilma_self_driver.s
+
+# target to generate assembly for a file
+src/moc_vilma_self_driver.cxx.s:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/moc_vilma_self_driver.cxx.s
+.PHONY : src/moc_vilma_self_driver.cxx.s
+
+src/vilma_ros_talker.o: src/vilma_ros_talker.cpp.o
+.PHONY : src/vilma_ros_talker.o
+
+# target to build an object file
+src/vilma_ros_talker.cpp.o:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.o
+.PHONY : src/vilma_ros_talker.cpp.o
+
+src/vilma_ros_talker.i: src/vilma_ros_talker.cpp.i
+.PHONY : src/vilma_ros_talker.i
+
+# target to preprocess a source file
+src/vilma_ros_talker.cpp.i:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.i
+.PHONY : src/vilma_ros_talker.cpp.i
+
+src/vilma_ros_talker.s: src/vilma_ros_talker.cpp.s
+.PHONY : src/vilma_ros_talker.s
+
+# target to generate assembly for a file
+src/vilma_ros_talker.cpp.s:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_ros_talker.cpp.s
+.PHONY : src/vilma_ros_talker.cpp.s
+
+src/vilma_self_driver.o: src/vilma_self_driver.cpp.o
+.PHONY : src/vilma_self_driver.o
+
+# target to build an object file
+src/vilma_self_driver.cpp.o:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.o
+.PHONY : src/vilma_self_driver.cpp.o
+
+src/vilma_self_driver.i: src/vilma_self_driver.cpp.i
+.PHONY : src/vilma_self_driver.i
+
+# target to preprocess a source file
+src/vilma_self_driver.cpp.i:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.i
+.PHONY : src/vilma_self_driver.cpp.i
+
+src/vilma_self_driver.s: src/vilma_self_driver.cpp.s
+.PHONY : src/vilma_self_driver.s
+
+# target to generate assembly for a file
+src/vilma_self_driver.cpp.s:
+	cd /home/tiberio/Dropbox/IC/VilmaProject/build && $(MAKE) -f vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/build.make vilma_driver_1_0/CMakeFiles/vilma_driverqt_1_0.dir/src/vilma_self_driver.cpp.s
+.PHONY : src/vilma_self_driver.cpp.s
 
 # Help Target
 help:
@@ -777,21 +825,27 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... vilma_driverqt_1_0"
-	@echo "... src/VilmaControler_RosSide.o"
-	@echo "... src/VilmaControler_RosSide.i"
-	@echo "... src/VilmaControler_RosSide.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/mainwindow.o"
 	@echo "... src/mainwindow.i"
 	@echo "... src/mainwindow.s"
-	@echo "... src/moc_VilmaControler_RosSide.o"
-	@echo "... src/moc_VilmaControler_RosSide.i"
-	@echo "... src/moc_VilmaControler_RosSide.s"
 	@echo "... src/moc_mainwindow.o"
 	@echo "... src/moc_mainwindow.i"
 	@echo "... src/moc_mainwindow.s"
+	@echo "... src/moc_vilma_ros_talker.o"
+	@echo "... src/moc_vilma_ros_talker.i"
+	@echo "... src/moc_vilma_ros_talker.s"
+	@echo "... src/moc_vilma_self_driver.o"
+	@echo "... src/moc_vilma_self_driver.i"
+	@echo "... src/moc_vilma_self_driver.s"
+	@echo "... src/vilma_ros_talker.o"
+	@echo "... src/vilma_ros_talker.i"
+	@echo "... src/vilma_ros_talker.s"
+	@echo "... src/vilma_self_driver.o"
+	@echo "... src/vilma_self_driver.i"
+	@echo "... src/vilma_self_driver.s"
 .PHONY : help
 
 
