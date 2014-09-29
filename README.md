@@ -21,3 +21,5 @@ VilmaProject
  been sourced.
  Place the Vilma_vehicle model. 
  Control it using the plugins (rosrun vilma_*).
+It is neccesary to install the package hector_gazebo_plugins:
+   sudo apt-get install ros-indigo-hector-gazebo-plugins
