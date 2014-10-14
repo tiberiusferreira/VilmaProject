@@ -16,6 +16,7 @@
 #include <gazebo/math/gzmath.hh>
 #include <gazebo/physics/physics.hh>
 #include <sensor_msgs/NavSatFix.h>
+#include <points.h>
 class vilma_ros_talker
 {
 public:

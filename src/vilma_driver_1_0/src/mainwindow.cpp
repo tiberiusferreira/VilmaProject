@@ -146,11 +146,9 @@ void MainWindow::update()
         }
         if(ui->Set_wheel_direction_from_table->isChecked())
         {
-            //double row_max = ui->Set_wheel_direction_table->rowCount();
-            //double column_max = ui->Set_wheel_direction_table->columnCount();
             double current_row;
             int ok;
-            QTableWidgetItem *current_item = ui->Set_wheel_direction_table->item(0,2);
+            QTableWidgetItem *current_item = ui->Set_wheel_direction_table->item(0,4);
             if(current_item!=0){
                 current_row= current_item->text().toDouble();
             }
@@ -259,3 +257,31 @@ void MainWindow::on_gears_backwards_radio_button_toggled(bool checked)
     }
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    std::deque<one_point> points_from_table;
+    std::deque<one_point> points_to_table;
+    QTableWidgetItem *X_item;
+    QTableWidgetItem *Y_item;
+    double current_row=0;
+    int ok=0;
+    while(ok==0){
+    X_item = ui->Set_wheel_direction_table->item(current_row,0);
+    Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+    if(X_item==0 || Y_item==0){ //reached end of X Y list
+        ok =-1;
+        break;
+    }
+    points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
+    current_row++;
+    }
+    points_to_table=vilma_self_driver_obj.generate_smooth_path(points_from_table);
+    current_row=0;
+    for(current_row=0;current_row<points_to_table.size();current_row++){
+        X_item = ui->Set_wheel_direction_table->item(current_row,0);
+        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+        X_item->setText(QString ("%5").arg(points_to_table.at(current_row).x));
+        Y_item->setText(QString ("%5").arg(points_to_table.at(current_row).y));
+    }
+}

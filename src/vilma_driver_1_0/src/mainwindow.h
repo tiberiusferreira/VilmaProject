@@ -44,6 +44,8 @@ private slots:
 
     void on_gears_backwards_radio_button_toggled(bool checked);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     vilma_ros_talker vilma_talker_obj;

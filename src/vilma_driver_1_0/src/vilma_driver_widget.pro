@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QMAKE_CXXFLAGS += -std=c++0x
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 INCLUDEPATH+=/usr/include/gazebo-1.8 \
@@ -40,10 +40,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     vilma_ros_talker.cpp \
-    vilma_self_driver.cpp
+    vilma_self_driver.cpp \
+    points.cpp
 
 HEADERS  += mainwindow.h \
     vilma_ros_talker.h \
-    vilma_self_driver.h
+    vilma_self_driver.h \
+    points.h
 
 FORMS    += mainwindow.ui

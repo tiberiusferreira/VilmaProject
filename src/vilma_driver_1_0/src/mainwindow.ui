@@ -23,7 +23,7 @@
      <x>0</x>
      <y>0</y>
      <width>1255</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuView">
@@ -73,13 +73,13 @@
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="CarStatusWidget_contents">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>12</x>
        <y>16</y>
        <width>356</width>
-       <height>498</height>
+       <height>507</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -499,7 +499,7 @@
          <x>0</x>
          <y>0</y>
          <width>367</width>
-         <height>50</height>
+         <height>63</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -588,7 +588,7 @@
          <x>0</x>
          <y>0</y>
          <width>367</width>
-         <height>55</height>
+         <height>63</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -1117,10 +1117,20 @@
      </column>
      <column>
       <property name="text">
+       <string>Velocity</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Action</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Current Active Row</string>
       </property>
      </column>
-     <item row="0" column="2">
+     <item row="0" column="4">
       <property name="text">
        <string>1</string>
       </property>
@@ -1187,6 +1197,19 @@
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Smooth Trajectory</string>
+     </property>
     </widget>
    </widget>
   </widget>
