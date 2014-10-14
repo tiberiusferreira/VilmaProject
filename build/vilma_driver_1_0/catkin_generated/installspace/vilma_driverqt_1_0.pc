@@ -1,8 +1,0 @@
-prefix=/home/tiberio/Dropbox/IC/VilmaProject/install
-
-Name: vilma_driverqt_1_0
-Description: Description of vilma_driverqt_1_0
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/tiberio/Dropbox/IC/VilmaProject/install/lib 
-Requires: roscpp std_msgs vilma_plugin
