@@ -4,32 +4,35 @@ vilma_ros_talker::vilma_ros_talker()
 {
     //////////////////////////////////// INIT AND RECEIVE STATE FUNCTION //////////////////////////////////////
         //////////////////////////////////// GAS PEDAL //////////////////////////////////////
-        gas_pedalpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/gas_pedal/cmd", 1);
-        gas_pedalsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/gas_pedal/state",1, &vilma_ros_talker::receive_gas_pedal_data,this);
-        //////////////////////////////////// Brake Pedal //////////////////////////////////////
-        brake_pedalpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/brake_pedal/cmd", 1);
-        brake_pedalsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/brake_pedal/state",1, &vilma_ros_talker::receive_brake_pedal_data,this);
-        //////////////////////////////////// Hand Brake //////////////////////////////////////
-        hand_brakepub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/hand_brake/cmd", 1);
-        hand_brakesub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/hand_brake/state",1, &vilma_ros_talker::receive_hand_brake_data,this);
-        ////////////////////////////////////Hand Wheel //////////////////////////////////////
-        hand_wheelpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/hand_wheel/cmd", 1);
-        hand_wheelsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/hand_wheel/state",1,&vilma_ros_talker::receive_hand_wheel_data,this);
-        ////////////////////////////////////Wheel Velocity //////////////////////////////////////
-        bl_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/blWheel",1,&vilma_ros_talker::receive_back_left_wheel_speed,this);
-        br_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/brWheel",1,&vilma_ros_talker::receive_back_right_wheel_speed,this);
-        fl_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/flWheel",1,&vilma_ros_talker::receive_front_left_wheel_speed,this);
-        fr_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/frWheel",1,&vilma_ros_talker::receive_front_right_wheel_speed,this);
-        //points_sub = rosNode.subscribe<sensor_msgs::PointCloud>("vilma_vehicle/lidar",1,&vilma_ros_talker::receive_points,this);
-        ////////////////////////////////////Gears State //////////////////////////////////////
-        gears_pub = rosNode.advertise<std_msgs::Int8>("/vilma_vehicle/direction/cmd", 1);
-        gears_sub = rosNode.subscribe<std_msgs::Int8>("/vilma_vehicle/direction/state",1,&vilma_ros_talker::receive_gears_state,this);
-        ////////////////////////////////////GPS State //////////////////////////////////////
-        modelstatesub = rosNode.subscribe<sensor_msgs::NavSatFix>("vilma_vehicle/ideal_gps",1,&vilma_ros_talker::receive_gps_state,this);
-        ////////////////////////////////////IMU State //////////////////////////////////////
-        imu_sub = rosNode.subscribe<sensor_msgs::Imu>("vilma_vehicle/imu",1,&vilma_ros_talker::receive_imu_data,this);
-        ros_service = rosNode.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
-        ((getmodelstate).request).model_name ="vilma_vehicle";
+//        gas_pedalpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/gas_pedal/cmd", 1);
+//        gas_pedalsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/gas_pedal/state",1, &vilma_ros_talker::receive_gas_pedal_data,this);
+//        //////////////////////////////////// Brake Pedal //////////////////////////////////////
+//        brake_pedalpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/brake_pedal/cmd", 1);
+//        brake_pedalsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/brake_pedal/state",1, &vilma_ros_talker::receive_brake_pedal_data,this);
+//        //////////////////////////////////// Hand Brake //////////////////////////////////////
+//        hand_brakepub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/hand_brake/cmd", 1);
+//        hand_brakesub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/hand_brake/state",1, &vilma_ros_talker::receive_hand_brake_data,this);
+//        ////////////////////////////////////Hand Wheel //////////////////////////////////////
+//        hand_wheelpub = rosNode.advertise<std_msgs::Float64>("/vilma_vehicle/hand_wheel/cmd", 1);
+//        hand_wheelsub = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/hand_wheel/state",1,&vilma_ros_talker::receive_hand_wheel_data,this);
+//        ////////////////////////////////////Wheel Velocity //////////////////////////////////////
+//        bl_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/blWheel",1,&vilma_ros_talker::receive_back_left_wheel_speed,this);
+//        br_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/brWheel",1,&vilma_ros_talker::receive_back_right_wheel_speed,this);
+//        fl_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/flWheel",1,&vilma_ros_talker::receive_front_left_wheel_speed,this);
+//        fr_wheel = rosNode.subscribe<std_msgs::Float64>("/vilma_vehicle/wheelspeed/frWheel",1,&vilma_ros_talker::receive_front_right_wheel_speed,this);
+//        //points_sub = rosNode.subscribe<sensor_msgs::PointCloud>("vilma_vehicle/lidar",1,&vilma_ros_talker::receive_points,this);
+//        ////////////////////////////////////Gears State //////////////////////////////////////
+//        gears_pub = rosNode.advertise<std_msgs::Int8>("/vilma_vehicle/direction/cmd", 1);
+//        gears_sub = rosNode.subscribe<std_msgs::Int8>("/vilma_vehicle/direction/state",1,&vilma_ros_talker::receive_gears_state,this);
+//        ////////////////////////////////////GPS State //////////////////////////////////////
+//        modelstatesub = rosNode.subscribe<sensor_msgs::NavSatFix>("vilma_vehicle/ideal_gps",1,&vilma_ros_talker::receive_gps_state,this);
+//        ////////////////////////////////////IMU State //////////////////////////////////////
+        imu_sub = rosNode.subscribe<sensor_msgs::Imu>("/imu",1,&vilma_ros_talker::receive_imu_data,this);
+//        ros_service = rosNode.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
+
+        ackermann_pub = rosNode.advertise<ackermann_msgs::AckermannDrive>("ackermann_cmd", 1000);
+
+        //((getmodelstate).request).model_name ="vilma_vehicle";
 }
 void vilma_ros_talker::receive_gps_state(sensor_msgs::NavSatFix gps_state)
 {
@@ -91,94 +94,87 @@ void vilma_ros_talker::receive_front_right_wheel_speed(const std_msgs::Float64::
 }
 void vilma_ros_talker::receive_gears_state(const std_msgs::Int8::ConstPtr& msg)
 {
-    gears.data=msg->data;
+    //gears.data=msg->data;
 }
 //////////////////////////////////// FUNCTION FOR CONTROLLING THE CAR //////////////////////////////////////
 
 void vilma_ros_talker::set_gears(int gear){
-    std_msgs::Int8 gears_value;
-    gears_value.data=gear;
-    this->gears_pub.publish(gears_value);
+    morse_gears=gear;
+//    std_msgs::Int8 gears_value;
+//    gears_value.data=gear;
+//    this->gears_pub.publish(gears_value);
 }
 void vilma_ros_talker::set_steering(float value)
 {
-    std_msgs::Float64 steering_value;
-    steering_value.data=value;
-    hand_wheelpub.publish(steering_value);
+    ack.steering_angle=(value+0.0)/10;
+    ackermann_pub.publish(ack);
+//    std_msgs::Float64 steering_value;
+//    steering_value.data=value;
+//    hand_wheelpub.publish(steering_value);
 }
 void vilma_ros_talker::accelerate(float amount_to_increase){
-    std_msgs::Float64 accelerate;
-    if(this->brake_pedal_state.data>0.01){
-        accelerate.data=0;
-        this->brake_pedalpub.publish(accelerate);
-        return;
-    }
-    accelerate.data=this->gas_pedal_state.data+amount_to_increase;
-    this->gas_pedalpub.publish(accelerate);
+//    std_msgs::Float64 accelerate;
+//    if(this->brake_pedal_state.data>0.01){
+//        accelerate.data=0;
+//        this->brake_pedalpub.publish(accelerate);
+//        return;
+//    }
+//    accelerate.data=this->gas_pedal_state.data+amount_to_increase;
+//    this->gas_pedalpub.publish(accelerate);
 }
 void vilma_ros_talker::set_gas_pedal(float value){
-    std_msgs::Float64 pub_msg;
-    pub_msg.data=value;
-    this->gas_pedalpub.publish(pub_msg);
+    ack.speed = value*100.0;
+    ack.acceleration = value*100;
+
+    this->ackermann_pub.publish(ack);
+    ros::spinOnce();
 }
 void vilma_ros_talker::set_brake_pedal(float value){
-    std_msgs::Float64 pub_msg;
-    pub_msg.data=value;
-    this->brake_pedalpub.publish(pub_msg);
+//    std_msgs::Float64 pub_msg;
+//    pub_msg.data=value;
+//    this->brake_pedalpub.publish(pub_msg);
 }
 void vilma_ros_talker::deaccelerate(float amount_to_decrease){
-    std_msgs::Float64 deaccelerate;
-    if(this->gas_pedal_state.data>0.005){
-        deaccelerate.data=this->gas_pedal_state.data-amount_to_decrease;
-        this->gas_pedalpub.publish(deaccelerate);
-        return;
-    }
-    deaccelerate.data=this->brake_pedal_state.data+amount_to_decrease;
-    this->brake_pedalpub.publish(deaccelerate);
+//    std_msgs::Float64 deaccelerate;
+//    if(this->gas_pedal_state.data>0.005){
+//        deaccelerate.data=this->gas_pedal_state.data-amount_to_decrease;
+//        this->gas_pedalpub.publish(deaccelerate);
+//        return;
+//    }
+//    deaccelerate.data=this->brake_pedal_state.data+amount_to_decrease;
+//    this->brake_pedalpub.publish(deaccelerate);
 }
 void vilma_ros_talker::use_hand_brake(){
-    std_msgs::Float64 hand_brake;
-    if(this->hand_brake_state.data>0.05)//turn to OFF
-    {
-        for(hand_brake.data=this->hand_brake_state.data-0.09; this->hand_brake_state.data>=0.05; hand_brake.data=this->hand_brake_state.data-0.1)
-        {
-            this->hand_brakepub.publish(hand_brake);
-            ros::spinOnce();
-        }
-    }
-    else
-        if(this->hand_brake_state.data<=0.1)// TURN TO ON
-        {
-            for(hand_brake.data=this->hand_brake_state.data+0.1; this->hand_brake_state.data<=0.88; hand_brake.data=this->hand_brake_state.data+0.1)
-            {
-                this->hand_brakepub.publish(hand_brake);
-                ros::spinOnce();
-            }
-        }
+
+    ack.speed = 0;
+    ack.acceleration = 0;
+
+    this->ackermann_pub.publish(ack);
+    ros::spinOnce();
 }
 void vilma_ros_talker::reset_state(){
-    ros::spinOnce();
-    std_msgs::Float64 reset_gas;
-    std_msgs::Float64 reset_brake;
-    std_msgs::Float64 reset_hand_brake;
-    std_msgs::Float64 reset_steering;
-    std_msgs::Int8 reset_gears;
-    reset_gas.data=0;
-    reset_steering.data=0;
-    reset_brake.data=0;
-    reset_gears.data=1;
-    this->gas_pedalpub.publish(reset_gas);
-    this->hand_wheelpub.publish(reset_steering);
-    this->brake_pedalpub.publish(reset_brake);
-    this->gears_pub.publish(reset_gears);
-    if(this->hand_brake_state.data<=0.1)
-    {
-        for(reset_hand_brake.data=this->hand_brake_state.data+0.1; this->hand_brake_state.data<=0.88; reset_hand_brake.data=this->hand_brake_state.data+0.1)
-        {
-            this->hand_brakepub.publish(reset_hand_brake);
-            ros::spinOnce();
-        }
-    }
+//    ros::spinOnce();
+//    std_msgs::Float64 reset_gas;
+//    std_msgs::Float64 reset_brake;
+//    std_msgs::Float64 reset_hand_brake;
+//    std_msgs::Float64 reset_steering;
+//    std_msgs::Int8 reset_gears;
+//    reset_gas.data=0;
+//    reset_steering.data=0;
+//    reset_brake.data=0;
+//    reset_gears.data=1;
+//    this->gas_pedalpub.publish(reset_gas);
+//    this->hand_wheelpub.publish(reset_steering);
+//    this->brake_pedalpub.publish(reset_brake);
+//    this->gears_pub.publish(reset_gears);
+//    if(this->hand_brake_state.data<=0.1)
+//    {
+//        for(reset_hand_brake.data=this->hand_brake_state.data+0.1; this->hand_brake_state.data<=0.88; reset_hand_brake.data=this->hand_brake_state.data+0.1)
+//        {
+//            this->hand_brakepub.publish(reset_hand_brake);
+//            ros::spinOnce();
+//        }
+//    }
 }
 gazebo::math::Quaternion vilma_ros_talker::imudata_to_euler()
 {

@@ -18,39 +18,39 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *key){
-//    if(key->key()== Qt::Key_W)
-//    {
-//        vilma_talker_obj.accelerate(0.1);
-//    }
-//    if(key->key()== Qt::Key_S)
-//    {
-//        if(vilma_talker_obj.gas_pedal_state.data>=0.02)
-//            vilma_talker_obj.set_gas_pedal(0);
-//        else
-//        {
-//            vilma_talker_obj.set_brake_pedal(vilma_talker_obj.brake_pedal_state.data+0.1);
-//        }
-//    }
-//    if(key->key()== Qt::Key_D)
-//    {
-//        if(vilma_talker_obj.hand_wheel_state.data<-2.5)
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
-//        }else
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
-//        }
-//    }
-//    if(key->key()== Qt::Key_A)
-//    {
-//        if(vilma_talker_obj.hand_wheel_state.data>2.5)
-//        {
-//            vilma_talker_obj.set_steering(3.14);
-//        }else
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data+0.4);
-//        }
-//    }
+    if(key->key()== Qt::Key_W)
+    {
+        vilma_talker_obj.accelerate(0.1);
+    }
+    if(key->key()== Qt::Key_S)
+    {
+        if(vilma_talker_obj.gas_pedal_state.data>=0.02)
+            vilma_talker_obj.set_gas_pedal(0);
+        else
+        {
+            vilma_talker_obj.set_brake_pedal(vilma_talker_obj.brake_pedal_state.data+0.1);
+        }
+    }
+    if(key->key()== Qt::Key_D)
+    {
+        if(vilma_talker_obj.hand_wheel_state.data<-2.5)
+        {
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
+        }else
+        {
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
+        }
+    }
+    if(key->key()== Qt::Key_A)
+    {
+        if(vilma_talker_obj.hand_wheel_state.data>2.5)
+        {
+            vilma_talker_obj.set_steering(3.14);
+        }else
+        {
+            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data+0.4);
+        }
+    }
 }
 
 

@@ -38,7 +38,7 @@ the point has a positive x value.*/
 }
 std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_point> given_points){
     std::deque <one_point> points,smoothed_points;
-    int i;
+    unsigned int i;
     for(i=0;i<given_points.size();i++){
             one_point new_point(given_points.at(i).x,given_points.at(i).y);
             points.push_back(new_point);
