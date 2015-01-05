@@ -23,7 +23,7 @@ class vilma_ros_talker
 {
 public:
     vilma_ros_talker();
-    ackermann_msgs::AckermannDrive ack;
+    ackermann_msgs::AckermannDrive ackermann_msg; //Holds the steering, speed and acceleration desired
     ros::Publisher ackermann_pub;
     std_msgs::Float64 gas_pedal_state, brake_pedal_state,hand_brake_state,hand_wheel_state;
     std_msgs::Float64 br_wheel_speed,bl_wheel_speed,fl_wheel_speed,fr_wheel_speed;
@@ -32,7 +32,7 @@ public:
     ros::Publisher gas_pedalpub, brake_pedalpub, hand_brakepub,hand_wheelpub, gears_pub;
     ros::Subscriber gas_pedalsub, brake_pedalsub, hand_brakesub, hand_wheelsub;
     ros::Subscriber bl_wheel, br_wheel, fl_wheel, fr_wheel,gears_sub;
-    ros::Subscriber points_sub,modelstatesub,imu_sub;
+    ros::Subscriber points_sub,modelstatesub,imu_sub, gps_sub;
     ros::ServiceClient ros_service;
     gazebo_msgs::GetModelState getmodelstate; //stores call message to query for model state.
     gazebo_msgs::ModelState modelstate;

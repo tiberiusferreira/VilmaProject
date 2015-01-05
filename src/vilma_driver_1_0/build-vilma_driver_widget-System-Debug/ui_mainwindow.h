@@ -15,6 +15,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
 #include <QtGui/QDockWidget>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -101,37 +102,19 @@ public:
     QLabel *imu_euler_z_rotation_value;
     QDockWidget *ManualControlsWidget;
     QWidget *ManualControlsWidget_contents;
-    QDockWidget *BrakeDock;
-    QWidget *dockWidgetContents_4;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *current_brake_label;
-    QSlider *current_brake_slider;
-    QDockWidget *AccelerationDock;
-    QWidget *dockWidgetContents_3;
-    QWidget *layoutWidget3;
-    QVBoxLayout *verticalLayout;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
     QLabel *current_acel_label;
-    QSlider *current_acel_label_slider;
-    QDockWidget *GearWidget;
-    QWidget *dockWidgetContents_7;
-    QHBoxLayout *horizontalLayout_4;
-    QHBoxLayout *horizontalLayout_3;
-    QRadioButton *gears_forward_radio_button;
-    QRadioButton *gears_neutral_radio_button;
-    QRadioButton *gears_backwards_radio_button;
-    QDockWidget *HandBrakeDock;
-    QWidget *dockWidgetContents_5;
-    QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
     QLabel *handbrake_label;
     QPushButton *handbrake_button;
-    QDockWidget *SteeringDock;
-    QWidget *dockWidgetContents_9;
-    QVBoxLayout *verticalLayout_5;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *steering_status_label;
+    QLabel *current_brake_label;
+    QVBoxLayout *verticalLayout;
+    QRadioButton *gears_neutral_radio_button;
+    QRadioButton *gears_forward_radio_button;
+    QRadioButton *gears_backwards_radio_button;
     QSlider *steering_slider;
+    QLabel *steering_status_label;
     QDockWidget *AutomationWidget;
     QWidget *dockWidgetContents;
     QPushButton *Set_wheel_direction_button;
@@ -145,14 +128,14 @@ public:
     QRadioButton *Maintain_current_speed;
     QRadioButton *Set_new_speed;
     QLineEdit *Enter_new_constant_speed;
-    QPushButton *pushButton;
+    QPushButton *SmoothTrajectoryButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1255, 771);
+        MainWindow->resize(1709, 1159);
         actionAccelerator = new QAction(MainWindow);
         actionAccelerator->setObjectName(QString::fromUtf8("actionAccelerator"));
         actionAccelerator->setCheckable(true);
@@ -165,7 +148,7 @@ public:
         MainWindow->setCentralWidget(MainWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1255, 25));
+        menuBar->setGeometry(QRect(0, 0, 1709, 42));
         menuView = new QMenu(menuBar);
         menuView->setObjectName(QString::fromUtf8("menuView"));
         MainWindow->setMenuBar(menuBar);
@@ -183,13 +166,18 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(CarStatusWidget->sizePolicy().hasHeightForWidth());
         CarStatusWidget->setSizePolicy(sizePolicy);
-        CarStatusWidget->setMinimumSize(QSize(384, 600));
-        CarStatusWidget->setMaximumSize(QSize(384, 600));
+        CarStatusWidget->setMinimumSize(QSize(800, 600));
+        CarStatusWidget->setMaximumSize(QSize(800, 1200));
         CarStatusWidget_contents = new QWidget();
         CarStatusWidget_contents->setObjectName(QString::fromUtf8("CarStatusWidget_contents"));
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(CarStatusWidget_contents->sizePolicy().hasHeightForWidth());
+        CarStatusWidget_contents->setSizePolicy(sizePolicy1);
         layoutWidget = new QWidget(CarStatusWidget_contents);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(12, 16, 356, 507));
+        layoutWidget->setGeometry(QRect(12, 16, 726, 996));
         verticalLayout_6 = new QVBoxLayout(layoutWidget);
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -200,6 +188,8 @@ public:
         Position_gazebo->setObjectName(QString::fromUtf8("Position_gazebo"));
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
+        sizePolicy1.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy1);
         label_5->setAlignment(Qt::AlignCenter);
 
         Position_gazebo->addWidget(label_5);
@@ -209,6 +199,11 @@ public:
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         gazebo_x = new QLabel(layoutWidget);
         gazebo_x->setObjectName(QString::fromUtf8("gazebo_x"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(gazebo_x->sizePolicy().hasHeightForWidth());
+        gazebo_x->setSizePolicy(sizePolicy2);
 
         horizontalLayout_5->addWidget(gazebo_x);
 
@@ -219,6 +214,8 @@ public:
 
         gazebo_z = new QLabel(layoutWidget);
         gazebo_z->setObjectName(QString::fromUtf8("gazebo_z"));
+        sizePolicy1.setHeightForWidth(gazebo_z->sizePolicy().hasHeightForWidth());
+        gazebo_z->setSizePolicy(sizePolicy1);
 
         horizontalLayout_5->addWidget(gazebo_z);
 
@@ -233,6 +230,11 @@ public:
         Position_gps->setObjectName(QString::fromUtf8("Position_gps"));
         label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
+        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy3);
         label_9->setAlignment(Qt::AlignCenter);
 
         Position_gps->addWidget(label_9);
@@ -486,155 +488,47 @@ public:
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), CarStatusWidget);
         ManualControlsWidget = new QDockWidget(MainWindow);
         ManualControlsWidget->setObjectName(QString::fromUtf8("ManualControlsWidget"));
+        ManualControlsWidget->setEnabled(true);
         sizePolicy.setHeightForWidth(ManualControlsWidget->sizePolicy().hasHeightForWidth());
         ManualControlsWidget->setSizePolicy(sizePolicy);
-        ManualControlsWidget->setMinimumSize(QSize(850, 300));
-        ManualControlsWidget->setMaximumSize(QSize(850, 300));
+        ManualControlsWidget->setMinimumSize(QSize(891, 400));
+        ManualControlsWidget->setMaximumSize(QSize(1000, 1000));
         ManualControlsWidget->setAutoFillBackground(false);
         ManualControlsWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
         ManualControlsWidget_contents = new QWidget();
         ManualControlsWidget_contents->setObjectName(QString::fromUtf8("ManualControlsWidget_contents"));
-        BrakeDock = new QDockWidget(ManualControlsWidget_contents);
-        BrakeDock->setObjectName(QString::fromUtf8("BrakeDock"));
-        BrakeDock->setGeometry(QRect(409, 11, 423, 80));
-        sizePolicy.setHeightForWidth(BrakeDock->sizePolicy().hasHeightForWidth());
-        BrakeDock->setSizePolicy(sizePolicy);
-        BrakeDock->setMinimumSize(QSize(423, 80));
-        BrakeDock->setFloating(false);
-        BrakeDock->setAllowedAreas(Qt::AllDockWidgetAreas);
-        dockWidgetContents_4 = new QWidget();
-        dockWidgetContents_4->setObjectName(QString::fromUtf8("dockWidgetContents_4"));
-        layoutWidget2 = new QWidget(dockWidgetContents_4);
-        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 0, 367, 63));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        current_brake_label = new QLabel(layoutWidget2);
-        current_brake_label->setObjectName(QString::fromUtf8("current_brake_label"));
-        current_brake_label->setEnabled(true);
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(current_brake_label->sizePolicy().hasHeightForWidth());
-        current_brake_label->setSizePolicy(sizePolicy1);
-        current_brake_label->setFrameShape(QFrame::Box);
-        current_brake_label->setTextFormat(Qt::AutoText);
-        current_brake_label->setScaledContents(true);
-        current_brake_label->setWordWrap(false);
-
-        verticalLayout_3->addWidget(current_brake_label);
-
-        current_brake_slider = new QSlider(layoutWidget2);
-        current_brake_slider->setObjectName(QString::fromUtf8("current_brake_slider"));
-        sizePolicy1.setHeightForWidth(current_brake_slider->sizePolicy().hasHeightForWidth());
-        current_brake_slider->setSizePolicy(sizePolicy1);
-        current_brake_slider->setMaximum(100);
-        current_brake_slider->setOrientation(Qt::Horizontal);
-
-        verticalLayout_3->addWidget(current_brake_slider);
-
-        BrakeDock->setWidget(dockWidgetContents_4);
-        AccelerationDock = new QDockWidget(ManualControlsWidget_contents);
-        AccelerationDock->setObjectName(QString::fromUtf8("AccelerationDock"));
-        AccelerationDock->setGeometry(QRect(11, 11, 392, 80));
-        sizePolicy.setHeightForWidth(AccelerationDock->sizePolicy().hasHeightForWidth());
-        AccelerationDock->setSizePolicy(sizePolicy);
-        AccelerationDock->setMinimumSize(QSize(392, 80));
-        AccelerationDock->setFloating(false);
-        AccelerationDock->setAllowedAreas(Qt::AllDockWidgetAreas);
-        dockWidgetContents_3 = new QWidget();
-        dockWidgetContents_3->setObjectName(QString::fromUtf8("dockWidgetContents_3"));
-        layoutWidget3 = new QWidget(dockWidgetContents_3);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(0, 0, 367, 63));
-        verticalLayout = new QVBoxLayout(layoutWidget3);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        current_acel_label = new QLabel(layoutWidget3);
+        gridLayoutWidget = new QWidget(ManualControlsWidget_contents);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(10, 0, 861, 261));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        current_acel_label = new QLabel(gridLayoutWidget);
         current_acel_label->setObjectName(QString::fromUtf8("current_acel_label"));
         current_acel_label->setEnabled(true);
-        sizePolicy1.setHeightForWidth(current_acel_label->sizePolicy().hasHeightForWidth());
-        current_acel_label->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(current_acel_label->sizePolicy().hasHeightForWidth());
+        current_acel_label->setSizePolicy(sizePolicy2);
+        current_acel_label->setMinimumSize(QSize(50, 0));
         current_acel_label->setFrameShape(QFrame::Box);
         current_acel_label->setTextFormat(Qt::AutoText);
         current_acel_label->setScaledContents(true);
         current_acel_label->setWordWrap(false);
 
-        verticalLayout->addWidget(current_acel_label);
+        gridLayout->addWidget(current_acel_label, 0, 0, 1, 1);
 
-        current_acel_label_slider = new QSlider(layoutWidget3);
-        current_acel_label_slider->setObjectName(QString::fromUtf8("current_acel_label_slider"));
-        sizePolicy1.setHeightForWidth(current_acel_label_slider->sizePolicy().hasHeightForWidth());
-        current_acel_label_slider->setSizePolicy(sizePolicy1);
-        current_acel_label_slider->setMaximum(100);
-        current_acel_label_slider->setOrientation(Qt::Horizontal);
-        current_acel_label_slider->setTickPosition(QSlider::NoTicks);
-
-        verticalLayout->addWidget(current_acel_label_slider);
-
-        AccelerationDock->setWidget(dockWidgetContents_3);
-        GearWidget = new QDockWidget(ManualControlsWidget_contents);
-        GearWidget->setObjectName(QString::fromUtf8("GearWidget"));
-        GearWidget->setGeometry(QRect(409, 97, 423, 100));
-        sizePolicy.setHeightForWidth(GearWidget->sizePolicy().hasHeightForWidth());
-        GearWidget->setSizePolicy(sizePolicy);
-        GearWidget->setMinimumSize(QSize(423, 100));
-        dockWidgetContents_7 = new QWidget();
-        dockWidgetContents_7->setObjectName(QString::fromUtf8("dockWidgetContents_7"));
-        horizontalLayout_4 = new QHBoxLayout(dockWidgetContents_7);
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        gears_forward_radio_button = new QRadioButton(dockWidgetContents_7);
-        gears_forward_radio_button->setObjectName(QString::fromUtf8("gears_forward_radio_button"));
-        gears_forward_radio_button->setChecked(true);
-
-        horizontalLayout_3->addWidget(gears_forward_radio_button);
-
-        gears_neutral_radio_button = new QRadioButton(dockWidgetContents_7);
-        gears_neutral_radio_button->setObjectName(QString::fromUtf8("gears_neutral_radio_button"));
-
-        horizontalLayout_3->addWidget(gears_neutral_radio_button);
-
-        gears_backwards_radio_button = new QRadioButton(dockWidgetContents_7);
-        gears_backwards_radio_button->setObjectName(QString::fromUtf8("gears_backwards_radio_button"));
-
-        horizontalLayout_3->addWidget(gears_backwards_radio_button);
-
-
-        horizontalLayout_4->addLayout(horizontalLayout_3);
-
-        GearWidget->setWidget(dockWidgetContents_7);
-        HandBrakeDock = new QDockWidget(ManualControlsWidget_contents);
-        HandBrakeDock->setObjectName(QString::fromUtf8("HandBrakeDock"));
-        HandBrakeDock->setGeometry(QRect(11, 97, 392, 100));
-        sizePolicy.setHeightForWidth(HandBrakeDock->sizePolicy().hasHeightForWidth());
-        HandBrakeDock->setSizePolicy(sizePolicy);
-        HandBrakeDock->setMinimumSize(QSize(392, 100));
-        HandBrakeDock->setFloating(false);
-        HandBrakeDock->setAllowedAreas(Qt::AllDockWidgetAreas);
-        dockWidgetContents_5 = new QWidget();
-        dockWidgetContents_5->setObjectName(QString::fromUtf8("dockWidgetContents_5"));
-        horizontalLayout_2 = new QHBoxLayout(dockWidgetContents_5);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        handbrake_label = new QLabel(dockWidgetContents_5);
+        handbrake_label = new QLabel(gridLayoutWidget);
         handbrake_label->setObjectName(QString::fromUtf8("handbrake_label"));
         handbrake_label->setEnabled(true);
-        sizePolicy1.setHeightForWidth(handbrake_label->sizePolicy().hasHeightForWidth());
-        handbrake_label->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(handbrake_label->sizePolicy().hasHeightForWidth());
+        handbrake_label->setSizePolicy(sizePolicy4);
         handbrake_label->setFrameShape(QFrame::Box);
         handbrake_label->setTextFormat(Qt::AutoText);
         handbrake_label->setScaledContents(true);
@@ -642,10 +536,10 @@ public:
 
         horizontalLayout->addWidget(handbrake_label);
 
-        handbrake_button = new QPushButton(dockWidgetContents_5);
+        handbrake_button = new QPushButton(gridLayoutWidget);
         handbrake_button->setObjectName(QString::fromUtf8("handbrake_button"));
-        sizePolicy1.setHeightForWidth(handbrake_button->sizePolicy().hasHeightForWidth());
-        handbrake_button->setSizePolicy(sizePolicy1);
+        sizePolicy4.setHeightForWidth(handbrake_button->sizePolicy().hasHeightForWidth());
+        handbrake_button->setSizePolicy(sizePolicy4);
         handbrake_button->setCheckable(true);
         handbrake_button->setChecked(false);
         handbrake_button->setAutoDefault(false);
@@ -655,50 +549,65 @@ public:
         horizontalLayout->addWidget(handbrake_button);
 
 
-        horizontalLayout_2->addLayout(horizontalLayout);
+        gridLayout->addLayout(horizontalLayout, 1, 1, 1, 1);
 
-        HandBrakeDock->setWidget(dockWidgetContents_5);
-        SteeringDock = new QDockWidget(ManualControlsWidget_contents);
-        SteeringDock->setObjectName(QString::fromUtf8("SteeringDock"));
-        SteeringDock->setGeometry(QRect(10, 204, 821, 85));
-        sizePolicy.setHeightForWidth(SteeringDock->sizePolicy().hasHeightForWidth());
-        SteeringDock->setSizePolicy(sizePolicy);
-        SteeringDock->setMinimumSize(QSize(821, 85));
-        SteeringDock->setMaximumSize(QSize(821, 85));
-        dockWidgetContents_9 = new QWidget();
-        dockWidgetContents_9->setObjectName(QString::fromUtf8("dockWidgetContents_9"));
-        verticalLayout_5 = new QVBoxLayout(dockWidgetContents_9);
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        steering_status_label = new QLabel(dockWidgetContents_9);
-        steering_status_label->setObjectName(QString::fromUtf8("steering_status_label"));
-        steering_status_label->setScaledContents(true);
-        steering_status_label->setAlignment(Qt::AlignCenter);
+        current_brake_label = new QLabel(gridLayoutWidget);
+        current_brake_label->setObjectName(QString::fromUtf8("current_brake_label"));
+        current_brake_label->setEnabled(true);
+        sizePolicy4.setHeightForWidth(current_brake_label->sizePolicy().hasHeightForWidth());
+        current_brake_label->setSizePolicy(sizePolicy4);
+        current_brake_label->setFrameShape(QFrame::Box);
+        current_brake_label->setTextFormat(Qt::AutoText);
+        current_brake_label->setScaledContents(true);
+        current_brake_label->setWordWrap(false);
 
-        verticalLayout_2->addWidget(steering_status_label);
+        gridLayout->addWidget(current_brake_label, 0, 1, 1, 1);
 
-        steering_slider = new QSlider(dockWidgetContents_9);
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        gears_neutral_radio_button = new QRadioButton(gridLayoutWidget);
+        gears_neutral_radio_button->setObjectName(QString::fromUtf8("gears_neutral_radio_button"));
+
+        verticalLayout->addWidget(gears_neutral_radio_button);
+
+        gears_forward_radio_button = new QRadioButton(gridLayoutWidget);
+        gears_forward_radio_button->setObjectName(QString::fromUtf8("gears_forward_radio_button"));
+        gears_forward_radio_button->setChecked(true);
+
+        verticalLayout->addWidget(gears_forward_radio_button);
+
+        gears_backwards_radio_button = new QRadioButton(gridLayoutWidget);
+        gears_backwards_radio_button->setObjectName(QString::fromUtf8("gears_backwards_radio_button"));
+
+        verticalLayout->addWidget(gears_backwards_radio_button);
+
+
+        gridLayout->addLayout(verticalLayout, 1, 0, 1, 1);
+
+        steering_slider = new QSlider(gridLayoutWidget);
         steering_slider->setObjectName(QString::fromUtf8("steering_slider"));
         steering_slider->setMinimum(-314);
         steering_slider->setMaximum(314);
         steering_slider->setOrientation(Qt::Horizontal);
 
-        verticalLayout_2->addWidget(steering_slider);
+        gridLayout->addWidget(steering_slider, 2, 1, 1, 1);
 
+        steering_status_label = new QLabel(gridLayoutWidget);
+        steering_status_label->setObjectName(QString::fromUtf8("steering_status_label"));
+        steering_status_label->setScaledContents(true);
+        steering_status_label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_5->addLayout(verticalLayout_2);
+        gridLayout->addWidget(steering_status_label, 2, 0, 1, 1);
 
-        SteeringDock->setWidget(dockWidgetContents_9);
         ManualControlsWidget->setWidget(ManualControlsWidget_contents);
+        gridLayoutWidget->raise();
+        handbrake_label->raise();
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), ManualControlsWidget);
         AutomationWidget = new QDockWidget(MainWindow);
         AutomationWidget->setObjectName(QString::fromUtf8("AutomationWidget"));
         AutomationWidget->setMinimumSize(QSize(850, 400));
-        AutomationWidget->setMaximumSize(QSize(850, 400));
+        AutomationWidget->setMaximumSize(QSize(850, 800));
         AutomationWidget->setLayoutDirection(Qt::LeftToRight);
         AutomationWidget->setAutoFillBackground(true);
         AutomationWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
@@ -706,17 +615,17 @@ public:
         dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
         Set_wheel_direction_button = new QPushButton(dockWidgetContents);
         Set_wheel_direction_button->setObjectName(QString::fromUtf8("Set_wheel_direction_button"));
-        Set_wheel_direction_button->setGeometry(QRect(20, 50, 171, 23));
+        Set_wheel_direction_button->setGeometry(QRect(20, 60, 391, 41));
         Set_wheel_direction_button->setCheckable(true);
         Set_wheel_direction_button->setAutoRepeat(true);
         Set_wheel_direction_button->setAutoDefault(false);
         Set_wheel_direction_x_input = new QLineEdit(dockWidgetContents);
         Set_wheel_direction_x_input->setObjectName(QString::fromUtf8("Set_wheel_direction_x_input"));
-        Set_wheel_direction_x_input->setGeometry(QRect(200, 50, 113, 23));
+        Set_wheel_direction_x_input->setGeometry(QRect(420, 60, 111, 51));
         Set_wheel_direction_x_input->setCursorPosition(0);
         Set_wheel_direction_y_input = new QLineEdit(dockWidgetContents);
         Set_wheel_direction_y_input->setObjectName(QString::fromUtf8("Set_wheel_direction_y_input"));
-        Set_wheel_direction_y_input->setGeometry(QRect(320, 50, 113, 23));
+        Set_wheel_direction_y_input->setGeometry(QRect(530, 60, 111, 51));
         Set_wheel_direction_table = new QTableWidget(dockWidgetContents);
         if (Set_wheel_direction_table->columnCount() < 5)
             Set_wheel_direction_table->setColumnCount(5);
@@ -728,7 +637,10 @@ public:
         Set_wheel_direction_table->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         Set_wheel_direction_table->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QFont font;
+        font.setPointSize(10);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setFont(font);
         Set_wheel_direction_table->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         if (Set_wheel_direction_table->rowCount() < 100)
             Set_wheel_direction_table->setRowCount(100);
@@ -754,14 +666,26 @@ public:
         Set_wheel_direction_table->setItem(0, 4, __qtablewidgetitem14);
         Set_wheel_direction_table->setObjectName(QString::fromUtf8("Set_wheel_direction_table"));
         Set_wheel_direction_table->setEnabled(false);
-        Set_wheel_direction_table->setGeometry(QRect(100, 110, 581, 151));
+        Set_wheel_direction_table->setGeometry(QRect(0, 160, 841, 471));
+        Set_wheel_direction_table->setGridStyle(Qt::SolidLine);
+        Set_wheel_direction_table->setWordWrap(true);
         Set_wheel_direction_table->setRowCount(100);
+        Set_wheel_direction_table->horizontalHeader()->setCascadingSectionResizes(true);
+        Set_wheel_direction_table->horizontalHeader()->setDefaultSectionSize(120);
+        Set_wheel_direction_table->horizontalHeader()->setMinimumSectionSize(120);
+        Set_wheel_direction_table->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        Set_wheel_direction_table->horizontalHeader()->setStretchLastSection(true);
+        Set_wheel_direction_table->verticalHeader()->setVisible(true);
+        Set_wheel_direction_table->verticalHeader()->setDefaultSectionSize(42);
+        Set_wheel_direction_table->verticalHeader()->setMinimumSectionSize(42);
+        Set_wheel_direction_table->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        Set_wheel_direction_table->verticalHeader()->setStretchLastSection(false);
         Set_wheel_direction_from_table = new QCheckBox(dockWidgetContents);
         Set_wheel_direction_from_table->setObjectName(QString::fromUtf8("Set_wheel_direction_from_table"));
-        Set_wheel_direction_from_table->setGeometry(QRect(440, 50, 91, 21));
+        Set_wheel_direction_from_table->setGeometry(QRect(650, 70, 191, 41));
         layoutWidget4 = new QWidget(dockWidgetContents);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 10, 511, 31));
+        layoutWidget4->setGeometry(QRect(20, 10, 817, 46));
         horizontalLayout_11 = new QHBoxLayout(layoutWidget4);
         horizontalLayout_11->setSpacing(6);
         horizontalLayout_11->setContentsMargins(11, 11, 11, 11);
@@ -791,9 +715,9 @@ public:
 
         horizontalLayout_11->addWidget(Enter_new_constant_speed);
 
-        pushButton = new QPushButton(dockWidgetContents);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 80, 151, 27));
+        SmoothTrajectoryButton = new QPushButton(dockWidgetContents);
+        SmoothTrajectoryButton->setObjectName(QString::fromUtf8("SmoothTrajectoryButton"));
+        SmoothTrajectoryButton->setGeometry(QRect(20, 100, 271, 51));
         AutomationWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), AutomationWidget);
 
@@ -852,23 +776,18 @@ public:
         imu_euler_z_rotation_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Euler Rotation (IMU)</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         imu_euler_z_rotation_value->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
         ManualControlsWidget->setWindowTitle(QApplication::translate("MainWindow", "Manual Controls", 0, QApplication::UnicodeUTF8));
-        BrakeDock->setWindowTitle(QApplication::translate("MainWindow", "BrakeDock", 0, QApplication::UnicodeUTF8));
-        current_brake_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">Current Brake: 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        AccelerationDock->setWindowTitle(QApplication::translate("MainWindow", "Acceleration", 0, QApplication::UnicodeUTF8));
-        current_acel_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">Current Acceleration: 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        GearWidget->setWindowTitle(QApplication::translate("MainWindow", "Gears", 0, QApplication::UnicodeUTF8));
-        gears_forward_radio_button->setText(QApplication::translate("MainWindow", "Forward", 0, QApplication::UnicodeUTF8));
-        gears_forward_radio_button->setShortcut(QApplication::translate("MainWindow", "F", 0, QApplication::UnicodeUTF8));
-        gears_neutral_radio_button->setText(QApplication::translate("MainWindow", "Neutral", 0, QApplication::UnicodeUTF8));
-        gears_neutral_radio_button->setShortcut(QApplication::translate("MainWindow", "N", 0, QApplication::UnicodeUTF8));
-        gears_backwards_radio_button->setText(QApplication::translate("MainWindow", "Backwards", 0, QApplication::UnicodeUTF8));
-        gears_backwards_radio_button->setShortcut(QApplication::translate("MainWindow", "B", 0, QApplication::UnicodeUTF8));
-        HandBrakeDock->setWindowTitle(QApplication::translate("MainWindow", "HandBrake", 0, QApplication::UnicodeUTF8));
-        handbrake_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">Handbrake Status:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        current_acel_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Aceleration 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        handbrake_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Handbrake Status:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         handbrake_button->setText(QApplication::translate("MainWindow", "ON", 0, QApplication::UnicodeUTF8));
         handbrake_button->setShortcut(QApplication::translate("MainWindow", "H", 0, QApplication::UnicodeUTF8));
-        SteeringDock->setWindowTitle(QApplication::translate("MainWindow", "Hand Wheel", 0, QApplication::UnicodeUTF8));
-        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:600;\">Hand Wheel Status : 00.0 rad</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        current_brake_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Brake 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        gears_neutral_radio_button->setText(QApplication::translate("MainWindow", "Neutral", 0, QApplication::UnicodeUTF8));
+        gears_neutral_radio_button->setShortcut(QApplication::translate("MainWindow", "N", 0, QApplication::UnicodeUTF8));
+        gears_forward_radio_button->setText(QApplication::translate("MainWindow", "Forward", 0, QApplication::UnicodeUTF8));
+        gears_forward_radio_button->setShortcut(QApplication::translate("MainWindow", "F", 0, QApplication::UnicodeUTF8));
+        gears_backwards_radio_button->setText(QApplication::translate("MainWindow", "Backwards", 0, QApplication::UnicodeUTF8));
+        gears_backwards_radio_button->setShortcut(QApplication::translate("MainWindow", "B", 0, QApplication::UnicodeUTF8));
+        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel Status : 00.0 rad</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         AutomationWidget->setWindowTitle(QApplication::translate("MainWindow", "Automatic Driving", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_button->setText(QApplication::translate("MainWindow", "Set Wheel Direction to (X,Y)", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_x_input->setPlaceholderText(QApplication::translate("MainWindow", "Input X", 0, QApplication::UnicodeUTF8));
@@ -912,7 +831,7 @@ public:
         Constant_speed_button->setText(QApplication::translate("MainWindow", "Constant Car Speed", 0, QApplication::UnicodeUTF8));
         Maintain_current_speed->setText(QApplication::translate("MainWindow", "Current Speed", 0, QApplication::UnicodeUTF8));
         Set_new_speed->setText(QApplication::translate("MainWindow", "Set Speed", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "Smooth Trajectory", 0, QApplication::UnicodeUTF8));
+        SmoothTrajectoryButton->setText(QApplication::translate("MainWindow", "Smooth Trajectory", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

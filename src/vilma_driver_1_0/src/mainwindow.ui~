@@ -697,6 +697,7 @@
     </widget>
     <zorder>gridLayoutWidget</zorder>
     <zorder>handbrake_label</zorder>
+    <zorder>verticalLayoutWidget_2</zorder>
    </widget>
   </widget>
   <widget class="QDockWidget" name="AutomationWidget">

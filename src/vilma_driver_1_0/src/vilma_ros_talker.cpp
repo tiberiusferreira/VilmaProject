@@ -26,11 +26,10 @@ vilma_ros_talker::vilma_ros_talker()
 //        gears_sub = rosNode.subscribe<std_msgs::Int8>("/vilma_vehicle/direction/state",1,&vilma_ros_talker::receive_gears_state,this);
 //        ////////////////////////////////////GPS State //////////////////////////////////////
 //        modelstatesub = rosNode.subscribe<sensor_msgs::NavSatFix>("vilma_vehicle/ideal_gps",1,&vilma_ros_talker::receive_gps_state,this);
+          gps_sub = rosNode.subscribe<sensor_msgs::NavSatFix>("/gps",1,&vilma_ros_talker::receive_gps_state,this);
 //        ////////////////////////////////////IMU State //////////////////////////////////////
-        imu_sub = rosNode.subscribe<sensor_msgs::Imu>("/imu",1,&vilma_ros_talker::receive_imu_data,this);
-//        ros_service = rosNode.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
-
-        ackermann_pub = rosNode.advertise<ackermann_msgs::AckermannDrive>("ackermann_cmd", 1000);
+          imu_sub = rosNode.subscribe<sensor_msgs::Imu>("/imu",1,&vilma_ros_talker::receive_imu_data,this);
+          ackermann_pub = rosNode.advertise<ackermann_msgs::AckermannDrive>("ackermann_cmd", 1000);
 
         //((getmodelstate).request).model_name ="vilma_vehicle";
 }
@@ -106,8 +105,10 @@ void vilma_ros_talker::set_gears(int gear){
 }
 void vilma_ros_talker::set_steering(float value)
 {
-    ack.steering_angle=(value+0.0)/10;
-    ackermann_pub.publish(ack);
+    ackermann_msg.steering_angle=(value+0.0)/10;
+    ackermann_pub.publish(ackermann_msg);
+
+
 //    std_msgs::Float64 steering_value;
 //    steering_value.data=value;
 //    hand_wheelpub.publish(steering_value);
@@ -123,10 +124,10 @@ void vilma_ros_talker::accelerate(float amount_to_increase){
 //    this->gas_pedalpub.publish(accelerate);
 }
 void vilma_ros_talker::set_gas_pedal(float value){
-    ack.speed = value*100.0;
-    ack.acceleration = value*100;
+    ackermann_msg.speed = value*100.0;
+    ackermann_msg.acceleration = value*100;
 
-    this->ackermann_pub.publish(ack);
+    this->ackermann_pub.publish(ackermann_msg);
     ros::spinOnce();
 }
 void vilma_ros_talker::set_brake_pedal(float value){
@@ -146,10 +147,10 @@ void vilma_ros_talker::deaccelerate(float amount_to_decrease){
 }
 void vilma_ros_talker::use_hand_brake(){
 
-    ack.speed = 0;
-    ack.acceleration = 0;
+    ackermann_msg.speed = 0;
+    ackermann_msg.acceleration = 0;
 
-    this->ackermann_pub.publish(ack);
+    this->ackermann_pub.publish(ackermann_msg);
     ros::spinOnce();
 }
 void vilma_ros_talker::reset_state(){
