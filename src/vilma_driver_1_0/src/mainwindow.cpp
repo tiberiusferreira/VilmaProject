@@ -74,10 +74,10 @@ void MainWindow::update()
 //    QString quaternion_gazebo_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.y,'f',3));
 //    QString quaternion_gazebo_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.z,'f',3));
 //    QString quaternion_gazebo_w_text = QString("W : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.orientation.w,'f',3));
-    QString quaternion_imu_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.x,'f',3));
-    QString quaternion_imu_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.y,'f',3));
-    QString quaternion_imu_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.z,'f',3));
-    QString quaternion_imu_w_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.w,'f',3));
+//    QString quaternion_imu_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.x,'f',3));
+//    QString quaternion_imu_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.y,'f',3));
+//    QString quaternion_imu_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.z,'f',3));
+//    QString quaternion_imu_w_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.orientation.w,'f',3));
 //    QString imu_ang_speed_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.x,'f',3));
 //    QString imu_ang_speed_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.y,'f',3));
 //    QString imu_ang_speed_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.imu_data.angular_velocity.z,'f',3));
@@ -103,10 +103,10 @@ void MainWindow::update()
 //    ui->quaternion_gazebo_y->setText(quaternion_gazebo_y_text);
 //    ui->quaternion_gazebo_z->setText(quaternion_gazebo_z_text);
 //    ui->quaternion_gazebo_w->setText(quaternion_gazebo_w_text);
-    ui->quaternion_imu_x->setText(quaternion_imu_x_text);
-    ui->quaternion_imu_y->setText(quaternion_imu_y_text);
-    ui->quaternion_imu_z->setText(quaternion_imu_z_text);
-    ui->quaternion_imu_w->setText(quaternion_imu_w_text);
+//    ui->quaternion_imu_x->setText(quaternion_imu_x_text);
+//    ui->quaternion_imu_y->setText(quaternion_imu_y_text);
+//    ui->quaternion_imu_z->setText(quaternion_imu_z_text);
+//    ui->quaternion_imu_w->setText(quaternion_imu_w_text);
 //    ui->imu_ang_speed_x->setText(imu_ang_speed_x_text);
 //    ui->imu_ang_speed_y->setText(imu_ang_speed_y_text);
 //    ui->imu_ang_speed_z->setText(imu_ang_speed_z_text);
@@ -203,7 +203,7 @@ void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
 
 void MainWindow::on_current_acel_label_slider_sliderMoved(int position)
 {
-    vilma_talker_obj.set_gas_pedal((float) position/100);
+    //vilma_talker_obj.set_gas_pedal((float) position/100);
 }
 
 void MainWindow::on_current_brake_slider_sliderMoved(int position)
@@ -213,75 +213,34 @@ void MainWindow::on_current_brake_slider_sliderMoved(int position)
 
 void MainWindow::on_steering_slider_sliderMoved(int position)
 {
-    vilma_talker_obj.set_steering((float) -position/100);
+    morse_transmiter_obj.setSteeringAngle((float) -position/100);
+    //vilma_talker_obj.set_steering((float) -position/100);
 }
-
-void MainWindow::on_handbrake_button_toggled(bool checked)
-{
-//    if(checked)
-//    {
-//        if(vilma_talker_obj.hand_brake_state.data<0.2)
-//        {
-//            vilma_talker_obj.use_hand_brake();
-//        }
-//    }else
-//    {
-//        if(vilma_talker_obj.hand_brake_state.data>0.05)
-//        {
-//            vilma_talker_obj.use_hand_brake();
-//        }
-//    }
-}
-
-void MainWindow::on_gears_forward_radio_button_toggled(bool checked)
-{
-//    if(checked)
-//    {
-//        vilma_talker_obj.set_gears(1);
-//    }
-}
-
-void MainWindow::on_gears_neutral_radio_button_toggled(bool checked)
-{
-//    if(checked)
-//    {
-//        vilma_talker_obj.set_gears(0);
-//    }
-}
-
-void MainWindow::on_gears_backwards_radio_button_toggled(bool checked)
-{
-    if(checked)
-    {
-//        vilma_talker_obj.set_gears(-1);
-    }
-}
-
 
 void MainWindow::on_pushButton_clicked()
 {
-    std::deque<one_point> points_from_table;
-    std::deque<one_point> points_to_table;
-    QTableWidgetItem *X_item;
-    QTableWidgetItem *Y_item;
-    double current_row=0;
-    int ok=0;
-    while(ok==0){
-    X_item = ui->Set_wheel_direction_table->item(current_row,0);
-    Y_item = ui->Set_wheel_direction_table->item(current_row,1);
-    if(X_item==0 || Y_item==0){ //reached end of X Y list
-        ok =-1;
-        break;
-    }
-    points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
-    current_row++;
-    }
-    points_to_table=vilma_self_driver_obj.generate_smooth_path(points_from_table);
-    current_row=0;
-    for(current_row=0;current_row<points_to_table.size();current_row++){
-        X_item = ui->Set_wheel_direction_table->item(current_row,0);
-        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
-        X_item->setText(QString ("%5").arg(points_to_table.at(current_row).x));
-        Y_item->setText(QString ("%5").arg(points_to_table.at(current_row).y));
-    }
+//    std::deque<one_point> points_from_table;
+//    std::deque<one_point> points_to_table;
+//    QTableWidgetItem *X_item;
+//    QTableWidgetItem *Y_item;
+//    double current_row=0;
+//    int ok=0;
+//    while(ok==0){
+//    X_item = ui->Set_wheel_direction_table->item(current_row,0);
+//    Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+//    if(X_item==0 || Y_item==0){ //reached end of X Y list
+//        ok =-1;
+//        break;
+//    }
+//    points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
+//    current_row++;
+//    }
+//    points_to_table=vilma_self_driver_obj.generate_smooth_path(points_from_table);
+//    current_row=0;
+//    for(current_row=0;current_row<points_to_table.size();current_row++){
+//        X_item = ui->Set_wheel_direction_table->item(current_row,0);
+//        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+//        X_item->setText(QString ("%5").arg(points_to_table.at(current_row).x));
+//        Y_item->setText(QString ("%5").arg(points_to_table.at(current_row).y));
+//    }
 }

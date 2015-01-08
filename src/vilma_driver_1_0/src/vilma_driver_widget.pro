@@ -41,11 +41,21 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     vilma_ros_talker.cpp \
     vilma_self_driver.cpp \
-    points.cpp
+    points.cpp \
+    gps.cpp \
+    imu.cpp \
+    morse_receiver.cpp \
+    morse_transmiter.cpp \
+    morse_subscriber.cpp
 
 HEADERS  += mainwindow.h \
     vilma_ros_talker.h \
     vilma_self_driver.h \
-    points.h
+    points.h \
+    gps.h \
+    imu.h \
+    morse_receiver.h \
+    morse_transmiter.h \
+    morse_subscriber.h
 
 FORMS    += mainwindow.ui

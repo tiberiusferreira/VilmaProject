@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -38,11 +38,7 @@ static const uint qt_meta_data_MainWindow[] = {
      186,  177,   11,   11, 0x08,
      232,  177,   11,   11, 0x08,
      273,  177,   11,   11, 0x08,
-     309,   51,   11,   11, 0x08,
-     343,   51,   11,   11, 0x08,
-     387,   51,   11,   11, 0x08,
-     431,   51,   11,   11, 0x08,
-     477,   11,   11,   11, 0x08,
+     309,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -56,10 +52,6 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "position\0on_current_acel_label_slider_sliderMoved(int)\0"
     "on_current_brake_slider_sliderMoved(int)\0"
     "on_steering_slider_sliderMoved(int)\0"
-    "on_handbrake_button_toggled(bool)\0"
-    "on_gears_forward_radio_button_toggled(bool)\0"
-    "on_gears_neutral_radio_button_toggled(bool)\0"
-    "on_gears_backwards_radio_button_toggled(bool)\0"
     "on_pushButton_clicked()\0"
 };
 
@@ -77,11 +69,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->on_current_acel_label_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 6: _t->on_current_brake_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->on_steering_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->on_handbrake_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 9: _t->on_gears_forward_radio_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 10: _t->on_gears_neutral_radio_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 11: _t->on_gears_backwards_radio_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 12: _t->on_pushButton_clicked(); break;
+        case 8: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
@@ -119,9 +107,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 9;
     }
     return _id;
 }

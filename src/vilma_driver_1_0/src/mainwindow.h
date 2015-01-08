@@ -5,8 +5,10 @@
 #include <QTimer>
 #include <QDebug>
 #include <QKeyEvent>
-#include "vilma_ros_talker.h"
+#include "morse_receiver.h"
+#include "morse_transmiter.h"
 #include "vilma_self_driver.h"
+#include "morse_subscriber.h"
 namespace Ui {
 class MainWindow;
 }
@@ -36,20 +38,14 @@ private slots:
 
     void on_steering_slider_sliderMoved(int position);
 
-    void on_handbrake_button_toggled(bool checked);
-
-    void on_gears_forward_radio_button_toggled(bool checked);
-
-    void on_gears_neutral_radio_button_toggled(bool checked);
-
-    void on_gears_backwards_radio_button_toggled(bool checked);
-
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    vilma_ros_talker vilma_talker_obj;
-    vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
+    morse_subscriber morse_subscriber_obj;
+    morse_receiver morse_receiver_obj;
+    morse_transmiter morse_transmiter_obj;
+    //vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
     QTimer *timer;
 
 };

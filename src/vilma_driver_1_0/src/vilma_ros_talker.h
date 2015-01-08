@@ -27,7 +27,9 @@ public:
     ros::Publisher ackermann_pub;
     std_msgs::Float64 gas_pedal_state, brake_pedal_state,hand_brake_state,hand_wheel_state;
     std_msgs::Float64 br_wheel_speed,bl_wheel_speed,fl_wheel_speed,fr_wheel_speed;
+    //GPS
     sensor_msgs::NavSatFix car_gps_state;
+    //GPS
     int morse_gears=0;
     ros::Publisher gas_pedalpub, brake_pedalpub, hand_brakepub,hand_wheelpub, gears_pub;
     ros::Subscriber gas_pedalsub, brake_pedalsub, hand_brakesub, hand_wheelsub;
