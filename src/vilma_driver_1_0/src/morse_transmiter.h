@@ -3,22 +3,28 @@
 #include <ros/ros.h>
 #include <stdio.h>
 #include <ackermann_msgs/AckermannDrive.h>
+#include <string.h>      //strlen
+#include <sys/socket.h>  //socket
+#include <arpa/inet.h>   //inet_addr
 class morse_transmiter
 {
 private:
     ackermann_msgs::AckermannDrive ackermann_msg; //Holds the steering, speed and acceleration desired
     ros::Publisher ackermann_pub;
     ros::NodeHandle rosNode;
+    float steering;
+    float velocity;
+    float power;
+    int sock;
+    struct sockaddr_in server;
 
 public:
     morse_transmiter();
     ~morse_transmiter();
-    void setAckermannDrive(ackermann_msgs::AckermannDrive AckermannState);
-    void setSteeringAngle(float rad);
-    void setSteeringAngleChangeVelocity(float rads_per_sec);
-    void setSpeed(float meters_per_sec);
-    void setAcceleration(float meter_per_sec_sec);
-    void setJerk(float meter_per_sec_sec_sec);
+
+    void setSteering(float rad);
+    void setVelocity(float meter_per_sec);
+    void setPowerAmount(float power_amount);
 
 };
 

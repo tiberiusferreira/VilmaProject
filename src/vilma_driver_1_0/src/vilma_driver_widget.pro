@@ -45,8 +45,7 @@ SOURCES += main.cpp\
     gps.cpp \
     imu.cpp \
     morse_receiver.cpp \
-    morse_transmiter.cpp \
-    morse_subscriber.cpp
+    morse_transmiter.cpp
 
 HEADERS  += mainwindow.h \
     vilma_ros_talker.h \
@@ -55,7 +54,6 @@ HEADERS  += mainwindow.h \
     gps.h \
     imu.h \
     morse_receiver.h \
-    morse_transmiter.h \
-    morse_subscriber.h
+    morse_transmiter.h
 
 FORMS    += mainwindow.ui

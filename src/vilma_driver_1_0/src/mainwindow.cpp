@@ -213,8 +213,11 @@ void MainWindow::on_current_brake_slider_sliderMoved(int position)
 
 void MainWindow::on_steering_slider_sliderMoved(int position)
 {
-    morse_transmiter_obj.setSteeringAngle((float) -position/100);
-    //vilma_talker_obj.set_steering((float) -position/100);
+    morse_transmiter_obj.setSteering(((float) -position/100)*0.191); //*0.191 so it stays as +-0.6 rad
+    morse_transmiter_obj.setVelocity(10);
+    morse_transmiter_obj.setPowerAmount(100);
+
+    //and not +-3.14 rad
 }
 
 void MainWindow::on_pushButton_clicked()
