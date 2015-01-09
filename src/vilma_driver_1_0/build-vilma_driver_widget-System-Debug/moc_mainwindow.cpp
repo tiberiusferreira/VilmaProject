@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,21 +31,24 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
-      25,   21,   11,   11, 0x08,
-      59,   51,   11,   11, 0x08,
-      90,   51,   11,   11, 0x08,
-     129,   51,   11,   11, 0x08,
-     186,  177,   11,   11, 0x08,
-     232,  177,   11,   11, 0x08,
-     273,  177,   11,   11, 0x08,
-     309,   11,   11,   11, 0x08,
+      21,   11,   11,   11, 0x08,
+      39,   35,   11,   11, 0x08,
+      65,   35,   11,   11, 0x08,
+     101,   93,   11,   11, 0x08,
+     132,   93,   11,   11, 0x08,
+     171,   93,   11,   11, 0x08,
+     228,  219,   11,   11, 0x08,
+     274,  219,   11,   11, 0x08,
+     315,  219,   11,   11, 0x08,
+     351,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
-    "MainWindow\0\0update()\0key\0"
-    "keyPressEvent(QKeyEvent*)\0checked\0"
+    "MainWindow\0\0update()\0reset_state()\0"
+    "key\0keyPressEvent(QKeyEvent*)\0"
+    "keyReleaseEvent(QKeyEvent*)\0checked\0"
     "on_Set_new_speed_toggled(bool)\0"
     "on_Constant_speed_button_toggled(bool)\0"
     "on_Set_wheel_direction_from_table_toggled(bool)\0"
@@ -62,14 +65,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
         case 0: _t->update(); break;
-        case 1: _t->keyPressEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
-        case 2: _t->on_Set_new_speed_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 3: _t->on_Constant_speed_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 4: _t->on_Set_wheel_direction_from_table_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 5: _t->on_current_acel_label_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: _t->on_current_brake_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->on_steering_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->on_pushButton_clicked(); break;
+        case 1: _t->reset_state(); break;
+        case 2: _t->keyPressEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
+        case 3: _t->keyReleaseEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
+        case 4: _t->on_Set_new_speed_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 5: _t->on_Constant_speed_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->on_Set_wheel_direction_from_table_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: _t->on_current_acel_label_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->on_current_brake_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->on_steering_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
@@ -107,9 +112,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

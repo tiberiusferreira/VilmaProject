@@ -108,7 +108,7 @@ public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *current_acel_label;
-    QLabel *current_brake_label;
+    QLabel *current_max_speed_label;
     QSlider *steering_slider;
     QLabel *steering_status_label;
     QDockWidget *AutomationWidget;
@@ -491,9 +491,6 @@ public:
         verticalLayout_2->addLayout(imu_euler);
 
         CarStatusWidget->setWidget(CarStatusWidget_contents);
-        layoutWidget->raise();
-        layoutWidget->raise();
-        layoutWidget->raise();
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), CarStatusWidget);
         ManualControlsWidget = new QDockWidget(MainWindow);
         ManualControlsWidget->setObjectName(QString::fromUtf8("ManualControlsWidget"));
@@ -527,20 +524,20 @@ public:
 
         gridLayout->addWidget(current_acel_label, 0, 0, 1, 1);
 
-        current_brake_label = new QLabel(gridLayoutWidget);
-        current_brake_label->setObjectName(QString::fromUtf8("current_brake_label"));
-        current_brake_label->setEnabled(true);
+        current_max_speed_label = new QLabel(gridLayoutWidget);
+        current_max_speed_label->setObjectName(QString::fromUtf8("current_max_speed_label"));
+        current_max_speed_label->setEnabled(true);
         QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(current_brake_label->sizePolicy().hasHeightForWidth());
-        current_brake_label->setSizePolicy(sizePolicy4);
-        current_brake_label->setFrameShape(QFrame::Box);
-        current_brake_label->setTextFormat(Qt::AutoText);
-        current_brake_label->setScaledContents(true);
-        current_brake_label->setWordWrap(false);
+        sizePolicy4.setHeightForWidth(current_max_speed_label->sizePolicy().hasHeightForWidth());
+        current_max_speed_label->setSizePolicy(sizePolicy4);
+        current_max_speed_label->setFrameShape(QFrame::Box);
+        current_max_speed_label->setTextFormat(Qt::AutoText);
+        current_max_speed_label->setScaledContents(true);
+        current_max_speed_label->setWordWrap(false);
 
-        gridLayout->addWidget(current_brake_label, 0, 1, 1, 1);
+        gridLayout->addWidget(current_max_speed_label, 0, 1, 1, 1);
 
         steering_slider = new QSlider(gridLayoutWidget);
         steering_slider->setObjectName(QString::fromUtf8("steering_slider"));
@@ -731,9 +728,9 @@ public:
         imu_euler_z_rotation_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Euler Rotation</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         imu_euler_z_rotation_value->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
         ManualControlsWidget->setWindowTitle(QApplication::translate("MainWindow", "Manual Controls", 0, QApplication::UnicodeUTF8));
-        current_acel_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Acceleration 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        current_brake_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Speed 0.000 %</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel Status : 00.0 rad</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        current_acel_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        current_max_speed_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel:    </span></p></body></html>", 0, QApplication::UnicodeUTF8));
         AutomationWidget->setWindowTitle(QApplication::translate("MainWindow", "Automatic Driving", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_button->setText(QApplication::translate("MainWindow", "Set Wheel Direction to (X,Y)", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_x_input->setPlaceholderText(QApplication::translate("MainWindow", "Input X", 0, QApplication::UnicodeUTF8));

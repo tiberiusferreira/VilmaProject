@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <stdio.h>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -8,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT( update()));
     timer->start(250);
+    timer2 = new QTimer(this);
+    connect(timer2, SIGNAL(timeout()), this, SLOT( reset_state()));
+
 //    ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
 //    ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
 }
@@ -17,40 +21,42 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::reset_state(){
+    timer2->stop();
+    morse_transmiter_obj.setSteering(0);
+
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *key){
+    if(key->key()== Qt::Key_A || key->key()== Qt::Key_D)
+    {
+        this->timer2->start(100);
+    }
+}
+
 void MainWindow::keyPressEvent(QKeyEvent *key){
-//    if(key->key()== Qt::Key_W)
-//    {
-//        vilma_talker_obj.accelerate(0.1);
-//    }
-//    if(key->key()== Qt::Key_S)
-//    {
-//        if(vilma_talker_obj.gas_pedal_state.data>=0.02)
-//            vilma_talker_obj.set_gas_pedal(0);
-//        else
-//        {
-//            vilma_talker_obj.set_brake_pedal(vilma_talker_obj.brake_pedal_state.data+0.1);
-//        }
-//    }
-//    if(key->key()== Qt::Key_D)
-//    {
-//        if(vilma_talker_obj.hand_wheel_state.data<-2.5)
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
-//        }else
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data-0.4);
-//        }
-//    }
-//    if(key->key()== Qt::Key_A)
-//    {
-//        if(vilma_talker_obj.hand_wheel_state.data>2.5)
-//        {
-//            vilma_talker_obj.set_steering(3.14);
-//        }else
-//        {
-//            vilma_talker_obj.set_steering(vilma_talker_obj.hand_wheel_state.data+0.4);
-//        }
-//    }
+
+    if(key->key()== Qt::Key_W)
+    {
+            morse_transmiter_obj.setVelocity(30);
+            morse_transmiter_obj.setPowerAmount(500);
+
+    }
+    if(key->key()== Qt::Key_S)
+    {
+        morse_transmiter_obj.setPowerAmount(0);
+        morse_transmiter_obj.setVelocity(0);
+
+    }
+    if(key->key()== Qt::Key_A)
+    {
+            morse_transmiter_obj.setSteering(0.3);
+    }
+    if(key->key()== Qt::Key_D)
+    {
+            morse_transmiter_obj.setSteering(-0.3);
+
+    }
 }
 
 
@@ -61,9 +67,10 @@ void MainWindow::update()
     //vilma_talker_obj.receive_model_physical_state(); //update ros side values dependable on service calls
 //    ui->current_acel_label_slider->setSliderPosition((vilma_talker_obj.gas_pedal_state.data)*100); //acel slider pose update
 //    ui->current_brake_slider->setSliderPosition((vilma_talker_obj.brake_pedal_state.data)*100); //brake slider pose update
-//    ui->steering_slider->setSliderPosition((-vilma_talker_obj.hand_wheel_state.data)*100); //steering slider pose update
-//    QString acel_text = QString("Current Acceleration: %1").arg(QString::number(vilma_talker_obj.gas_pedal_state.data,'f',3));
-//    QString brake_text = QString("Current Brake: %1").arg(QString::number(vilma_talker_obj.brake_pedal_state.data,'f',3));
+
+      ui->steering_slider->setSliderPosition((float) -morse_transmiter_obj.getSteering()*523.23); //steering slider pose update
+      QString acel_text = QString("Current Power: %1").arg(QString::number(morse_transmiter_obj.getPowerAmount(),'f',3));
+      QString max_speed_text = QString("Max Speed %1 m/s").arg(QString::number(morse_transmiter_obj.getVelocity(),'f',3));
 //    QString steering_text = QString("Hand Wheel Status : %1 rad").arg(QString::number(vilma_talker_obj.hand_wheel_state.data,'f',3));
 //    QString gazebo_x_text = QString("X : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.position.x,'f',3));
 //    QString gazebo_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.pose.position.y,'f',3));
@@ -91,7 +98,8 @@ void MainWindow::update()
 //    QString gazebo_ang_vel_y_text = QString("Y : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.angular.y,'f',3));
 //    QString gazebo_ang_vel_z_text = QString("Z : %1").arg(QString::number(vilma_talker_obj.modelstate.twist.angular.z,'f',3));
 //    QString imu_euler_rot_z = QString("Z : %1").arg(QString::number(vilma_talker_obj.imudata_to_euler().GetYaw(),'f',3));
-//    ui->current_acel_label->setText(acel_text);
+      ui->current_acel_label->setText(acel_text);
+      ui->current_max_speed_label->setText(max_speed_text);
 //    ui->current_brake_label->setText(brake_text);
 //    ui->steering_status_label->setText(steering_text);
 //    ui->gazebo_x->setText(gazebo_x_text);
@@ -214,9 +222,6 @@ void MainWindow::on_current_brake_slider_sliderMoved(int position)
 void MainWindow::on_steering_slider_sliderMoved(int position)
 {
     morse_transmiter_obj.setSteering(((float) -position/100)*0.191); //*0.191 so it stays as +-0.6 rad
-    morse_transmiter_obj.setVelocity(10);
-    morse_transmiter_obj.setPowerAmount(100);
-
     //and not +-3.14 rad
 }
 

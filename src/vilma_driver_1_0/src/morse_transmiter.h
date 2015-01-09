@@ -25,6 +25,9 @@ public:
     void setSteering(float rad);
     void setVelocity(float meter_per_sec);
     void setPowerAmount(float power_amount);
+    float getSteering();
+    float getVelocity();
+    float getPowerAmount();
 
 };
 

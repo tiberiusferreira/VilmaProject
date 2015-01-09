@@ -15,6 +15,9 @@ morse_transmiter::morse_transmiter()
         perror("connect failed. Error");
         exit(1);
     }
+    this->setPowerAmount(0);
+    this->setVelocity(30);
+    this->setSteering(0);
 
 }
 
@@ -54,4 +57,17 @@ void morse_transmiter::setPowerAmount(float power_amount){
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send steer failed");
     }
+}
+
+
+float morse_transmiter::getSteering(){
+    return this->steering;
+}
+
+float morse_transmiter::getVelocity(){
+    return this->velocity;
+}
+
+float morse_transmiter::getPowerAmount(){
+    return this->power;
 }

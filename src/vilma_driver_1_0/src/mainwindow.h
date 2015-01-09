@@ -23,7 +23,11 @@ public:
 private slots:
     void update();
 
+    void reset_state();
+
     void keyPressEvent(QKeyEvent *key);
+
+    void keyReleaseEvent(QKeyEvent *key);
 
     void on_Set_new_speed_toggled(bool checked);
 
@@ -46,6 +50,8 @@ private:
     morse_transmiter morse_transmiter_obj;
     //vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
     QTimer *timer;
+    QTimer *timer2;
+
 
 };
 
