@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
+#include <gazebo/math/Quaternion.hh>
 class morse_receiver
 {
 private:
@@ -38,6 +39,7 @@ public:
     float getAngularVelX();
     float getAngularVelY();
     float getAngularVelZ();
+    float getOrientationZAsEuler();
 
 
 };

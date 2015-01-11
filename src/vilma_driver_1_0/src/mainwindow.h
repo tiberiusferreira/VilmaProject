@@ -8,6 +8,8 @@
 #include "morse_receiver.h"
 #include "morse_transmiter.h"
 #include "vilma_self_driver.h"
+#include "gps.h"
+#include "imu.h"
 namespace Ui {
 class MainWindow;
 }
@@ -35,10 +37,6 @@ private slots:
 
     void on_Set_wheel_direction_from_table_toggled(bool checked);
 
-    void on_current_acel_label_slider_sliderMoved(int position);
-
-    void on_current_brake_slider_sliderMoved(int position);
-
     void on_steering_slider_sliderMoved(int position);
 
     void on_pushButton_clicked();
@@ -48,7 +46,9 @@ private:
     //morse_subscriber morse_subscriber_obj;
     morse_receiver morse_receiver_obj;
     morse_transmiter morse_transmiter_obj;
-    //vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
+    gps gps_obj;
+    imu imu_obj;
+    vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
     QTimer *timer2;
 

@@ -79,3 +79,12 @@ float morse_receiver::getAngularVelY(){
 float morse_receiver::getAngularVelZ(){
     return this->received_vel.twist.angular.z;
 }
+
+float morse_receiver::getOrientationZAsEuler(){
+    gazebo::math::Quaternion temp;
+    temp.x=this->received_pose.pose.orientation.x;
+    temp.y=this->received_pose.pose.orientation.y;
+    temp.z=this->received_pose.pose.orientation.z;
+    temp.w=this->received_pose.pose.orientation.w;
+    return (float) temp.GetYaw();
+}

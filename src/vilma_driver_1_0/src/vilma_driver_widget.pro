@@ -39,7 +39,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    vilma_ros_talker.cpp \
     vilma_self_driver.cpp \
     points.cpp \
     gps.cpp \
@@ -48,7 +47,6 @@ SOURCES += main.cpp\
     morse_transmiter.cpp
 
 HEADERS  += mainwindow.h \
-    vilma_ros_talker.h \
     vilma_self_driver.h \
     points.h \
     gps.h \

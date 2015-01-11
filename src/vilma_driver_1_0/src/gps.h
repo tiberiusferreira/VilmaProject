@@ -8,18 +8,19 @@
 class gps
 {
 private:
-    gps();
-    ~gps();
     sensor_msgs::NavSatFix car_gps_state;
     ros::Subscriber gps_sub;
     ros::NodeHandle rosNode;
     void receive_gps_state(sensor_msgs::NavSatFix gps_state);
 
+
 public:
+    gps();
+    ~gps();
     sensor_msgs::NavSatFix getAsNavSatFix();
-    float getLatitude();
-    float getLongitude();
-    float getAltitude();
+    double getLatitude();
+    double getLongitude();
+    double getAltitude();
 
 };
 

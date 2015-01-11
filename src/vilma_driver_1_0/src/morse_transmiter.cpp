@@ -28,6 +28,12 @@ morse_transmiter::~morse_transmiter()
 
 void morse_transmiter::setSteering(float rad){
     char message1[100];
+    if(rad>0.6){
+        rad=0.6;
+    }
+    if(rad<-0.6){
+        rad=-0.6;
+    }
     this->steering=rad;
     //robot carina2 is hardcoded
     sprintf(message1, "id carina2 steer [1,%lf]\n", rad);

@@ -17,4 +17,15 @@ void gps::receive_gps_state(sensor_msgs::NavSatFix gps_state)
 sensor_msgs::NavSatFix gps::getAsNavSatFix(){
     return this->car_gps_state;
 }
+double gps::getLatitude(){
+    return this->car_gps_state.latitude;
+}
+
+double gps::getLongitude(){
+    return this->car_gps_state.longitude;
+}
+
+double gps::getAltitude(){
+    return this->car_gps_state.altitude;
+}
 

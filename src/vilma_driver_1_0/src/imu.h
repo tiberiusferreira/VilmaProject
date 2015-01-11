@@ -7,14 +7,14 @@
 class imu
 {
 private:
-    imu();
-    ~imu();
     sensor_msgs::Imu imu_received_data;
     ros::Subscriber imu_sub;
     ros::NodeHandle rosNode;
     void receive_imu_data(sensor_msgs::Imu data);
     gazebo::math::Quaternion imudata_to_euler();
 public:
+    imu();
+    ~imu();
     sensor_msgs::Imu getAsImu();
 
     float getOrientationX();
