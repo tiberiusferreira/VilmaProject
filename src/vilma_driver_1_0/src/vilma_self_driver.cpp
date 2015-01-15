@@ -4,7 +4,8 @@ vilma_self_driver::vilma_self_driver(morse_receiver *morse_receiver_obj, morse_t
 {
     this->morse_receiver_obj=morse_receiver_obj;
     this->morse_transmiter_obj=morse_transmiter_obj;
-
+    gasControler.initPid(150,0.9,0,500,-500,this->rosNode);
+    this->previous_interation_time = ros::Time::now();
 }
 int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates wheels so model goes to given X Y position.
     //Step 1: Find out if the desired location if forward or backwards in respect to the car.
@@ -40,6 +41,7 @@ the point has a positive x value.*/
     return 1;
 
 }
+
 std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_point> given_points){
     std::deque <one_point> points,smoothed_points;
     unsigned int i;
@@ -68,4 +70,34 @@ std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_poi
 //            printf("%f %f",((smoothed_points.at(i)).x),((smoothed_points.at(i)).y));
 //    }
     return smoothed_points;
+}
+
+int vilma_self_driver::maintainSpeed(int desiredSpeed){
+    float currentSpeed;
+    double updated_value;
+    ros::Duration dt = ros::Time::now()-this->previous_interation_time;
+    float velXsquare = this->morse_receiver_obj->getLinearVelX();
+    velXsquare=velXsquare*velXsquare;
+    float velYsquare = this->morse_receiver_obj->getLinearVelY();
+    velYsquare=velYsquare*velYsquare;
+    float velZsquare = this->morse_receiver_obj->getAngularVelZ();
+    velZsquare=velZsquare*velZsquare;
+    currentSpeed=sqrt(velXsquare+velYsquare+velZsquare);
+    updated_value=gasControler.updatePid(currentSpeed-desiredSpeed,dt);
+    printf("Valor de saida %f, erro %f, dt %f hora %f\n",updated_value,currentSpeed-desiredSpeed,dt.toSec(),this->previous_interation_time.toSec());
+    if(updated_value-this->morse_transmiter_obj->getPowerAmount()>10){
+        updated_value=this->morse_transmiter_obj->getPowerAmount()+10;
+    }
+    if(updated_value-this->morse_transmiter_obj->getPowerAmount()<-10){
+        updated_value=this->morse_transmiter_obj->getPowerAmount()-10;
+    }
+    if(updated_value>20*desiredSpeed){
+        updated_value=20*desiredSpeed;
+    }
+    morse_transmiter_obj->setPowerAmount(updated_value);
+    this->previous_interation_time = ros::Time::now();
+
+
+    return 0;
+
 }

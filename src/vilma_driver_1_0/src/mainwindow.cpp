@@ -9,9 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT( update()));
     timer->start(250);
-    timer2 = new QTimer(this);
-    connect(timer2, SIGNAL(timeout()), this, SLOT( reset_state()));
-
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
 }
@@ -50,6 +47,7 @@ void MainWindow::update()
     QString morse_lin_vel_x_text = QString("X : %1").arg(QString::number(morse_receiver_obj.getLinearVelX(),'f',3));
     QString morse_lin_vel_y_text = QString("Y : %1").arg(QString::number(morse_receiver_obj.getLinearVelY(),'f',3));
     QString morse_lin_vel_z_text = QString("Z : %1").arg(QString::number(morse_receiver_obj.getLinearVelZ(),'f',3));
+    QString morse_lin_vel_avg_text = QString("AVG : %1").arg(QString::number(morse_receiver_obj.getLinearVelAVG(),'f',3));
     QString morse_ang_vel_x_text = QString("X : %1").arg(QString::number(morse_receiver_obj.getAngularVelX(),'f',3));
     QString morse_ang_vel_y_text = QString("Y : %1").arg(QString::number(morse_receiver_obj.getAngularVelY(),'f',3));
     QString morse_ang_vel_z_text = QString("Z : %1").arg(QString::number(morse_receiver_obj.getAngularVelZ(),'f',3));
@@ -78,11 +76,18 @@ void MainWindow::update()
     ui->morse_lin_vel_x_text->setText(morse_lin_vel_x_text);
     ui->morse_lin_vel_y_text->setText(morse_lin_vel_y_text);
     ui->morse_lin_vel_z_text->setText(morse_lin_vel_z_text);
+    ui->morse_lin_vel_avg_text->setText(morse_lin_vel_avg_text);
     ui->morse_ang_vel_x_text->setText(morse_ang_vel_x_text);
     ui->morse_ang_vel_y_text->setText(morse_ang_vel_y_text);
     ui->morse_ang_vel_z_text->setText(morse_ang_vel_z_text);
     ui->imu_euler_z_rotation_text->setText(imu_euler_rot_z);
-
+    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
+        bool ok;
+        ui->Enter_new_constant_speed->text().toDouble(&ok);
+        if(ok==1){
+        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
+        }
+    }
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
                 && ui->Set_wheel_direction_y_input->text()!=""){
@@ -114,24 +119,24 @@ void MainWindow::update()
 }
 void MainWindow::on_Set_new_speed_toggled(bool checked)
 {
-//    if(checked)
-//        ui->Enter_new_constant_speed->setEnabled(1);
-//    else
-//        ui->Enter_new_constant_speed->setEnabled(0);
+    if(checked)
+        ui->Enter_new_constant_speed->setEnabled(1);
+    else
+        ui->Enter_new_constant_speed->setEnabled(0);
 
 }
 
 void MainWindow::on_Constant_speed_button_toggled(bool checked)
 {
-//    if(checked)
-//    {
-//        ui->Maintain_current_speed->setEnabled(1);
-//        ui->Set_new_speed->setEnabled(1);
-//    }else
-//    {
-//        ui->Maintain_current_speed->setEnabled(0);
-//        ui->Set_new_speed->setEnabled(0);
-//    }
+    if(checked)
+    {
+        ui->Maintain_current_speed->setEnabled(1);
+        ui->Set_new_speed->setEnabled(1);
+    }else
+    {
+        ui->Maintain_current_speed->setEnabled(0);
+        ui->Set_new_speed->setEnabled(0);
+    }
 }
 
 void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)

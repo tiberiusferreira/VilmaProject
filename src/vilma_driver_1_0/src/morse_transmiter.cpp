@@ -16,7 +16,7 @@ morse_transmiter::morse_transmiter()
         exit(1);
     }
     this->setPowerAmount(0);
-    this->setVelocity(30);
+    this->setVelocity(100);
     this->setSteering(0);
 
 }

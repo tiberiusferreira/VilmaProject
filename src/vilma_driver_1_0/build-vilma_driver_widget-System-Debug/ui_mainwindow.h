@@ -47,39 +47,6 @@ public:
     QDockWidget *CarStatusWidget;
     QWidget *CarStatusWidget_contents;
     QWidget *layoutWidget;
-    QVBoxLayout *Position_gps;
-    QLabel *label_9;
-    QHBoxLayout *horizontalLayout_6;
-    QLabel *latitude_text;
-    QLabel *longitude_text;
-    QWidget *layoutWidget1;
-    QVBoxLayout *Morse_data_layout;
-    QVBoxLayout *Quaternion_morse;
-    QVBoxLayout *Position_morse;
-    QLabel *label_5;
-    QHBoxLayout *horizontalLayout_5;
-    QLabel *morse_x_text;
-    QLabel *morse_y_text;
-    QLabel *morse_z_text;
-    QLabel *label_12;
-    QHBoxLayout *Morse_quaternion_layout;
-    QLabel *morse_quaternion_x_text;
-    QLabel *morse_quaternion_y_text;
-    QLabel *morse_quaternion_z_text;
-    QLabel *morse_quaternion_w_text;
-    QVBoxLayout *Lin_vel_morse;
-    QLabel *label_34;
-    QHBoxLayout *horizontalLayout_12;
-    QLabel *morse_lin_vel_x_text;
-    QLabel *morse_lin_vel_y_text;
-    QLabel *morse_lin_vel_z_text;
-    QVBoxLayout *Ang_vel_morse;
-    QLabel *label_38;
-    QHBoxLayout *horizontalLayout_13;
-    QLabel *morse_ang_vel_x_text;
-    QLabel *morse_ang_vel_y_text;
-    QLabel *morse_ang_vel_z_text;
-    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *IMU_quat;
     QLabel *label_17;
@@ -103,6 +70,39 @@ public:
     QVBoxLayout *imu_euler;
     QLabel *imu_euler_z_rotation_label;
     QLabel *imu_euler_z_rotation_text;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *Quaternion_morse;
+    QVBoxLayout *Position_morse;
+    QLabel *label_5;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *morse_x_text;
+    QLabel *morse_y_text;
+    QLabel *morse_z_text;
+    QLabel *label_12;
+    QHBoxLayout *Morse_quaternion_layout;
+    QLabel *morse_quaternion_x_text;
+    QLabel *morse_quaternion_y_text;
+    QLabel *morse_quaternion_z_text;
+    QLabel *morse_quaternion_w_text;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_34;
+    QHBoxLayout *horizontalLayout;
+    QLabel *morse_lin_vel_x_text;
+    QLabel *morse_lin_vel_y_text;
+    QLabel *morse_lin_vel_z_text;
+    QLabel *morse_lin_vel_avg_text;
+    QVBoxLayout *Ang_vel_morse;
+    QLabel *label_38;
+    QHBoxLayout *horizontalLayout_13;
+    QLabel *morse_ang_vel_x_text;
+    QLabel *morse_ang_vel_y_text;
+    QLabel *morse_ang_vel_z_text;
+    QVBoxLayout *Position_gps;
+    QLabel *label_9;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *latitude_text;
+    QLabel *longitude_text;
     QDockWidget *ManualControlsWidget;
     QWidget *ManualControlsWidget_contents;
     QWidget *gridLayoutWidget;
@@ -173,197 +173,8 @@ public:
         CarStatusWidget_contents->setSizePolicy(sizePolicy1);
         layoutWidget = new QWidget(CarStatusWidget_contents);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(50, 460, 631, 100));
-        Position_gps = new QVBoxLayout(layoutWidget);
-        Position_gps->setSpacing(6);
-        Position_gps->setContentsMargins(11, 11, 11, 11);
-        Position_gps->setObjectName(QString::fromUtf8("Position_gps"));
-        Position_gps->setContentsMargins(0, 0, 0, 0);
-        label_9 = new QLabel(layoutWidget);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
-        label_9->setSizePolicy(sizePolicy2);
-        label_9->setAlignment(Qt::AlignCenter);
-
-        Position_gps->addWidget(label_9);
-
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        latitude_text = new QLabel(layoutWidget);
-        latitude_text->setObjectName(QString::fromUtf8("latitude_text"));
-
-        horizontalLayout_6->addWidget(latitude_text);
-
-        longitude_text = new QLabel(layoutWidget);
-        longitude_text->setObjectName(QString::fromUtf8("longitude_text"));
-
-        horizontalLayout_6->addWidget(longitude_text);
-
-
-        Position_gps->addLayout(horizontalLayout_6);
-
-        layoutWidget1 = new QWidget(CarStatusWidget_contents);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(50, 10, 587, 438));
-        Morse_data_layout = new QVBoxLayout(layoutWidget1);
-        Morse_data_layout->setSpacing(6);
-        Morse_data_layout->setContentsMargins(11, 11, 11, 11);
-        Morse_data_layout->setObjectName(QString::fromUtf8("Morse_data_layout"));
-        Morse_data_layout->setContentsMargins(0, 0, 0, 0);
-        Quaternion_morse = new QVBoxLayout();
-        Quaternion_morse->setSpacing(6);
-        Quaternion_morse->setObjectName(QString::fromUtf8("Quaternion_morse"));
-        Position_morse = new QVBoxLayout();
-        Position_morse->setSpacing(6);
-        Position_morse->setObjectName(QString::fromUtf8("Position_morse"));
-        label_5 = new QLabel(layoutWidget1);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        sizePolicy1.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
-        label_5->setSizePolicy(sizePolicy1);
-        label_5->setAlignment(Qt::AlignCenter);
-
-        Position_morse->addWidget(label_5);
-
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        morse_x_text = new QLabel(layoutWidget1);
-        morse_x_text->setObjectName(QString::fromUtf8("morse_x_text"));
-        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(morse_x_text->sizePolicy().hasHeightForWidth());
-        morse_x_text->setSizePolicy(sizePolicy3);
-
-        horizontalLayout_5->addWidget(morse_x_text);
-
-        morse_y_text = new QLabel(layoutWidget1);
-        morse_y_text->setObjectName(QString::fromUtf8("morse_y_text"));
-
-        horizontalLayout_5->addWidget(morse_y_text);
-
-        morse_z_text = new QLabel(layoutWidget1);
-        morse_z_text->setObjectName(QString::fromUtf8("morse_z_text"));
-        sizePolicy1.setHeightForWidth(morse_z_text->sizePolicy().hasHeightForWidth());
-        morse_z_text->setSizePolicy(sizePolicy1);
-
-        horizontalLayout_5->addWidget(morse_z_text);
-
-
-        Position_morse->addLayout(horizontalLayout_5);
-
-
-        Quaternion_morse->addLayout(Position_morse);
-
-        label_12 = new QLabel(layoutWidget1);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setAlignment(Qt::AlignCenter);
-
-        Quaternion_morse->addWidget(label_12);
-
-        Morse_quaternion_layout = new QHBoxLayout();
-        Morse_quaternion_layout->setSpacing(6);
-        Morse_quaternion_layout->setObjectName(QString::fromUtf8("Morse_quaternion_layout"));
-        morse_quaternion_x_text = new QLabel(layoutWidget1);
-        morse_quaternion_x_text->setObjectName(QString::fromUtf8("morse_quaternion_x_text"));
-
-        Morse_quaternion_layout->addWidget(morse_quaternion_x_text);
-
-        morse_quaternion_y_text = new QLabel(layoutWidget1);
-        morse_quaternion_y_text->setObjectName(QString::fromUtf8("morse_quaternion_y_text"));
-
-        Morse_quaternion_layout->addWidget(morse_quaternion_y_text);
-
-        morse_quaternion_z_text = new QLabel(layoutWidget1);
-        morse_quaternion_z_text->setObjectName(QString::fromUtf8("morse_quaternion_z_text"));
-
-        Morse_quaternion_layout->addWidget(morse_quaternion_z_text);
-
-        morse_quaternion_w_text = new QLabel(layoutWidget1);
-        morse_quaternion_w_text->setObjectName(QString::fromUtf8("morse_quaternion_w_text"));
-
-        Morse_quaternion_layout->addWidget(morse_quaternion_w_text);
-
-
-        Quaternion_morse->addLayout(Morse_quaternion_layout);
-
-
-        Morse_data_layout->addLayout(Quaternion_morse);
-
-        Lin_vel_morse = new QVBoxLayout();
-        Lin_vel_morse->setSpacing(6);
-        Lin_vel_morse->setObjectName(QString::fromUtf8("Lin_vel_morse"));
-        label_34 = new QLabel(layoutWidget1);
-        label_34->setObjectName(QString::fromUtf8("label_34"));
-        label_34->setAlignment(Qt::AlignCenter);
-
-        Lin_vel_morse->addWidget(label_34);
-
-        horizontalLayout_12 = new QHBoxLayout();
-        horizontalLayout_12->setSpacing(6);
-        horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
-        morse_lin_vel_x_text = new QLabel(layoutWidget1);
-        morse_lin_vel_x_text->setObjectName(QString::fromUtf8("morse_lin_vel_x_text"));
-
-        horizontalLayout_12->addWidget(morse_lin_vel_x_text);
-
-        morse_lin_vel_y_text = new QLabel(layoutWidget1);
-        morse_lin_vel_y_text->setObjectName(QString::fromUtf8("morse_lin_vel_y_text"));
-
-        horizontalLayout_12->addWidget(morse_lin_vel_y_text);
-
-        morse_lin_vel_z_text = new QLabel(layoutWidget1);
-        morse_lin_vel_z_text->setObjectName(QString::fromUtf8("morse_lin_vel_z_text"));
-
-        horizontalLayout_12->addWidget(morse_lin_vel_z_text);
-
-
-        Lin_vel_morse->addLayout(horizontalLayout_12);
-
-
-        Morse_data_layout->addLayout(Lin_vel_morse);
-
-        Ang_vel_morse = new QVBoxLayout();
-        Ang_vel_morse->setSpacing(6);
-        Ang_vel_morse->setObjectName(QString::fromUtf8("Ang_vel_morse"));
-        label_38 = new QLabel(layoutWidget1);
-        label_38->setObjectName(QString::fromUtf8("label_38"));
-        label_38->setAlignment(Qt::AlignCenter);
-
-        Ang_vel_morse->addWidget(label_38);
-
-        horizontalLayout_13 = new QHBoxLayout();
-        horizontalLayout_13->setSpacing(6);
-        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
-        morse_ang_vel_x_text = new QLabel(layoutWidget1);
-        morse_ang_vel_x_text->setObjectName(QString::fromUtf8("morse_ang_vel_x_text"));
-
-        horizontalLayout_13->addWidget(morse_ang_vel_x_text);
-
-        morse_ang_vel_y_text = new QLabel(layoutWidget1);
-        morse_ang_vel_y_text->setObjectName(QString::fromUtf8("morse_ang_vel_y_text"));
-
-        horizontalLayout_13->addWidget(morse_ang_vel_y_text);
-
-        morse_ang_vel_z_text = new QLabel(layoutWidget1);
-        morse_ang_vel_z_text->setObjectName(QString::fromUtf8("morse_ang_vel_z_text"));
-
-        horizontalLayout_13->addWidget(morse_ang_vel_z_text);
-
-
-        Ang_vel_morse->addLayout(horizontalLayout_13);
-
-
-        Morse_data_layout->addLayout(Ang_vel_morse);
-
-        layoutWidget2 = new QWidget(CarStatusWidget_contents);
-        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(50, 580, 495, 436));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget2);
+        layoutWidget->setGeometry(QRect(50, 580, 495, 436));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -371,7 +182,7 @@ public:
         IMU_quat = new QVBoxLayout();
         IMU_quat->setSpacing(6);
         IMU_quat->setObjectName(QString::fromUtf8("IMU_quat"));
-        label_17 = new QLabel(layoutWidget2);
+        label_17 = new QLabel(layoutWidget);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setAlignment(Qt::AlignCenter);
 
@@ -380,22 +191,22 @@ public:
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        imu_quaternion_x_text = new QLabel(layoutWidget2);
+        imu_quaternion_x_text = new QLabel(layoutWidget);
         imu_quaternion_x_text->setObjectName(QString::fromUtf8("imu_quaternion_x_text"));
 
         horizontalLayout_8->addWidget(imu_quaternion_x_text);
 
-        imu_quaternion_y_text = new QLabel(layoutWidget2);
+        imu_quaternion_y_text = new QLabel(layoutWidget);
         imu_quaternion_y_text->setObjectName(QString::fromUtf8("imu_quaternion_y_text"));
 
         horizontalLayout_8->addWidget(imu_quaternion_y_text);
 
-        imu_quaternion_z_text = new QLabel(layoutWidget2);
+        imu_quaternion_z_text = new QLabel(layoutWidget);
         imu_quaternion_z_text->setObjectName(QString::fromUtf8("imu_quaternion_z_text"));
 
         horizontalLayout_8->addWidget(imu_quaternion_z_text);
 
-        imu_quaternion_w_text = new QLabel(layoutWidget2);
+        imu_quaternion_w_text = new QLabel(layoutWidget);
         imu_quaternion_w_text->setObjectName(QString::fromUtf8("imu_quaternion_w_text"));
 
         horizontalLayout_8->addWidget(imu_quaternion_w_text);
@@ -409,7 +220,7 @@ public:
         IMU_lin_acel = new QVBoxLayout();
         IMU_lin_acel->setSpacing(6);
         IMU_lin_acel->setObjectName(QString::fromUtf8("IMU_lin_acel"));
-        label_26 = new QLabel(layoutWidget2);
+        label_26 = new QLabel(layoutWidget);
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setAlignment(Qt::AlignCenter);
 
@@ -418,17 +229,17 @@ public:
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
-        imu_lin_acel_x_text = new QLabel(layoutWidget2);
+        imu_lin_acel_x_text = new QLabel(layoutWidget);
         imu_lin_acel_x_text->setObjectName(QString::fromUtf8("imu_lin_acel_x_text"));
 
         horizontalLayout_10->addWidget(imu_lin_acel_x_text);
 
-        imu_lin_acel_y_text = new QLabel(layoutWidget2);
+        imu_lin_acel_y_text = new QLabel(layoutWidget);
         imu_lin_acel_y_text->setObjectName(QString::fromUtf8("imu_lin_acel_y_text"));
 
         horizontalLayout_10->addWidget(imu_lin_acel_y_text);
 
-        imu_lin_acel_z_text = new QLabel(layoutWidget2);
+        imu_lin_acel_z_text = new QLabel(layoutWidget);
         imu_lin_acel_z_text->setObjectName(QString::fromUtf8("imu_lin_acel_z_text"));
 
         horizontalLayout_10->addWidget(imu_lin_acel_z_text);
@@ -442,7 +253,7 @@ public:
         IMU_ang_vel = new QVBoxLayout();
         IMU_ang_vel->setSpacing(6);
         IMU_ang_vel->setObjectName(QString::fromUtf8("IMU_ang_vel"));
-        label_22 = new QLabel(layoutWidget2);
+        label_22 = new QLabel(layoutWidget);
         label_22->setObjectName(QString::fromUtf8("label_22"));
         label_22->setAlignment(Qt::AlignCenter);
 
@@ -451,17 +262,17 @@ public:
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        imu_ang_speed_x_text = new QLabel(layoutWidget2);
+        imu_ang_speed_x_text = new QLabel(layoutWidget);
         imu_ang_speed_x_text->setObjectName(QString::fromUtf8("imu_ang_speed_x_text"));
 
         horizontalLayout_9->addWidget(imu_ang_speed_x_text);
 
-        imu_ang_speed_y_text = new QLabel(layoutWidget2);
+        imu_ang_speed_y_text = new QLabel(layoutWidget);
         imu_ang_speed_y_text->setObjectName(QString::fromUtf8("imu_ang_speed_y_text"));
 
         horizontalLayout_9->addWidget(imu_ang_speed_y_text);
 
-        imu_ang_speed_z_text = new QLabel(layoutWidget2);
+        imu_ang_speed_z_text = new QLabel(layoutWidget);
         imu_ang_speed_z_text->setObjectName(QString::fromUtf8("imu_ang_speed_z_text"));
 
         horizontalLayout_9->addWidget(imu_ang_speed_z_text);
@@ -475,13 +286,13 @@ public:
         imu_euler = new QVBoxLayout();
         imu_euler->setSpacing(6);
         imu_euler->setObjectName(QString::fromUtf8("imu_euler"));
-        imu_euler_z_rotation_label = new QLabel(layoutWidget2);
+        imu_euler_z_rotation_label = new QLabel(layoutWidget);
         imu_euler_z_rotation_label->setObjectName(QString::fromUtf8("imu_euler_z_rotation_label"));
         imu_euler_z_rotation_label->setAlignment(Qt::AlignCenter);
 
         imu_euler->addWidget(imu_euler_z_rotation_label);
 
-        imu_euler_z_rotation_text = new QLabel(layoutWidget2);
+        imu_euler_z_rotation_text = new QLabel(layoutWidget);
         imu_euler_z_rotation_text->setObjectName(QString::fromUtf8("imu_euler_z_rotation_text"));
         imu_euler_z_rotation_text->setAlignment(Qt::AlignCenter);
 
@@ -489,6 +300,198 @@ public:
 
 
         verticalLayout_2->addLayout(imu_euler);
+
+        widget = new QWidget(CarStatusWidget_contents);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(50, 11, 633, 550));
+        verticalLayout_3 = new QVBoxLayout(widget);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        Quaternion_morse = new QVBoxLayout();
+        Quaternion_morse->setSpacing(6);
+        Quaternion_morse->setObjectName(QString::fromUtf8("Quaternion_morse"));
+        Position_morse = new QVBoxLayout();
+        Position_morse->setSpacing(6);
+        Position_morse->setObjectName(QString::fromUtf8("Position_morse"));
+        label_5 = new QLabel(widget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        sizePolicy1.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy1);
+        label_5->setAlignment(Qt::AlignCenter);
+
+        Position_morse->addWidget(label_5);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        morse_x_text = new QLabel(widget);
+        morse_x_text->setObjectName(QString::fromUtf8("morse_x_text"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(morse_x_text->sizePolicy().hasHeightForWidth());
+        morse_x_text->setSizePolicy(sizePolicy2);
+
+        horizontalLayout_5->addWidget(morse_x_text);
+
+        morse_y_text = new QLabel(widget);
+        morse_y_text->setObjectName(QString::fromUtf8("morse_y_text"));
+
+        horizontalLayout_5->addWidget(morse_y_text);
+
+        morse_z_text = new QLabel(widget);
+        morse_z_text->setObjectName(QString::fromUtf8("morse_z_text"));
+        sizePolicy1.setHeightForWidth(morse_z_text->sizePolicy().hasHeightForWidth());
+        morse_z_text->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_5->addWidget(morse_z_text);
+
+
+        Position_morse->addLayout(horizontalLayout_5);
+
+
+        Quaternion_morse->addLayout(Position_morse);
+
+        label_12 = new QLabel(widget);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setAlignment(Qt::AlignCenter);
+
+        Quaternion_morse->addWidget(label_12);
+
+        Morse_quaternion_layout = new QHBoxLayout();
+        Morse_quaternion_layout->setSpacing(6);
+        Morse_quaternion_layout->setObjectName(QString::fromUtf8("Morse_quaternion_layout"));
+        morse_quaternion_x_text = new QLabel(widget);
+        morse_quaternion_x_text->setObjectName(QString::fromUtf8("morse_quaternion_x_text"));
+
+        Morse_quaternion_layout->addWidget(morse_quaternion_x_text);
+
+        morse_quaternion_y_text = new QLabel(widget);
+        morse_quaternion_y_text->setObjectName(QString::fromUtf8("morse_quaternion_y_text"));
+
+        Morse_quaternion_layout->addWidget(morse_quaternion_y_text);
+
+        morse_quaternion_z_text = new QLabel(widget);
+        morse_quaternion_z_text->setObjectName(QString::fromUtf8("morse_quaternion_z_text"));
+
+        Morse_quaternion_layout->addWidget(morse_quaternion_z_text);
+
+        morse_quaternion_w_text = new QLabel(widget);
+        morse_quaternion_w_text->setObjectName(QString::fromUtf8("morse_quaternion_w_text"));
+
+        Morse_quaternion_layout->addWidget(morse_quaternion_w_text);
+
+
+        Quaternion_morse->addLayout(Morse_quaternion_layout);
+
+
+        verticalLayout_3->addLayout(Quaternion_morse);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        label_34 = new QLabel(widget);
+        label_34->setObjectName(QString::fromUtf8("label_34"));
+        label_34->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(label_34);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        morse_lin_vel_x_text = new QLabel(widget);
+        morse_lin_vel_x_text->setObjectName(QString::fromUtf8("morse_lin_vel_x_text"));
+
+        horizontalLayout->addWidget(morse_lin_vel_x_text);
+
+        morse_lin_vel_y_text = new QLabel(widget);
+        morse_lin_vel_y_text->setObjectName(QString::fromUtf8("morse_lin_vel_y_text"));
+
+        horizontalLayout->addWidget(morse_lin_vel_y_text);
+
+        morse_lin_vel_z_text = new QLabel(widget);
+        morse_lin_vel_z_text->setObjectName(QString::fromUtf8("morse_lin_vel_z_text"));
+
+        horizontalLayout->addWidget(morse_lin_vel_z_text);
+
+        morse_lin_vel_avg_text = new QLabel(widget);
+        morse_lin_vel_avg_text->setObjectName(QString::fromUtf8("morse_lin_vel_avg_text"));
+
+        horizontalLayout->addWidget(morse_lin_vel_avg_text);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+
+        verticalLayout_3->addLayout(verticalLayout);
+
+        Ang_vel_morse = new QVBoxLayout();
+        Ang_vel_morse->setSpacing(6);
+        Ang_vel_morse->setObjectName(QString::fromUtf8("Ang_vel_morse"));
+        label_38 = new QLabel(widget);
+        label_38->setObjectName(QString::fromUtf8("label_38"));
+        label_38->setAlignment(Qt::AlignCenter);
+
+        Ang_vel_morse->addWidget(label_38);
+
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setSpacing(6);
+        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
+        morse_ang_vel_x_text = new QLabel(widget);
+        morse_ang_vel_x_text->setObjectName(QString::fromUtf8("morse_ang_vel_x_text"));
+
+        horizontalLayout_13->addWidget(morse_ang_vel_x_text);
+
+        morse_ang_vel_y_text = new QLabel(widget);
+        morse_ang_vel_y_text->setObjectName(QString::fromUtf8("morse_ang_vel_y_text"));
+
+        horizontalLayout_13->addWidget(morse_ang_vel_y_text);
+
+        morse_ang_vel_z_text = new QLabel(widget);
+        morse_ang_vel_z_text->setObjectName(QString::fromUtf8("morse_ang_vel_z_text"));
+
+        horizontalLayout_13->addWidget(morse_ang_vel_z_text);
+
+
+        Ang_vel_morse->addLayout(horizontalLayout_13);
+
+
+        verticalLayout_3->addLayout(Ang_vel_morse);
+
+        Position_gps = new QVBoxLayout();
+        Position_gps->setSpacing(6);
+        Position_gps->setObjectName(QString::fromUtf8("Position_gps"));
+        label_9 = new QLabel(widget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy3);
+        label_9->setAlignment(Qt::AlignCenter);
+
+        Position_gps->addWidget(label_9);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        latitude_text = new QLabel(widget);
+        latitude_text->setObjectName(QString::fromUtf8("latitude_text"));
+
+        horizontalLayout_6->addWidget(latitude_text);
+
+        longitude_text = new QLabel(widget);
+        longitude_text->setObjectName(QString::fromUtf8("longitude_text"));
+
+        horizontalLayout_6->addWidget(longitude_text);
+
+
+        Position_gps->addLayout(horizontalLayout_6);
+
+
+        verticalLayout_3->addLayout(Position_gps);
 
         CarStatusWidget->setWidget(CarStatusWidget_contents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), CarStatusWidget);
@@ -514,8 +517,8 @@ public:
         current_acel_text = new QLabel(gridLayoutWidget);
         current_acel_text->setObjectName(QString::fromUtf8("current_acel_text"));
         current_acel_text->setEnabled(true);
-        sizePolicy3.setHeightForWidth(current_acel_text->sizePolicy().hasHeightForWidth());
-        current_acel_text->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(current_acel_text->sizePolicy().hasHeightForWidth());
+        current_acel_text->setSizePolicy(sizePolicy2);
         current_acel_text->setMinimumSize(QSize(50, 0));
         current_acel_text->setFrameShape(QFrame::Box);
         current_acel_text->setTextFormat(Qt::AutoText);
@@ -692,26 +695,6 @@ public:
         actionBrake->setText(QApplication::translate("MainWindow", "Brake", 0, QApplication::UnicodeUTF8));
         menuView->setTitle(QApplication::translate("MainWindow", "View", 0, QApplication::UnicodeUTF8));
         CarStatusWidget->setWindowTitle(QApplication::translate("MainWindow", "Car Status", 0, QApplication::UnicodeUTF8));
-        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position GPS</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        latitude_text->setText(QApplication::translate("MainWindow", "Latitude: 0.000000000", 0, QApplication::UnicodeUTF8));
-        longitude_text->setText(QApplication::translate("MainWindow", "Longitude: 0.000000000", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position (MORSE) </span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        morse_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Orientation (MORSE )</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        morse_quaternion_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_quaternion_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_quaternion_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_quaternion_w_text->setText(QApplication::translate("MainWindow", "W : 0.000", 0, QApplication::UnicodeUTF8));
-        label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Linear Velocity (MORSE)</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        morse_lin_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_lin_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_lin_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
-        label_38->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Angular Velocity (MORSE)</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        morse_ang_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_ang_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
-        morse_ang_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
         label_17->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Orientation </span></p></body></html>", 0, QApplication::UnicodeUTF8));
         imu_quaternion_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
         imu_quaternion_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
@@ -727,6 +710,27 @@ public:
         imu_ang_speed_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
         imu_euler_z_rotation_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Euler Rotation</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         imu_euler_z_rotation_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position (MORSE) </span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        morse_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Orientation (MORSE )</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        morse_quaternion_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_quaternion_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_quaternion_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_quaternion_w_text->setText(QApplication::translate("MainWindow", "W : 0.000", 0, QApplication::UnicodeUTF8));
+        label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Linear Velocity (MORSE)</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        morse_lin_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_lin_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_lin_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_lin_vel_avg_text->setText(QApplication::translate("MainWindow", "AVG : 0.000", 0, QApplication::UnicodeUTF8));
+        label_38->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Angular Velocity (MORSE)</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        morse_ang_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_ang_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0, QApplication::UnicodeUTF8));
+        morse_ang_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position GPS</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        latitude_text->setText(QApplication::translate("MainWindow", "Latitude: 0.000000000", 0, QApplication::UnicodeUTF8));
+        longitude_text->setText(QApplication::translate("MainWindow", "Longitude: 0.000000000", 0, QApplication::UnicodeUTF8));
         ManualControlsWidget->setWindowTitle(QApplication::translate("MainWindow", "Manual Controls", 0, QApplication::UnicodeUTF8));
         current_acel_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         current_max_speed_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0, QApplication::UnicodeUTF8));

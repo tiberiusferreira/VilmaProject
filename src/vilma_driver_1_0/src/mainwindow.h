@@ -44,7 +44,6 @@ private:
     imu imu_obj;
     vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
-    QTimer *timer2;
 
 
 };

@@ -35,6 +35,7 @@ public:
     float getLinearVelX();
     float getLinearVelY();
     float getLinearVelZ();
+    float getLinearVelAVG();
 
     float getAngularVelX();
     float getAngularVelY();

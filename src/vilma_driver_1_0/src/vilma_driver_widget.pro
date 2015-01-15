@@ -25,7 +25,7 @@ LIBS += -L/opt/ros/indigo/lib/ -lactionlib -lbondcpp -lclass_loader -lroscpp \
 -lconsole_bridge -lcpp_common -lcv_bridge -ldynamic_reconfigure_config_init_mutex \
 -limage_transport_plugins -limage_transport -lmessage_filters -lnodeletlib -lqt_gui_cpp \
 -lrosconsole -lrostime -lroscpp_serialization -lxmlrpcpp -lrosconsole_log4cxx -lrosconsole \
--lrosconsole_backend_interface
+-lrosconsole_backend_interface -lcontrol_toolbox
 
 LIBS += -lboost_thread
 

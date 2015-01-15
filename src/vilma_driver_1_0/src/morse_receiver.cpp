@@ -68,6 +68,16 @@ float morse_receiver::getLinearVelZ(){
     return this->received_vel.twist.linear.z;
 }
 
+float morse_receiver::getLinearVelAVG(){
+    float velXsquare = this->getLinearVelX();
+    velXsquare=velXsquare*velXsquare;
+    float velYsquare = this->getLinearVelY();
+    velYsquare=velYsquare*velYsquare;
+    float velZsquare = this->getAngularVelZ();
+    velZsquare=velZsquare*velZsquare;
+    return sqrt(velXsquare+velYsquare+velZsquare);
+}
+
 float morse_receiver::getAngularVelX(){
     return this->received_vel.twist.angular.x;
 }
