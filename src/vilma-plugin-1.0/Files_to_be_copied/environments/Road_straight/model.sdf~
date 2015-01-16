@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="Road_straight">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0 0.375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>9.95 9.95 .001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.375 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>9.95 9.95 .001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://Road_straight/materials/scripts</uri>
+            <uri>model://Road_straight/materials/textures</uri>
+            <name>vrc/asphalt</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
+

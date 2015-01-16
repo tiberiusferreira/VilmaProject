@@ -1,0 +1,2370 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <model name='Road_straight'>
+      <static>1</static>
+      <pose>29 -68 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_0'>
+      <static>1</static>
+      <pose>28.5741 -58 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <state world_name='default'>
+      <sim_time>10538 75000000</sim_time>
+      <real_time>2026 472881338</real_time>
+      <wall_time>1393196856 253480827</wall_time>
+      <model name='Construction Barrel'>
+        <pose>-44.0001 3.0005 -1e-06 2e-06 2e-06 -0.001017</pose>
+        <link name='link'>
+          <pose>-44.0001 3.0005 -1e-06 2e-06 2e-06 -0.001017</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Dumpster'>
+        <pose>-18.1408 16.2531 0.000908 5e-06 -1.2e-05 0</pose>
+        <link name='link'>
+          <pose>-18.1408 16.2531 0.000908 5e-06 -1.2e-05 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Fast Food'>
+        <pose>-41.5611 -6.48345 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-41.5611 -6.48345 1.57966 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='House 1'>
+        <pose>-21.6739 -7.56706 0 0 0 -3.12</pose>
+        <link name='link'>
+          <pose>-21.6739 -7.56706 0 0 0 -3.12</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='House 1_0'>
+        <pose>39.1039 -28.1775 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>39.1039 -28.1775 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='House 2'>
+        <pose>-1.25284 -8.40144 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-1.25284 -8.40144 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='House 2_0'>
+        <pose>36.8805 -3.59713 0 0 -0 1.6</pose>
+        <link name='link'>
+          <pose>36.8805 -3.59713 0 0 -0 1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='House 3'>
+        <pose>-18.1803 41.06 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-18.1803 41.06 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Mailbox_0'>
+        <pose>-16 -5 -1e-05 5e-06 -9e-06 6.46235e-27</pose>
+        <link name='link'>
+          <pose>-16 -5 -1e-05 5e-06 -9e-06 6.46235e-27</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Mailbox_1'>
+        <pose>3 -8 -9e-06 1e-05 -8e-06 0</pose>
+        <link name='link'>
+          <pose>3 -8 -9e-06 1e-05 -8e-06 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Mailbox_2'>
+        <pose>33 -3 -1e-05 2e-06 -7e-06 -3.23117e-27</pose>
+        <link name='link'>
+          <pose>33 -3 -1e-05 2e-06 -7e-06 -3.23117e-27</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Mailbox_3'>
+        <pose>33 -27.474 0 -1.1e-05 0 0</pose>
+        <link name='link'>
+          <pose>33 -27.474 0 -1.1e-05 0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_cross'>
+        <pose>-11.5676 10.622 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-11.5676 10.622 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_curve'>
+        <pose>23.7554 26.3501 -0.33 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>23.7554 26.3501 -0.33 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_curve_1'>
+        <pose>-46.9437 6.31014 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-46.9437 6.31014 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_curve_3'>
+        <pose>-36.9181 -37.6027 0 0 0 -3.11681</pose>
+        <link name='link'>
+          <pose>-36.9181 -37.6027 0 0 0 -3.11681</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_0'>
+        <pose>8.68413 38.9529 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>8.68413 38.9529 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_1'>
+        <pose>17.3648 41.3676 0 0 0 -3.12</pose>
+        <link name='link'>
+          <pose>17.3648 41.3676 0 0 0 -3.12</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_11'>
+        <pose>-32.5076 -23.4149 0 0 -0 0.04</pose>
+        <link name='link'>
+          <pose>-32.5076 -23.4149 0 0 -0 0.04</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_12'>
+        <pose>9.45069 30.9354 0 0 -0 1.60319</pose>
+        <link name='link'>
+          <pose>9.45069 30.9354 0 0 -0 1.60319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_13'>
+        <pose>-49.3377 -41.4267 0 0 -0 1.56319</pose>
+        <link name='link'>
+          <pose>-49.3377 -41.4267 0 0 -0 1.56319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_14'>
+        <pose>6.60798 -20.6136 0.03 0 -0 3.12</pose>
+        <link name='link'>
+          <pose>6.60798 -20.6136 0.03 0 -0 3.12</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_2'>
+        <pose>16.4941 59.3621 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>16.4941 59.3621 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_3'>
+        <pose>-11.394 58.6775 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-11.394 58.6775 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_4'>
+        <pose>6.58043 9.94202 0 0 0 -1.6</pose>
+        <link name='link'>
+          <pose>6.58043 9.94202 0 0 0 -1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_6'>
+        <pose>-7.90177 -17.145 -0.01 0 0 -1.55682</pose>
+        <link name='link'>
+          <pose>-7.90177 -17.145 -0.01 0 0 -1.55682</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_7'>
+        <pose>-15.9331 -17.9911 -0.01 0 -0 0.04</pose>
+        <link name='link'>
+          <pose>-15.9331 -17.9911 -0.01 0 -0 0.04</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_8'>
+        <pose>-15.0163 -26.0756 0 0 -0 1.60319</pose>
+        <link name='link'>
+          <pose>-15.0163 -26.0756 0 0 -0 1.60319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_hard_curve_9'>
+        <pose>-7.1414 -25.2362 0 0 0 -3.12318</pose>
+        <link name='link'>
+          <pose>-7.1414 -25.2362 0 0 0 -3.12318</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight'>
+        <pose>29 -68 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>29 -68 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_0'>
+        <pose>28.906 -58.1093 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.906 -58.1093 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_10'>
+        <pose>17.7356 50.2512 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>17.7356 50.2512 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_11'>
+        <pose>7.63705 59.8246 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>7.63705 59.8246 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_12'>
+        <pose>-2.22028 59.8162 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-2.22028 59.8162 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_13'>
+        <pose>-11.9156 50.1815 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-11.9156 50.1815 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_14'>
+        <pose>-11.8106 40.3056 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-11.8106 40.3056 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_15'>
+        <pose>-11.7124 30.4369 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-11.7124 30.4369 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_16'>
+        <pose>-11.6116 -9.01044 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-11.6116 -9.01044 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_17'>
+        <pose>-51.2073 -9.01659 -0.01 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>-51.2073 -9.01659 -0.01 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_18'>
+        <pose>-50.9651 -19.1524 0.02 0 -0 1.6</pose>
+        <link name='link'>
+          <pose>-50.9651 -19.1524 0.02 0 -0 1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_19'>
+        <pose>-24.1242 -21.9851 0.03 0 -0 0.04</pose>
+        <link name='link'>
+          <pose>-24.1242 -21.9851 0.03 0 -0 0.04</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_2'>
+        <pose>28.7979 -48.2289 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.7979 -48.2289 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_20'>
+        <pose>-31.5941 10.5278 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-31.5941 10.5278 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_21'>
+        <pose>-50.6884 -28.8741 0 0 -0 1.6</pose>
+        <link name='link'>
+          <pose>-50.6884 -28.8741 0 0 -0 1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_22'>
+        <pose>-50.5904 -32.5253 0.01 0 -0 1.6</pose>
+        <link name='link'>
+          <pose>-50.5904 -32.5253 0.01 0 -0 1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_23'>
+        <pose>7.45046 0.946529 0.02 0 0 -1.6</pose>
+        <link name='link'>
+          <pose>7.45046 0.946529 0.02 0 0 -1.6</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_24'>
+        <pose>7.35242 -2.3257 0 0 -0 1.56319</pose>
+        <link name='link'>
+          <pose>7.35242 -2.3257 0 0 -0 1.56319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_26'>
+        <pose>0.719651 -21.7013 0.01 0 -0 0</pose>
+        <link name='link'>
+          <pose>0.719651 -21.7013 0.01 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_27'>
+        <pose>7.27004 -12.1899 0.02 0 -0 1.56</pose>
+        <link name='link'>
+          <pose>7.27004 -12.1899 0.02 0 -0 1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_3'>
+        <pose>28.6795 -38.3333 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.6795 -38.3333 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_4'>
+        <pose>28.5728 -28.464 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.5728 -28.464 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_5'>
+        <pose>28.4555 -18.5602 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.4555 -18.5602 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_6'>
+        <pose>28.3535 -8.68237 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.3535 -8.68237 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_7'>
+        <pose>28.2643 1.1937 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.2643 1.1937 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Road_straight_8'>
+        <pose>28.1633 11.0582 0 0 0 -1.56</pose>
+        <link name='link'>
+          <pose>28.1633 11.0582 0 0 0 -1.56</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Speed limit'>
+        <pose>-15.797 -13.281 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-15.797 -13.281 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>48.4659 -51 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>48.4659 -51 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane_0'>
+        <pose>-51 -51 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-51 -51 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane_1'>
+        <pose>-51 49 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>-51 49 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane_2'>
+        <pose>48.4491 49 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>48.4491 49 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>108.472 -7.46071 68.5248 0 0.565801 3.06159</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name='Road_straight_2'>
+      <static>1</static>
+      <pose>28.548 -48 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_3'>
+      <static>1</static>
+      <pose>28.492 -37 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_4'>
+      <static>1</static>
+      <pose>28.5484 -27.4082 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_5'>
+      <static>1</static>
+      <pose>28.5905 -17.4676 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_6'>
+      <static>1</static>
+      <pose>28 -8 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_7'>
+      <static>1</static>
+      <pose>28 2 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_8'>
+      <static>1</static>
+      <pose>28 12 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_curve'>
+      <static>1</static>
+      <pose>22 29 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 -7.5 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_curve/models/Road 06.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_0'>
+      <static>1</static>
+      <pose>9 39.4643 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_1'>
+      <static>1</static>
+      <pose>19 42 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_10'>
+      <static>1</static>
+      <pose>17 51.4011 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_2'>
+      <static>1</static>
+      <pose>18 59 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_11'>
+      <static>1</static>
+      <pose>7.56961 60 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_12'>
+      <static>1</static>
+      <pose>-2.45288 60 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_3'>
+      <static>1</static>
+      <pose>-11 58.5679 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_13'>
+      <static>1</static>
+      <pose>-13 48.4752 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_14'>
+      <static>1</static>
+      <pose>-12 40 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_15'>
+      <static>1</static>
+      <pose>-12 30 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_cross'>
+      <static>1</static>
+      <pose>-12 10.5452 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_cross/models/Road 08.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_4'>
+      <static>1</static>
+      <pose>9 9.43418 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_16'>
+      <static>1</static>
+      <pose>-12 -10 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_6'>
+      <static>1</static>
+      <pose>-7 -20 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_7'>
+      <static>1</static>
+      <pose>-15.4372 -18.5381 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_8'>
+      <static>1</static>
+      <pose>-18 -28.4287 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_9'>
+      <static>1</static>
+      <pose>-5.46199 -28 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_curve_1'>
+      <static>1</static>
+      <pose>-37 6 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 -7.83 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_curve/models/Road 06.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_17'>
+      <static>1</static>
+      <pose>-42 -10 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_18'>
+      <static>1</static>
+      <pose>-41 -20 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_19'>
+      <static>1</static>
+      <pose>-25 -22 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_11'>
+      <static>1</static>
+      <pose>-33.4422 -23.5879 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_12'>
+      <static>1</static>
+      <pose>8 28 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_20'>
+      <static>1</static>
+      <pose>-31.5941 10.5278 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_21'>
+      <static>1</static>
+      <pose>-51 -29.5608 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_curve_3'>
+      <static>1</static>
+      <pose>-40 -36 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 -7.83 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_curve/models/Road 06.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_13'>
+      <static>1</static>
+      <pose>-50 -39 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_22'>
+      <static>1</static>
+      <pose>-55 -34 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_23'>
+      <static>1</static>
+      <pose>8 0 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_24'>
+      <static>1</static>
+      <pose>7 -10.573 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_26'>
+      <static>1</static>
+      <pose>1 -21.4573 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_hard_curve_14'>
+      <static>1</static>
+      <pose>7 -19.575 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_hard_curve/models/Road 09.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='Road_straight_27'>
+      <static>1</static>
+      <pose>7 -12 0 0 -0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0.04 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Road_straight/models/Road 01.dae</uri>
+              <scale>0.39 0.39 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>48.4659 -51 0 0 -0 0</pose>
+    </model>
+    <model name='ground_plane_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-51 -51 0 0 -0 0</pose>
+    </model>
+    <model name='ground_plane_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-51 49 0 0 -0 0</pose>
+    </model>
+    <model name='ground_plane_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>48.4491 49 0 0 -0 0</pose>
+    </model>
+    <model name='House 1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_1/materials/scripts</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_1/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>House_1_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-21.4338 -7.43336 0 0 -0 0</pose>
+    </model>
+    <model name='House 2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_2/materials/scripts</uri>
+              <uri>model://house_2/materials/textures</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_2/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>model://house_1/materials/textures/House_1_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-3.58612 -8.4657 0 0 -0 0</pose>
+    </model>
+    <model name='Speed limit'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://speed_limit_sign/meshes/speed_limit_sign.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>model://speed_limit_sign/meshes/speed_limit_sign.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>3.47846 -17 0 0 -0 0</pose>
+    </model>
+    <model name='Dumpster'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://dumpster/meshes/dumpster.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://dumpster/meshes/dumpster.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://dumpster/materials/scripts</uri>
+              <uri>model://dumpster/materials/textures</uri>
+              <name>Dumpster/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-18 15 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='House 3'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_3/meshes/house_3.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_3/meshes/house_3.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_3/materials/scripts</uri>
+              <uri>model://house_3/materials/textures</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_3/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>model://house_1/materials/textures/House_1_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-20 42.5725 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Barrel'>
+      <link name='link'>
+        <inertial>
+          <pose>0 0 0.4 0 -0 0</pose>
+          <mass>500</mass>
+          <inertia>
+            <ixx>51.2096</ixx>
+            <iyy>51.2096</iyy>
+            <izz>25</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-44 3 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='Fast Food'>
+      <static>1</static>
+      <link name='link'>
+        <pose>0 0 1.57966 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://fast_food/meshes/fast_food.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://fast_food/meshes/fast_food.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://fast_food/materials/scripts</uri>
+              <uri>model://fast_food/materials/textures</uri>
+              <name>FastFood/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>FastFood_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-41.5611 -6.48345 0 0 -0 0</pose>
+    </model>
+    <model name='Mailbox_0'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mailbox/materials/scripts</uri>
+              <uri>model://mailbox/materials/textures</uri>
+              <name>Mailbox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>-16 -5 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='Mailbox_1'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mailbox/materials/scripts</uri>
+              <uri>model://mailbox/materials/textures</uri>
+              <name>Mailbox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>3 -8 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='House 1_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_1/meshes/house_1.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_1/materials/scripts</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_1/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>House_1_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>40 -28 0 0 -0 0</pose>
+    </model>
+    <model name='House 2_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_2/materials/scripts</uri>
+              <uri>model://house_2/materials/textures</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_2/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>model://house_1/materials/textures/House_1_Normal.tga</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>38 -2 0 0 -0 0</pose>
+    </model>
+    <model name='Mailbox_2'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mailbox/materials/scripts</uri>
+              <uri>model://mailbox/materials/textures</uri>
+              <name>Mailbox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>33 -3 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='Mailbox_3'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://mailbox/meshes/mailbox.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mailbox/materials/scripts</uri>
+              <uri>model://mailbox/materials/textures</uri>
+              <name>Mailbox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>33 -27.474 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+  </world>
+</sdf>
