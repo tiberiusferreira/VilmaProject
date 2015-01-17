@@ -19,6 +19,7 @@ morse_transmiter::morse_transmiter()
     this->setVelocity(100);
     this->setSteering(0);
 
+
 }
 
 morse_transmiter::~morse_transmiter()
@@ -61,21 +62,22 @@ void morse_transmiter::setVelocity(float meter_per_sec){
 }
 
 void morse_transmiter::setPowerAmount(float power_amount){
-    pthread_mutex_lock(&lockSetPower);
+    boost::mutex::scoped_lock scopedLock(PowerMutex);
     char message1[100];
     this->power=power_amount;
     //robot carina2 is hardcoded
     sprintf(message1, "id carina2 controlpower [1,%lf,%lf]\n", power_amount,this->velocity);
 
     if( send(sock , message1 , strlen(message1) , 0) < 0){
-        puts("send steer failed");
+        puts("send power failed");
     }
+    printf("Sent: %s",message1);
     sprintf(message1, "id carina2 controlpower [0,%lf,%lf]\n", power_amount,this->velocity);
 
     if( send(sock , message1 , strlen(message1) , 0) < 0){
-        puts("send steer failed");
+        puts("send power failed");
     }
-    pthread_mutex_unlock(&lockSetPower);
+    printf("Sent: %s",message1);
 }
 
 

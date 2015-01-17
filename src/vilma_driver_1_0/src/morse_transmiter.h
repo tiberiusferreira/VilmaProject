@@ -6,7 +6,7 @@
 #include <string.h>      //strlen
 #include <sys/socket.h>  //socket
 #include <arpa/inet.h>   //inet_addr
-#include <pthread.h>
+#include <boost/thread.hpp>
 class morse_transmiter
 {
 private:
@@ -22,7 +22,7 @@ private:
 public:
     morse_transmiter();
     ~morse_transmiter();
-    pthread_mutex_t lockSetPower;
+    boost::mutex PowerMutex;
 
     void setSteering(float rad);
     void setVelocity(float meter_per_sec);

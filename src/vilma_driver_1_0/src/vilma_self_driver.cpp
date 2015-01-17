@@ -5,6 +5,7 @@ vilma_self_driver::vilma_self_driver(morse_receiver *morse_receiver_obj, morse_t
     this->morse_receiver_obj=morse_receiver_obj;
     this->morse_transmiter_obj=morse_transmiter_obj;
     gasControler.initPid(150,0.9,150,500,-500,this->rosNode);
+    running_threads=0;
 }
 int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates wheels so model goes to given X Y position.
     //Step 1: Find out if the desired location if forward or backwards in respect to the car.
@@ -71,14 +72,27 @@ std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_poi
     return smoothed_points;
 }
 
+
+vilma_self_driver::~vilma_self_driver(){
+    this->SetMaintainSpeedOFF();
+    if(running_threads!=0){
+    printf("Waiting for thread to finish.\n");
+    }
+    while(running_threads!=0){
+    }
+    this->morse_transmiter_obj->~morse_transmiter(); //otherwise results in mutex
+    //being killed before the maintainSpeedWorker has unlocked it
+}
+
 void vilma_self_driver::maintainSpeed(int desiredSpeed){
-    this->maintainSpeedON=1;
-
-
-
+    this->SetMaintainSpeedOFF();
+    if(running_threads!=0){
+    printf("Waiting for thread to finish.\n");
+    }
+    while(running_threads!=0){
+    }
     boost::thread t(&vilma_self_driver::maintainSpeedWorker,this,desiredSpeed);
     t.detach();
-
 }
 void vilma_self_driver::SetMaintainSpeedOFF(){
     this->maintainSpeedON=0;
@@ -86,6 +100,9 @@ void vilma_self_driver::SetMaintainSpeedOFF(){
 
 
 void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
+    running_threads++;
+    this->maintainSpeedON=1;
+    gasControler.reset();
     ros::Time previous_interation_time;
     previous_interation_time = ros::Time::now();
     float currentSpeed;
@@ -93,7 +110,6 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
     while(this->maintainSpeedON){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
         previous_interation_time = ros::Time::now();
-        sleep(1);
         float velXsquare = this->morse_receiver_obj->getLinearVelX();
         velXsquare=velXsquare*velXsquare;
         float velYsquare = this->morse_receiver_obj->getLinearVelY();
@@ -101,8 +117,14 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         float velZsquare = this->morse_receiver_obj->getAngularVelZ();
         velZsquare=velZsquare*velZsquare;
         currentSpeed=sqrt(velXsquare+velYsquare+velZsquare);
+        if(abs(desiredSpeed-currentSpeed)>2){
+            gasControler.setGains(150,0,150,0,0);
+            gasControler.reset();
+        }else{
+            gasControler.setGains(150,15,150,25*desiredSpeed,-25*desiredSpeed);
+        }
         updated_value=this->gasControler.computeCommand(desiredSpeed-currentSpeed,dt);
-        printf("Valor de saida %f, erro %f, dt %f hora %f\n",updated_value,currentSpeed-desiredSpeed,dt.toSec(),previous_interation_time.toSec());
+        //printf("Valor de saida %f, erro %f, dt %f hora %f\n",updated_value,currentSpeed-desiredSpeed,dt.toSec(),previous_interation_time.toSec());
         if(updated_value-this->morse_transmiter_obj->getPowerAmount()>10){
             updated_value=this->morse_transmiter_obj->getPowerAmount()+10;
         }
@@ -112,6 +134,10 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         if(updated_value>20*(desiredSpeed)){
             updated_value=20*(desiredSpeed);
         }
+        gasControler.printValues();
+
+        boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
     }
+    running_threads--;
 }

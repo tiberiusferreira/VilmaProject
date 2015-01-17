@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(vilma_driverqt_1_0)
-
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  control_toolbox
   std_msgs
   gazebo_ros
 )
@@ -13,8 +14,8 @@ find_package(gazebo REQUIRED)
 find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDeclarative)
 
 
-SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/mainwindow.cpp src/vilma_ros_talker.cpp src/vilma_self_driver.cpp src/points.cpp )
-SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h src/vilma_ros_talker.h src/vilma_self_driver.h src/points.h)
+SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/mainwindow.cpp src/morse_receiver.cpp src/morse_transmiter.cpp src/vilma_self_driver.cpp src/points.cpp src/imu.cpp src/gps.cpp)
+SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h src/morse_receiver.h src/morse_transmiter.h src/vilma_self_driver.h src/points.h src/imu.h src/gps.h)
 SET(vilma_driverqt_1_0_FORMS src/mainwindow.ui)
 #SET(vilma_driverqt_1_0_RESOURCES /src/mainwindow.ui)
 catkin_package(
