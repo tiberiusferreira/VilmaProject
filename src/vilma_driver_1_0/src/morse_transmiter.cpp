@@ -71,13 +71,13 @@ void morse_transmiter::setPowerAmount(float power_amount){
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send power failed");
     }
-    printf("Sent: %s",message1);
+    //printf("Sent: %s",message1);
     sprintf(message1, "id carina2 controlpower [0,%lf,%lf]\n", power_amount,this->velocity);
 
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send power failed");
     }
-    printf("Sent: %s",message1);
+    //printf("Sent: %s",message1);
 }
 
 

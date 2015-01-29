@@ -44,7 +44,9 @@ SOURCES += main.cpp\
     gps.cpp \
     imu.cpp \
     morse_receiver.cpp \
-    morse_transmiter.cpp
+    morse_transmiter.cpp \
+    qcustomplot.cpp \
+    plotui.cpp
 
 HEADERS  += mainwindow.h \
     vilma_self_driver.h \
@@ -52,6 +54,9 @@ HEADERS  += mainwindow.h \
     gps.h \
     imu.h \
     morse_receiver.h \
-    morse_transmiter.h
+    morse_transmiter.h \
+    qcustomplot.h \
+    plotui.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    plotui.ui

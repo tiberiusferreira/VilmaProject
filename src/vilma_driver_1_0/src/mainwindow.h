@@ -10,6 +10,8 @@
 #include "vilma_self_driver.h"
 #include "gps.h"
 #include "imu.h"
+#include <plotui.h>
+
 namespace Ui {
 class MainWindow;
 }
@@ -25,9 +27,6 @@ public:
 private slots:
     void update();
 
-    void on_Set_new_speed_toggled(bool checked);
-
-    void on_Constant_speed_button_toggled(bool checked);
 
     void on_Set_wheel_direction_from_table_toggled(bool checked);
 
@@ -35,7 +34,16 @@ private slots:
 
     void on_SmoothTrajectoryButton_clicked();
 
-    void on_Enter_new_constant_speed_editingFinished();
+
+    void on_Set_new_speed_pressed();
+
+    void on_Maintain_current_speed_toggled();
+
+    void on_Set_new_speed_released();
+
+    void on_Set_new_speed_toggled(bool checked);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -46,6 +54,8 @@ private:
     imu imu_obj;
     vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
+    PlotUI PlotUI_obj;
+
 
 
 };

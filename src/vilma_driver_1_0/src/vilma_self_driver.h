@@ -8,7 +8,7 @@
 #include <control_toolbox/pid.h>
 #include <thread>
 #include <boost/thread.hpp>
-
+#include <stdio.h>
 class vilma_self_driver
 {
 public:

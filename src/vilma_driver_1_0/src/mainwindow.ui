@@ -239,7 +239,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -614,6 +614,19 @@
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>170</y>
+       <width>174</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QDockWidget" name="AutomationWidget">
@@ -943,9 +956,28 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_11">
       <item>
-       <widget class="QPushButton" name="Constant_speed_button">
+       <widget class="QPushButton" name="Maintain_current_speed">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="text">
-         <string>Constant Car Speed</string>
+         <string>Current Speed</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Set_new_speed">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Set Speed</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -953,29 +985,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="Maintain_current_speed">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Current Speed</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="Set_new_speed">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Set Speed</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLineEdit" name="Enter_new_constant_speed">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>

@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../teste8")
+sys.path.append("../Morse_data")
 
 from Carina2Builder import *
 from morse.builder import *
@@ -13,4 +13,4 @@ carina2.add_service('socket')
 #keyboard = Keyboard()
 #robot.append(keyboard)
 
-env = Environment("../teste8/city7.blend")
+env = Environment("../Morse_data/city7.blend")

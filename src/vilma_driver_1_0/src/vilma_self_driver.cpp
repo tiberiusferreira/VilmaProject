@@ -76,7 +76,7 @@ std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_poi
 vilma_self_driver::~vilma_self_driver(){
     this->SetMaintainSpeedOFF();
     if(running_threads!=0){
-    printf("Waiting for thread to finish.\n");
+    printf("Deconstructor Waiting for thread to finish.\n");
     }
     while(running_threads!=0){
     }
@@ -107,6 +107,10 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
     previous_interation_time = ros::Time::now();
     float currentSpeed;
     double updated_value;
+    double initialTime = ros::Time::now().toSec();
+    FILE * pFile;
+    pFile = fopen ("myfile.txt","w");
+    fprintf (pFile,"Tempo desde o começo da simulação\tMódulo da velocidade do veículo\n");
     while(this->maintainSpeedON){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
         previous_interation_time = ros::Time::now();
@@ -124,7 +128,6 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
             gasControler.setGains(150,15,150,25*desiredSpeed,-25*desiredSpeed);
         }
         updated_value=this->gasControler.computeCommand(desiredSpeed-currentSpeed,dt);
-        //printf("Valor de saida %f, erro %f, dt %f hora %f\n",updated_value,currentSpeed-desiredSpeed,dt.toSec(),previous_interation_time.toSec());
         if(updated_value-this->morse_transmiter_obj->getPowerAmount()>10){
             updated_value=this->morse_transmiter_obj->getPowerAmount()+10;
         }
@@ -134,10 +137,11 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         if(updated_value>20*(desiredSpeed)){
             updated_value=20*(desiredSpeed);
         }
-        gasControler.printValues();
-
+        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
+        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
     }
+    fclose (pFile);
     running_threads--;
 }

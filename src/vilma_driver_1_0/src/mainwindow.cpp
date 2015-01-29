@@ -82,13 +82,13 @@ void MainWindow::update()
     ui->morse_ang_vel_y_text->setText(morse_ang_vel_y_text);
     ui->morse_ang_vel_z_text->setText(morse_ang_vel_z_text);
     ui->imu_euler_z_rotation_text->setText(imu_euler_rot_z);
-//    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
-//        bool ok;
-//        ui->Enter_new_constant_speed->text().toDouble(&ok);
-//        if(ok==1){
-//        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
-//        }
-//    }
+    //    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
+    //        bool ok;
+    //        ui->Enter_new_constant_speed->text().toDouble(&ok);
+    //        if(ok==1){
+    //        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
+    //        }
+    //    }
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
                 && ui->Set_wheel_direction_y_input->text()!=""){
@@ -118,29 +118,8 @@ void MainWindow::update()
         }
     }
 }
-void MainWindow::on_Set_new_speed_toggled(bool checked)
-{
-    if(checked)
-        ui->Enter_new_constant_speed->setEnabled(1);
-    else
-        ui->Enter_new_constant_speed->setEnabled(0);
-
-}
 
 
-void MainWindow::on_Constant_speed_button_toggled(bool checked)
-{
-    if(checked)
-    {
-        ui->Maintain_current_speed->setEnabled(1);
-        ui->Set_new_speed->setEnabled(1);
-    }else
-    {
-        ui->Maintain_current_speed->setEnabled(0);
-        ui->Set_new_speed->setEnabled(0);
-        vilma_self_driver_obj.SetMaintainSpeedOFF();
-    }
-}
 
 void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
 {
@@ -170,14 +149,14 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
     double current_row=0;
     int ok=0;
     while(ok==0){
-    X_item = ui->Set_wheel_direction_table->item(current_row,0);
-    Y_item = ui->Set_wheel_direction_table->item(current_row,1);
-    if(X_item==0 || Y_item==0){ //reached end of X Y list
-        ok =-1;
-        break;
-    }
-    points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
-    current_row++;
+        X_item = ui->Set_wheel_direction_table->item(current_row,0);
+        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+        if(X_item==0 || Y_item==0){ //reached end of X Y list
+            ok =-1;
+            break;
+        }
+        points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
+        current_row++;
     }
     points_to_table=vilma_self_driver_obj.generate_smooth_path(points_from_table);
     current_row=0;
@@ -189,13 +168,57 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
     }
 }
 
-void MainWindow::on_Enter_new_constant_speed_editingFinished()
+
+
+
+
+void MainWindow::on_Set_new_speed_pressed()
 {
-    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
-                bool ok;
-                ui->Enter_new_constant_speed->text().toDouble(&ok);
-                if(ok==1){
-                vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
-                }
+
+}
+
+void MainWindow::on_Set_new_speed_released()
+{
+
+}
+
+void MainWindow::on_Maintain_current_speed_toggled()
+{
+    if(ui->Set_new_speed->isChecked()){
+        ui->Set_new_speed->setChecked(0);
+        ui->Maintain_current_speed->setChecked(0);
+        return;
     }
+}
+
+
+
+void MainWindow::on_Set_new_speed_toggled(bool checked)
+{
+    if(checked==1){
+    if(ui->Maintain_current_speed->isChecked()){
+        ui->Maintain_current_speed->setChecked(0);
+        ui->Set_new_speed->setChecked(0);
+        return;
+    }
+    bool ok;
+    ui->Enter_new_constant_speed->text().toDouble(&ok);
+    if(ok==1){
+        printf(" New Speed entered\n");
+        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
+        ui->Enter_new_constant_speed->setEnabled(0);
+    }else{
+        ui->Set_new_speed->setChecked(0);
+    }
+    return;
+    }else{
+    vilma_self_driver_obj.SetMaintainSpeedOFF();
+    ui->Enter_new_constant_speed->setEnabled(1);
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    this->PlotUI_obj.initiate();
+
 }
