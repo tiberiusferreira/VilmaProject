@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,10 +35,8 @@ static const uint qt_meta_data_MainWindow[] = {
       86,   77,   11,   11, 0x08,
      122,   11,   11,   11, 0x08,
      158,   11,   11,   11, 0x08,
-     185,   11,   11,   11, 0x08,
-     221,   11,   11,   11, 0x08,
-     249,   21,   11,   11, 0x08,
-     280,   11,   11,   11, 0x08,
+     194,   21,   11,   11, 0x08,
+     225,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -48,9 +46,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_Set_wheel_direction_from_table_toggled(bool)\0"
     "position\0on_steering_slider_sliderMoved(int)\0"
     "on_SmoothTrajectoryButton_clicked()\0"
-    "on_Set_new_speed_pressed()\0"
     "on_Maintain_current_speed_toggled()\0"
-    "on_Set_new_speed_released()\0"
     "on_Set_new_speed_toggled(bool)\0"
     "on_pushButton_clicked()\0"
 };
@@ -65,11 +61,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_Set_wheel_direction_from_table_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 2: _t->on_steering_slider_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_SmoothTrajectoryButton_clicked(); break;
-        case 4: _t->on_Set_new_speed_pressed(); break;
-        case 5: _t->on_Maintain_current_speed_toggled(); break;
-        case 6: _t->on_Set_new_speed_released(); break;
-        case 7: _t->on_Set_new_speed_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 8: _t->on_pushButton_clicked(); break;
+        case 4: _t->on_Maintain_current_speed_toggled(); break;
+        case 5: _t->on_Set_new_speed_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
@@ -107,9 +101,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 7;
     }
     return _id;
 }

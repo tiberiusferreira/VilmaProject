@@ -82,6 +82,11 @@ void MainWindow::update()
     ui->morse_ang_vel_y_text->setText(morse_ang_vel_y_text);
     ui->morse_ang_vel_z_text->setText(morse_ang_vel_z_text);
     ui->imu_euler_z_rotation_text->setText(imu_euler_rot_z);
+
+    if(plot==1){
+    this->PlotUI_obj.ui->QPlotUI->graph(0)->addData(this->morse_receiver_obj.getPosX(),this->morse_receiver_obj.getPosY());
+    this->PlotUI_obj.ui->QPlotUI->replot();
+    }
     //    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
     //        bool ok;
     //        ui->Enter_new_constant_speed->text().toDouble(&ok);
@@ -107,7 +112,7 @@ void MainWindow::update()
             if(X_item==0 || Y_item==0){ //reached end of X Y list
                 morse_transmiter_obj.setSteering(0);
                 morse_transmiter_obj.setPowerAmount(0);
-                morse_transmiter_obj.setVelocity(0);
+
                 return;
             }
             ok=vilma_self_driver_obj.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
@@ -172,15 +177,7 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
 
 
 
-void MainWindow::on_Set_new_speed_pressed()
-{
 
-}
-
-void MainWindow::on_Set_new_speed_released()
-{
-
-}
 
 void MainWindow::on_Maintain_current_speed_toggled()
 {
@@ -219,6 +216,63 @@ void MainWindow::on_Set_new_speed_toggled(bool checked)
 
 void MainWindow::on_pushButton_clicked()
 {
-    this->PlotUI_obj.initiate();
+    //this->PlotUI_obj.initiate();
+    plot=1;
+    this->PlotUI_obj.ui->QPlotUI->clearPlottables();
+    this->PlotUI_obj.ui->QPlotUI->clearGraphs();
+
+
+    QVector<double> x(101), y(101); // initialize with entries 0..100
+    QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(0,0);
+    QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(0,1);
+    int i=0;
+    double maxx=-1000000000;
+    double maxy=-1000000000;
+    double minx= 1000000000;
+    double miny= 1000000000;
+    while(!(X_item==0 || Y_item==0)){ //reached end of X Y list
+        if(X_item->text().toDouble()>maxx){
+            maxx=X_item->text().toDouble();
+        }
+        if(Y_item->text().toDouble()>maxy){
+            maxy=Y_item->text().toDouble();
+        }
+        if(X_item->text().toDouble()<minx){
+            minx=X_item->text().toDouble();
+        }
+        if(Y_item->text().toDouble()<miny){
+            miny=Y_item->text().toDouble();
+        }
+        x.append(X_item->text().toDouble()); // x goes from -1 to 1
+        y.append(Y_item->text().toDouble());  // let's plot a quadratic function
+        i++;
+        X_item = ui->Set_wheel_direction_table->item(i,0);
+        Y_item = ui->Set_wheel_direction_table->item(i,1);
+    }
+
+
+
+    // give the axes some labels:
+    this->PlotUI_obj.ui->QPlotUI->addGraph();
+
+    this->PlotUI_obj.ui->QPlotUI->yAxis->setLabel("y");
+    // set axes ranges, so we see all data:
+    this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(minx-1, maxx+1);
+    this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(miny-1, maxy+1);
+    this->PlotUI_obj.ui->QPlotUI->xAxis->setLabel("x");
+    this->PlotUI_obj.ui->QPlotUI->addGraph();
+    this->PlotUI_obj.ui->QPlotUI->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
+    this->PlotUI_obj.ui->QPlotUI->graph(0)->setLineStyle(QCPGraph::lsLine);
+
+    // create graph and assign data to it:
+    QCPCurve *fermatSpiral1 = new QCPCurve(this->PlotUI_obj.ui->QPlotUI->xAxis, this->PlotUI_obj.ui->QPlotUI->yAxis);
+    this->PlotUI_obj.ui->QPlotUI->addPlottable(fermatSpiral1);
+    fermatSpiral1->setData(x, y);
+
+
+
+    this->PlotUI_obj.ui->QPlotUI->replot();
+    this->PlotUI_obj.show();
+
 
 }

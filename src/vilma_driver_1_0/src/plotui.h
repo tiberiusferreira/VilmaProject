@@ -19,7 +19,7 @@ public:
     ~PlotUI();
 public slots:
     void initiate();
-private:
+public:
     Ui::PlotUI *ui;
 };
 

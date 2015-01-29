@@ -11,6 +11,7 @@
 #include "gps.h"
 #include "imu.h"
 #include <plotui.h>
+#include "ui_plotui.h"
 
 namespace Ui {
 class MainWindow;
@@ -35,11 +36,8 @@ private slots:
     void on_SmoothTrajectoryButton_clicked();
 
 
-    void on_Set_new_speed_pressed();
-
     void on_Maintain_current_speed_toggled();
 
-    void on_Set_new_speed_released();
 
     void on_Set_new_speed_toggled(bool checked);
 
@@ -55,6 +53,7 @@ private:
     vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
     PlotUI PlotUI_obj;
+    int plot=0;
 
 
 
