@@ -13,10 +13,10 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(gazebo REQUIRED)
 find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDeclarative)
 
-
-SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/mainwindow.cpp src/morse_receiver.cpp src/morse_transmiter.cpp src/vilma_self_driver.cpp src/points.cpp src/imu.cpp src/gps.cpp)
-SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h src/morse_receiver.h src/morse_transmiter.h src/vilma_self_driver.h src/points.h src/imu.h src/gps.h)
-SET(vilma_driverqt_1_0_FORMS src/mainwindow.ui)
+set( CMAKE_EXPORT_COMPILE_COMMANDS 1 )
+SET(vilma_driverqt_1_0_SOURCES src/main.cpp src/plotui.cpp src/qcustomplot.cpp src/mainwindow.cpp src/morse_receiver.cpp src/morse_transmiter.cpp src/vilma_self_driver.cpp src/points.cpp src/imu.cpp src/gps.cpp)
+SET(vilma_driverqt_1_0_HEADERS src/mainwindow.h  src/plotui.h src/qcustomplot.h src/morse_receiver.h src/morse_transmiter.h src/vilma_self_driver.h src/points.h src/imu.h src/gps.h)
+SET(vilma_driverqt_1_0_FORMS src/mainwindow.ui src/plotui.ui)
 #SET(vilma_driverqt_1_0_RESOURCES /src/mainwindow.ui)
 catkin_package(
 #  INCLUDE_DIRS include

@@ -21,6 +21,12 @@ public slots:
     void initiate();
 public:
     Ui::PlotUI *ui;
+    double maxx=-1000000000;
+    double maxy=-1000000000;
+    double minx= 1000000000;
+    double miny= 1000000000;
+
 };
+
 
 #endif // PLOTUI_H

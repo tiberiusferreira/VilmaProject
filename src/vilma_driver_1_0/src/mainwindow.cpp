@@ -85,7 +85,23 @@ void MainWindow::update()
 
     if(plot==1){
     this->PlotUI_obj.ui->QPlotUI->graph(0)->addData(this->morse_receiver_obj.getPosX(),this->morse_receiver_obj.getPosY());
+    if(this->morse_receiver_obj.getPosX()>this->PlotUI_obj.maxx){
+        this->PlotUI_obj.maxx=this->morse_receiver_obj.getPosX();
+    }
+    if(this->morse_receiver_obj.getPosX()<this->PlotUI_obj.minx){
+        this->PlotUI_obj.minx=this->morse_receiver_obj.getPosX();
+    }
+    if(this->morse_receiver_obj.getPosY()>this->PlotUI_obj.maxy){
+        this->PlotUI_obj.maxy=this->morse_receiver_obj.getPosY();
+    }
+    if(this->morse_receiver_obj.getPosY()<this->PlotUI_obj.miny){
+        this->PlotUI_obj.miny=this->morse_receiver_obj.getPosY();
+    }
+    this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
+    this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
+    printf("Minx:%f Maxx:%f Maxy:%f Miny:%f\n",this->PlotUI_obj.minx,this->PlotUI_obj.maxx,this->PlotUI_obj.maxy,this->PlotUI_obj.miny);
     this->PlotUI_obj.ui->QPlotUI->replot();
+
     }
     //    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
     //        bool ok;
@@ -221,53 +237,51 @@ void MainWindow::on_pushButton_clicked()
     this->PlotUI_obj.ui->QPlotUI->clearPlottables();
     this->PlotUI_obj.ui->QPlotUI->clearGraphs();
 
+    this->PlotUI_obj.ui->QPlotUI->addGraph();
+    QCPCurve *fermatSpiral1 = new QCPCurve(this->PlotUI_obj.ui->QPlotUI->xAxis, this->PlotUI_obj.ui->QPlotUI->yAxis);
+    this->PlotUI_obj.ui->QPlotUI->addPlottable(fermatSpiral1);
+    // give the axes some labels:
+    this->PlotUI_obj.ui->QPlotUI->yAxis->setLabel("y");
+    // set axes ranges, so we see all data:
+    this->PlotUI_obj.ui->QPlotUI->xAxis->setLabel("x");
+    this->PlotUI_obj.ui->QPlotUI->addGraph();
+    this->PlotUI_obj.ui->QPlotUI->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
+    this->PlotUI_obj.ui->QPlotUI->graph(0)->setLineStyle(QCPGraph::lsNone);
 
+    // create graph and assign data to it:
+
+    if(this->ui->Set_wheel_direction_table->isEnabled()){
     QVector<double> x(101), y(101); // initialize with entries 0..100
     QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(0,0);
     QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(0,1);
     int i=0;
-    double maxx=-1000000000;
-    double maxy=-1000000000;
-    double minx= 1000000000;
-    double miny= 1000000000;
     while(!(X_item==0 || Y_item==0)){ //reached end of X Y list
-        if(X_item->text().toDouble()>maxx){
-            maxx=X_item->text().toDouble();
+        if(X_item->text().toDouble()>this->PlotUI_obj.maxx){
+            this->PlotUI_obj.maxx=X_item->text().toDouble();
         }
-        if(Y_item->text().toDouble()>maxy){
-            maxy=Y_item->text().toDouble();
+        if(Y_item->text().toDouble()>this->PlotUI_obj.maxy){
+            this->PlotUI_obj.maxy=Y_item->text().toDouble();
         }
-        if(X_item->text().toDouble()<minx){
-            minx=X_item->text().toDouble();
+        if(X_item->text().toDouble()<this->PlotUI_obj.minx){
+            this->PlotUI_obj.minx=X_item->text().toDouble();
         }
-        if(Y_item->text().toDouble()<miny){
-            miny=Y_item->text().toDouble();
+        if(Y_item->text().toDouble()<this->PlotUI_obj.miny){
+            this->PlotUI_obj.miny=Y_item->text().toDouble();
         }
         x.append(X_item->text().toDouble()); // x goes from -1 to 1
         y.append(Y_item->text().toDouble());  // let's plot a quadratic function
         i++;
         X_item = ui->Set_wheel_direction_table->item(i,0);
         Y_item = ui->Set_wheel_direction_table->item(i,1);
+        this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
+        this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
+        fermatSpiral1->setData(x, y);
+
+    }
     }
 
 
 
-    // give the axes some labels:
-    this->PlotUI_obj.ui->QPlotUI->addGraph();
-
-    this->PlotUI_obj.ui->QPlotUI->yAxis->setLabel("y");
-    // set axes ranges, so we see all data:
-    this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(minx-1, maxx+1);
-    this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(miny-1, maxy+1);
-    this->PlotUI_obj.ui->QPlotUI->xAxis->setLabel("x");
-    this->PlotUI_obj.ui->QPlotUI->addGraph();
-    this->PlotUI_obj.ui->QPlotUI->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
-    this->PlotUI_obj.ui->QPlotUI->graph(0)->setLineStyle(QCPGraph::lsLine);
-
-    // create graph and assign data to it:
-    QCPCurve *fermatSpiral1 = new QCPCurve(this->PlotUI_obj.ui->QPlotUI->xAxis, this->PlotUI_obj.ui->QPlotUI->yAxis);
-    this->PlotUI_obj.ui->QPlotUI->addPlottable(fermatSpiral1);
-    fermatSpiral1->setData(x, y);
 
 
 

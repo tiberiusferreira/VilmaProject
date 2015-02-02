@@ -9,7 +9,6 @@
 #ifndef UI_PLOTUI_H
 #define UI_PLOTUI_H
 
-#include <./qcustomplot.h>
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtGui/QApplication>

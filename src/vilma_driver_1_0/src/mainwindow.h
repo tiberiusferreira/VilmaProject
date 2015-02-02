@@ -10,7 +10,7 @@
 #include "vilma_self_driver.h"
 #include "gps.h"
 #include "imu.h"
-#include <plotui.h>
+#include "plotui.h"
 #include "ui_plotui.h"
 
 namespace Ui {

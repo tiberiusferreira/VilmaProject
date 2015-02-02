@@ -14,6 +14,7 @@ PlotUI::PlotUI(QWidget *parent) :
     ui->QPlotUI->xAxis->setTickStep(2);
     ui->QPlotUI->axisRect()->setupFullAxesBox();
 
+
 }
 
 void PlotUI::initiate(){
