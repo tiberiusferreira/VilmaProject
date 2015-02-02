@@ -13,7 +13,7 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
     float newx=x-morse_receiver_obj->getPosX();
     float newy=y-morse_receiver_obj->getPosY();
     qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
-    if(sqrt(newy*newx+newy*newy)<1){
+    if(sqrt(newy*newx+newy*newy)<2){
         return -1;
     }
 //    if( (newy>=0 && (morse_receiver_obj->getOrientationZAsEuler()<=(-3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>=(3.14/2)))
@@ -41,8 +41,8 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
 //        return -1;
 //    }
 //    qDebug("Car Z is: %f\n",morse_receiver_obj->getOrientationZAsEuler());
-//    qDebug("Delta X is: %f\n",newx);
-//    qDebug("Detla Y is: %f\n",newy);
+    qDebug("Delta X is: %f\n",newx);
+    qDebug("Detla Y is: %f\n",newy);
 //    qDebug("Atan newx/newy is:%f\n",ang);
 //    qDebug("Ang to turn =%f\n",value_to_turn);
 
@@ -74,6 +74,24 @@ std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_poi
             delta=+ fabs(temp-(smoothed_points.at(i)).y);
         }
     }
+    //    for(i=0;i<given_points.size();i++){
+    //        printf("\n");
+    //            printf("%f %f",((smoothed_points.at(i)).x),((smoothed_points.at(i)).y));
+    //    }
+    return smoothed_points;
+}
+
+std::deque<one_point> vilma_self_driver::generate_points(std::deque<one_point> given_points){
+    std::deque <one_point> smoothed_points;
+    unsigned int i;
+    one_point new_point;
+       for(i=0;i<given_points.size()-1;i++){ // for each point
+            smoothed_points.push_back(given_points.at(i));
+            new_point.x=(given_points.at(i+1).x-given_points.at(i).x)/2 + given_points.at(i).x;
+            new_point.y=(given_points.at(i+1).y-given_points.at(i).y)/2 + given_points.at(i).y;
+            smoothed_points.push_back(new_point);
+        }
+        smoothed_points.push_back(given_points.at(i));
     //    for(i=0;i<given_points.size();i++){
     //        printf("\n");
     //            printf("%f %f",((smoothed_points.at(i)).x),((smoothed_points.at(i)).y));

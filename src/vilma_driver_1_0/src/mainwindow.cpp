@@ -99,7 +99,6 @@ void MainWindow::update()
     }
     this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
     this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
-    printf("Minx:%f Maxx:%f Maxy:%f Miny:%f\n",this->PlotUI_obj.minx,this->PlotUI_obj.maxx,this->PlotUI_obj.maxy,this->PlotUI_obj.miny);
     this->PlotUI_obj.ui->QPlotUI->replot();
 
     }
@@ -230,9 +229,11 @@ void MainWindow::on_Set_new_speed_toggled(bool checked)
     }
 }
 
-void MainWindow::on_pushButton_clicked()
+
+
+
+void MainWindow::on_PlotTrajectory_clicked()
 {
-    //this->PlotUI_obj.initiate();
     plot=1;
     this->PlotUI_obj.ui->QPlotUI->clearPlottables();
     this->PlotUI_obj.ui->QPlotUI->clearGraphs();
@@ -255,7 +256,7 @@ void MainWindow::on_pushButton_clicked()
     QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(0,0);
     QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(0,1);
     int i=0;
-    while(!(X_item==0 || Y_item==0)){ //reached end of X Y list
+    while(!(X_item==NULL || Y_item==NULL)){ //reached end of X Y list
         if(X_item->text().toDouble()>this->PlotUI_obj.maxx){
             this->PlotUI_obj.maxx=X_item->text().toDouble();
         }
@@ -276,17 +277,86 @@ void MainWindow::on_pushButton_clicked()
         this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
         this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
         fermatSpiral1->setData(x, y);
-
+        fermatSpiral1->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCrossCircle,Qt::red,Qt::white,5));
+        fermatSpiral1->setLineStyle(QCPCurve::lsNone);
     }
     }
-
-
-
-
-
 
     this->PlotUI_obj.ui->QPlotUI->replot();
     this->PlotUI_obj.show();
 
 
+}
+
+void MainWindow::on_InputFromFile_clicked()
+{
+    if(!ui->Set_wheel_direction_table->isEnabled()){
+       ui->Set_wheel_direction_table->setEnabled(1);
+   }
+   QString filename = QFileDialog::getOpenFileName();
+
+   QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+   QString content = file.readAll();
+   file.close();
+   int column=0;
+   int row=0;
+   foreach( QString numStr, content.split(QRegExp("[\\s]"), QString::SkipEmptyParts) )
+   {
+       bool check = false;
+       float val = numStr.toFloat(&check);
+       if( !check )
+           continue;
+       else{
+           if(column==0){
+           ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
+           ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
+           column=1;
+           }else if(column==1){
+           ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
+           ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
+           row++;
+           column=0;
+           }
+       }
+           //do something with "val"
+   }
+
+}
+
+void MainWindow::on_GeneratePoints_clicked()
+{
+    std::deque<one_point> points_from_table;
+    std::deque<one_point> points_to_table;
+    QTableWidgetItem *X_item;
+    QTableWidgetItem *Y_item;
+    double current_row=0;
+    int ok=0;
+    while(ok==0){
+        X_item = ui->Set_wheel_direction_table->item(current_row,0);
+        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+        if(X_item==0 || Y_item==0){ //reached end of X Y list
+            ok =-1;
+            break;
+        }
+        points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
+        current_row++;
+    }
+    points_to_table=vilma_self_driver_obj.generate_points(points_from_table);
+    current_row=0;
+    qDebug() << points_to_table.size();
+    for(current_row=0;current_row<points_to_table.size();current_row++){
+        if(ui->Set_wheel_direction_table->item(current_row,0)==NULL){
+        ui->Set_wheel_direction_table->setItem(current_row,0,new QTableWidgetItem());
+        }
+        if(ui->Set_wheel_direction_table->item(current_row,1)==NULL){
+        ui->Set_wheel_direction_table->setItem(current_row,1,new QTableWidgetItem());
+        }
+        X_item = ui->Set_wheel_direction_table->item(current_row,0);
+        Y_item = ui->Set_wheel_direction_table->item(current_row,1);
+        X_item->setText(QString ("%5").arg(points_to_table.at(current_row).x));
+        Y_item->setText(QString ("%5").arg(points_to_table.at(current_row).y));
+    }
 }

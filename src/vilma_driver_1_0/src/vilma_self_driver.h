@@ -21,6 +21,7 @@ public:
     int reorientate_to_pose(float x, float y);
     void maintainSpeed(int desiredSpeed);
     std::deque<one_point> generate_smooth_path(std::deque<one_point> given_points);
+    std::deque<one_point> generate_points(std::deque<one_point> given_points);
     int maintainSpeedON;
     void maintainSpeedWorker(int desiredSpeed);
 

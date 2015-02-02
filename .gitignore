@@ -16,3 +16,5 @@ src/vilma_driver_1_0/CMakeLists.txt~
 *.usr
 
 *.usr~
+
+*.user

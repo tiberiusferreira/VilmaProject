@@ -614,17 +614,43 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="PlotTrajectory">
      <property name="geometry">
       <rect>
        <x>90</x>
        <y>170</y>
-       <width>174</width>
+       <width>231</width>
        <height>44</height>
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Plot Trajectory</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="InputFromFile">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>230</y>
+       <width>241</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Input From File</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="GeneratePoints">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>170</y>
+       <width>231</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Generate Points</string>
      </property>
     </widget>
    </widget>

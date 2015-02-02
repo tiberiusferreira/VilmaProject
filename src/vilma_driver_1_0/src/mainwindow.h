@@ -12,7 +12,7 @@
 #include "imu.h"
 #include "plotui.h"
 #include "ui_plotui.h"
-
+#include <QFileDialog>
 namespace Ui {
 class MainWindow;
 }
@@ -41,7 +41,11 @@ private slots:
 
     void on_Set_new_speed_toggled(bool checked);
 
-    void on_pushButton_clicked();
+    void on_PlotTrajectory_clicked();
+
+    void on_InputFromFile_clicked();
+
+    void on_GeneratePoints_clicked();
 
 private:
     Ui::MainWindow *ui;

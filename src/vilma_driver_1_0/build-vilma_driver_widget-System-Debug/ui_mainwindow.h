@@ -110,7 +110,9 @@ public:
     QLabel *current_max_speed_text;
     QSlider *steering_slider;
     QLabel *steering_status_label;
-    QPushButton *pushButton;
+    QPushButton *PlotTrajectory;
+    QPushButton *InputFromFile;
+    QPushButton *GeneratePoints;
     QDockWidget *AutomationWidget;
     QWidget *dockWidgetContents;
     QPushButton *Set_wheel_direction_button;
@@ -556,9 +558,15 @@ public:
 
         gridLayout->addWidget(steering_status_label, 1, 0, 1, 1);
 
-        pushButton = new QPushButton(ManualControlsWidget_contents);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(90, 170, 174, 44));
+        PlotTrajectory = new QPushButton(ManualControlsWidget_contents);
+        PlotTrajectory->setObjectName(QString::fromUtf8("PlotTrajectory"));
+        PlotTrajectory->setGeometry(QRect(90, 170, 231, 44));
+        InputFromFile = new QPushButton(ManualControlsWidget_contents);
+        InputFromFile->setObjectName(QString::fromUtf8("InputFromFile"));
+        InputFromFile->setGeometry(QRect(90, 230, 241, 44));
+        GeneratePoints = new QPushButton(ManualControlsWidget_contents);
+        GeneratePoints->setObjectName(QString::fromUtf8("GeneratePoints"));
+        GeneratePoints->setGeometry(QRect(370, 170, 231, 44));
         ManualControlsWidget->setWidget(ManualControlsWidget_contents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), ManualControlsWidget);
         AutomationWidget = new QDockWidget(MainWindow);
@@ -734,7 +742,9 @@ public:
         current_acel_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         current_max_speed_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel:    </span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0, QApplication::UnicodeUTF8));
+        PlotTrajectory->setText(QApplication::translate("MainWindow", "Plot Trajectory", 0, QApplication::UnicodeUTF8));
+        InputFromFile->setText(QApplication::translate("MainWindow", "Input From File", 0, QApplication::UnicodeUTF8));
+        GeneratePoints->setText(QApplication::translate("MainWindow", "Generate Points", 0, QApplication::UnicodeUTF8));
         AutomationWidget->setWindowTitle(QApplication::translate("MainWindow", "Automatic Driving", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_button->setText(QApplication::translate("MainWindow", "Set Wheel Direction to (X,Y)", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_x_input->setPlaceholderText(QApplication::translate("MainWindow", "Input X", 0, QApplication::UnicodeUTF8));

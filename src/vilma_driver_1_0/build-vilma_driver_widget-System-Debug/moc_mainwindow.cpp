@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -37,6 +37,8 @@ static const uint qt_meta_data_MainWindow[] = {
      158,   11,   11,   11, 0x08,
      194,   21,   11,   11, 0x08,
      225,   11,   11,   11, 0x08,
+     253,   11,   11,   11, 0x08,
+     280,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -48,7 +50,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_SmoothTrajectoryButton_clicked()\0"
     "on_Maintain_current_speed_toggled()\0"
     "on_Set_new_speed_toggled(bool)\0"
-    "on_pushButton_clicked()\0"
+    "on_PlotTrajectory_clicked()\0"
+    "on_InputFromFile_clicked()\0"
+    "on_GeneratePoints_clicked()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -63,7 +67,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_SmoothTrajectoryButton_clicked(); break;
         case 4: _t->on_Maintain_current_speed_toggled(); break;
         case 5: _t->on_Set_new_speed_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 6: _t->on_pushButton_clicked(); break;
+        case 6: _t->on_PlotTrajectory_clicked(); break;
+        case 7: _t->on_InputFromFile_clicked(); break;
+        case 8: _t->on_GeneratePoints_clicked(); break;
         default: ;
         }
     }
@@ -101,9 +107,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 9;
     }
     return _id;
 }
