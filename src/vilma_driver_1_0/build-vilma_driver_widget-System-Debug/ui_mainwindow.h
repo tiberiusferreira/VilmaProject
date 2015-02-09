@@ -607,8 +607,8 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         __qtablewidgetitem4->setFont(font);
         Set_wheel_direction_table->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        if (Set_wheel_direction_table->rowCount() < 100)
-            Set_wheel_direction_table->setRowCount(100);
+        if (Set_wheel_direction_table->rowCount() < 10000)
+            Set_wheel_direction_table->setRowCount(10000);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         Set_wheel_direction_table->setVerticalHeaderItem(0, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
@@ -634,7 +634,7 @@ public:
         Set_wheel_direction_table->setGeometry(QRect(0, 160, 841, 471));
         Set_wheel_direction_table->setGridStyle(Qt::SolidLine);
         Set_wheel_direction_table->setWordWrap(true);
-        Set_wheel_direction_table->setRowCount(100);
+        Set_wheel_direction_table->setRowCount(10000);
         Set_wheel_direction_table->horizontalHeader()->setCascadingSectionResizes(true);
         Set_wheel_direction_table->horizontalHeader()->setDefaultSectionSize(120);
         Set_wheel_direction_table->horizontalHeader()->setMinimumSectionSize(120);

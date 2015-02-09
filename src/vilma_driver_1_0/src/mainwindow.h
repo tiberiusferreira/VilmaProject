@@ -28,6 +28,7 @@ public:
 private slots:
     void update();
 
+    void set_wheel_direction();
 
     void on_Set_wheel_direction_from_table_toggled(bool checked);
 
@@ -56,6 +57,7 @@ private:
     imu imu_obj;
     vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
+    QTimer *timer2;
     PlotUI PlotUI_obj;
     int plot=0;
 

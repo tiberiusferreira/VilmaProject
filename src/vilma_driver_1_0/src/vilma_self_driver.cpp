@@ -13,7 +13,7 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
     float newx=x-morse_receiver_obj->getPosX();
     float newy=y-morse_receiver_obj->getPosY();
     qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
-    if(sqrt(newy*newx+newy*newy)<2){
+    if(sqrt(newy*newx+newy*newy)<3){
         return -1;
     }
 //    if( (newy>=0 && (morse_receiver_obj->getOrientationZAsEuler()<=(-3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>=(3.14/2)))
@@ -136,7 +136,10 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
     double updated_value;
     double initialTime = ros::Time::now().toSec();
     FILE * pFile;
-    pFile = fopen ("myfile.txt","w");
+    pFile = fopen ("SpeedLog.txt","w");
+    FILE * pFile2;
+    pFile2 = fopen ("PositionLog.txt","w");
+
     fprintf (pFile,"Tempo desde o começo da simulação\tMódulo da velocidade do veículo\n");
     while(this->maintainSpeedON){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
@@ -165,10 +168,12 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
             updated_value=20*(desiredSpeed);
         }
         fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
-        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
+        fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+//        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
     }
     fclose (pFile);
+    fclose (pFile2);
     running_threads--;
 }

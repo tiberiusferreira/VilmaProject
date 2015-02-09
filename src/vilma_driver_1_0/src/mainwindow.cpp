@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT( update()));
     timer->start(250);
+    timer2 = new QTimer(this);
+    connect(timer2, SIGNAL(timeout()), this, SLOT(set_wheel_direction()));
+    timer2->start(10);
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
     ui->Enter_new_constant_speed->setValidator(new QDoubleValidator(this));
@@ -109,6 +112,9 @@ void MainWindow::update()
     //        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
     //        }
     //    }
+}
+
+void MainWindow::set_wheel_direction(){
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
                 && ui->Set_wheel_direction_y_input->text()!=""){
@@ -127,20 +133,15 @@ void MainWindow::update()
             if(X_item==0 || Y_item==0){ //reached end of X Y list
                 morse_transmiter_obj.setSteering(0);
                 morse_transmiter_obj.setPowerAmount(0);
-
                 return;
             }
             ok=vilma_self_driver_obj.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
             if(ok==-1){ //check if the X Y is behind the car already
                 current_item->setText(QString ("%1").arg(current_item->text().toDouble()+1));
             }
-
         }
     }
 }
-
-
-
 void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
 {
     if(checked)

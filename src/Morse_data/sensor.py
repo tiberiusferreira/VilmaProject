@@ -1,5 +1,4 @@
 import sys
-sys.path.append("/home/tiago/Documents/MORSE/teste8")
 from laserscanner import *
 
 import logging; logger = logging.getLogger("morse.builder." + __name__)
