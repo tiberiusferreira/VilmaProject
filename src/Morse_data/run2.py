@@ -13,5 +13,5 @@ carina2.add_service('socket')
 #keyboard = Keyboard()
 #robot.append(keyboard)
 
-#env = Environment("../teste8/empty.blend",  fastmode = True)
-env = Environment("../Morse_data/empty.blend")
+env = Environment("../Morse_data/empty.blend",  fastmode = True)
+#env = Environment("../Morse_data/empty.blend")

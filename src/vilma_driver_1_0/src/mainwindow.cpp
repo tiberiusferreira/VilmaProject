@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(250);
     timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(set_wheel_direction()));
-    timer2->start(10);
+    timer2->start(100);
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
     ui->Enter_new_constant_speed->setValidator(new QDoubleValidator(this));

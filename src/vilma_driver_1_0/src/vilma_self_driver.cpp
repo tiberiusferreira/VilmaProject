@@ -12,8 +12,8 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
     //Solution: put all data in respect to car. Take car as origin, but keep axis orientation.
     float newx=x-morse_receiver_obj->getPosX();
     float newy=y-morse_receiver_obj->getPosY();
-    qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
-    if(sqrt(newy*newx+newy*newy)<3){
+//    qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
+    if(sqrt(newy*newx+newy*newy)<0.3){
         return -1;
     }
 //    if( (newy>=0 && (morse_receiver_obj->getOrientationZAsEuler()<=(-3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>=(3.14/2)))
@@ -27,7 +27,7 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
     float ang=atan(newx/newy); //ang returned is from -pi/2 to pi/2
     float ang_car=morse_receiver_obj->getOrientationZAsEuler(); //get car z rotation, but it goes from 0 to -3.14 and 0 to 3.14 too
     //need to convert it so I can compare it with ang_car. It only needs to happen when the car is backwards
-    if(newx>0 && newy>0){ //first quadrant
+    if(newx>=0 && newy>=0){ //first quadrant
         ang=-ang;
     }else if(newx<0 && newy>0){ //second quadrant
         ang=-ang;
@@ -41,11 +41,13 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
 //        return -1;
 //    }
 //    qDebug("Car Z is: %f\n",morse_receiver_obj->getOrientationZAsEuler());
-    qDebug("Delta X is: %f\n",newx);
-    qDebug("Detla Y is: %f\n",newy);
-//    qDebug("Atan newx/newy is:%f\n",ang);
-//    qDebug("Ang to turn =%f\n",value_to_turn);
-
+//    qDebug("Delta X is: %f",newx);
+//    qDebug("Detla Y is: %f",newy);
+//    qDebug("Atan newx/newy is:%f",ang);
+//    qDebug("Wheel Ang %f\n",value_to_turn);
+    if(abs(value_to_turn)>0.6){
+        return -1;
+    }
     morse_transmiter_obj->setSteering(value_to_turn);
     return 1;
 
@@ -144,13 +146,7 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
     while(this->maintainSpeedON){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
         previous_interation_time = ros::Time::now();
-        float velXsquare = this->morse_receiver_obj->getLinearVelX();
-        velXsquare=velXsquare*velXsquare;
-        float velYsquare = this->morse_receiver_obj->getLinearVelY();
-        velYsquare=velYsquare*velYsquare;
-        float velZsquare = this->morse_receiver_obj->getAngularVelZ();
-        velZsquare=velZsquare*velZsquare;
-        currentSpeed=sqrt(velXsquare+velYsquare+velZsquare);
+        currentSpeed=this->morse_receiver_obj->getLinearVelAVG();
         if(abs(desiredSpeed-currentSpeed)>2){
             gasControler.setGains(150,0,150,0,0);
             gasControler.reset();
@@ -167,8 +163,11 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         if(updated_value>20*(desiredSpeed)){
             updated_value=20*(desiredSpeed);
         }
-        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
-        fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+        if(updated_value<0){
+            updated_value=-updated_value;
+        }
+//        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
+       fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
 //        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
