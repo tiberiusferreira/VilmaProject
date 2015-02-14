@@ -5,8 +5,14 @@
 #include <QTimer>
 #include <QDebug>
 #include <QKeyEvent>
-#include "vilma_ros_talker.h"
+#include "morse_receiver.h"
+#include "morse_transmiter.h"
 #include "vilma_self_driver.h"
+#include "gps.h"
+#include "imu.h"
+#include "plotui.h"
+#include "ui_plotui.h"
+#include <QFileDialog>
 namespace Ui {
 class MainWindow;
 }
@@ -22,35 +28,40 @@ public:
 private slots:
     void update();
 
-    void keyPressEvent(QKeyEvent *key);
-
-    void on_Set_new_speed_toggled(bool checked);
-
-    void on_Constant_speed_button_toggled(bool checked);
+    void set_wheel_direction();
 
     void on_Set_wheel_direction_from_table_toggled(bool checked);
 
-    void on_current_acel_label_slider_sliderMoved(int position);
-
-    void on_current_brake_slider_sliderMoved(int position);
-
     void on_steering_slider_sliderMoved(int position);
 
-    void on_handbrake_button_toggled(bool checked);
+    void on_SmoothTrajectoryButton_clicked();
 
-    void on_gears_forward_radio_button_toggled(bool checked);
 
-    void on_gears_neutral_radio_button_toggled(bool checked);
+    void on_Maintain_current_speed_toggled();
 
-    void on_gears_backwards_radio_button_toggled(bool checked);
 
-    void on_pushButton_clicked();
+    void on_Set_new_speed_toggled(bool checked);
+
+    void on_PlotTrajectory_clicked();
+
+    void on_InputFromFile_clicked();
+
+    void on_GeneratePoints_clicked();
 
 private:
     Ui::MainWindow *ui;
-    vilma_ros_talker vilma_talker_obj;
-    vilma_self_driver vilma_self_driver_obj{&vilma_talker_obj};
+    //morse_subscriber morse_subscriber_obj;
+    morse_receiver morse_receiver_obj;
+    morse_transmiter morse_transmiter_obj;
+    gps gps_obj;
+    imu imu_obj;
+    vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *timer;
+    QTimer *timer2;
+    PlotUI PlotUI_obj;
+    int plot=0;
+
+
 
 };
 

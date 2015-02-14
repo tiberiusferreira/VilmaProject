@@ -25,7 +25,7 @@ LIBS += -L/opt/ros/indigo/lib/ -lactionlib -lbondcpp -lclass_loader -lroscpp \
 -lconsole_bridge -lcpp_common -lcv_bridge -ldynamic_reconfigure_config_init_mutex \
 -limage_transport_plugins -limage_transport -lmessage_filters -lnodeletlib -lqt_gui_cpp \
 -lrosconsole -lrostime -lroscpp_serialization -lxmlrpcpp -lrosconsole_log4cxx -lrosconsole \
--lrosconsole_backend_interface
+-lrosconsole_backend_interface -lcontrol_toolbox
 
 LIBS += -lboost_thread
 
@@ -39,13 +39,24 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    vilma_ros_talker.cpp \
     vilma_self_driver.cpp \
-    points.cpp
+    points.cpp \
+    gps.cpp \
+    imu.cpp \
+    morse_receiver.cpp \
+    morse_transmiter.cpp \
+    qcustomplot.cpp \
+    plotui.cpp
 
 HEADERS  += mainwindow.h \
-    vilma_ros_talker.h \
     vilma_self_driver.h \
-    points.h
+    points.h \
+    gps.h \
+    imu.h \
+    morse_receiver.h \
+    morse_transmiter.h \
+    qcustomplot.h \
+    plotui.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    plotui.ui
