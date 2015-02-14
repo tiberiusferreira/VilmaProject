@@ -24,7 +24,7 @@ public:
     std::deque<one_point> generate_points(std::deque<one_point> given_points);
     int maintainSpeedON;
     void maintainSpeedWorker(int desiredSpeed);
-
+    double time=0;
     void SetMaintainSpeedOFF();
 private:
     int running_threads;

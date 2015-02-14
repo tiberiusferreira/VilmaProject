@@ -2,8 +2,8 @@
 
 morse_receiver::morse_receiver()
 {
-    morse_pose_sub = rosNode.subscribe<geometry_msgs::PoseStamped>("/pose",1,&morse_receiver::receive_pos,this);
-    morse_vel_sub = rosNode.subscribe<geometry_msgs::TwistStamped>("/velocity",1,&morse_receiver::receive_vel,this);
+    morse_pose_sub = rosNode.subscribe<geometry_msgs::PoseStamped>("/pose",3,&morse_receiver::receive_pos,this);
+    morse_vel_sub = rosNode.subscribe<geometry_msgs::TwistStamped>("/velocity",3,&morse_receiver::receive_vel,this);
 
 }
 

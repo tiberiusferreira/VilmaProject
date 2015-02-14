@@ -41,8 +41,10 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
 //        return -1;
 //    }
 //    qDebug("Car Z is: %f\n",morse_receiver_obj->getOrientationZAsEuler());
-//    qDebug("Delta X is: %f",newx);
-//    qDebug("Detla Y is: %f",newy);
+    qDebug("Delta X is: %f",newx);
+    qDebug("Detla Y is: %f",newy);
+    qDebug("Time Delta = %f",(ros::Time::now().toNSec()-this->time)/1000000);
+    this->time=ros::Time::now().toNSec();
 //    qDebug("Atan newx/newy is:%f",ang);
 //    qDebug("Wheel Ang %f\n",value_to_turn);
     if(abs(value_to_turn)>0.6){
