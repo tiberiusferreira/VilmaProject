@@ -110,22 +110,26 @@ public:
     QLabel *current_max_speed_text;
     QSlider *steering_slider;
     QLabel *steering_status_label;
-    QPushButton *PlotTrajectory;
-    QPushButton *InputFromFile;
-    QPushButton *GeneratePoints;
     QDockWidget *AutomationWidget;
     QWidget *dockWidgetContents;
-    QPushButton *Set_wheel_direction_button;
-    QLineEdit *Set_wheel_direction_x_input;
-    QLineEdit *Set_wheel_direction_y_input;
-    QTableWidget *Set_wheel_direction_table;
-    QCheckBox *Set_wheel_direction_from_table;
-    QWidget *layoutWidget4;
-    QHBoxLayout *horizontalLayout_11;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *Maintain_current_speed;
     QPushButton *Set_new_speed;
     QLineEdit *Enter_new_constant_speed;
+    QPushButton *PlotTrajectory;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *Set_wheel_direction_button;
+    QLineEdit *Set_wheel_direction_x_input;
+    QLineEdit *Set_wheel_direction_y_input;
+    QCheckBox *Set_wheel_direction_from_table;
+    QHBoxLayout *horizontalLayout_4;
     QPushButton *SmoothTrajectoryButton;
+    QPushButton *GeneratePoints;
+    QPushButton *InputFromFile;
+    QTableWidget *Set_wheel_direction_table;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -501,7 +505,7 @@ public:
         ManualControlsWidget->setEnabled(true);
         sizePolicy.setHeightForWidth(ManualControlsWidget->sizePolicy().hasHeightForWidth());
         ManualControlsWidget->setSizePolicy(sizePolicy);
-        ManualControlsWidget->setMinimumSize(QSize(891, 400));
+        ManualControlsWidget->setMinimumSize(QSize(891, 200));
         ManualControlsWidget->setMaximumSize(QSize(1000, 1000));
         ManualControlsWidget->setAutoFillBackground(false);
         ManualControlsWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
@@ -558,15 +562,6 @@ public:
 
         gridLayout->addWidget(steering_status_label, 1, 0, 1, 1);
 
-        PlotTrajectory = new QPushButton(ManualControlsWidget_contents);
-        PlotTrajectory->setObjectName(QString::fromUtf8("PlotTrajectory"));
-        PlotTrajectory->setGeometry(QRect(90, 170, 231, 44));
-        InputFromFile = new QPushButton(ManualControlsWidget_contents);
-        InputFromFile->setObjectName(QString::fromUtf8("InputFromFile"));
-        InputFromFile->setGeometry(QRect(90, 230, 241, 44));
-        GeneratePoints = new QPushButton(ManualControlsWidget_contents);
-        GeneratePoints->setObjectName(QString::fromUtf8("GeneratePoints"));
-        GeneratePoints->setGeometry(QRect(370, 170, 231, 44));
         ManualControlsWidget->setWidget(ManualControlsWidget_contents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), ManualControlsWidget);
         AutomationWidget = new QDockWidget(MainWindow);
@@ -578,20 +573,111 @@ public:
         AutomationWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
         dockWidgetContents = new QWidget();
         dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
-        Set_wheel_direction_button = new QPushButton(dockWidgetContents);
+        widget = new QWidget(dockWidgetContents);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(10, 0, 829, 651));
+        verticalLayout_5 = new QVBoxLayout(widget);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        Maintain_current_speed = new QPushButton(widget);
+        Maintain_current_speed->setObjectName(QString::fromUtf8("Maintain_current_speed"));
+        Maintain_current_speed->setEnabled(true);
+        Maintain_current_speed->setCheckable(true);
+        Maintain_current_speed->setFlat(false);
+
+        horizontalLayout_3->addWidget(Maintain_current_speed);
+
+        Set_new_speed = new QPushButton(widget);
+        Set_new_speed->setObjectName(QString::fromUtf8("Set_new_speed"));
+        Set_new_speed->setEnabled(true);
+        Set_new_speed->setCheckable(true);
+
+        horizontalLayout_3->addWidget(Set_new_speed);
+
+        Enter_new_constant_speed = new QLineEdit(widget);
+        Enter_new_constant_speed->setObjectName(QString::fromUtf8("Enter_new_constant_speed"));
+        Enter_new_constant_speed->setEnabled(true);
+        Enter_new_constant_speed->setMaximumSize(QSize(111, 51));
+
+        horizontalLayout_3->addWidget(Enter_new_constant_speed);
+
+        PlotTrajectory = new QPushButton(widget);
+        PlotTrajectory->setObjectName(QString::fromUtf8("PlotTrajectory"));
+
+        horizontalLayout_3->addWidget(PlotTrajectory);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_3);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        Set_wheel_direction_button = new QPushButton(widget);
         Set_wheel_direction_button->setObjectName(QString::fromUtf8("Set_wheel_direction_button"));
-        Set_wheel_direction_button->setGeometry(QRect(20, 60, 391, 41));
         Set_wheel_direction_button->setCheckable(true);
         Set_wheel_direction_button->setAutoRepeat(true);
         Set_wheel_direction_button->setAutoDefault(false);
-        Set_wheel_direction_x_input = new QLineEdit(dockWidgetContents);
+
+        horizontalLayout_2->addWidget(Set_wheel_direction_button);
+
+        Set_wheel_direction_x_input = new QLineEdit(widget);
         Set_wheel_direction_x_input->setObjectName(QString::fromUtf8("Set_wheel_direction_x_input"));
-        Set_wheel_direction_x_input->setGeometry(QRect(420, 60, 111, 51));
+        sizePolicy.setHeightForWidth(Set_wheel_direction_x_input->sizePolicy().hasHeightForWidth());
+        Set_wheel_direction_x_input->setSizePolicy(sizePolicy);
+        Set_wheel_direction_x_input->setMaximumSize(QSize(111, 51));
         Set_wheel_direction_x_input->setCursorPosition(0);
-        Set_wheel_direction_y_input = new QLineEdit(dockWidgetContents);
+
+        horizontalLayout_2->addWidget(Set_wheel_direction_x_input);
+
+        Set_wheel_direction_y_input = new QLineEdit(widget);
         Set_wheel_direction_y_input->setObjectName(QString::fromUtf8("Set_wheel_direction_y_input"));
-        Set_wheel_direction_y_input->setGeometry(QRect(530, 60, 111, 51));
-        Set_wheel_direction_table = new QTableWidget(dockWidgetContents);
+        sizePolicy.setHeightForWidth(Set_wheel_direction_y_input->sizePolicy().hasHeightForWidth());
+        Set_wheel_direction_y_input->setSizePolicy(sizePolicy);
+        Set_wheel_direction_y_input->setMaximumSize(QSize(111, 51));
+
+        horizontalLayout_2->addWidget(Set_wheel_direction_y_input);
+
+        Set_wheel_direction_from_table = new QCheckBox(widget);
+        Set_wheel_direction_from_table->setObjectName(QString::fromUtf8("Set_wheel_direction_from_table"));
+
+        horizontalLayout_2->addWidget(Set_wheel_direction_from_table);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_2);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        SmoothTrajectoryButton = new QPushButton(widget);
+        SmoothTrajectoryButton->setObjectName(QString::fromUtf8("SmoothTrajectoryButton"));
+
+        horizontalLayout_4->addWidget(SmoothTrajectoryButton);
+
+        GeneratePoints = new QPushButton(widget);
+        GeneratePoints->setObjectName(QString::fromUtf8("GeneratePoints"));
+
+        horizontalLayout_4->addWidget(GeneratePoints);
+
+        InputFromFile = new QPushButton(widget);
+        InputFromFile->setObjectName(QString::fromUtf8("InputFromFile"));
+
+        horizontalLayout_4->addWidget(InputFromFile);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_4);
+
+
+        verticalLayout_5->addLayout(verticalLayout_4);
+
+        Set_wheel_direction_table = new QTableWidget(widget);
         if (Set_wheel_direction_table->columnCount() < 5)
             Set_wheel_direction_table->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -631,7 +717,6 @@ public:
         Set_wheel_direction_table->setItem(0, 4, __qtablewidgetitem14);
         Set_wheel_direction_table->setObjectName(QString::fromUtf8("Set_wheel_direction_table"));
         Set_wheel_direction_table->setEnabled(false);
-        Set_wheel_direction_table->setGeometry(QRect(0, 160, 841, 471));
         Set_wheel_direction_table->setGridStyle(Qt::SolidLine);
         Set_wheel_direction_table->setWordWrap(true);
         Set_wheel_direction_table->setRowCount(10000);
@@ -645,41 +730,9 @@ public:
         Set_wheel_direction_table->verticalHeader()->setMinimumSectionSize(42);
         Set_wheel_direction_table->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
         Set_wheel_direction_table->verticalHeader()->setStretchLastSection(false);
-        Set_wheel_direction_from_table = new QCheckBox(dockWidgetContents);
-        Set_wheel_direction_from_table->setObjectName(QString::fromUtf8("Set_wheel_direction_from_table"));
-        Set_wheel_direction_from_table->setGeometry(QRect(650, 70, 191, 41));
-        layoutWidget4 = new QWidget(dockWidgetContents);
-        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 10, 817, 46));
-        horizontalLayout_11 = new QHBoxLayout(layoutWidget4);
-        horizontalLayout_11->setSpacing(6);
-        horizontalLayout_11->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
-        horizontalLayout_11->setContentsMargins(0, 0, 0, 0);
-        Maintain_current_speed = new QPushButton(layoutWidget4);
-        Maintain_current_speed->setObjectName(QString::fromUtf8("Maintain_current_speed"));
-        Maintain_current_speed->setEnabled(true);
-        Maintain_current_speed->setCheckable(true);
-        Maintain_current_speed->setFlat(false);
 
-        horizontalLayout_11->addWidget(Maintain_current_speed);
+        verticalLayout_5->addWidget(Set_wheel_direction_table);
 
-        Set_new_speed = new QPushButton(layoutWidget4);
-        Set_new_speed->setObjectName(QString::fromUtf8("Set_new_speed"));
-        Set_new_speed->setEnabled(true);
-        Set_new_speed->setCheckable(true);
-
-        horizontalLayout_11->addWidget(Set_new_speed);
-
-        Enter_new_constant_speed = new QLineEdit(layoutWidget4);
-        Enter_new_constant_speed->setObjectName(QString::fromUtf8("Enter_new_constant_speed"));
-        Enter_new_constant_speed->setEnabled(true);
-
-        horizontalLayout_11->addWidget(Enter_new_constant_speed);
-
-        SmoothTrajectoryButton = new QPushButton(dockWidgetContents);
-        SmoothTrajectoryButton->setObjectName(QString::fromUtf8("SmoothTrajectoryButton"));
-        SmoothTrajectoryButton->setGeometry(QRect(20, 100, 271, 51));
         AutomationWidget->setWidget(dockWidgetContents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), AutomationWidget);
 
@@ -742,13 +795,17 @@ public:
         current_acel_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         current_max_speed_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel:    </span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        PlotTrajectory->setText(QApplication::translate("MainWindow", "Plot Trajectory", 0, QApplication::UnicodeUTF8));
-        InputFromFile->setText(QApplication::translate("MainWindow", "Input From File", 0, QApplication::UnicodeUTF8));
-        GeneratePoints->setText(QApplication::translate("MainWindow", "Generate Points", 0, QApplication::UnicodeUTF8));
         AutomationWidget->setWindowTitle(QApplication::translate("MainWindow", "Automatic Driving", 0, QApplication::UnicodeUTF8));
+        Maintain_current_speed->setText(QApplication::translate("MainWindow", "Current Speed", 0, QApplication::UnicodeUTF8));
+        Set_new_speed->setText(QApplication::translate("MainWindow", "Set Speed", 0, QApplication::UnicodeUTF8));
+        PlotTrajectory->setText(QApplication::translate("MainWindow", "Plot Trajectory", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_button->setText(QApplication::translate("MainWindow", "Set Wheel Direction to (X,Y)", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_x_input->setPlaceholderText(QApplication::translate("MainWindow", "Input X", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_y_input->setPlaceholderText(QApplication::translate("MainWindow", "Input Y", 0, QApplication::UnicodeUTF8));
+        Set_wheel_direction_from_table->setText(QApplication::translate("MainWindow", "From Table", 0, QApplication::UnicodeUTF8));
+        SmoothTrajectoryButton->setText(QApplication::translate("MainWindow", "Smooth Trajectory", 0, QApplication::UnicodeUTF8));
+        GeneratePoints->setText(QApplication::translate("MainWindow", "Generate Points", 0, QApplication::UnicodeUTF8));
+        InputFromFile->setText(QApplication::translate("MainWindow", "Input From File", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = Set_wheel_direction_table->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "X", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = Set_wheel_direction_table->horizontalHeaderItem(1);
@@ -784,10 +841,6 @@ public:
         ___qtablewidgetitem14->setText(QApplication::translate("MainWindow", "1", 0, QApplication::UnicodeUTF8));
         Set_wheel_direction_table->setSortingEnabled(__sortingEnabled);
 
-        Set_wheel_direction_from_table->setText(QApplication::translate("MainWindow", "From Table", 0, QApplication::UnicodeUTF8));
-        Maintain_current_speed->setText(QApplication::translate("MainWindow", "Current Speed", 0, QApplication::UnicodeUTF8));
-        Set_new_speed->setText(QApplication::translate("MainWindow", "Set Speed", 0, QApplication::UnicodeUTF8));
-        SmoothTrajectoryButton->setText(QApplication::translate("MainWindow", "Smooth Trajectory", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

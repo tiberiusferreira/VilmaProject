@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -40,6 +40,7 @@ static const uint qt_meta_data_MainWindow[] = {
      247,   11,   11,   11, 0x08,
      275,   11,   11,   11, 0x08,
      302,   11,   11,   11, 0x08,
+     330,   43,   11,   11, 0x08,
 
        0        // eod
 };
@@ -54,6 +55,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_PlotTrajectory_clicked()\0"
     "on_InputFromFile_clicked()\0"
     "on_GeneratePoints_clicked()\0"
+    "on_Set_wheel_direction_button_toggled(bool)\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -72,6 +74,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_PlotTrajectory_clicked(); break;
         case 8: _t->on_InputFromFile_clicked(); break;
         case 9: _t->on_GeneratePoints_clicked(); break;
+        case 10: _t->on_Set_wheel_direction_button_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -109,9 +112,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

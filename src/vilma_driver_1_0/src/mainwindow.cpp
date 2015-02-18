@@ -6,12 +6,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT( update()));
-    timer->start(250);
+    updateUiTimer = new QTimer(this);
+    connect(updateUiTimer, SIGNAL(timeout()), this, SLOT( update()));
+    updateUiTimer->start(250);
     timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(set_wheel_direction()));
-    timer2->start(34); // about 60hz which is ros publishing rate
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
     ui->Enter_new_constant_speed->setValidator(new QDoubleValidator(this));
@@ -85,25 +84,23 @@ void MainWindow::update()
     ui->morse_ang_vel_y_text->setText(morse_ang_vel_y_text);
     ui->morse_ang_vel_z_text->setText(morse_ang_vel_z_text);
     ui->imu_euler_z_rotation_text->setText(imu_euler_rot_z);
-
-    if(plot==1){
-    this->PlotUI_obj.ui->QPlotUI->graph(0)->addData(this->morse_receiver_obj.getPosX(),this->morse_receiver_obj.getPosY());
-    if(this->morse_receiver_obj.getPosX()>this->PlotUI_obj.maxx){
-        this->PlotUI_obj.maxx=this->morse_receiver_obj.getPosX();
-    }
-    if(this->morse_receiver_obj.getPosX()<this->PlotUI_obj.minx){
-        this->PlotUI_obj.minx=this->morse_receiver_obj.getPosX();
-    }
-    if(this->morse_receiver_obj.getPosY()>this->PlotUI_obj.maxy){
-        this->PlotUI_obj.maxy=this->morse_receiver_obj.getPosY();
-    }
-    if(this->morse_receiver_obj.getPosY()<this->PlotUI_obj.miny){
-        this->PlotUI_obj.miny=this->morse_receiver_obj.getPosY();
-    }
-    this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
-    this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
-    this->PlotUI_obj.ui->QPlotUI->replot();
-
+    if(PlotUI_obj.isVisible()){
+        this->PlotUI_obj.ui->QPlotUI->graph(0)->addData(this->morse_receiver_obj.getPosX(),this->morse_receiver_obj.getPosY());
+        if(this->morse_receiver_obj.getPosX()>this->PlotUI_obj.maxx){
+            this->PlotUI_obj.maxx=this->morse_receiver_obj.getPosX();
+        }
+        if(this->morse_receiver_obj.getPosX()<this->PlotUI_obj.minx){
+            this->PlotUI_obj.minx=this->morse_receiver_obj.getPosX();
+        }
+        if(this->morse_receiver_obj.getPosY()>this->PlotUI_obj.maxy){
+            this->PlotUI_obj.maxy=this->morse_receiver_obj.getPosY();
+        }
+        if(this->morse_receiver_obj.getPosY()<this->PlotUI_obj.miny){
+            this->PlotUI_obj.miny=this->morse_receiver_obj.getPosY();
+        }
+        this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
+        this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
+        this->PlotUI_obj.ui->QPlotUI->replot();
     }
 }
 void MainWindow::set_wheel_direction(){
@@ -134,7 +131,7 @@ void MainWindow::set_wheel_direction(){
             }
         }
     }else{
-       morse_transmiter_obj.setManualControl();
+        morse_transmiter_obj.setManualControl();
     }
 }
 void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
@@ -209,26 +206,26 @@ void MainWindow::on_Maintain_current_speed_toggled()
 void MainWindow::on_Set_new_speed_toggled(bool checked)
 {
     if(checked==1){
-    if(ui->Maintain_current_speed->isChecked()){
-        ui->Maintain_current_speed->setChecked(0);
-        ui->Set_new_speed->setChecked(0);
-        morse_transmiter_obj.setManualControl();
+        if(ui->Maintain_current_speed->isChecked()){
+            ui->Maintain_current_speed->setChecked(0);
+            ui->Set_new_speed->setChecked(0);
+            morse_transmiter_obj.setManualControl();
+            return;
+        }
+        bool ok;
+        ui->Enter_new_constant_speed->text().toDouble(&ok);
+        if(ok==1){
+            printf(" New Speed entered\n");
+            vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
+            ui->Enter_new_constant_speed->setEnabled(0);
+        }else{
+            ui->Set_new_speed->setChecked(0);
+            morse_transmiter_obj.setManualControl();
+        }
         return;
-    }
-    bool ok;
-    ui->Enter_new_constant_speed->text().toDouble(&ok);
-    if(ok==1){
-        printf(" New Speed entered\n");
-        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
-        ui->Enter_new_constant_speed->setEnabled(0);
     }else{
-        ui->Set_new_speed->setChecked(0);
-        morse_transmiter_obj.setManualControl();
-    }
-    return;
-    }else{
-    vilma_self_driver_obj.SetMaintainSpeedOFF();
-    ui->Enter_new_constant_speed->setEnabled(1);
+        vilma_self_driver_obj.SetMaintainSpeedOFF();
+        ui->Enter_new_constant_speed->setEnabled(1);
     }
 }
 
@@ -255,34 +252,34 @@ void MainWindow::on_PlotTrajectory_clicked()
     // create graph and assign data to it:
 
     if(this->ui->Set_wheel_direction_table->isEnabled()){
-    QVector<double> x(101), y(101); // initialize with entries 0..100
-    QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(0,0);
-    QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(0,1);
-    int i=0;
-    while(!(X_item==NULL || Y_item==NULL)){ //reached end of X Y list
-        if(X_item->text().toDouble()>this->PlotUI_obj.maxx){
-            this->PlotUI_obj.maxx=X_item->text().toDouble();
+        QVector<double> x(101), y(101); // initialize with entries 0..100
+        QTableWidgetItem *X_item = ui->Set_wheel_direction_table->item(0,0);
+        QTableWidgetItem *Y_item = ui->Set_wheel_direction_table->item(0,1);
+        int i=0;
+        while(!(X_item==NULL || Y_item==NULL)){ //reached end of X Y list
+            if(X_item->text().toDouble()>this->PlotUI_obj.maxx){
+                this->PlotUI_obj.maxx=X_item->text().toDouble();
+            }
+            if(Y_item->text().toDouble()>this->PlotUI_obj.maxy){
+                this->PlotUI_obj.maxy=Y_item->text().toDouble();
+            }
+            if(X_item->text().toDouble()<this->PlotUI_obj.minx){
+                this->PlotUI_obj.minx=X_item->text().toDouble();
+            }
+            if(Y_item->text().toDouble()<this->PlotUI_obj.miny){
+                this->PlotUI_obj.miny=Y_item->text().toDouble();
+            }
+            x.append(X_item->text().toDouble()); // x goes from -1 to 1
+            y.append(Y_item->text().toDouble());  // let's plot a quadratic function
+            i++;
+            X_item = ui->Set_wheel_direction_table->item(i,0);
+            Y_item = ui->Set_wheel_direction_table->item(i,1);
+            this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
+            this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
+            fermatSpiral1->setData(x, y);
+            fermatSpiral1->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCrossCircle,Qt::red,Qt::white,5));
+            fermatSpiral1->setLineStyle(QCPCurve::lsNone);
         }
-        if(Y_item->text().toDouble()>this->PlotUI_obj.maxy){
-            this->PlotUI_obj.maxy=Y_item->text().toDouble();
-        }
-        if(X_item->text().toDouble()<this->PlotUI_obj.minx){
-            this->PlotUI_obj.minx=X_item->text().toDouble();
-        }
-        if(Y_item->text().toDouble()<this->PlotUI_obj.miny){
-            this->PlotUI_obj.miny=Y_item->text().toDouble();
-        }
-        x.append(X_item->text().toDouble()); // x goes from -1 to 1
-        y.append(Y_item->text().toDouble());  // let's plot a quadratic function
-        i++;
-        X_item = ui->Set_wheel_direction_table->item(i,0);
-        Y_item = ui->Set_wheel_direction_table->item(i,1);
-        this->PlotUI_obj.ui->QPlotUI->xAxis->setRange(this->PlotUI_obj.minx-1, this->PlotUI_obj.maxx+1);
-        this->PlotUI_obj.ui->QPlotUI->yAxis->setRange(this->PlotUI_obj.miny-1, this->PlotUI_obj.maxy+1);
-        fermatSpiral1->setData(x, y);
-        fermatSpiral1->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCrossCircle,Qt::red,Qt::white,5));
-        fermatSpiral1->setLineStyle(QCPCurve::lsNone);
-    }
     }
 
     this->PlotUI_obj.ui->QPlotUI->replot();
@@ -294,38 +291,38 @@ void MainWindow::on_PlotTrajectory_clicked()
 void MainWindow::on_InputFromFile_clicked()
 {
     if(!ui->Set_wheel_direction_table->isEnabled()){
-       ui->Set_wheel_direction_table->setEnabled(1);
-   }
-   QString filename = QFileDialog::getOpenFileName();
+        ui->Set_wheel_direction_table->setEnabled(1);
+    }
+    QString filename = QFileDialog::getOpenFileName();
 
-   QFile file(filename);
+    QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
 
-   QString content = file.readAll();
-   file.close();
-   int column=0;
-   int row=0;
-   foreach( QString numStr, content.split(QRegExp("[\\s]"), QString::SkipEmptyParts) )
-   {
-       bool check = false;
-       float val = numStr.toFloat(&check);
-       if( !check )
-           continue;
-       else{
-           if(column==0){
-           ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
-           ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
-           column=1;
-           }else if(column==1){
-           ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
-           ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
-           row++;
-           column=0;
-           }
-       }
-           //do something with "val"
-   }
+    QString content = file.readAll();
+    file.close();
+    int column=0;
+    int row=0;
+    foreach( QString numStr, content.split(QRegExp("[\\s]"), QString::SkipEmptyParts) )
+    {
+        bool check = false;
+        float val = numStr.toFloat(&check);
+        if( !check )
+            continue;
+        else{
+            if(column==0){
+                ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
+                ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
+                column=1;
+            }else if(column==1){
+                ui->Set_wheel_direction_table->setItem(row,column,new QTableWidgetItem());
+                ui->Set_wheel_direction_table->item(row,column)->setText(QString ("%5").arg(val));
+                row++;
+                column=0;
+            }
+        }
+        //do something with "val"
+    }
 
 }
 
@@ -352,10 +349,10 @@ void MainWindow::on_GeneratePoints_clicked()
     qDebug() << points_to_table.size();
     for(current_row=0;current_row<points_to_table.size();current_row++){
         if(ui->Set_wheel_direction_table->item(current_row,0)==NULL){
-        ui->Set_wheel_direction_table->setItem(current_row,0,new QTableWidgetItem());
+            ui->Set_wheel_direction_table->setItem(current_row,0,new QTableWidgetItem());
         }
         if(ui->Set_wheel_direction_table->item(current_row,1)==NULL){
-        ui->Set_wheel_direction_table->setItem(current_row,1,new QTableWidgetItem());
+            ui->Set_wheel_direction_table->setItem(current_row,1,new QTableWidgetItem());
         }
         X_item = ui->Set_wheel_direction_table->item(current_row,0);
         Y_item = ui->Set_wheel_direction_table->item(current_row,1);
@@ -365,3 +362,12 @@ void MainWindow::on_GeneratePoints_clicked()
 }
 
 
+
+void MainWindow::on_Set_wheel_direction_button_toggled(bool checked)
+{
+    if(checked==1){
+        timer2->start(34); // about 30hz
+    }else{
+        timer2->stop();
+    }
+}
