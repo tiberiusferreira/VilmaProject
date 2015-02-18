@@ -11,6 +11,8 @@
 
 .*
 
+.*/
+
 src/vilma_driver_1_0/CMakeLists.txt~
 
 *.usr
@@ -18,3 +20,6 @@ src/vilma_driver_1_0/CMakeLists.txt~
 *.usr~
 
 *.user
+
+.catkin_workspace
+
