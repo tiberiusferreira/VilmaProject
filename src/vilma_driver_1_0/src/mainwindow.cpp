@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(250);
     timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(set_wheel_direction()));
-    timer2->start(17); // about 60hz which is ros publishing rate
+    timer2->start(34); // about 60hz which is ros publishing rate
     ui->Set_wheel_direction_x_input->setValidator(new QDoubleValidator(this));
     ui->Set_wheel_direction_y_input->setValidator(new QDoubleValidator(this));
     ui->Enter_new_constant_speed->setValidator(new QDoubleValidator(this));
@@ -105,15 +105,7 @@ void MainWindow::update()
     this->PlotUI_obj.ui->QPlotUI->replot();
 
     }
-    //    if(ui->Set_new_speed->isEnabled() && ui->Set_new_speed->isChecked()){
-    //        bool ok;
-    //        ui->Enter_new_constant_speed->text().toDouble(&ok);
-    //        if(ok==1){
-    //        vilma_self_driver_obj.maintainSpeed(ui->Enter_new_constant_speed->text().toDouble());
-    //        }
-    //    }
 }
-
 void MainWindow::set_wheel_direction(){
     if(ui->Set_wheel_direction_button->isChecked()){
         if(!ui->Set_wheel_direction_from_table->isChecked() && ui->Set_wheel_direction_x_input->text()!=""
@@ -133,6 +125,7 @@ void MainWindow::set_wheel_direction(){
             if(X_item==0 || Y_item==0){ //reached end of X Y list
                 morse_transmiter_obj.setSteering(0);
                 morse_transmiter_obj.setPowerAmount(0);
+                morse_transmiter_obj.setManualControl();
                 return;
             }
             ok=vilma_self_driver_obj.reorientate_to_pose(X_item->text().toDouble(),Y_item->text().toDouble());
@@ -140,6 +133,8 @@ void MainWindow::set_wheel_direction(){
                 current_item->setText(QString ("%1").arg(current_item->text().toDouble()+1));
             }
         }
+    }else{
+       morse_transmiter_obj.setManualControl();
     }
 }
 void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
@@ -198,10 +193,15 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
 void MainWindow::on_Maintain_current_speed_toggled()
 {
     if(ui->Set_new_speed->isChecked()){
+        morse_transmiter_obj.setManualControl();
         ui->Set_new_speed->setChecked(0);
         ui->Maintain_current_speed->setChecked(0);
+        vilma_self_driver_obj.SetMaintainSpeedOFF();
         return;
+    }else{
+        vilma_self_driver_obj.maintainSpeed(morse_receiver_obj.getLinearVelAVG());
     }
+
 }
 
 
@@ -212,6 +212,7 @@ void MainWindow::on_Set_new_speed_toggled(bool checked)
     if(ui->Maintain_current_speed->isChecked()){
         ui->Maintain_current_speed->setChecked(0);
         ui->Set_new_speed->setChecked(0);
+        morse_transmiter_obj.setManualControl();
         return;
     }
     bool ok;
@@ -222,6 +223,7 @@ void MainWindow::on_Set_new_speed_toggled(bool checked)
         ui->Enter_new_constant_speed->setEnabled(0);
     }else{
         ui->Set_new_speed->setChecked(0);
+        morse_transmiter_obj.setManualControl();
     }
     return;
     }else{
@@ -361,3 +363,5 @@ void MainWindow::on_GeneratePoints_clicked()
         Y_item->setText(QString ("%5").arg(points_to_table.at(current_row).y));
     }
 }
+
+

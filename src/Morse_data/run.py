@@ -13,4 +13,4 @@ carina2.add_service('socket')
 #keyboard = Keyboard()
 #robot.append(keyboard)
 
-env = Environment("../Morse_data/city7.blend")
+env = Environment("../Morse_data/city7.blend", fastmode= True)

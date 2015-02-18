@@ -1,20 +1,18 @@
 import sys
-sys.path.append("../teste8")
+sys.path.append("../Morse_data")
 
 from Carina2Class import *
-from sensor import *
 from morse.builder import *
-
 
 class Carina2Builder(Robot):
     def __init__(self):
         debug=1;
+
         Robot.__init__(self, "carina2.blend")           
         self.properties(classpath="Carina2Class.Carina2Class")
         pose = Pose()
         pose.translate(0,1.3,0.2)
         self.append(pose)               
-            #pose.add_stream("ros", method="morse.middleware.ros.pose.TFPublisher", topic="/base_link")
         pose.add_stream("ros", topic="/pose")
         #velocity
         velocity = Velocity()

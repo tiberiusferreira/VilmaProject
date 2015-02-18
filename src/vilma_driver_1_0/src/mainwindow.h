@@ -48,6 +48,8 @@ private slots:
 
     void on_GeneratePoints_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
     //morse_subscriber morse_subscriber_obj;

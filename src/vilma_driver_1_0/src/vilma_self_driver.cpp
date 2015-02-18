@@ -8,14 +8,15 @@ vilma_self_driver::vilma_self_driver(morse_receiver *morse_receiver_obj, morse_t
     running_threads=0;
 }
 int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates wheels so model goes to given X Y position.
+    ros::spinOnce(); //update ros side values
     //Step 1: Find out if the desired location if forward or backwards in respect to the car.
     //Solution: put all data in respect to car. Take car as origin, but keep axis orientation.
     float newx=x-morse_receiver_obj->getPosX();
     float newy=y-morse_receiver_obj->getPosY();
 //    qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
-    if(sqrt(newy*newx+newy*newy)<0.3){
-        return -1;
-    }
+//    if(sqrt(newy*newx+newy*newy)<0.3){
+//        return -1;
+//    }
 //    if( (newy>=0 && (morse_receiver_obj->getOrientationZAsEuler()<=(-3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>=(3.14/2)))
 //            || (newy<0 && (morse_receiver_obj->getOrientationZAsEuler()<(3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>(-3.14/2))))
 //    { //if point is oposite to car direction, do nothing
@@ -41,10 +42,10 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
 //        return -1;
 //    }
 //    qDebug("Car Z is: %f\n",morse_receiver_obj->getOrientationZAsEuler());
-    qDebug("Delta X is: %f",newx);
-    qDebug("Detla Y is: %f",newy);
-    qDebug("Time Delta = %f",(ros::Time::now().toNSec()-this->time)/1000000);
-    this->time=ros::Time::now().toNSec();
+//    qDebug("Delta X is: %f\n",newx);
+//    qDebug("Detla Y is: %f",newy);
+//    qDebug("Time Delta = %f",(ros::Time::now().toNSec()-this->time)/1000000);
+//    this->time=ros::Time::now().toNSec();
 //    qDebug("Atan newx/newy is:%f",ang);
 //    qDebug("Wheel Ang %f\n",value_to_turn);
     if(abs(value_to_turn)>0.6){
