@@ -36,4 +36,4 @@ sudo python3 setup.py install
 To open the simulation go to the folder containing run2.py and execute the following command:
 morse run run2.py
 
-To open the GUI for car controlling utilize the executable in the vilma_driver build folder (64 bits Ubuntu 14.04 tested) or compile it utilizing the catkin system.
+To open the GUI for car controlling utilize the executable in the vilma_driver build folder (64 bits Ubuntu 14.04 tested) or compile it utilizing the catkin system. To compile using the catkin system it is necessary to copy the src folder of the VilmaDriver to the catkin workspace.
