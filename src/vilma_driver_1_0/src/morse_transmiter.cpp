@@ -18,6 +18,7 @@ morse_transmiter::morse_transmiter()
     this->setPowerAmount(0);
     this->setVelocity(100);
     this->setSteering(0);
+    this->setManualControl();
 
 
 }
@@ -36,7 +37,7 @@ void morse_transmiter::setSteering(float rad){
         rad=-0.6;
     }
     this->steering=rad;
-    sprintf(message1, "id carina2 steer [1,%lf]\n", rad);
+    sprintf(message1, "id vilma steer [1,%lf]\n", rad);
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send steer failed");
     }
@@ -45,7 +46,7 @@ void morse_transmiter::setSteering(float rad){
 void morse_transmiter::setVelocity(float meter_per_sec){
     char message1[100];
     this->velocity=meter_per_sec;
-    sprintf(message1, "id carina2 controlpower [1,%lf,%lf]\n", this->power,meter_per_sec);
+    sprintf(message1, "id vilma controlpower [1,%lf,%lf]\n", this->power,meter_per_sec);
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send steer failed");
     }
@@ -55,8 +56,8 @@ void morse_transmiter::setPowerAmount(float power_amount){
     boost::mutex::scoped_lock scopedLock(PowerMutex);
     char message1[100];
     this->power=power_amount;
-    //robot carina2 is hardcoded
-    sprintf(message1, "id carina2 controlpower [1,%lf,%lf]\n", power_amount,this->velocity);
+    //robot vilma is hardcoded
+    sprintf(message1, "id vilma controlpower [1,%lf,%lf]\n", power_amount,this->velocity);
 
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send power failed");
@@ -66,12 +67,12 @@ void morse_transmiter::setPowerAmount(float power_amount){
 
 void morse_transmiter::setManualControl(){
     char message1[100];
-    sprintf(message1, "id carina2 controlpower [0,0,100]\n");
+    sprintf(message1, "id vilma controlpower [0,0,100]\n");
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("Switch to manual power failed");
     }
     //Making it so Blender can control it too
-    sprintf(message1, "id carina2 steer [0,0]\n");
+    sprintf(message1, "id vilma steer [0,0]\n");
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("Switch to manual steer failed");
     }

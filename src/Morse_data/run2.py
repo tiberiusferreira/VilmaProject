@@ -1,14 +1,14 @@
 import sys
 sys.path.append("../Morse_data")
 
-from Carina2Builder import *
+from VilmaBuilder import *
 from morse.builder import *
 
 bpymorse.set_speed(30, 1, 1)
 
-carina2 = Carina2Builder()
+vilma = VilmaBuilder()
 
-carina2.add_service('socket')
+vilma.add_service('socket')
 
 
 #keyboard = Keyboard()

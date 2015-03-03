@@ -149,6 +149,7 @@ void MainWindow::on_Set_wheel_direction_from_table_toggled(bool checked)
 void MainWindow::on_steering_slider_sliderMoved(int position)
 {
     morse_transmiter_obj.setSteering(((float) -position/100)*0.191); //*0.191 so it stays as +-0.6 rad
+    morse_transmiter_obj.setManualControl();
     //and not +-3.14 rad
 }
 
@@ -161,6 +162,10 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
     QTableWidgetItem *Y_item;
     double current_row=0;
     int ok=0;
+    int number_itens=0;
+    if(!ui->Set_wheel_direction_table->isEnabled()){
+       return;
+    }
     while(ok==0){
         X_item = ui->Set_wheel_direction_table->item(current_row,0);
         Y_item = ui->Set_wheel_direction_table->item(current_row,1);
@@ -170,6 +175,10 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
         }
         points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
         current_row++;
+        number_itens++;
+    }
+    if(number_itens<4){
+        return;
     }
     points_to_table=vilma_self_driver_obj.generate_smooth_path(points_from_table);
     current_row=0;
@@ -334,6 +343,10 @@ void MainWindow::on_GeneratePoints_clicked()
     QTableWidgetItem *Y_item;
     double current_row=0;
     int ok=0;
+    int number_points=0;
+    if(!ui->Set_wheel_direction_table->isEnabled()){
+        return;
+    }
     while(ok==0){
         X_item = ui->Set_wheel_direction_table->item(current_row,0);
         Y_item = ui->Set_wheel_direction_table->item(current_row,1);
@@ -343,6 +356,10 @@ void MainWindow::on_GeneratePoints_clicked()
         }
         points_from_table.push_back(one_point (X_item->text().toFloat(),Y_item->text().toFloat()));
         current_row++;
+        number_points++;
+    }
+    if(number_points<2){
+        return;
     }
     points_to_table=vilma_self_driver_obj.generate_points(points_from_table);
     current_row=0;
@@ -366,7 +383,7 @@ void MainWindow::on_GeneratePoints_clicked()
 void MainWindow::on_Set_wheel_direction_button_toggled(bool checked)
 {
     if(checked==1){
-        timer2->start(34); // about 30hz
+        timer2->start(17); // about 60hz
     }else{
         timer2->stop();
     }
