@@ -3,8 +3,11 @@ This is the repository for the VILMA simulator (ve√≠culo inteligente do Laborat√
 The project has been restructured and now utilizes the MORSE simulator (https://www.openrobots.org/wiki/morse/)
 and ROS (http://ros.org).
 
+To compile Morse it is recommended to install python-dev, is special python3.4-dev .
 MORSE must be installed with the following cmake parameters for it's utilization:
-cmake -DPYMORSE_SUPPORT=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_ROS_SUPPORT=ON -DPYTHON_EXECUTABLE=`which python3.3` ..
+cmake -DPYMORSE_SUPPORT=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_ROS_SUPPORT=ON 
+
+-DPYTHON_EXECUTABLE=$(which python3.4) can also be usefull to indicate the python location, in this case python3.4.
 
 In addition the following components must be installed
 
@@ -16,6 +19,7 @@ git clone git://github.com/ros/catkin.git
 cd catkin
 sudo python3 setup.py install
 
+
 2-
 sudo apt-get install python3-dev
 Install PyYAML with Python3 support (package python3-yaml on Debian/Ubuntu, or you can get the sources from http://pyyaml.org ) and build it using python3:
@@ -25,9 +29,11 @@ cd PyYAML-3.10
 sudo python3 setup.py install
 
 3-
+Get Setuptools:
+
+sudo apt-get install python3-setuptools
+
 Install rospkg using Python3:
-wget http://python-distribute.org/distribute_setup.py
-sudo python3 distribute_setup.py
 
 git clone git://github.com/ros/rospkg.git
 cd rospkg
