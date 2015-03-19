@@ -1,0 +1,1 @@
+Tempo desde o começo da simulação	Módulo da velocidade do veículo
