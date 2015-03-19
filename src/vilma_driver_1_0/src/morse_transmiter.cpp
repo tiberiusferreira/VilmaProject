@@ -13,7 +13,7 @@ morse_transmiter::morse_transmiter()
     //Connect to remote server
     if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0){
         perror("connect failed. Error");
-        exit(1);
+        //exit(1);
     }
     this->setPowerAmount(0);
     this->setVelocity(100);

@@ -9,9 +9,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1709</width>
-    <height>1159</height>
+    <width>1018</width>
+    <height>661</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1309</width>
+    <height>1000</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Vilma Driver</string>
@@ -22,8 +28,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1709</width>
-     <height>42</height>
+     <width>1018</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuView">
@@ -56,14 +62,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>800</width>
+     <width>400</width>
      <height>600</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>800</width>
-     <height>1200</height>
+     <width>400</width>
+     <height>500</height>
     </size>
    </property>
    <property name="windowTitle">
@@ -79,22 +85,28 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>580</y>
-       <width>495</width>
-       <height>436</height>
+       <x>20</x>
+       <y>14</y>
+       <width>330</width>
+       <height>507</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_7">
       <item>
-       <layout class="QVBoxLayout" name="IMU_quat">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QLabel" name="label_17">
+         <widget class="QLabel" name="label_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Orientation &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Position (MORSE) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -102,159 +114,29 @@
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
-           <widget class="QLabel" name="imu_quaternion_x_text">
+           <widget class="QLabel" name="morse_x_text">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="imu_quaternion_y_text">
+           <widget class="QLabel" name="morse_y_text">
             <property name="text">
              <string>Y : 0.000</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="imu_quaternion_z_text">
-            <property name="text">
-             <string>Z : 0.000</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="imu_quaternion_w_text">
-            <property name="text">
-             <string>W : 0.000</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="IMU_lin_acel">
-        <item>
-         <widget class="QLabel" name="label_26">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Linear Acceleration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_10">
-          <item>
-           <widget class="QLabel" name="imu_lin_acel_x_text">
-            <property name="text">
-             <string>X : 0.000</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="imu_lin_acel_y_text">
-            <property name="text">
-             <string>Y : 0.000</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="imu_lin_acel_z_text">
-            <property name="text">
-             <string>Z : 0.000</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="IMU_ang_vel">
-        <item>
-         <widget class="QLabel" name="label_22">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Angular Velocity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <item>
-           <widget class="QLabel" name="imu_ang_speed_x_text">
-            <property name="text">
-             <string>X : 0.000</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="imu_ang_speed_y_text">
-            <property name="text">
-             <string>Y : 0.000</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="imu_ang_speed_z_text">
-            <property name="text">
-             <string>Z : 0.000</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="imu_euler">
-        <item>
-         <widget class="QLabel" name="imu_euler_z_rotation_label">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Euler Rotation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="imu_euler_z_rotation_text">
-          <property name="text">
-           <string>Z : 0.000</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>11</y>
-       <width>633</width>
-       <height>550</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <layout class="QVBoxLayout" name="Quaternion_morse">
-        <item>
-         <layout class="QVBoxLayout" name="Position_morse">
-          <item>
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="morse_z_text">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -262,52 +144,16 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Position (MORSE) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <string>Z : 0.000</string>
             </property>
            </widget>
           </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QLabel" name="morse_x_text">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>X : 0.000</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="morse_y_text">
-              <property name="text">
-               <string>Y : 0.000</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="morse_z_text">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Z : 0.000</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
          </layout>
         </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QLabel" name="label_12">
           <property name="text">
@@ -475,8 +321,176 @@
         </item>
        </layout>
       </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Orientation &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="imu_quaternion_x_text">
+            <property name="text">
+             <string>X : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_quaternion_y_text">
+            <property name="text">
+             <string>Y : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_quaternion_z_text">
+            <property name="text">
+             <string>Z : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_quaternion_w_text">
+            <property name="text">
+             <string>W : 0.000</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="IMU_lin_acel">
+        <item>
+         <widget class="QLabel" name="label_26">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Linear Acceleration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="imu_lin_acel_x_text">
+            <property name="text">
+             <string>X : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_lin_acel_y_text">
+            <property name="text">
+             <string>Y : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_lin_acel_z_text">
+            <property name="text">
+             <string>Z : 0.000</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="IMU_ang_vel">
+        <item>
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Angular Velocity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="imu_ang_speed_x_text">
+            <property name="text">
+             <string>X : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_ang_speed_y_text">
+            <property name="text">
+             <string>Y : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="imu_ang_speed_z_text">
+            <property name="text">
+             <string>Z : 0.000</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="imu_euler">
+        <item>
+         <widget class="QLabel" name="imu_euler_z_rotation_label">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Euler Rotation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="imu_euler_z_rotation_text">
+          <property name="text">
+           <string>Z : 0.000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
      </layout>
     </widget>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>label_12</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>label_5</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
+    <zorder>label_17</zorder>
+    <zorder>morse_lin_vel_avg_text</zorder>
+    <zorder>label_34</zorder>
+    <zorder>morse_lin_vel_avg_text</zorder>
+    <zorder></zorder>
+    <zorder>morse_ang_vel_z_text</zorder>
+    <zorder>imu_quaternion_x_text</zorder>
+    <zorder>imu_quaternion_z_text</zorder>
+    <zorder>imu_quaternion_w_text</zorder>
+    <zorder>imu_quaternion_y_text</zorder>
    </widget>
   </widget>
   <widget class="QDockWidget" name="ManualControlsWidget">
@@ -491,14 +505,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>891</width>
+     <width>600</width>
      <height>200</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>1000</width>
-     <height>1000</height>
+     <width>600</width>
+     <height>200</height>
     </size>
    </property>
    <property name="autoFillBackground">
@@ -514,13 +528,13 @@
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="ManualControlsWidget_contents">
-    <widget class="QWidget" name="gridLayoutWidget">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>861</width>
-       <height>101</height>
+       <x>11</x>
+       <y>21</y>
+       <width>461</width>
+       <height>71</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -586,19 +600,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QSlider" name="steering_slider">
-        <property name="minimum">
-         <number>-314</number>
-        </property>
-        <property name="maximum">
-         <number>314</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="steering_status_label">
         <property name="text">
@@ -612,6 +613,19 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QSlider" name="steering_slider">
+        <property name="minimum">
+         <number>-314</number>
+        </property>
+        <property name="maximum">
+         <number>314</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -619,13 +633,13 @@
   <widget class="QDockWidget" name="AutomationWidget">
    <property name="minimumSize">
     <size>
-     <width>850</width>
+     <width>600</width>
      <height>400</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>850</width>
+     <width>60</width>
      <height>800</height>
     </size>
    </property>
@@ -648,10 +662,10 @@
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>829</width>
-       <height>651</height>
+       <x>11</x>
+       <y>1</y>
+       <width>559</width>
+       <height>301</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
