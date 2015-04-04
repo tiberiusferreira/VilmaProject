@@ -3,12 +3,15 @@
 #Esta eh a parte logica do robo, ela tem que herdar de morse.core.robot Robot
 #nao confundir esta heranca com o Robot do builder
 import logging; logger = logging.getLogger("morse." + __name__)
-
+import morse.middleware.ros.abstract_ros
 import morse.core.robot
 import morse.builder.bpymorse
 from morse.core.services import service
+from morse.builder import *
+
 
 from morse.middleware.ros_request_manager import *
+from morse.middleware.ros.abstract_ros import *
 
 class VilmaClass(morse.core.robot.Robot):
 			
@@ -22,11 +25,23 @@ class VilmaClass(morse.core.robot.Robot):
 		#print(obj['keyboard'])
 		#obj['keyboard'] = 0
 		#print(obj['keyboard'])
-		print("############################## END  TESTS ##############################")
+		#self.bge_object.getNumWheels()
+
+ 		#add imu
+		#pub=ROSPublisher()
 
 
+
+
+		#scene = self.bge_object.scene
+		#for objects in scene.objects:
+		#	if 'wheel1' in objects.name:
+		#		logger.info('%s' % objects.getAngularVelocity(1)[0] )
+
+				
 		
-	
+		print("############################## END  TESTS ##############################")		
+		
 	
 	#======================================================="
 	#services examples

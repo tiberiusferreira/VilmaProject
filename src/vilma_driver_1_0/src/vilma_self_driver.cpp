@@ -150,28 +150,30 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
         previous_interation_time = ros::Time::now();
         currentSpeed=this->morse_receiver_obj->getLinearVelAVG();
-        if(abs(desiredSpeed-currentSpeed)>2){
-            gasControler.setGains(500+abs(morse_transmiter_obj->getSteering()*350),0,150,0,0);
+        if(abs(desiredSpeed-currentSpeed)>1){
+            gasControler.setGains(200+abs(morse_transmiter_obj->getSteering()*350),0,0,0,0);
             gasControler.reset();
         }else{
-            gasControler.setGains(500+abs(morse_transmiter_obj->getSteering()*350),15+abs(morse_transmiter_obj->getSteering()*800),150,25*desiredSpeed+abs(morse_transmiter_obj->getSteering()*500),-25*desiredSpeed-abs(morse_transmiter_obj->getSteering()*500));
+            gasControler.setGains(200+abs(morse_transmiter_obj->getSteering()*350),50+abs(morse_transmiter_obj->getSteering()*800),0,25*desiredSpeed+abs(morse_transmiter_obj->getSteering()*500),-25*desiredSpeed-abs(morse_transmiter_obj->getSteering()*500));
+
         }
         updated_value=this->gasControler.computeCommand(desiredSpeed-currentSpeed,dt);
-        if(updated_value-this->morse_transmiter_obj->getPowerAmount()>20){
-            updated_value=this->morse_transmiter_obj->getPowerAmount()+20;
+        if(updated_value-this->morse_transmiter_obj->getPowerAmount()>10){
+            updated_value=this->morse_transmiter_obj->getPowerAmount()+10;
         }
-        if(updated_value-this->morse_transmiter_obj->getPowerAmount()<-50){
-            updated_value=this->morse_transmiter_obj->getPowerAmount()-50;
+        if(updated_value-this->morse_transmiter_obj->getPowerAmount()<-40){
+            updated_value=this->morse_transmiter_obj->getPowerAmount()-40;
         }
-        if(updated_value>80*(desiredSpeed)+abs(this->morse_transmiter_obj->getSteering()*800)){
-            updated_value=80*(desiredSpeed)+abs(this->morse_transmiter_obj->getSteering()*800);
+        if(updated_value>50*(desiredSpeed)+abs(this->morse_transmiter_obj->getSteering()*800)){
+            updated_value=50*(desiredSpeed)+abs(this->morse_transmiter_obj->getSteering()*800);
         }
         if(updated_value<0){
             updated_value=-updated_value;
         }
-//        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
-       fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
-//        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
+        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
+        gasControler.printValues();
+       //fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
     }

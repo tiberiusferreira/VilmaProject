@@ -5,8 +5,6 @@ and ROS (http://ros.org).
 
 To compile Morse it is recommended to install python-dev, is special python3.4-dev .
 MORSE must be installed with the following cmake parameters for it's utilization:
-
-sudo apt-get install python-dev python3-dev blender python3-setuptools
 cmake -DPYMORSE_SUPPORT=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_ROS_SUPPORT=ON 
 
 -DPYTHON_EXECUTABLE=$(which python3.4) can also be usefull to indicate the python location, in this case python3.4.
@@ -23,15 +21,18 @@ sudo python3 setup.py install
 
 
 2-
-
+sudo apt-get install python3-dev
 Install PyYAML with Python3 support (package python3-yaml on Debian/Ubuntu, or you can get the sources from http://pyyaml.org ) and build it using python3:
-
 wget http://pyyaml.org/download/pyyaml/PyYAML-3.10.tar.gz
 tar xvf PyYAML-3.10.tar.gz
 cd PyYAML-3.10
 sudo python3 setup.py install
 
 3-
+Get Setuptools:
+
+sudo apt-get install python3-setuptools
+
 Install rospkg using Python3:
 
 git clone git://github.com/ros/rospkg.git
@@ -42,5 +43,3 @@ To open the simulation go to the folder containing run2.py and execute the follo
 morse run run2.py
 
 To open the GUI for car controlling utilize the executable in the vilma_driver build folder (64 bits Ubuntu 14.04 tested) or compile it utilizing the catkin system. To compile using the catkin system it is necessary to copy the src folder of the VilmaDriver to the catkin workspace.
-first install the next package
-sudo apt-get install ros-indigo-control-toolbox ros-indigo-ackermann-msgs

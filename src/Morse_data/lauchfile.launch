@@ -1,0 +1,12 @@
+<launch>
+
+
+
+<node pkg ="rosbag" type="play" name="rosbag" args="/home/tiberio/git/VilmaProject/src/Morse_data/record1.bag" respawn="true"/>
+<node pkg ="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc" args="" required="true"/>
+
+<node pkg ="topic_tools" type="relay" name="relay_left" args="/left/image /left/image_raw"/>
+<node pkg ="topic_tools" type="relay" name="relay_right" args="/right/image /right/image_raw" respawn="true"/>
+<node pkg ="image_view" type="stereo_view" name="stereo_view" args="stereo:=" respawn="true"/>
+
+</launch>
