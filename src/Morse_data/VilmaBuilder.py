@@ -3,7 +3,10 @@ sys.path.append("../Morse_data")
 
 from VilmaClass import *
 from morse.builder import *
-from Wheel_sensor import *
+from carsensor_pub import *
+
+
+
 class VilmaBuilder(Robot):
     def __init__(self):
         debug=0;
@@ -15,13 +18,16 @@ class VilmaBuilder(Robot):
         #pose.translate(0,1.3,0.2)
         #self.append(pose)               
         #pose.add_stream("ros", topic="/pose")
+        carsensor = Carsensor()
+        #pose.translate(0,1.3,0.2)
+        self.append(carsensor)
+        carsensor.add_stream("ros", topic="/wheelspeed")               
+ 
         #velocity
         velocity = Velocity()
         velocity.translate(0,1.3,0.2)
         self.append(velocity)
-        velocity.add_stream("ros", topic='/velocity')     
-        #wheel_sensor = Wheel_sensor()
-        #self.append(wheel_sensor) 
+        velocity.add_stream("ros", topic='/velocity')           
         #if debug==0:
             #add odometry
             #odometry = Odometry()

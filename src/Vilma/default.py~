@@ -1,0 +1,20 @@
+import sys
+sys.path.append("./Vilma")
+
+from VilmaBuilder import *
+from morse.builder import *
+
+bpymorse.set_speed(30, 1, 1)
+
+vilma = VilmaBuilder()
+
+vilma.add_service('socket')
+
+
+#keyboard = Keyboard()
+#robot.append(keyboard)
+
+env = Environment("./Vilma/empty.blend", fastmode=True)
+#env = Environment("../Morse_data/empty.blend")
+env.set_log_level('morse.middleware.socket_request_manager', 'warning')
+#env.set_log_level('morse.core.request_manager', 'warning')

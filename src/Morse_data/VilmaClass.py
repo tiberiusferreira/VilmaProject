@@ -33,10 +33,10 @@ class VilmaClass(morse.core.robot.Robot):
 
 
 
-		#scene = self.bge_object.scene
-		#for objects in scene.objects:
-		#	if 'wheel1' in objects.name:
-		#		logger.info('%s' % objects.getAngularVelocity(1)[0] )
+		scene = self.bge_object.scene
+		for objects in scene.objects:
+			if 'wheel1' in objects.name:
+				logger.info('%s' % objects.getAngularVelocity(1)[0] )
 
 				
 		
