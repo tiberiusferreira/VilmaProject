@@ -11,9 +11,16 @@ morse_transmiter::morse_transmiter()
     server.sin_family = AF_INET;
     server.sin_port = htons(4000);
     //Connect to remote server
+    for(;1;){
     if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0){
-        perror("connect failed. Error");
+        printf("Failed to connect to the car sockets. Retrying in 1 second...\n");
+        sleep(1);
         //exit(1);
+    }else{
+        printf("Connection Successful!\n");
+        fflush(stdout);
+        break;
+    }
     }
     this->setPowerAmount(0);
     this->setVelocity(100);

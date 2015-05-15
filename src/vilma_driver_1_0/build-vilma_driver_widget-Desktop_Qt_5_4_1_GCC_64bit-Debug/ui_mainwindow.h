@@ -15,7 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDockWidget>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -27,7 +27,6 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -42,7 +41,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuView;
     QStatusBar *statusBar;
-    QToolBar *mainToolBar;
     QDockWidget *CarStatusWidget;
     QWidget *CarStatusWidget_contents;
     QWidget *widget;
@@ -103,7 +101,7 @@ public:
     QDockWidget *ManualControlsWidget;
     QWidget *ManualControlsWidget_contents;
     QWidget *widget1;
-    QGridLayout *gridLayout;
+    QFormLayout *formLayout;
     QLabel *current_acel_text;
     QLabel *current_max_speed_text;
     QLabel *steering_status_label;
@@ -113,12 +111,12 @@ public:
     QWidget *widget2;
     QVBoxLayout *verticalLayout_5;
     QVBoxLayout *verticalLayout_4;
-    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
     QPushButton *Maintain_current_speed;
     QPushButton *Set_new_speed;
     QLineEdit *Enter_new_constant_speed;
     QPushButton *PlotTrajectory;
-    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *Set_wheel_direction_button;
     QLineEdit *Set_wheel_direction_x_input;
     QLineEdit *Set_wheel_direction_y_input;
@@ -134,7 +132,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1018, 661);
+        MainWindow->resize(678, 467);
         MainWindow->setMaximumSize(QSize(1309, 1000));
         actionAccelerator = new QAction(MainWindow);
         actionAccelerator->setObjectName(QStringLiteral("actionAccelerator"));
@@ -148,17 +146,13 @@ public:
         MainWindow->setCentralWidget(MainWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1018, 25));
+        menuBar->setGeometry(QRect(0, 0, 678, 25));
         menuView = new QMenu(menuBar);
         menuView->setObjectName(QStringLiteral("menuView"));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        mainToolBar->setFloatable(false);
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         CarStatusWidget = new QDockWidget(MainWindow);
         CarStatusWidget->setObjectName(QStringLiteral("CarStatusWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -166,8 +160,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(CarStatusWidget->sizePolicy().hasHeightForWidth());
         CarStatusWidget->setSizePolicy(sizePolicy);
-        CarStatusWidget->setMinimumSize(QSize(400, 600));
-        CarStatusWidget->setMaximumSize(QSize(400, 500));
+        CarStatusWidget->setMinimumSize(QSize(280, 420));
+        CarStatusWidget->setMaximumSize(QSize(400, 420));
         CarStatusWidget_contents = new QWidget();
         CarStatusWidget_contents->setObjectName(QStringLiteral("CarStatusWidget_contents"));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
@@ -177,9 +171,9 @@ public:
         CarStatusWidget_contents->setSizePolicy(sizePolicy1);
         widget = new QWidget(CarStatusWidget_contents);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 14, 330, 507));
+        widget->setGeometry(QRect(10, 0, 253, 392));
         verticalLayout_7 = new QVBoxLayout(widget);
-        verticalLayout_7->setSpacing(6);
+        verticalLayout_7->setSpacing(0);
         verticalLayout_7->setContentsMargins(11, 11, 11, 11);
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
         verticalLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -204,11 +198,15 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(morse_x_text->sizePolicy().hasHeightForWidth());
         morse_x_text->setSizePolicy(sizePolicy2);
+        QFont font;
+        font.setPointSize(8);
+        morse_x_text->setFont(font);
 
         horizontalLayout_5->addWidget(morse_x_text);
 
         morse_y_text = new QLabel(widget);
         morse_y_text->setObjectName(QStringLiteral("morse_y_text"));
+        morse_y_text->setFont(font);
 
         horizontalLayout_5->addWidget(morse_y_text);
 
@@ -216,6 +214,7 @@ public:
         morse_z_text->setObjectName(QStringLiteral("morse_z_text"));
         sizePolicy1.setHeightForWidth(morse_z_text->sizePolicy().hasHeightForWidth());
         morse_z_text->setSizePolicy(sizePolicy1);
+        morse_z_text->setFont(font);
 
         horizontalLayout_5->addWidget(morse_z_text);
 
@@ -230,6 +229,11 @@ public:
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         label_12 = new QLabel(widget);
         label_12->setObjectName(QStringLiteral("label_12"));
+        QFont font1;
+        font1.setPointSize(8);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_12->setFont(font1);
         label_12->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(label_12);
@@ -239,21 +243,25 @@ public:
         Morse_quaternion_layout->setObjectName(QStringLiteral("Morse_quaternion_layout"));
         morse_quaternion_x_text = new QLabel(widget);
         morse_quaternion_x_text->setObjectName(QStringLiteral("morse_quaternion_x_text"));
+        morse_quaternion_x_text->setFont(font);
 
         Morse_quaternion_layout->addWidget(morse_quaternion_x_text);
 
         morse_quaternion_y_text = new QLabel(widget);
         morse_quaternion_y_text->setObjectName(QStringLiteral("morse_quaternion_y_text"));
+        morse_quaternion_y_text->setFont(font);
 
         Morse_quaternion_layout->addWidget(morse_quaternion_y_text);
 
         morse_quaternion_z_text = new QLabel(widget);
         morse_quaternion_z_text->setObjectName(QStringLiteral("morse_quaternion_z_text"));
+        morse_quaternion_z_text->setFont(font);
 
         Morse_quaternion_layout->addWidget(morse_quaternion_z_text);
 
         morse_quaternion_w_text = new QLabel(widget);
         morse_quaternion_w_text->setObjectName(QStringLiteral("morse_quaternion_w_text"));
+        morse_quaternion_w_text->setFont(font);
 
         Morse_quaternion_layout->addWidget(morse_quaternion_w_text);
 
@@ -268,6 +276,11 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label_34 = new QLabel(widget);
         label_34->setObjectName(QStringLiteral("label_34"));
+        QFont font2;
+        font2.setPointSize(8);
+        font2.setBold(false);
+        font2.setWeight(50);
+        label_34->setFont(font2);
         label_34->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_34);
@@ -277,21 +290,25 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         morse_lin_vel_x_text = new QLabel(widget);
         morse_lin_vel_x_text->setObjectName(QStringLiteral("morse_lin_vel_x_text"));
+        morse_lin_vel_x_text->setFont(font);
 
         horizontalLayout->addWidget(morse_lin_vel_x_text);
 
         morse_lin_vel_y_text = new QLabel(widget);
         morse_lin_vel_y_text->setObjectName(QStringLiteral("morse_lin_vel_y_text"));
+        morse_lin_vel_y_text->setFont(font);
 
         horizontalLayout->addWidget(morse_lin_vel_y_text);
 
         morse_lin_vel_z_text = new QLabel(widget);
         morse_lin_vel_z_text->setObjectName(QStringLiteral("morse_lin_vel_z_text"));
+        morse_lin_vel_z_text->setFont(font);
 
         horizontalLayout->addWidget(morse_lin_vel_z_text);
 
         morse_lin_vel_avg_text = new QLabel(widget);
         morse_lin_vel_avg_text->setObjectName(QStringLiteral("morse_lin_vel_avg_text"));
+        morse_lin_vel_avg_text->setFont(font);
 
         horizontalLayout->addWidget(morse_lin_vel_avg_text);
 
@@ -306,6 +323,7 @@ public:
         Ang_vel_morse->setObjectName(QStringLiteral("Ang_vel_morse"));
         label_38 = new QLabel(widget);
         label_38->setObjectName(QStringLiteral("label_38"));
+        label_38->setFont(font2);
         label_38->setAlignment(Qt::AlignCenter);
 
         Ang_vel_morse->addWidget(label_38);
@@ -315,16 +333,19 @@ public:
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
         morse_ang_vel_x_text = new QLabel(widget);
         morse_ang_vel_x_text->setObjectName(QStringLiteral("morse_ang_vel_x_text"));
+        morse_ang_vel_x_text->setFont(font);
 
         horizontalLayout_13->addWidget(morse_ang_vel_x_text);
 
         morse_ang_vel_y_text = new QLabel(widget);
         morse_ang_vel_y_text->setObjectName(QStringLiteral("morse_ang_vel_y_text"));
+        morse_ang_vel_y_text->setFont(font);
 
         horizontalLayout_13->addWidget(morse_ang_vel_y_text);
 
         morse_ang_vel_z_text = new QLabel(widget);
         morse_ang_vel_z_text->setObjectName(QStringLiteral("morse_ang_vel_z_text"));
+        morse_ang_vel_z_text->setFont(font);
 
         horizontalLayout_13->addWidget(morse_ang_vel_z_text);
 
@@ -344,6 +365,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
         label_9->setSizePolicy(sizePolicy3);
+        label_9->setFont(font2);
         label_9->setAlignment(Qt::AlignCenter);
 
         Position_gps->addWidget(label_9);
@@ -353,11 +375,13 @@ public:
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         latitude_text = new QLabel(widget);
         latitude_text->setObjectName(QStringLiteral("latitude_text"));
+        latitude_text->setFont(font);
 
         horizontalLayout_6->addWidget(latitude_text);
 
         longitude_text = new QLabel(widget);
         longitude_text->setObjectName(QStringLiteral("longitude_text"));
+        longitude_text->setFont(font);
 
         horizontalLayout_6->addWidget(longitude_text);
 
@@ -372,6 +396,7 @@ public:
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
         label_17 = new QLabel(widget);
         label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setFont(font2);
         label_17->setAlignment(Qt::AlignCenter);
 
         verticalLayout_6->addWidget(label_17);
@@ -381,21 +406,25 @@ public:
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
         imu_quaternion_x_text = new QLabel(widget);
         imu_quaternion_x_text->setObjectName(QStringLiteral("imu_quaternion_x_text"));
+        imu_quaternion_x_text->setFont(font);
 
         horizontalLayout_7->addWidget(imu_quaternion_x_text);
 
         imu_quaternion_y_text = new QLabel(widget);
         imu_quaternion_y_text->setObjectName(QStringLiteral("imu_quaternion_y_text"));
+        imu_quaternion_y_text->setFont(font);
 
         horizontalLayout_7->addWidget(imu_quaternion_y_text);
 
         imu_quaternion_z_text = new QLabel(widget);
         imu_quaternion_z_text->setObjectName(QStringLiteral("imu_quaternion_z_text"));
+        imu_quaternion_z_text->setFont(font);
 
         horizontalLayout_7->addWidget(imu_quaternion_z_text);
 
         imu_quaternion_w_text = new QLabel(widget);
         imu_quaternion_w_text->setObjectName(QStringLiteral("imu_quaternion_w_text"));
+        imu_quaternion_w_text->setFont(font);
 
         horizontalLayout_7->addWidget(imu_quaternion_w_text);
 
@@ -410,6 +439,7 @@ public:
         IMU_lin_acel->setObjectName(QStringLiteral("IMU_lin_acel"));
         label_26 = new QLabel(widget);
         label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setFont(font2);
         label_26->setAlignment(Qt::AlignCenter);
 
         IMU_lin_acel->addWidget(label_26);
@@ -419,16 +449,19 @@ public:
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
         imu_lin_acel_x_text = new QLabel(widget);
         imu_lin_acel_x_text->setObjectName(QStringLiteral("imu_lin_acel_x_text"));
+        imu_lin_acel_x_text->setFont(font);
 
         horizontalLayout_10->addWidget(imu_lin_acel_x_text);
 
         imu_lin_acel_y_text = new QLabel(widget);
         imu_lin_acel_y_text->setObjectName(QStringLiteral("imu_lin_acel_y_text"));
+        imu_lin_acel_y_text->setFont(font);
 
         horizontalLayout_10->addWidget(imu_lin_acel_y_text);
 
         imu_lin_acel_z_text = new QLabel(widget);
         imu_lin_acel_z_text->setObjectName(QStringLiteral("imu_lin_acel_z_text"));
+        imu_lin_acel_z_text->setFont(font);
 
         horizontalLayout_10->addWidget(imu_lin_acel_z_text);
 
@@ -443,6 +476,7 @@ public:
         IMU_ang_vel->setObjectName(QStringLiteral("IMU_ang_vel"));
         label_22 = new QLabel(widget);
         label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setFont(font2);
         label_22->setAlignment(Qt::AlignCenter);
 
         IMU_ang_vel->addWidget(label_22);
@@ -452,16 +486,19 @@ public:
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         imu_ang_speed_x_text = new QLabel(widget);
         imu_ang_speed_x_text->setObjectName(QStringLiteral("imu_ang_speed_x_text"));
+        imu_ang_speed_x_text->setFont(font);
 
         horizontalLayout_9->addWidget(imu_ang_speed_x_text);
 
         imu_ang_speed_y_text = new QLabel(widget);
         imu_ang_speed_y_text->setObjectName(QStringLiteral("imu_ang_speed_y_text"));
+        imu_ang_speed_y_text->setFont(font);
 
         horizontalLayout_9->addWidget(imu_ang_speed_y_text);
 
         imu_ang_speed_z_text = new QLabel(widget);
         imu_ang_speed_z_text->setObjectName(QStringLiteral("imu_ang_speed_z_text"));
+        imu_ang_speed_z_text->setFont(font);
 
         horizontalLayout_9->addWidget(imu_ang_speed_z_text);
 
@@ -476,12 +513,14 @@ public:
         imu_euler->setObjectName(QStringLiteral("imu_euler"));
         imu_euler_z_rotation_label = new QLabel(widget);
         imu_euler_z_rotation_label->setObjectName(QStringLiteral("imu_euler_z_rotation_label"));
+        imu_euler_z_rotation_label->setFont(font2);
         imu_euler_z_rotation_label->setAlignment(Qt::AlignCenter);
 
         imu_euler->addWidget(imu_euler_z_rotation_label);
 
         imu_euler_z_rotation_text = new QLabel(widget);
         imu_euler_z_rotation_text->setObjectName(QStringLiteral("imu_euler_z_rotation_text"));
+        imu_euler_z_rotation_text->setFont(font);
         imu_euler_z_rotation_text->setAlignment(Qt::AlignCenter);
 
         imu_euler->addWidget(imu_euler_z_rotation_text);
@@ -490,37 +529,26 @@ public:
         verticalLayout_7->addLayout(imu_euler);
 
         CarStatusWidget->setWidget(CarStatusWidget_contents);
-        label_12->raise();
-        label_5->raise();
-        label_17->raise();
-        morse_lin_vel_avg_text->raise();
-        label_34->raise();
-        morse_lin_vel_avg_text->raise();
-        morse_ang_vel_z_text->raise();
-        imu_quaternion_x_text->raise();
-        imu_quaternion_z_text->raise();
-        imu_quaternion_w_text->raise();
-        imu_quaternion_y_text->raise();
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(1), CarStatusWidget);
         ManualControlsWidget = new QDockWidget(MainWindow);
         ManualControlsWidget->setObjectName(QStringLiteral("ManualControlsWidget"));
         ManualControlsWidget->setEnabled(true);
         sizePolicy.setHeightForWidth(ManualControlsWidget->sizePolicy().hasHeightForWidth());
         ManualControlsWidget->setSizePolicy(sizePolicy);
-        ManualControlsWidget->setMinimumSize(QSize(600, 200));
-        ManualControlsWidget->setMaximumSize(QSize(600, 200));
+        ManualControlsWidget->setMinimumSize(QSize(380, 80));
+        ManualControlsWidget->setMaximumSize(QSize(380, 80));
         ManualControlsWidget->setAutoFillBackground(false);
         ManualControlsWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
         ManualControlsWidget_contents = new QWidget();
         ManualControlsWidget_contents->setObjectName(QStringLiteral("ManualControlsWidget_contents"));
         widget1 = new QWidget(ManualControlsWidget_contents);
         widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(11, 21, 461, 71));
-        gridLayout = new QGridLayout(widget1);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        widget1->setGeometry(QRect(1, 1, 351, 51));
+        formLayout = new QFormLayout(widget1);
+        formLayout->setSpacing(6);
+        formLayout->setContentsMargins(11, 11, 11, 11);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
         current_acel_text = new QLabel(widget1);
         current_acel_text->setObjectName(QStringLiteral("current_acel_text"));
         current_acel_text->setEnabled(true);
@@ -532,7 +560,7 @@ public:
         current_acel_text->setScaledContents(true);
         current_acel_text->setWordWrap(false);
 
-        gridLayout->addWidget(current_acel_text, 0, 0, 1, 1);
+        formLayout->setWidget(0, QFormLayout::LabelRole, current_acel_text);
 
         current_max_speed_text = new QLabel(widget1);
         current_max_speed_text->setObjectName(QStringLiteral("current_max_speed_text"));
@@ -547,14 +575,14 @@ public:
         current_max_speed_text->setScaledContents(true);
         current_max_speed_text->setWordWrap(false);
 
-        gridLayout->addWidget(current_max_speed_text, 0, 1, 1, 1);
+        formLayout->setWidget(0, QFormLayout::FieldRole, current_max_speed_text);
 
         steering_status_label = new QLabel(widget1);
         steering_status_label->setObjectName(QStringLiteral("steering_status_label"));
         steering_status_label->setScaledContents(true);
         steering_status_label->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(steering_status_label, 1, 0, 1, 1);
+        formLayout->setWidget(1, QFormLayout::LabelRole, steering_status_label);
 
         steering_slider = new QSlider(widget1);
         steering_slider->setObjectName(QStringLiteral("steering_slider"));
@@ -562,14 +590,14 @@ public:
         steering_slider->setMaximum(314);
         steering_slider->setOrientation(Qt::Horizontal);
 
-        gridLayout->addWidget(steering_slider, 1, 1, 1, 1);
+        formLayout->setWidget(1, QFormLayout::FieldRole, steering_slider);
 
         ManualControlsWidget->setWidget(ManualControlsWidget_contents);
         MainWindow->addDockWidget(static_cast<Qt::DockWidgetArea>(2), ManualControlsWidget);
         AutomationWidget = new QDockWidget(MainWindow);
         AutomationWidget->setObjectName(QStringLiteral("AutomationWidget"));
-        AutomationWidget->setMinimumSize(QSize(600, 400));
-        AutomationWidget->setMaximumSize(QSize(60, 800));
+        AutomationWidget->setMinimumSize(QSize(380, 300));
+        AutomationWidget->setMaximumSize(QSize(380, 300));
         AutomationWidget->setLayoutDirection(Qt::LeftToRight);
         AutomationWidget->setAutoFillBackground(true);
         AutomationWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
@@ -577,7 +605,7 @@ public:
         dockWidgetContents->setObjectName(QStringLiteral("dockWidgetContents"));
         widget2 = new QWidget(dockWidgetContents);
         widget2->setObjectName(QStringLiteral("widget2"));
-        widget2->setGeometry(QRect(11, 1, 559, 301));
+        widget2->setGeometry(QRect(1, 0, 359, 271));
         verticalLayout_5 = new QVBoxLayout(widget2);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -586,90 +614,108 @@ public:
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         Maintain_current_speed = new QPushButton(widget2);
         Maintain_current_speed->setObjectName(QStringLiteral("Maintain_current_speed"));
         Maintain_current_speed->setEnabled(true);
+        Maintain_current_speed->setMaximumSize(QSize(80, 16777215));
+        Maintain_current_speed->setFont(font);
         Maintain_current_speed->setCheckable(true);
         Maintain_current_speed->setFlat(false);
 
-        horizontalLayout_3->addWidget(Maintain_current_speed);
+        horizontalLayout_2->addWidget(Maintain_current_speed);
 
         Set_new_speed = new QPushButton(widget2);
         Set_new_speed->setObjectName(QStringLiteral("Set_new_speed"));
         Set_new_speed->setEnabled(true);
+        Set_new_speed->setMaximumSize(QSize(60, 16777215));
+        Set_new_speed->setFont(font);
         Set_new_speed->setCheckable(true);
 
-        horizontalLayout_3->addWidget(Set_new_speed);
+        horizontalLayout_2->addWidget(Set_new_speed);
 
         Enter_new_constant_speed = new QLineEdit(widget2);
         Enter_new_constant_speed->setObjectName(QStringLiteral("Enter_new_constant_speed"));
         Enter_new_constant_speed->setEnabled(true);
-        Enter_new_constant_speed->setMaximumSize(QSize(111, 51));
+        Enter_new_constant_speed->setMaximumSize(QSize(30, 51));
 
-        horizontalLayout_3->addWidget(Enter_new_constant_speed);
+        horizontalLayout_2->addWidget(Enter_new_constant_speed);
 
         PlotTrajectory = new QPushButton(widget2);
         PlotTrajectory->setObjectName(QStringLiteral("PlotTrajectory"));
+        PlotTrajectory->setMaximumSize(QSize(85, 16777215));
+        PlotTrajectory->setFont(font);
 
-        horizontalLayout_3->addWidget(PlotTrajectory);
+        horizontalLayout_2->addWidget(PlotTrajectory);
 
 
-        verticalLayout_4->addLayout(horizontalLayout_3);
+        verticalLayout_4->addLayout(horizontalLayout_2);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         Set_wheel_direction_button = new QPushButton(widget2);
         Set_wheel_direction_button->setObjectName(QStringLiteral("Set_wheel_direction_button"));
+        Set_wheel_direction_button->setMaximumSize(QSize(150, 16777215));
+        Set_wheel_direction_button->setFont(font);
         Set_wheel_direction_button->setCheckable(true);
         Set_wheel_direction_button->setAutoRepeat(true);
         Set_wheel_direction_button->setAutoDefault(false);
 
-        horizontalLayout_2->addWidget(Set_wheel_direction_button);
+        horizontalLayout_3->addWidget(Set_wheel_direction_button);
 
         Set_wheel_direction_x_input = new QLineEdit(widget2);
         Set_wheel_direction_x_input->setObjectName(QStringLiteral("Set_wheel_direction_x_input"));
         sizePolicy.setHeightForWidth(Set_wheel_direction_x_input->sizePolicy().hasHeightForWidth());
         Set_wheel_direction_x_input->setSizePolicy(sizePolicy);
-        Set_wheel_direction_x_input->setMaximumSize(QSize(111, 51));
+        Set_wheel_direction_x_input->setMaximumSize(QSize(50, 51));
+        Set_wheel_direction_x_input->setFont(font);
         Set_wheel_direction_x_input->setCursorPosition(0);
 
-        horizontalLayout_2->addWidget(Set_wheel_direction_x_input);
+        horizontalLayout_3->addWidget(Set_wheel_direction_x_input);
 
         Set_wheel_direction_y_input = new QLineEdit(widget2);
         Set_wheel_direction_y_input->setObjectName(QStringLiteral("Set_wheel_direction_y_input"));
         sizePolicy.setHeightForWidth(Set_wheel_direction_y_input->sizePolicy().hasHeightForWidth());
         Set_wheel_direction_y_input->setSizePolicy(sizePolicy);
-        Set_wheel_direction_y_input->setMaximumSize(QSize(111, 51));
+        Set_wheel_direction_y_input->setMaximumSize(QSize(50, 51));
+        Set_wheel_direction_y_input->setFont(font);
 
-        horizontalLayout_2->addWidget(Set_wheel_direction_y_input);
+        horizontalLayout_3->addWidget(Set_wheel_direction_y_input);
 
         Set_wheel_direction_from_table = new QCheckBox(widget2);
         Set_wheel_direction_from_table->setObjectName(QStringLiteral("Set_wheel_direction_from_table"));
+        Set_wheel_direction_from_table->setMaximumSize(QSize(85, 16777215));
+        Set_wheel_direction_from_table->setFont(font);
 
-        horizontalLayout_2->addWidget(Set_wheel_direction_from_table);
+        horizontalLayout_3->addWidget(Set_wheel_direction_from_table);
 
 
-        verticalLayout_4->addLayout(horizontalLayout_2);
+        verticalLayout_4->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         SmoothTrajectoryButton = new QPushButton(widget2);
         SmoothTrajectoryButton->setObjectName(QStringLiteral("SmoothTrajectoryButton"));
+        SmoothTrajectoryButton->setMaximumSize(QSize(100, 16777215));
+        SmoothTrajectoryButton->setFont(font);
 
         horizontalLayout_4->addWidget(SmoothTrajectoryButton);
 
         GeneratePoints = new QPushButton(widget2);
         GeneratePoints->setObjectName(QStringLiteral("GeneratePoints"));
+        GeneratePoints->setMaximumSize(QSize(90, 16777215));
+        GeneratePoints->setFont(font);
 
         horizontalLayout_4->addWidget(GeneratePoints);
 
         InputFromFile = new QPushButton(widget2);
         InputFromFile->setObjectName(QStringLiteral("InputFromFile"));
+        InputFromFile->setMaximumSize(QSize(85, 16777215));
+        InputFromFile->setFont(font);
 
         horizontalLayout_4->addWidget(InputFromFile);
 
@@ -690,10 +736,10 @@ public:
         Set_wheel_direction_table->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         Set_wheel_direction_table->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        QFont font;
-        font.setPointSize(10);
+        QFont font3;
+        font3.setPointSize(10);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        __qtablewidgetitem4->setFont(font);
+        __qtablewidgetitem4->setFont(font3);
         Set_wheel_direction_table->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         if (Set_wheel_direction_table->rowCount() < 10000)
             Set_wheel_direction_table->setRowCount(10000);
@@ -719,16 +765,17 @@ public:
         Set_wheel_direction_table->setItem(0, 4, __qtablewidgetitem14);
         Set_wheel_direction_table->setObjectName(QStringLiteral("Set_wheel_direction_table"));
         Set_wheel_direction_table->setEnabled(false);
+        Set_wheel_direction_table->setFont(font);
         Set_wheel_direction_table->setGridStyle(Qt::SolidLine);
         Set_wheel_direction_table->setWordWrap(true);
         Set_wheel_direction_table->setRowCount(10000);
         Set_wheel_direction_table->horizontalHeader()->setCascadingSectionResizes(true);
-        Set_wheel_direction_table->horizontalHeader()->setDefaultSectionSize(120);
+        Set_wheel_direction_table->horizontalHeader()->setDefaultSectionSize(50);
         Set_wheel_direction_table->horizontalHeader()->setMinimumSectionSize(120);
         Set_wheel_direction_table->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
         Set_wheel_direction_table->horizontalHeader()->setStretchLastSection(true);
         Set_wheel_direction_table->verticalHeader()->setVisible(false);
-        Set_wheel_direction_table->verticalHeader()->setDefaultSectionSize(42);
+        Set_wheel_direction_table->verticalHeader()->setDefaultSectionSize(20);
         Set_wheel_direction_table->verticalHeader()->setMinimumSectionSize(42);
         Set_wheel_direction_table->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
         Set_wheel_direction_table->verticalHeader()->setStretchLastSection(false);
@@ -757,46 +804,46 @@ public:
         actionBrake->setText(QApplication::translate("MainWindow", "Brake", 0));
         menuView->setTitle(QApplication::translate("MainWindow", "View", 0));
         CarStatusWidget->setWindowTitle(QApplication::translate("MainWindow", "Car Status", 0));
-        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position (MORSE) </span></p></body></html>", 0));
+        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; font-style:italic;\">Position (MORSE) </span></p></body></html>", 0));
         morse_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         morse_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         morse_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
-        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Orientation (MORSE )</span></p></body></html>", 0));
+        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-style:italic;\">Orientation (MORSE )</span></p></body></html>", 0));
         morse_quaternion_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         morse_quaternion_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         morse_quaternion_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
         morse_quaternion_w_text->setText(QApplication::translate("MainWindow", "W : 0.000", 0));
-        label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Linear Velocity (MORSE)</span></p></body></html>", 0));
+        label_34->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">Linear Velocity (MORSE)</span></p></body></html>", 0));
         morse_lin_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         morse_lin_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         morse_lin_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
         morse_lin_vel_avg_text->setText(QApplication::translate("MainWindow", "AVG : 0.000", 0));
-        label_38->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Angular Velocity (MORSE)</span></p></body></html>", 0));
+        label_38->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">Angular Velocity (MORSE)</span></p></body></html>", 0));
         morse_ang_vel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         morse_ang_vel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         morse_ang_vel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
-        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">Position GPS</span></p></body></html>", 0));
+        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">Position GPS</span></p></body></html>", 0));
         latitude_text->setText(QApplication::translate("MainWindow", "Latitude: 0.000000000", 0));
         longitude_text->setText(QApplication::translate("MainWindow", "Longitude: 0.000000000", 0));
-        label_17->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Orientation </span></p></body></html>", 0));
+        label_17->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">IMU Orientation </span></p></body></html>", 0));
         imu_quaternion_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         imu_quaternion_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         imu_quaternion_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
         imu_quaternion_w_text->setText(QApplication::translate("MainWindow", "W : 0.000", 0));
-        label_26->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Linear Acceleration</span></p></body></html>", 0));
+        label_26->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">IMU Linear Acceleration</span></p></body></html>", 0));
         imu_lin_acel_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         imu_lin_acel_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         imu_lin_acel_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
-        label_22->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Angular Velocity</span></p></body></html>", 0));
+        label_22->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">IMU Angular Velocity</span></p></body></html>", 0));
         imu_ang_speed_x_text->setText(QApplication::translate("MainWindow", "X : 0.000", 0));
         imu_ang_speed_y_text->setText(QApplication::translate("MainWindow", "Y : 0.000", 0));
         imu_ang_speed_z_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
-        imu_euler_z_rotation_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; font-style:italic;\">IMU Euler Rotation</span></p></body></html>", 0));
+        imu_euler_z_rotation_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600; font-style:italic;\">IMU Euler Rotation</span></p></body></html>", 0));
         imu_euler_z_rotation_text->setText(QApplication::translate("MainWindow", "Z : 0.000", 0));
         ManualControlsWidget->setWindowTitle(QApplication::translate("MainWindow", "Manual Controls", 0));
-        current_acel_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0));
-        current_max_speed_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0));
-        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Hand Wheel:    </span></p></body></html>", 0));
+        current_acel_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:8pt; font-weight:600;\">Current Power: 0.000</span></p></body></html>", 0));
+        current_max_speed_text->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:8pt; font-weight:600;\">Max Speed 0.000 m/s</span></p></body></html>", 0));
+        steering_status_label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:8pt; font-weight:600;\">Hand Wheel: </span></p></body></html>", 0));
         AutomationWidget->setWindowTitle(QApplication::translate("MainWindow", "Automatic Driving", 0));
         Maintain_current_speed->setText(QApplication::translate("MainWindow", "Current Speed", 0));
         Set_new_speed->setText(QApplication::translate("MainWindow", "Set Speed", 0));

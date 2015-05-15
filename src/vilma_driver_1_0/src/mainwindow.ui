@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1018</width>
-    <height>661</height>
+    <width>678</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -28,7 +28,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1018</width>
+     <width>678</width>
      <height>25</height>
     </rect>
    </property>
@@ -42,17 +42,6 @@
    <addaction name="menuView"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QToolBar" name="mainToolBar">
-   <property name="floatable">
-    <bool>false</bool>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <widget class="QDockWidget" name="CarStatusWidget">
    <property name="sizePolicy">
     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -62,14 +51,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>400</width>
-     <height>600</height>
+     <width>280</width>
+     <height>420</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>400</width>
-     <height>500</height>
+     <height>420</height>
     </size>
    </property>
    <property name="windowTitle">
@@ -88,13 +77,19 @@
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>14</y>
-       <width>330</width>
-       <height>507</height>
+       <x>10</x>
+       <y>0</y>
+       <width>253</width>
+       <height>392</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -106,7 +101,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Position (MORSE) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Position (MORSE) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -123,6 +118,11 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -130,6 +130,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -142,6 +147,11 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
             </property>
             <property name="text">
              <string>Z : 0.000</string>
@@ -156,8 +166,15 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QLabel" name="label_12">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Orientation (MORSE )&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Orientation (MORSE )&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -168,6 +185,11 @@
          <layout class="QHBoxLayout" name="Morse_quaternion_layout">
           <item>
            <widget class="QLabel" name="morse_quaternion_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -175,6 +197,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_quaternion_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -182,6 +209,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_quaternion_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -189,6 +221,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_quaternion_w_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>W : 0.000</string>
             </property>
@@ -202,8 +239,15 @@
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="label_34">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Linear Velocity (MORSE)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Linear Velocity (MORSE)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -214,6 +258,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QLabel" name="morse_lin_vel_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -221,6 +270,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_lin_vel_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -228,6 +282,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_lin_vel_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -235,6 +294,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_lin_vel_avg_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>AVG : 0.000</string>
             </property>
@@ -248,8 +312,15 @@
        <layout class="QVBoxLayout" name="Ang_vel_morse">
         <item>
          <widget class="QLabel" name="label_38">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Angular Velocity (MORSE)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Angular Velocity (MORSE)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -260,6 +331,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_13">
           <item>
            <widget class="QLabel" name="morse_ang_vel_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -267,6 +343,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_ang_vel_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -274,6 +355,11 @@
           </item>
           <item>
            <widget class="QLabel" name="morse_ang_vel_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -293,8 +379,15 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Position GPS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Position GPS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -305,6 +398,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
            <widget class="QLabel" name="latitude_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Latitude: 0.000000000</string>
             </property>
@@ -312,6 +410,11 @@
           </item>
           <item>
            <widget class="QLabel" name="longitude_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Longitude: 0.000000000</string>
             </property>
@@ -325,8 +428,15 @@
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
          <widget class="QLabel" name="label_17">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Orientation &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;IMU Orientation &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -337,6 +447,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
            <widget class="QLabel" name="imu_quaternion_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -344,6 +459,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_quaternion_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -351,6 +471,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_quaternion_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -358,6 +483,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_quaternion_w_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>W : 0.000</string>
             </property>
@@ -371,8 +501,15 @@
        <layout class="QVBoxLayout" name="IMU_lin_acel">
         <item>
          <widget class="QLabel" name="label_26">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Linear Acceleration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;IMU Linear Acceleration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -383,6 +520,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <item>
            <widget class="QLabel" name="imu_lin_acel_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -390,6 +532,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_lin_acel_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -397,6 +544,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_lin_acel_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -410,8 +562,15 @@
        <layout class="QVBoxLayout" name="IMU_ang_vel">
         <item>
          <widget class="QLabel" name="label_22">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Angular Velocity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;IMU Angular Velocity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -422,6 +581,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_9">
           <item>
            <widget class="QLabel" name="imu_ang_speed_x_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>X : 0.000</string>
             </property>
@@ -429,6 +593,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_ang_speed_y_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Y : 0.000</string>
             </property>
@@ -436,6 +605,11 @@
           </item>
           <item>
            <widget class="QLabel" name="imu_ang_speed_z_text">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Z : 0.000</string>
             </property>
@@ -449,8 +623,15 @@
        <layout class="QVBoxLayout" name="imu_euler">
         <item>
          <widget class="QLabel" name="imu_euler_z_rotation_label">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;IMU Euler Rotation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;IMU Euler Rotation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -459,6 +640,11 @@
         </item>
         <item>
          <widget class="QLabel" name="imu_euler_z_rotation_text">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Z : 0.000</string>
           </property>
@@ -471,26 +657,6 @@
       </item>
      </layout>
     </widget>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>label_12</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>label_5</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>label_17</zorder>
-    <zorder>morse_lin_vel_avg_text</zorder>
-    <zorder>label_34</zorder>
-    <zorder>morse_lin_vel_avg_text</zorder>
-    <zorder></zorder>
-    <zorder>morse_ang_vel_z_text</zorder>
-    <zorder>imu_quaternion_x_text</zorder>
-    <zorder>imu_quaternion_z_text</zorder>
-    <zorder>imu_quaternion_w_text</zorder>
-    <zorder>imu_quaternion_y_text</zorder>
    </widget>
   </widget>
   <widget class="QDockWidget" name="ManualControlsWidget">
@@ -505,14 +671,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>600</width>
-     <height>200</height>
+     <width>380</width>
+     <height>80</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>600</width>
-     <height>200</height>
+     <width>380</width>
+     <height>80</height>
     </size>
    </property>
    <property name="autoFillBackground">
@@ -531,13 +697,13 @@
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>11</x>
-       <y>21</y>
-       <width>461</width>
-       <height>71</height>
+       <x>1</x>
+       <y>1</y>
+       <width>351</width>
+       <height>51</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
+     <layout class="QFormLayout" name="formLayout">
       <item row="0" column="0">
        <widget class="QLabel" name="current_acel_text">
         <property name="enabled">
@@ -559,7 +725,7 @@
          <enum>QFrame::Box</enum>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Current Power: 0.000&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Current Power: 0.000&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -587,7 +753,7 @@
          <enum>QFrame::Box</enum>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Max Speed 0.000 m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Max Speed 0.000 m/s&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -603,7 +769,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="steering_status_label">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Hand Wheel:    &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Hand Wheel: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -633,14 +799,14 @@
   <widget class="QDockWidget" name="AutomationWidget">
    <property name="minimumSize">
     <size>
-     <width>600</width>
-     <height>400</height>
+     <width>380</width>
+     <height>300</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>60</width>
-     <height>800</height>
+     <width>380</width>
+     <height>300</height>
     </size>
    </property>
    <property name="layoutDirection">
@@ -662,21 +828,32 @@
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>11</x>
-       <y>1</y>
-       <width>559</width>
-       <height>301</height>
+       <x>1</x>
+       <y>0</y>
+       <width>359</width>
+       <height>271</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="Maintain_current_speed">
             <property name="enabled">
              <bool>true</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
             </property>
             <property name="text">
              <string>Current Speed</string>
@@ -694,6 +871,17 @@
             <property name="enabled">
              <bool>true</bool>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Set Speed</string>
             </property>
@@ -709,7 +897,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>111</width>
+              <width>30</width>
               <height>51</height>
              </size>
             </property>
@@ -717,6 +905,17 @@
           </item>
           <item>
            <widget class="QPushButton" name="PlotTrajectory">
+            <property name="maximumSize">
+             <size>
+              <width>85</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Plot Trajectory</string>
             </property>
@@ -725,9 +924,20 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QPushButton" name="Set_wheel_direction_button">
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Set Wheel Direction to (X,Y)</string>
             </property>
@@ -752,9 +962,14 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>111</width>
+              <width>50</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
             </property>
             <property name="cursorPosition">
              <number>0</number>
@@ -774,9 +989,14 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>111</width>
+              <width>50</width>
               <height>51</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
             </property>
             <property name="placeholderText">
              <string>Input Y</string>
@@ -785,6 +1005,17 @@
           </item>
           <item>
            <widget class="QCheckBox" name="Set_wheel_direction_from_table">
+            <property name="maximumSize">
+             <size>
+              <width>85</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>From Table</string>
             </property>
@@ -796,6 +1027,17 @@
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QPushButton" name="SmoothTrajectoryButton">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Smooth Trajectory</string>
             </property>
@@ -803,6 +1045,17 @@
           </item>
           <item>
            <widget class="QPushButton" name="GeneratePoints">
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Generate Points</string>
             </property>
@@ -810,6 +1063,17 @@
           </item>
           <item>
            <widget class="QPushButton" name="InputFromFile">
+            <property name="maximumSize">
+             <size>
+              <width>85</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Input From File</string>
             </property>
@@ -824,6 +1088,11 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
         <property name="gridStyle">
          <enum>Qt::SolidLine</enum>
         </property>
@@ -837,7 +1106,7 @@
          <bool>true</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>120</number>
+         <number>50</number>
         </attribute>
         <attribute name="horizontalHeaderMinimumSectionSize">
          <number>120</number>
@@ -852,7 +1121,7 @@
          <bool>false</bool>
         </attribute>
         <attribute name="verticalHeaderDefaultSectionSize">
-         <number>42</number>
+         <number>20</number>
         </attribute>
         <attribute name="verticalHeaderMinimumSectionSize">
          <number>42</number>

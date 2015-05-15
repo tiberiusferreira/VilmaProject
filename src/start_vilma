@@ -1,0 +1,3 @@
+#!/bin/bash
+roscore &
+morse run Vilma | ~/git/VilmaProject/src/vilma_driver_1_0/build-vilma_driver_widget-Desktop_Qt_5_4_1_GCC_64bit-Debug/vilma_driver_widget_qtBuilt &

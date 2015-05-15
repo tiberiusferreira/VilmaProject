@@ -128,6 +128,13 @@ void vilma_self_driver::maintainSpeed(int desiredSpeed){
 }
 void vilma_self_driver::SetMaintainSpeedOFF(){
     this->maintainSpeedON=0;
+    if(running_threads!=0){
+    printf("Waiting for %d thread(s) to finish.\n",running_threads);
+    }
+    while(running_threads!=0){
+    }
+    this->morse_transmiter_obj->setPowerAmount(0);
+    this->morse_transmiter_obj->setManualControl();
 }
 
 
@@ -172,7 +179,7 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         }
         fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         gasControler.printValues();
-       fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+        fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
         printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);

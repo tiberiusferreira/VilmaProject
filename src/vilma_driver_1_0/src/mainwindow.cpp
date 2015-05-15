@@ -197,15 +197,16 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
 
 
 void MainWindow::on_Maintain_current_speed_toggled()
-{
+{ //set -> current
     if(ui->Set_new_speed->isChecked()){
-        morse_transmiter_obj.setManualControl();
-        ui->Set_new_speed->setChecked(0);
-        ui->Maintain_current_speed->setChecked(0);
-        vilma_self_driver_obj.SetMaintainSpeedOFF();
+        ui->Set_new_speed->toggle();
         return;
     }else{
-        vilma_self_driver_obj.maintainSpeed(morse_receiver_obj.getLinearVelAVG());
+        if(ui->Maintain_current_speed->isChecked()){
+            vilma_self_driver_obj.maintainSpeed(morse_receiver_obj.getLinearVelAVG());
+        }else{
+            vilma_self_driver_obj.SetMaintainSpeedOFF();
+        }
     }
 
 }
