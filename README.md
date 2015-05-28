@@ -3,7 +3,17 @@ This is the repository for the VILMA simulator (ve√≠culo inteligente do Laborat√
 The project has been restructured and now utilizes the MORSE simulator (https://www.openrobots.org/wiki/morse/)
 and ROS (http://ros.org).
 
-To compile Morse it is recommended to install python-dev, is special python3.4-dev .
+AUTOMATIC INSTALL. (Supported on Ubuntu 14.04
+
+Install ROS Indigo by "two line install":
+wget https://raw.githubusercontent.com/oroca/oroca-ros-pkg/master/ros_indigo_install.sh
+sh ros_indigo_install.sh
+Download and execute the setup_script.sh
+Import the Vilma morse environment (go to VilmaProject/src and type morse import Vilma) 
+Done (to use it start roscore and type morse run Vilma at VilmaProject/src)
+
+Manual Install:
+To compile Morse it is recommended to install python-dev, in special python3.4-dev .
 MORSE must be installed with the following cmake parameters for it's utilization:
 cmake -DPYMORSE_SUPPORT=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_ROS_SUPPORT=ON 
 
@@ -39,7 +49,7 @@ git clone git://github.com/ros/rospkg.git
 cd rospkg
 sudo python3 setup.py install
 
-To open the simulation go to the folder containing run2.py and execute the following command:
-morse run run2.py
+Import the Vilma morse environment (go to VilmaProject/src and type morse import Vilma) 
+Done (to use it start roscore and type morse run Vilma at VilmaProject/src)
 
 To open the GUI for car controlling utilize the executable in the vilma_driver build folder (64 bits Ubuntu 14.04 tested) or compile it utilizing the catkin system. To compile using the catkin system it is necessary to copy the src folder of the VilmaDriver to the catkin workspace.
