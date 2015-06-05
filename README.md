@@ -71,6 +71,7 @@ cd rospkg
 sudo python3 setup.py install
 
 Import the Vilma morse environment (go to VilmaProject/src and type morse import Vilma) 
+
 Done (to use it start roscore and type morse run Vilma at VilmaProject/src)
 
 To open the GUI for car controlling utilize the executable in the vilma_driver build folder (64 bits Ubuntu 14.04 tested) or compile it utilizing the catkin system. To compile using the catkin system it is necessary to copy the src folder of the VilmaDriver to the catkin workspace.
