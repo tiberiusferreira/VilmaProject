@@ -3,7 +3,7 @@ This is the repository for the VILMA simulator (ve√≠culo inteligente do Laborat√
 The project has been restructured and now utilizes the MORSE simulator (https://www.openrobots.org/wiki/morse/)
 and ROS (http://ros.org).
 
-AUTOMATIC INSTALL. (Supported on Ubuntu 14.04)
+# Automated INSTALL. (Supported on Ubuntu 14.04)
 
 Install ROS Indigo by "two line install":
 
@@ -19,7 +19,8 @@ Execute startvilma.sh at home directory.
 
 
 
-Manual Install:
+# Manual Install:
+
 To compile Morse it is recommended to install python-dev, in special python3.4-dev .
 
 MORSE must be installed with the following cmake parameters for it's utilization:
