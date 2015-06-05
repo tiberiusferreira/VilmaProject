@@ -1,0 +1,18 @@
+<package>
+  <description brief="foo">
+
+     foo
+
+  </description>
+  <author>Ken Conley</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/foo</url>
+  <depend package="foo" />
+  <depend package="bar" />
+
+  <rosdep name="baz_rosdep1" />
+
+</package>
+
+

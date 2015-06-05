@@ -1,0 +1,18 @@
+[Paths]
+Prefix = /home/tiberio/git/VilmaProject/src/vilma_driver_1_0/build-vilma_driver_widget-Desktop_Qt_5_4_1_GCC_64bit-Release
+Documentation = doc
+Headers = include
+Libraries = lib
+LibraryExecutables = libexec
+Binaries = bin
+Plugins = plugins
+Imports = imports
+Qml2Imports = qml
+ArchData = .
+Data = .
+Translations = translations
+Examples = examples
+Tests = tests
+Settings = .
+
+

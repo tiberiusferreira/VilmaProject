@@ -1,0 +1,667 @@
+#! /usr/bin/env python
+"""
+This tools import various components of MORSE (currently, the sensors and actuators)
+and generates a set of documentation in RST format based on the Python source.
+
+It generates doc for:
+    - the component itself, based on the component class docstring,
+    - the data fields exposed by the components and created with add_data,
+    - the configurable parameters created with add_property
+    - the services exported by the conmponent
+    - the abstraction levels exposed by the component
+    - the interfaces and serialization types for each input/output
+"""
+
+import os
+import sys
+import pkgutil
+import inspect
+
+#
+# helpers
+#
+
+def get_classes_from_module(module_name):
+    __import__(module_name)
+    # Predicate to make sure the classes only come from the module in question
+    def predicate(member):
+        return inspect.isclass(member) and member.__module__.startswith(module_name)
+    # fetch all members of module name matching 'pred'
+    return inspect.getmembers(sys.modules[module_name], predicate)
+
+def get_submodules(module_name):
+    """ Get a list of submodules from a module name.
+    Not recursive, don't return nor look in subpackages """
+    __import__(module_name)
+    module = sys.modules[module_name]
+    module_path = getattr(module, '__path__')
+    return [name for _, name, ispkg in pkgutil.iter_modules(module_path) if not ispkg]
+
+def get_subclasses(module_name, skip_submodules=[]):
+    subclasses = []
+    submodules = get_submodules(module_name)
+    for submodule_name in submodules:
+        if submodule_name in skip_submodules:
+            pass
+        submodule = "%s.%s"%(module_name, submodule_name)
+        try:
+            submodule_classes = get_classes_from_module(submodule)
+            for _, klass in submodule_classes:
+                subclasses.append(klass)
+        except Exception:
+            # can not import some resources
+            pass
+    return subclasses
+
+modules = [
+    "morse.actuators",
+    "morse.sensors",
+    "morse.modifiers",
+    "morse.robots",
+]
+
+import sys, os, codecs
+import fnmatch
+from copy import copy
+
+from morse.core.actuator import Actuator
+from morse.core.robot import Robot
+from morse.core.sensor import Sensor
+from morse.modifiers.abstract_modifier import AbstractModifier
+
+from morse.builder.data import MORSE_DATASTREAM_DICT
+
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
+PREFIX = "."
+MEDIA_PATH = "../../media"
+
+# docstring role that, if present, prevent automatic generation of a code sample
+NOAUTOEXAMPLE = ":noautoexample:"
+
+# documentation of special parameters
+special_doc = {}
+
+def underline(text, char = '='):
+    return text + '\n' + (char * len(text) + '\n')
+
+def insert_code(code):
+
+    return ".. code-block:: python\n\n%s\n\n" % code
+
+def insert_image(name):
+    matches = []
+    for root, dirnames, filenames in os.walk(MEDIA_PATH):
+      for filename in fnmatch.filter(filenames, '%s.png' % name):
+            matches.append(os.path.join(root, filename))
+
+    if matches:
+        file = matches[0]
+        print("Found image %s for the component %s" % (file, name))
+        # take the first file found
+        return ".. image:: ../%s\n  :align: center\n  :width: 600\n\n" % file
+
+    return ""
+
+def extract_examples(doc):
+    """
+    Returns a set of examples extracted (ie, removed) from a docstring.
+    Examples must be presented in a `.. example::` block.
+
+    :returns: a tuple (examples list, input doc with examples blocks removed)
+    """
+    examples = []
+
+    remaining_doc = []
+
+    i = 0
+    while i < len(doc):
+        if doc[i].strip() == ".. example::":
+            example = []
+            while True:
+                i += 1
+                if len(doc[i]) > 0 and doc[i][0] != ' ':
+                    remaining_doc.append(doc[i])
+                    break
+                else:
+                    example.append(doc[i])
+            examples.append("\n".join(example))
+        else:
+            remaining_doc.append(doc[i])
+        i += 1
+
+    return examples, remaining_doc
+
+def parse_docstring(doc):
+    """ Parses the doc string, and return the doc without :param *: or :return:
+    but with a list of params, return values and their associated doc.
+
+    Also replace known keywords by hyperlinks.
+    Also replace :see:/:sees: by 'See also:'
+    """
+
+    generate_example = True
+
+    # Try to 'safely' remove leading spaces introduced by natural Python
+    # docstring formatting. We can not simply strip leading withspaces,
+    # because they may be significant for rst (like in ..note:)
+    orig = doc.split('\n')
+    if (orig[0].strip()):
+        print("XXX Invalid docstring (first line of MORSE docstrings " \
+              "must be empty):\n%s" % doc)
+        return (doc, None, None, None, None)
+
+    new = [""]
+    
+    # Try to determine indentation level reading number of space on the
+    # first line
+
+    trailing_space = 0
+    for i, c in enumerate(orig[1]):
+        if c != ' ':
+            trailing_space = i
+            break
+
+    for l in orig[1:]:
+        new.append(l[trailing_space:])
+
+    examples, new = extract_examples(new)
+
+    doc = "\n".join(new)
+
+    # Pre-processing
+    if NOAUTOEXAMPLE in doc:
+        generate_example = False
+        doc = doc.replace(NOAUTOEXAMPLE, "")
+
+
+    doc = doc.replace(":see:", "\n**See also:**")
+    doc = doc.replace(":sees:", "\n**See also:**")
+    r = doc.split(":param ", 1)
+    doc = r[0]
+    paramsdoc = None
+
+    if len(r) == 1:
+        parts = doc.split(":return", 1)
+        if len(parts) == 2:
+            doc = parts[0]
+            returndoc = parts[1].split(':', 1)[1]
+            returndoc = returndoc.replace("\n", " ")
+            return (doc, None, returndoc, generate_example, examples)
+        else:
+            return (doc, None, None, generate_example, examples)
+    else:
+        parts= r[1].split(":return", 1)
+
+    returndoc = None
+    paramsdoc = parts[0].split(":param ")
+
+    paramsdoc = [param.replace("\n", " ").split(':', 1) for param in paramsdoc]
+    paramsdoc = [[x,y.strip()] for x, y in paramsdoc]
+
+    if len(parts) == 2:
+        returndoc = parts[1].split(':', 1)[1]
+        returndoc = returndoc.replace("\n", " ")
+
+
+    return (doc, paramsdoc,returndoc, generate_example, examples)
+
+components = {}
+
+# browse morse components modules
+for module in modules:
+    print("browse %s classes"%module)
+    for klass in get_subclasses(module):
+        print("process %s"%str(klass))
+        if issubclass(klass, Actuator):
+            ctype = 'actuator'
+        elif issubclass(klass, Sensor):
+            ctype = 'sensor'
+        elif issubclass(klass, AbstractModifier):
+            ctype = 'modifier'
+        elif issubclass(klass, Robot):
+            ctype = 'robot'
+        else:
+            print('not subclass %s'%str(klass))
+            continue
+        
+        component = klass
+        if hasattr(component, '_name'):
+            name = component._name
+            
+            try:
+                parent_name = component.mro()[1]._name
+                if name == parent_name:
+                    print("Component %s does not declare its own _name (name identical to parent <%s>). Skipping it." % (component.__name__, name))
+                    continue
+            except AttributeError:
+                pass
+        else:
+            print("Component %s does not declare a _name. Skipping it." % component.__name__)
+            continue
+        
+        if hasattr(component, '_short_desc'):
+            desc = getattr(component, '_short_desc')
+        else:
+            desc = ""
+        
+        components[name] = {'object': component,
+                            'type': ctype,
+                            'desc': desc,
+                            'module': sys.modules[klass.__module__],
+                            'doc': component.__doc__}
+
+# Extract levels, data_fields and properties
+for name, props in components.items():
+    c = props['object'] # component class
+    for cls in reversed(c.__mro__):
+        for key in ['levels', 'data_fields', 'properties']:
+            attribute = '_' + key
+            if hasattr(cls, attribute):
+                if not key in components[name]:
+                    components[name][key] = copy(getattr(cls, attribute))
+                else:
+                    components[name][key].update(getattr(cls, attribute))
+
+# Then, extract services
+for name, props in components.items():
+    c = props['object'] # component class
+    services = {}
+    for fn in [getattr(c, fn) for fn in dir(c)]:
+        if hasattr(fn, "_morse_service"):
+            print("Found service '" + fn.__name__ + "' in component " + name)
+
+            services[fn.__name__] = {'async': fn._morse_service_is_async,
+                                     'doc': fn.__doc__}
+
+    components[name]['services'] = services
+
+# Retrieve serializers documentation
+def get_interface_doc(classpath):
+
+    if not isinstance(classpath, str):
+        return None, None, None
+
+    modulename, classname = classpath.rsplit(".", 1)
+
+    try:
+        __import__(modulename)
+    except ImportError as detail:
+        print("WARNING! Interface module not found: %s. Maybe you did not install the required middleware?" % detail)
+        return classname, None, None
+    except OSError:
+        return classname, None, None
+
+    module = sys.modules[modulename]
+
+    try:
+        klass = getattr(module, classname)
+    except AttributeError as detail:
+        raise Exception("Serialization class not found: %s" % detail)
+        return None
+
+    return (klass._type_name, klass.__doc__, klass._type_url)
+
+
+# Finally, generate doc
+
+def print_code_snippet(out, name, props):
+
+    out.write(".. cssclass:: examples morse-section\n\n")
+    title = "Examples"
+    out.write(underline(title, '-') + '\n')
+
+    out.write("\nThe following examples show how to use this component in a *Builder* script:\n\n")
+
+def generate_builder_example(out, name, props):
+    args = {'var': props["object"].__name__.lower(), 'name':props["object"].__name__, 'type': props['type']}
+
+    code = """
+    from morse.builder import *
+    """
+
+    if props['type'] != 'robot':
+        code += """
+    robot = ATRV()
+    """
+
+    code += """
+    # creates a new instance of the %(type)s
+    %(var)s = %(name)s()
+
+    # place your component at the correct location
+    %(var)s.translate(<x>, <y>, <z>)
+    %(var)s.rotate(<rx>, <ry>, <rz>)
+    """ % args
+
+    if "levels" in props:
+        code += """
+    # select a specific abstraction level (cf below), or skip it to use default level
+    %(var)s.level(<level>)
+    """ % args
+
+    if props['type'] != 'robot':
+        code += """
+    robot.append(%(var)s)
+    """ % args
+
+    code += """
+    # define one or several communication interface, like 'socket'
+    %(var)s.add_interface(<interface>)
+
+    env = Environment('empty')
+    """ % args
+
+    out.write(insert_code(code))
+
+def print_files(out, name, props):
+    out.write(".. cssclass:: files morse-section\n\n")
+    if props['type'] == 'modifier':
+        title = "Sources of examples"
+        out.write(underline(title, '-') + '\n')
+    else:
+        title = "Other sources of examples"
+        out.write(underline(title, '+') + '\n')
+
+    module_name = components[name]['module'].__name__.split('.')[-1]
+
+    out.write("- `Source code <../../_modules/" +
+              components[name]['module'].__name__.replace('.', '/') +
+              ".html>`_\n")
+    out.write("- `Unit-test <../../_modules/base/" +
+                module_name + "_testing.html>`_\n")
+
+    out.write("\n\n")
+
+def supported_interfaces(cmpt, level = "default", tabs = 0):
+
+    def iface_type(type_name, value, type_url):
+        if not type_name: 
+            return ""
+        else:
+            if type_url:
+                return " as `%s <%s>`_ (:py:mod:`%s`)" % (type_name, type_url, value)
+            else:
+                return " as %s (:py:mod:`%s`)" % (type_name, value)
+
+    if not cmpt in MORSE_DATASTREAM_DICT:
+        return "(attention, no interface support!)"
+    if not level in MORSE_DATASTREAM_DICT[cmpt]:
+        return "(attention, no interface support!)"
+
+    interfaces = ""
+    for interface, values in MORSE_DATASTREAM_DICT[cmpt][level].items():
+
+        # we find a dict when we fallback on default serialization
+        if isinstance(values, dict): 
+            values = values[interface]
+
+        # If it is a single string, make a list, otherwise, it is
+        # already a list.
+        if isinstance(values, str):
+            values = [values]
+
+        ifaces = []
+        for value in values:
+            type_name, iface_doc, type_url = get_interface_doc(value)
+            ifaces.append(iface_type(type_name, value, type_url))
+        interfaces += "\t" * tabs + "- :tag:`%s` %s\n" % (interface, ' or'.join(ifaces))
+
+    return interfaces
+
+
+
+def print_levels(out, name, props):
+
+        try:
+            levels = props['levels']
+        except KeyError:
+            return False
+
+        out.write(".. cssclass:: levels morse-section\n\n")
+        title = "Available functional levels"
+        out.write(underline(title, '-') + '\n')
+        out.write("\n*Functional levels* are predefined *abstraction* or *realism* levels for the %s.\n\n" % props["type"])
+
+
+        for name, level in levels.items():
+            out.write('\n- ``' + name + '``' + (' (default level)' if level[2] else '' ) + ' ' + level[1] + "\n")
+
+            out.write("\tAt this level, the %s %s these datafields at each simulation step:\n\n" % ( props["type"], "exports" if props["type"] == "sensor" else "reads"))
+
+            for fieldname, prop in props["data_fields"].items():
+                if name is "all" or name in prop[3]:
+                    out.write('\t- ``' + fieldname + '`` (' + (prop[1] + ', ' if prop[1] else '' ) + 'initial value: ``' + str(prop[0]) + '``): ' + prop[2] + "\n")
+
+            out.write("\n\t*Interface support:*\n\n%s\n\n" % supported_interfaces(props["object"].__module__ + '.' + props["object"].__name__, name, tabs = 1))
+
+        out.write("\n\n")
+        return True
+
+def print_data(out, name, props):
+
+        out.write(".. cssclass:: fields morse-section\n\n")
+        title = "Data fields"
+        out.write(underline(title, '-') + '\n')
+
+        if not "data_fields" in props:
+            out.write("No data field documented (see above for possible notes).\n\n")
+            return
+
+        prop = props['data_fields']
+        out.write("\nThis %s %s these datafields at each simulation step:\n\n" % ( props["type"], "exports" if props["type"] == "sensor" else "reads"))
+
+        for name, prop in prop.items():
+            out.write('- ``' + name + '`` (' + (prop[1] + ', ' if prop[1] else '' ) + 'initial value: ``' + str(prop[0]) + '``)\n\t' + prop[2] + "\n")
+
+        out.write("\n*Interface support:*\n\n%s" % supported_interfaces(props["object"].__module__ + '.' + props["object"].__name__))
+
+        out.write("\n\n")
+
+def print_properties(out, name, props):
+
+        out.write(".. cssclass:: properties morse-section\n\n")
+        title = "Configuration parameters for " + name.lower()
+        out.write(underline(title, '-') + '\n')
+
+        if props['type'] == 'robot':
+            out.write("\nYou can :\n\n- set the mass of the robot using the builder method :py:meth:`morse.builder.morsebuilder.Robot.set_mass()`\n- set the friction coefficient of the robot using the builder method :py:meth:`morse.builder.morsebuilder.Robot.set_friction()`\n\n")
+
+        try:
+            prop = props['properties']
+        except KeyError:
+            out.write("*No configurable parameter.*\n\n")
+            return
+
+        if props['type'] != 'modifier':
+            out.write("\nYou can set these properties in your scripts with ``<component>.properties(<property1>=..., <property2>=...)``.\n\n")
+        else:
+            out.write("\nYou can set these parameters in your scripts with ``<component>.alter('%s', <property1>=..., <property2>=...)``.\n\n"
+                      % name)
+
+        for name, prop in prop.items():
+            out.write('- ``' + name + '`` (' + (prop[1] + ', ' if prop[1] else '' ) + 'default: ``' + 
+          ('"' + prop[0] + '"' if isinstance(prop[0], str) else str(prop[0])) + '``)\n\t' + prop[2] + "\n")
+
+        out.write("\n\n")
+
+def print_services(out, name, props):
+
+        out.write(".. cssclass:: services morse-section\n\n")
+        title = "Services for " + name
+        out.write(underline(title, '-') + '\n')
+
+        services = props['services']
+
+        if not services:
+            out.write("*This component does not expose any service.*\n\n")
+            return
+
+        for name, serv in services.items():
+            out.write('- ``' + name + '(')
+
+            doc = params = returndoc = generate_example = examples = None
+
+            if serv['doc']:
+                doc, params, returndoc, generate_example, examples = parse_docstring(serv['doc'])
+
+            if params:
+                out.write(", ".join([p for p,d in params]))
+
+            if serv['async']:
+                out.write(')`` (non blocking)')
+            else:
+                out.write(')`` (blocking)')
+
+            if doc:
+                out.write(doc.replace("\n", "\n    "))
+                if params:
+                    out.write("\n  - Parameters\n\n")
+                    for p, d in params:
+                        out.write("    - ``" + p + "``: " + d + "\n")
+                if returndoc:
+                    out.write("\n  - Return value\n\n")
+                    out.write("   " + returndoc)
+                    out.write("\n")
+            else:
+                out.write("\n    (no documentation yet)")
+            out.write("\n")
+
+        out.write("\n\n")
+
+
+
+if not os.path.exists(PREFIX):
+    os.makedirs(PREFIX)
+
+for directory in ['actuators', 'sensors', 'modifiers', 'robots']:
+    path = os.path.join(PREFIX, directory)
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+for name, props in components.items():
+    module = (props['object'].__module__.split('.'))[-1]
+    with open(os.path.join(PREFIX, props['type'] + 's', module + ".rst"), 'w',
+              encoding='utf-8') as out:
+        out.write(underline(name) + '\n')
+
+        # if an image if available, use it
+        out.write(insert_image(module))
+
+        if props['desc']:
+            out.write("\n**" + props['desc'] + "**\n\n")
+
+        doc, params, returndoc, generate_example, examples = parse_docstring(props['doc'])
+        out.write(doc + "\n\n")
+
+        print_properties(out, name, props)
+        if not print_levels(out, name, props) and \
+               props['type'] not in ['modifier', 'robot']:
+            print_data(out, name, props)
+
+        if props['type'] != 'modifier':
+            print_services(out, name, props)
+            if generate_example or examples:
+                print_code_snippet(out, name, props)
+                if generate_example:
+                    generate_builder_example(out, name, props)
+                for example in examples:
+                    out.write(insert_code(example))
+
+        print_files(out, name, props)
+
+        out.write('\n\n*(This page has been auto-generated from MORSE module %s.)*\n' % (props['object'].__module__) )
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Matrix generation tool """
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+def add_csv_line(out, l):
+    out.write(', '.join(l) + '\n')
+
+def print_csv_data(out, name, datastreams, props):
+        if 'levels' in props:
+            module = (props['object'].__module__.split('.'))[-1]
+            add_csv_line(out, [":doc:`" + props['type'] + 's/' + module + "`,"])
+            for name, level in props['levels'].items():
+                s = supported_interfaces_csv(props, datastreams, name)
+                out.write(s + '\n')
+        else:
+            s = supported_interfaces_csv(props, datastreams)
+            out.write(s + '\n')
+
+def supported_interfaces_csv(props, datastreams, level = "default"):
+    def csv_format(type_name, type_url):
+        if not type_name: 
+            return "?"
+        else:
+            if type_url:
+                return "`%s <%s>`_" % (type_name, type_url)
+            else:
+                return "%s" % (type_name)
+
+    cmpt = props["object"].__module__ + '.' + props["object"].__name__
+    module = (props['object'].__module__.split('.'))[-1]
+
+    module_name = ":doc:`" + props['type'] + 's/' + module + "`"
+    if (level != 'default'):
+        module_name = module_name + " (" + level + " level )"
+    supported_interfaces = [module_name]
+
+    if not cmpt in MORSE_DATASTREAM_DICT or not level in MORSE_DATASTREAM_DICT[cmpt]:
+        for ds in datastreams:
+            supported_interfaces.append('✘')
+    else:
+        for ds in datastreams:
+            values = MORSE_DATASTREAM_DICT[cmpt][level].get(ds, None)
+            if not values:
+                supported_interfaces.append('✘')
+            if values:
+                if (isinstance(values, dict)):
+                    supported_interfaces.append('✔')
+                    continue
+
+                if (isinstance(values, str)):
+                    values = [values]
+
+                ifaces = []
+                for value in values:
+                    type_name, iface_doc, type_url = get_interface_doc(value)
+                    ifaces.append(csv_format(type_name, type_url))
+                supported_interfaces.append('✔ ' + ' or  '.join(ifaces))
+
+    return ' ,'.join(supported_interfaces)
+
+def generate_matrix(filename):
+    datastreams = ['text', 'socket', 'yarp', 'ros', 'pocolibs', 'moos']
+
+    with open(filename, 'w', encoding='utf-8') as out:
+        sensors_list = []
+        actuators_list = []
+        for name, props in components.items():
+            if props['type'] == 'sensor':
+                sensors_list.append(name)
+
+            if props['type'] == 'actuator':
+                actuators_list.append(name)
+
+        sensors_list.sort()
+        actuators_list.sort()
+        
+        first_line = ['Features']
+        link_datastreams = [':doc:`' + d + ' <middlewares/' + d + '>`' for d in datastreams]
+        first_line.extend(link_datastreams)
+        add_csv_line(out, first_line)
+        add_csv_line(out, ['Communications,'])
+        add_csv_line(out, ['``Datastreams``', '✔', '✔', '✔ (ports)', '✔ (topics)',  '✔ (posters)', '✔ (database)'])
+        add_csv_line(out, ['``Services``', '✘', '✔', '✔', '✔ (services + actions)', '✔ (requests)', '✘'])
+        add_csv_line(out, ['Sensors,'])
+        for name in sensors_list:
+            print_csv_data(out, name, datastreams, components[name])
+        add_csv_line(out, ['Actuators,'])
+        for name in actuators_list:
+            print_csv_data(out, name, datastreams, components[name])
+
+
+generate_matrix(os.path.join(PREFIX, 'compatibility_matrix.csv'))

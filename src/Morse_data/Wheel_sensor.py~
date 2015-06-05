@@ -2,12 +2,12 @@ import logging; logger = logging.getLogger("morse." + __name__)
 import morse.core.sensor
 from morse.helpers.components import add_data
 
-class Wheel_vel(morse.core.sensor.Sensor):
+class Wheel_sensor(morse.core.sensor.Sensor):
     """ 
     This sensor returns the full pose of the sensor, i.e. both
     translation and rotation with respect to the Blender world frame.
     """
-    _name = "Wheel_vel"
+    _name = "Wheel_sensor"
 
     add_data('x', 0.0, "float",
              'x coordinate of the sensor, in world coordinate, in meter')
@@ -43,10 +43,10 @@ class Wheel_vel(morse.core.sensor.Sensor):
         self.local_data['pitch'] = self.position_3d.pitch
         self.local_data['roll'] = self.position_3d.roll
 
-        scene = self.bge_object.scene
-        for objects in scene.objects:
-                if 'wheel1' in objects.name:
-                        logger.info('%s' % objects.getAngularVelocity(1)[0] )
+        #scene = self.bge_object.scene
+        #for objects in scene.objects:
+        #        if 'wheel1' in objects.name:
+        #                logger.info('%s' % objects.getAngularVelocity(1)[0] )
 
 
 
