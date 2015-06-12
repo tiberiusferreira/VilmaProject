@@ -8,6 +8,7 @@
 #include "morse_receiver.h"
 #include "morse_transmiter.h"
 #include "vilma_self_driver.h"
+#include "wheel_speed.h"
 #include "gps.h"
 #include "imu.h"
 #include "plotui.h"
@@ -31,7 +32,7 @@ private slots:
     void on_Set_wheel_direction_from_table_toggled(bool checked);
     void on_steering_slider_sliderMoved(int position);
     void on_SmoothTrajectoryButton_clicked();
-    void on_Maintain_current_speed_toggled();
+    void on_Maintain_current_speed_toggled(bool checked);
     void on_Set_new_speed_toggled(bool checked);
     void on_PlotTrajectory_clicked();
     void on_InputFromFile_clicked();
@@ -39,12 +40,17 @@ private slots:
 
     void on_Set_wheel_direction_button_toggled(bool checked);
 
+    void on_RecordTrajectoryButton_toggled(bool checked);
+
+    void on_RecordSpeedButton_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     morse_receiver morse_receiver_obj;
     morse_transmiter morse_transmiter_obj;
     gps gps_obj;
     imu imu_obj;
+    wheel_speed wheel_speed_obj;
     vilma_self_driver vilma_self_driver_obj{&morse_receiver_obj, &morse_transmiter_obj};
     QTimer *updateUiTimer;
     QTimer *timer2;

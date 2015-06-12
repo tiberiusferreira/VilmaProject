@@ -1,0 +1,14 @@
+prefix=/home/tiberio/Qt/5.4/gcc_64
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 PlatformSupport
+Description: Qt PlatformSupport module
+Version: 5.4.1
+Libs: -L${libdir} -lQt5PlatformSupport 
+Libs.private: -lfontconfig -lfreetype -L/home/tiberio/Qt/5.4/gcc_64/lib -lQt5Gui -lQt5DBus -lQt5Core -lpthread -pthread -lgthread-2.0 -lrt -lglib-2.0 -lXrender -lXext -lX11 -lm -lEGL -lGL  
+Cflags: -I${includedir}/QtPlatformSupport -I${includedir}
+Requires: Qt5Core Qt5Gui
+

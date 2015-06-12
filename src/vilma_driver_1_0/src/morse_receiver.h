@@ -5,9 +5,11 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <gazebo/math/Quaternion.hh>
+#include <boost/thread.hpp>
 class morse_receiver
 {
 private:
+    boost::mutex PowerMutex;
     ros::Subscriber morse_pose_sub;
     ros::Subscriber morse_vel_sub;
     ros::NodeHandle rosNode;

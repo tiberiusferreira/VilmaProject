@@ -1,0 +1,14 @@
+prefix=/home/tiberio/Qt/5.4/gcc_64
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 Quick
+Description: Qt Quick module
+Version: 5.4.1
+Libs: -L${libdir} -lQt5Quick 
+Libs.private: -L/home/tiberio/Qt/5.4/gcc_64/lib -lQt5Gui -L/home/tiberio/Qt/5.4/gcc_64/lib -lQt5Qml -lQt5Network -lQt5Core -lpthread -lQt5Network -L/home/tiberio/Qt/5.4/gcc_64/lib -lQt5Core -lpthread -lGL  
+Cflags: -I${includedir}/QtQuick -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Qml
+

@@ -5,7 +5,6 @@ vilma_self_driver::vilma_self_driver(morse_receiver *morse_receiver_obj, morse_t
     this->morse_receiver_obj=morse_receiver_obj;
     this->morse_transmiter_obj=morse_transmiter_obj;
     gasControler.initPid(150,0.9,150,500,-500,this->rosNode);
-    running_threads=0;
 }
 int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates wheels so model goes to given X Y position.
     ros::spinOnce(); //update ros side values
@@ -13,18 +12,6 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
     //Solution: put all data in respect to car. Take car as origin, but keep axis orientation.
     float newx=x-morse_receiver_obj->getPosX();
     float newy=y-morse_receiver_obj->getPosY();
-//    qDebug("Orientation: %f",morse_receiver_obj->getOrientationZAsEuler());
-//    if(sqrt(newy*newx+newy*newy)<0.3){
-//        return -1;
-//    }
-//    if( (newy>=0 && (morse_receiver_obj->getOrientationZAsEuler()<=(-3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>=(3.14/2)))
-//            || (newy<0 && (morse_receiver_obj->getOrientationZAsEuler()<(3.14/2) || morse_receiver_obj->getOrientationZAsEuler()>(-3.14/2))))
-//    { //if point is oposite to car direction, do nothing
-//        /* The point given is oposite to car direction if the car is facing forward (between -pi/2 and pi/2 of rotation)
-// and the point has a negative x value or if the car is facing backwards (between -pi/2 and -pi or between pi/2 and pi) and
-//the point has a positive x value.*/
-//        return -1;
-//    }
     float ang=atan(newx/newy); //ang returned is from -pi/2 to pi/2
     float ang_car=morse_receiver_obj->getOrientationZAsEuler(); //get car z rotation, but it goes from 0 to -3.14 and 0 to 3.14 too
     //need to convert it so I can compare it with ang_car. It only needs to happen when the car is backwards
@@ -38,26 +25,15 @@ int vilma_self_driver::reorientate_to_pose(float x, float y){ //reorientates whe
         ang=-3.14-ang;
     }
     float value_to_turn=ang-ang_car;
-//    if(value_to_turn>(3.14/2) || value_to_turn<(-3.14/2)){
-//        return -1;
-//    }
-//    qDebug("Car Z is: %f\n",morse_receiver_obj->getOrientationZAsEuler());
-//    qDebug("Delta X is: %f\n",newx);
-//    qDebug("Detla Y is: %f",newy);
-//    qDebug("Time Delta = %f",(ros::Time::now().toNSec()-this->time)/1000000);
-//    this->time=ros::Time::now().toNSec();
-//    qDebug("Atan newx/newy is:%f",ang);
-//    qDebug("Wheel Ang %f\n",value_to_turn);
     if(abs(value_to_turn)>0.6){
         return -1;
     }
     morse_transmiter_obj->setSteering(value_to_turn);
     return 1;
-
 }
 
 std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_point> given_points){
-    std::deque <one_point> points,smoothed_points;
+    std::deque <one_point> points,smoothed_points;//udacity's autonomous vehicles course algorithm
     unsigned int i;
     for(i=0;i<given_points.size();i++){
         one_point new_point(given_points.at(i).x,given_points.at(i).y);
@@ -73,16 +49,12 @@ std::deque<one_point> vilma_self_driver::generate_smooth_path(std::deque<one_poi
         for(i=1;i<given_points.size()-1;i++){ // for each point
             temp=(smoothed_points.at(i)).x;
             (smoothed_points.at(i)).x+=weight_data*(((points.at(i)).x) - (smoothed_points.at(i)).x) + weight_smooth * (((smoothed_points.at(i-1)).x) + ((smoothed_points.at(i+1)).x) - 2.0 * ((smoothed_points.at(i)).x));
-            delta=+ fabs(temp-(smoothed_points.at(i)).x);
+            delta+= fabs(temp-(smoothed_points.at(i)).x);
             temp=(smoothed_points.at(i)).y;
             (smoothed_points.at(i)).y+=weight_data*(((points.at(i)).y) - (smoothed_points.at(i)).y) + weight_smooth * (((smoothed_points.at(i-1)).y) + ((smoothed_points.at(i+1)).y) - 2.0 * ((smoothed_points.at(i)).y));
-            delta=+ fabs(temp-(smoothed_points.at(i)).y);
+            delta+= fabs(temp-(smoothed_points.at(i)).y);
         }
     }
-    //    for(i=0;i<given_points.size();i++){
-    //        printf("\n");
-    //            printf("%f %f",((smoothed_points.at(i)).x),((smoothed_points.at(i)).y));
-    //    }
     return smoothed_points;
 }
 
@@ -97,62 +69,75 @@ std::deque<one_point> vilma_self_driver::generate_points(std::deque<one_point> g
             smoothed_points.push_back(new_point);
         }
         smoothed_points.push_back(given_points.at(i));
-    //    for(i=0;i<given_points.size();i++){
-    //        printf("\n");
-    //            printf("%f %f",((smoothed_points.at(i)).x),((smoothed_points.at(i)).y));
-    //    }
     return smoothed_points;
 }
 
 
 vilma_self_driver::~vilma_self_driver(){
-    this->SetMaintainSpeedOFF();
-    if(running_threads!=0){
-    printf("Deconstructor Waiting for thread to finish.\n");
-    }
-    while(running_threads!=0){
-    }
+    this->maintainSpeedON=0;
+    maintainSpeedThread.join();
     this->morse_transmiter_obj->~morse_transmiter(); //otherwise results in mutex
-    //being killed before the maintainSpeedWorker has unlocked it
+    //being killed before the maintainSpeedWorker has unlocked it -> segfault
 }
 
 void vilma_self_driver::maintainSpeed(int desiredSpeed){
     this->SetMaintainSpeedOFF();
-    if(running_threads!=0){
-    printf("Waiting for thread to finish.\n");
-    }
-    while(running_threads!=0){
-    }
-    boost::thread t(&vilma_self_driver::maintainSpeedWorker,this,desiredSpeed);
-    t.detach();
+    maintainSpeedThread = boost::thread(&vilma_self_driver::maintainSpeedWorker,this,desiredSpeed);
 }
 void vilma_self_driver::SetMaintainSpeedOFF(){
     this->maintainSpeedON=0;
-    if(running_threads!=0){
-    printf("Waiting for %d thread(s) to finish.\n",running_threads);
-    }
-    while(running_threads!=0){
-    }
+    maintainSpeedThread.join();
     this->morse_transmiter_obj->setPowerAmount(0);
     this->morse_transmiter_obj->setManualControl();
 }
 
+void vilma_self_driver::speedLogger(){
+    record_speed=0;
+    SpeedLoggerThread.join();
+    record_speed=1;
+    SpeedLoggerThread = boost::thread(&vilma_self_driver::speedLogger_worker,this);
+}
+void vilma_self_driver::positionLogger(){
+    record_pos=0;
+    PositionLoggerThread.join();
+    record_pos=1;
+    PositionLoggerThread = boost::thread(&vilma_self_driver::positionLogger_worker,this);
+}
+void vilma_self_driver::speedLogger_worker(){
+    FILE * SpeedLog;
+    SpeedLog = fopen ("SpeedLog.txt","w");
+    double initialTime = ros::Time::now().toSec();
+    printf("ROS TIME NOW:%f\n",ros::Time::now().toSec());
+    fprintf(SpeedLog,"Tempo desde o começo da simulação\tMódulo da velocidade do veículo\n");
+    fprintf (SpeedLog,"%lf\t%f\n",ros::Time::now().toSec()-initialTime,this->morse_receiver_obj->getLinearVelAVG());
+    boost::this_thread::sleep(boost::posix_time::milliseconds(250));
+    while(this->record_speed==1){
+        fprintf (SpeedLog,"%lf\t%f\n",ros::Time::now().toSec()-initialTime,this->morse_receiver_obj->getLinearVelAVG());
+        boost::this_thread::sleep(boost::posix_time::milliseconds(250));
+    }
+    fclose (SpeedLog);
+}
+
+void vilma_self_driver::positionLogger_worker(){
+    FILE * PositionLog;
+    PositionLog = fopen ("PositionLog.txt","w");
+    fprintf (PositionLog,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+    boost::this_thread::sleep(boost::posix_time::milliseconds(250));
+    while(this->record_pos==1){
+        fprintf (PositionLog,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
+        boost::this_thread::sleep(boost::posix_time::milliseconds(250));
+    }
+    fclose (PositionLog);
+}
+
 
 void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
-    running_threads++;
     this->maintainSpeedON=1;
     gasControler.reset();
     ros::Time previous_interation_time;
     previous_interation_time = ros::Time::now();
     float currentSpeed;
     double updated_value;
-    double initialTime = ros::Time::now().toSec();
-    FILE * pFile;
-    pFile = fopen ("SpeedLog.txt","w");
-    FILE * pFile2;
-    pFile2 = fopen ("PositionLog.txt","w");
-
-    fprintf (pFile,"Tempo desde o começo da simulação\tMódulo da velocidade do veículo\n");
     while(this->maintainSpeedON){
         ros::Duration dt = ros::Time::now()-previous_interation_time;
         previous_interation_time = ros::Time::now();
@@ -177,14 +162,8 @@ void vilma_self_driver::maintainSpeedWorker(int desiredSpeed){
         if(updated_value<0){
             updated_value=-updated_value;
         }
-        fprintf (pFile,"%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         gasControler.printValues();
-        fprintf (pFile2,"%f\t%f\n",this->morse_receiver_obj->getPosX(),morse_receiver_obj->getPosY());
-        printf ("%f\t%f\n",ros::Time::now().toSec()-initialTime,currentSpeed);
         boost::this_thread::sleep(boost::posix_time::milliseconds(250));
         this->morse_transmiter_obj->setPowerAmount(updated_value);
     }
-    fclose (pFile);
-    fclose (pFile2);
-    running_threads--;
 }

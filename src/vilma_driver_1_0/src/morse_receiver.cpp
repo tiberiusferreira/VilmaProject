@@ -12,11 +12,13 @@ morse_receiver::~morse_receiver()
 }
 
 void morse_receiver::receive_pos(geometry_msgs::PoseStamped pose){
+    boost::mutex::scoped_lock scopedLock(PowerMutex); //protect all the variables below
     this->received_pose=pose;
 //    printf("Received %f %f\n",pose.pose.position.x,ros::Time::now().toNSec()/1000000);
 }
 
 void morse_receiver::receive_vel(geometry_msgs::TwistStamped vel){
+    boost::mutex::scoped_lock scopedLock(PowerMutex); //protect all the variables below
     this->received_vel=vel;
 }
 

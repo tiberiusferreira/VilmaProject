@@ -7,7 +7,9 @@
 QT       += core gui
 QMAKE_CXXFLAGS += -std=c++0x
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
-
+#QMAKE_LFLAGS += -Wl,--rpath=\/home/tiberio/git/VilmaProject/src/vilma_driver_1_0/build-vilma_driver_widget-Desktop_Qt_5_4_1_GCC_64bit-Release/lib
+QMAKE_LFLAGS = -Wl,--rpath=\./lib
+#QMAKE_LFLAGS += -Wl,--rpath=\'$ORIGIN'/libs
 INCLUDEPATH+=/usr/include/gazebo-1.8 \
 /opt/ros/groovy/include \
 /usr/include/gazebo-1.9 \
@@ -25,7 +27,7 @@ LIBS += -L/opt/ros/indigo/lib/ -lactionlib -lbondcpp -lclass_loader -lroscpp \
 -lconsole_bridge -lcpp_common -lcv_bridge -ldynamic_reconfigure_config_init_mutex \
 -limage_transport_plugins -limage_transport -lmessage_filters -lnodeletlib -lqt_gui_cpp \
 -lrosconsole -lrostime -lroscpp_serialization -lxmlrpcpp -lrosconsole_log4cxx -lrosconsole \
--lrosconsole_backend_interface -lcontrol_toolbox
+-lrosconsole_backend_interface -lcontrol_toolbox -lroslib -lrospack
 
 LIBS += -lboost_thread
 
@@ -46,7 +48,8 @@ SOURCES += main.cpp\
     morse_receiver.cpp \
     morse_transmiter.cpp \
     qcustomplot.cpp \
-    plotui.cpp
+    plotui.cpp \
+    wheel_speed.cpp
 
 HEADERS  += mainwindow.h \
     vilma_self_driver.h \
@@ -56,7 +59,8 @@ HEADERS  += mainwindow.h \
     morse_receiver.h \
     morse_transmiter.h \
     qcustomplot.h \
-    plotui.h
+    plotui.h \
+    wheel_speed.h
 
 FORMS    += mainwindow.ui \
     plotui.ui

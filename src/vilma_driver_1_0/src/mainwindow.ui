@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>678</width>
-    <height>467</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -29,7 +29,7 @@
      <x>0</x>
      <y>0</y>
      <width>678</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuView">
@@ -52,13 +52,13 @@
    <property name="minimumSize">
     <size>
      <width>280</width>
-     <height>420</height>
+     <height>450</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>400</width>
-     <height>420</height>
+     <height>480</height>
     </size>
    </property>
    <property name="windowTitle">
@@ -74,22 +74,16 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>253</width>
-       <height>392</height>
+       <x>11</x>
+       <y>1</y>
+       <width>245</width>
+       <height>436</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_7">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -655,6 +649,79 @@
         </item>
        </layout>
       </item>
+      <item>
+       <layout class="QVBoxLayout" name="wheel_speedLayout">
+        <item>
+         <widget class="QLabel" name="label_35">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Wheel Speeds&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="wheel_speedFL">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>FL: 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="wheel_speedFR">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>FR : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="wheel_speedRL">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>RL : 0.000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="wheel_speedRR">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>RR : 0.000</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -672,13 +739,13 @@
    <property name="minimumSize">
     <size>
      <width>380</width>
-     <height>80</height>
+     <height>150</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>380</width>
-     <height>80</height>
+     <height>150</height>
     </size>
    </property>
    <property name="autoFillBackground">
@@ -694,13 +761,13 @@
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="ManualControlsWidget_contents">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>1</x>
        <y>1</y>
        <width>351</width>
-       <height>51</height>
+       <height>53</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -794,6 +861,38 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>240</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <item>
+       <widget class="QPushButton" name="RecordTrajectoryButton">
+        <property name="text">
+         <string>Record Trajectory</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="RecordSpeedButton">
+        <property name="text">
+         <string>Record Speed</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QDockWidget" name="AutomationWidget">
@@ -825,13 +924,13 @@
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>1</x>
        <y>0</y>
        <width>359</width>
-       <height>271</height>
+       <height>289</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">

@@ -13,9 +13,8 @@ morse_transmiter::morse_transmiter()
     //Connect to remote server
     for(;1;){
     if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0){
-        printf("Failed to connect to the car sockets. Retrying in 1 second...\n");
+        printf("Failed to connect to the car sockets. Is Morse (and Vilma) running? Retrying in 1 second...\n");
         sleep(1);
-        //exit(1);
     }else{
         printf("Connection Successful!\n");
         fflush(stdout);
@@ -26,8 +25,6 @@ morse_transmiter::morse_transmiter()
     this->setVelocity(100);
     this->setSteering(0);
     this->setManualControl();
-
-
 }
 
 morse_transmiter::~morse_transmiter()
@@ -36,6 +33,7 @@ morse_transmiter::~morse_transmiter()
 }
 
 void morse_transmiter::setSteering(float rad){
+    boost::mutex::scoped_lock scopedLock(PowerMutex); //protect all the variables below
     char message1[100];
     if(rad>0.6){
         rad=0.6;
@@ -51,6 +49,7 @@ void morse_transmiter::setSteering(float rad){
 }
 
 void morse_transmiter::setVelocity(float meter_per_sec){
+    boost::mutex::scoped_lock scopedLock(PowerMutex); //protect all the variables below
     char message1[100];
     this->velocity=meter_per_sec;
     sprintf(message1, "id vilma controlpower [1,%lf,%lf]\n", this->power,meter_per_sec);
@@ -60,7 +59,7 @@ void morse_transmiter::setVelocity(float meter_per_sec){
 }
 
 void morse_transmiter::setPowerAmount(float power_amount){
-    boost::mutex::scoped_lock scopedLock(PowerMutex);
+    boost::mutex::scoped_lock scopedLock(PowerMutex); //protect all the variables below
     char message1[100];
     this->power=power_amount;
     //robot vilma is hardcoded
@@ -69,7 +68,6 @@ void morse_transmiter::setPowerAmount(float power_amount){
     if( send(sock , message1 , strlen(message1) , 0) < 0){
         puts("send power failed");
     }
-    //printf("Sent: %s",message1);
 }
 
 void morse_transmiter::setManualControl(){

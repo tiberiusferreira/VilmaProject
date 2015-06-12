@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete updateUiTimer;
+    delete timer2;
     delete ui;
 }
 
@@ -55,6 +57,12 @@ void MainWindow::update()
     QString morse_ang_vel_y_text = QString("Y : %1").arg(QString::number(morse_receiver_obj.getAngularVelY(),'f',3));
     QString morse_ang_vel_z_text = QString("Z : %1").arg(QString::number(morse_receiver_obj.getAngularVelZ(),'f',3));
     QString imu_euler_rot_z = QString("Z : %1").arg(QString::number(imu_obj.getOrientationZAsEuler(),'f',3));
+
+    QString wheel_speedFL = QString("FL: %1").arg(QString::number(wheel_speed_obj.getFLspeed(),'f',3));
+    QString wheel_speedFR = QString("FR: %1").arg(QString::number(wheel_speed_obj.getFRspeed(),'f',3));
+    QString wheel_speedRL = QString("RL: %1").arg(QString::number(wheel_speed_obj.getRLspeed(),'f',3));
+    QString wheel_speedRR = QString("RR: %1").arg(QString::number(wheel_speed_obj.getRRspeed(),'f',3));
+
     ui->current_acel_text->setText(acel_text);
     ui->current_max_speed_text->setText(max_speed_text);
     ui->morse_x_text->setText(morse_x_text);
@@ -84,6 +92,12 @@ void MainWindow::update()
     ui->morse_ang_vel_y_text->setText(morse_ang_vel_y_text);
     ui->morse_ang_vel_z_text->setText(morse_ang_vel_z_text);
     ui->imu_euler_z_rotation_text->setText(imu_euler_rot_z);
+    ui->wheel_speedFL->setText(wheel_speedFL);
+    ui->wheel_speedFR->setText(wheel_speedFR);
+    ui->wheel_speedRL->setText(wheel_speedRL);
+    ui->wheel_speedRR->setText(wheel_speedRR);
+
+
     if(PlotUI_obj.isVisible()){
         this->PlotUI_obj.ui->QPlotUI->graph(0)->addData(this->morse_receiver_obj.getPosX(),this->morse_receiver_obj.getPosY());
         if(this->morse_receiver_obj.getPosX()>this->PlotUI_obj.maxx){
@@ -196,17 +210,18 @@ void MainWindow::on_SmoothTrajectoryButton_clicked()
 
 
 
-void MainWindow::on_Maintain_current_speed_toggled()
-{ //set -> current
-    if(ui->Set_new_speed->isChecked()){
-        ui->Set_new_speed->toggle();
-        return;
-    }else{
-        if(ui->Maintain_current_speed->isChecked()){
-            vilma_self_driver_obj.maintainSpeed(morse_receiver_obj.getLinearVelAVG());
+void MainWindow::on_Maintain_current_speed_toggled(bool checked)
+{
+    if(checked==1){
+        if(ui->Set_new_speed->isChecked()){
+            ui->Set_new_speed->toggle();
+            ui->Maintain_current_speed->setChecked(false);
+            return;
         }else{
-            vilma_self_driver_obj.SetMaintainSpeedOFF();
-        }
+                vilma_self_driver_obj.maintainSpeed(morse_receiver_obj.getLinearVelAVG());
+            }
+    }else{
+        vilma_self_driver_obj.SetMaintainSpeedOFF();
     }
 
 }
@@ -387,5 +402,25 @@ void MainWindow::on_Set_wheel_direction_button_toggled(bool checked)
         timer2->start(17); // about 60hz
     }else{
         timer2->stop();
+    }
+}
+
+void MainWindow::on_RecordTrajectoryButton_toggled(bool checked)
+{
+    if(checked==1){
+        this->vilma_self_driver_obj.positionLogger();
+    }else{
+        this->vilma_self_driver_obj.record_pos=0;
+    }
+}
+
+
+
+void MainWindow::on_RecordSpeedButton_toggled(bool checked)
+{
+    if(checked==1){
+        this->vilma_self_driver_obj.speedLogger();
+    }else{
+        this->vilma_self_driver_obj.record_speed=0;
     }
 }
