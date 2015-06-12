@@ -15,6 +15,8 @@ Download put all the content of the install_stable folder in the HOME directory.
 
 Execute the setup_scriptReliable.sh script at HOME directory.
 
+Close terminal and open a new one.
+
 Execute startvilma.sh at home directory.
 
 
